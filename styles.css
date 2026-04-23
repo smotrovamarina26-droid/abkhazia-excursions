@@ -182,3 +182,19 @@
       font-size: 28px;
     }
   }
+  .hero-features {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  
+  .hero-features span {
+    background: rgba(255,255,255,0.15);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    color: white;
+    backdrop-filter: blur(6px);
+  } 
