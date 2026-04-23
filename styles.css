@@ -198,3 +198,18 @@
     color: white;
     backdrop-filter: blur(6px);
   } 
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+  }
+  
+  .card-tags span {
+    background: #fff4e8;
+    color: #ff7a00;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+  }
