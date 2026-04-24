@@ -92,7 +92,7 @@
             </div>
           
             <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
-            <a href="#" class="card-book-btn" data-tour-name="Золотое кольцо Абхазии">Оставить заявку</a>
+            <a href="#" class="card-book-btn" data-tour-name="Золотое кольцо Абхазии" data-scroll-target="tour-golden-ring">Оставить заявку</a>
             <a href="pages/zolotoe-koltso-abkhazia.html" class="card-program-link">Смотреть программу</a>
           </article>
 
@@ -109,7 +109,7 @@
             </div>
           
             <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
-            <a href="#" class="card-book-btn" data-tour-name="Термальный источник Кындыг">Оставить заявку</a>
+            <a href="#" class="card-book-btn" data-tour-name="Термальный источник Кындыг" data-scroll-target="tour-kyndyg">Оставить заявку</a>
             <a href="pages/kyndyg-chernigovka.html" class="card-program-link">Смотреть программу</a>
           </article>
 
@@ -125,7 +125,7 @@
             </div>
           
             <p class="price">от 2800 ₽<span class="price-per-person">за человека</span></p>
-            <a href="#" class="card-book-btn" data-tour-name="Джип-тур Гегский водопад">Оставить заявку</a>
+            <a href="#" class="card-book-btn" data-tour-name="Джип-тур Гегский водопад" data-scroll-target="tour-gega-jeep">Оставить заявку</a>
             <a href="pages/dzhip-gegskiy-vodopad.html" class="card-program-link">Смотреть программу</a>
           </article>
 
@@ -200,6 +200,7 @@
           <span class="booking-success-note">Место за вами закреплено</span>
         </p>
         <button type="button" class="booking-success-btn" id="booking-success-close">Спасибо</button>
+        <button type="button" class="booking-success-secondary-btn" id="booking-success-scroll">Смотреть программу</button>
       </div>
     </div>
   </div>
@@ -213,17 +214,19 @@
       const form = document.getElementById("booking-form");
       const successState = document.getElementById("booking-success-state");
       const successCloseBtn = document.getElementById("booking-success-close");
+      const successScrollBtn = document.getElementById("booking-success-scroll");
       const selectedTourNameEl = document.getElementById("selected-tour-name");
       const errorMessageEl = document.getElementById("booking-error-message");
       const nameInput = document.getElementById("booking-name");
       const contactInput = document.getElementById("booking-contact");
       const bookButtons = document.querySelectorAll(".card-book-btn");
 
-      if (!overlay || !popup || !formState || !form || !successState || !successCloseBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
+      if (!overlay || !popup || !formState || !form || !successState || !successCloseBtn || !successScrollBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
         return;
       }
 
       let lastFocusedElement = null;
+      let selectedScrollTargetId = "";
 
       function showFormState() {
         formState.classList.remove("is-hidden");
@@ -260,6 +263,7 @@
       bookButtons.forEach((button) => {
         button.addEventListener("click", (event) => {
           event.preventDefault();
+          selectedScrollTargetId = button.getAttribute("data-scroll-target") || "";
           openPopup(button.getAttribute("data-tour-name"));
         });
       });
@@ -308,6 +312,18 @@
       });
 
       successCloseBtn.addEventListener("click", closePopup);
+      successScrollBtn.addEventListener("click", () => {
+        closePopup();
+        const targetEl = selectedScrollTargetId ? document.getElementById(selectedScrollTargetId) : null;
+        const fallbackEl = document.getElementById("tours");
+        const destination = targetEl || fallbackEl;
+
+        if (destination) {
+          requestAnimationFrame(() => {
+            destination.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
+      });
     })();
   </script>
 
