@@ -92,8 +92,8 @@
             </div>
           
             <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
-          
-            <a href="pages/zolotoe-koltso-abkhazia.html">Смотреть программу</a>
+            <a href="#" class="card-book-btn" data-tour-name="Золотое кольцо Абхазии">Записаться</a>
+            <a href="pages/zolotoe-koltso-abkhazia.html" class="card-program-link">Смотреть программу</a>
           </article>
 
           <article id="tour-kyndyg" class="card">
@@ -109,8 +109,8 @@
             </div>
           
             <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
-          
-            <a href="pages/kyndyg-chernigovka.html">Смотреть программу</a>
+            <a href="#" class="card-book-btn" data-tour-name="Термальный источник Кындыг">Записаться</a>
+            <a href="pages/kyndyg-chernigovka.html" class="card-program-link">Смотреть программу</a>
           </article>
 
           <article id="tour-gega-jeep" class="card">
@@ -125,8 +125,8 @@
             </div>
           
             <p class="price">от 2800 ₽<span class="price-per-person">за человека</span></p>
-          
-            <a href="pages/dzhip-gegskiy-vodopad.html">Смотреть программу</a>
+            <a href="#" class="card-book-btn" data-tour-name="Джип-тур Гегский водопад">Записаться</a>
+            <a href="pages/dzhip-gegskiy-vodopad.html" class="card-program-link">Смотреть программу</a>
           </article>
 
         </div>
@@ -163,6 +163,147 @@
     </section>
 
   </main>
+
+  <div class="popup-overlay" id="booking-overlay" aria-hidden="true">
+    <div class="booking-popup" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+      <button class="booking-popup-close" type="button" id="booking-close" aria-label="Закрыть форму">×</button>
+      <h3 id="booking-title">Оставьте заявку — мы свяжемся с вами и расскажем все детали</h3>
+      <p class="booking-selected-tour">Вы выбрали: <strong id="selected-tour-name"></strong></p>
+
+      <form id="booking-form" class="booking-form">
+        <label for="booking-name">Как к вам обращаться?</label>
+        <input id="booking-name" name="name" type="text" autocomplete="name" />
+
+        <label for="booking-contact">Телефон для связи</label>
+        <input id="booking-contact" name="contact" type="tel" placeholder="+7 (___) ___-__-__" required autocomplete="tel" />
+        <p class="booking-error-message" id="booking-error-message" role="alert" aria-live="assertive"></p>
+
+        <button type="submit" class="booking-submit-btn">Отправить заявку</button>
+        <p class="form-note">Ничего оплачивать сейчас не нужно</p>
+
+        <div class="booking-trust">
+          <p>✔ Ежедневные выезды</p>
+          <p>✔ Подтвердим всё перед поездкой</p>
+          <p>✔ Ответим в течение 5–10 минут</p>
+        </div>
+        <p class="privacy-note">Мы не передаём ваши данные третьим лицам</p>
+
+      </form>
+
+      <div class="booking-success-state" id="booking-success-state" role="status" aria-live="polite">
+        <div class="booking-success-icon" aria-hidden="true">✓</div>
+        <h4>Заявка отправлена</h4>
+        <p>Свяжемся с вами в течение 5–10 минут<br>и подтвердим детали поездки</p>
+        <button type="button" class="booking-success-btn" id="booking-success-close">Понятно</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const overlay = document.getElementById("booking-overlay");
+      const popup = overlay ? overlay.querySelector(".booking-popup") : null;
+      const closeBtn = document.getElementById("booking-close");
+      const form = document.getElementById("booking-form");
+      const successState = document.getElementById("booking-success-state");
+      const successCloseBtn = document.getElementById("booking-success-close");
+      const selectedTourNameEl = document.getElementById("selected-tour-name");
+      const errorMessageEl = document.getElementById("booking-error-message");
+      const nameInput = document.getElementById("booking-name");
+      const contactInput = document.getElementById("booking-contact");
+      const bookButtons = document.querySelectorAll(".card-book-btn");
+
+      if (!overlay || !popup || !form || !successState || !successCloseBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
+        return;
+      }
+
+      let lastFocusedElement = null;
+
+      function showFormState() {
+        form.classList.remove("is-hidden");
+        successState.classList.remove("is-visible");
+      }
+
+      function showSuccessState() {
+        form.classList.add("is-hidden");
+        successState.classList.add("is-visible");
+        successCloseBtn.focus();
+      }
+
+      function openPopup(tourName) {
+        selectedTourNameEl.textContent = tourName || "Экскурсия";
+        errorMessageEl.textContent = "";
+        form.reset();
+        showFormState();
+        overlay.classList.add("is-open");
+        overlay.setAttribute("aria-hidden", "false");
+        lastFocusedElement = document.activeElement;
+        requestAnimationFrame(() => {
+          nameInput.focus();
+        });
+      }
+
+      function closePopup() {
+        overlay.classList.remove("is-open");
+        overlay.setAttribute("aria-hidden", "true");
+        if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+          lastFocusedElement.focus();
+        }
+      }
+
+      bookButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          openPopup(button.getAttribute("data-tour-name"));
+        });
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closePopup);
+      }
+
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+          closePopup();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && overlay.classList.contains("is-open")) {
+          closePopup();
+        }
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const contactValue = contactInput.value.trim();
+
+        if (!contactValue) {
+          errorMessageEl.textContent = "Укажите телефон для связи";
+          contactInput.focus();
+          return;
+        }
+
+        errorMessageEl.textContent = "";
+        const payload = {
+          tour: selectedTourNameEl.textContent,
+          name: nameInput.value.trim(),
+          contact: contactValue,
+        };
+
+        console.log("booking_request", payload);
+        showSuccessState();
+      });
+
+      contactInput.addEventListener("input", () => {
+        if (contactInput.value.trim()) {
+          errorMessageEl.textContent = "";
+        }
+      });
+
+      successCloseBtn.addEventListener("click", closePopup);
+    })();
+  </script>
 
 </body>
 </html>
