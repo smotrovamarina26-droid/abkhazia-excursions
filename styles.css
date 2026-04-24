@@ -10,6 +10,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   color: #222;
@@ -35,17 +39,21 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
+  padding: 10px 0;
+  background: transparent;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .topbar-content {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 0;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #ffe5cc;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
 }
 
 .logo {
@@ -151,17 +159,79 @@ img {
   border-radius: 999px;
   font-size: 14px;
   line-height: 1.3;
-  background: #e9ecef;
-  color: #333;
+  background: #fffaf4;
+  color: #2f2f2f;
   font-weight: 600;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #ffe3c8;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-benefit:hover {
+  transform: translateY(-2px);
+  border-color: #ffc891;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+}
+
+.hero-benefit--primary {
+  background: linear-gradient(135deg, #fff7ed, #fff1e0);
+  border-color: #ffc891;
+  color: #7d3f00;
+}
+
+.hero-benefit--secondary {
+  background: #fffdf9;
 }
 
 .tours,
 .advantages,
 .trust {
   padding: 52px 0;
+}
+
+.quick-scenarios {
+  padding: 40px 0 10px;
+}
+
+.scenario-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.scenario-card {
+  display: block;
+  text-decoration: none;
+  color: #222;
+  background: #fff;
+  border: 1px solid #ffe3c8;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.scenario-card:hover {
+  transform: translateY(-3px);
+  border-color: #ffc891;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.scenario-card h3 {
+  margin-bottom: 4px;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.scenario-card p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.card[id] {
+  scroll-margin-top: 92px;
 }
 
 h2 {
@@ -281,7 +351,15 @@ h2 {
   background: #fff;
   border-radius: 18px;
   padding: 18px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  border: 1px solid #ffe9d2;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.trust-item:hover {
+  transform: translateY(-3px);
+  border-color: #ffd3a3;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.09);
 }
 
 .trust-item strong {
@@ -295,7 +373,7 @@ h2 {
 
 .trust-item p {
   font-size: 16px;
-  color: #555;
+  color: #5f636d;
   line-height: 1.5;
   margin: 0;
   overflow-wrap: anywhere;
@@ -305,6 +383,14 @@ h2 {
   .container {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .topbar {
+    padding: 12px 0;
+  }
+
+  .topbar-content {
+    padding: 13px 16px;
   }
 
   .hero {
@@ -328,13 +414,18 @@ h2 {
   .cards {
     gap: 20px;
   }
+
+  .scenario-cards {
+    gap: 14px;
+  }
 }
 
 @media (min-width: 769px) {
   .topbar-content {
     justify-content: space-between;
     gap: 20px;
-    padding: 14px 0;
+    padding: 14px 18px;
+    border-radius: 18px;
   }
 
   .logo {
@@ -371,6 +462,10 @@ h2 {
     padding: 64px 0;
   }
 
+  .quick-scenarios {
+    padding: 52px 0 16px;
+  }
+
   h2 {
     margin-bottom: 40px;
     font-size: 34px;
@@ -379,6 +474,19 @@ h2 {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
+  }
+
+  .scenario-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .scenario-card {
+    padding: 16px 18px;
+  }
+
+  .scenario-card h3 {
+    font-size: 18px;
   }
 
   .card {
@@ -404,7 +512,8 @@ h2 {
   }
 
   .topbar-content {
-    padding: 16px 0;
+    padding: 16px 22px;
+    border-radius: 20px;
   }
 
   .hero {
