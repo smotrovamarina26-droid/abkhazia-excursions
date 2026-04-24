@@ -155,19 +155,20 @@
               <li>Взрослый с 12 лет — 2400 ₽</li>
               <li>Детский 7–11 лет — 2100 ₽</li>
               <li>Дети до 6 лет на руках — бесплатно</li>
-              <li>Дети до 6 лет с отдельным местом — 1000 ₽</li>
+              <li>Дети до 6 лет с отдельным местом — 1400 ₽</li>
             </ul>
           </div>
           <div class="tour-price-col">
             <h3 class="tour-price-col-title">Из Сочи и Хосты</h3>
             <ul class="tour-price-list">
-              <li>Взрослый с 12 лет — 2800 ₽</li>
-              <li>Детский 7–11 лет — 2500 ₽</li>
+              <li>Взрослый с 12 лет — 2600 ₽</li>
+              <li>Детский 7–11 лет — 2300 ₽</li>
               <li>Дети до 6 лет на руках — бесплатно</li>
-              <li>Дети до 6 лет с отдельным местом — 1400 ₽</li>
+              <li>Дети до 6 лет с отдельным местом — 1600 ₽</li>
             </ul>
           </div>
         </div>
+        <p class="tour-price-highlight">Экологический сбор Рицинского национального парка 1000 ₽ уже включён в стоимость.</p>
 
         <div class="tour-pricing-calc" id="tour-pricing">
           <h3 class="tour-pricing-calc-title">Рассчитайте стоимость поездки</h3>
@@ -183,7 +184,9 @@
           <div class="tour-pricing-calc-block">
             <p class="tour-pricing-calc-label">Количество участников</p>
             <div class="tour-pricing-calc-row">
-              <span class="tour-pricing-calc-row-name">Взрослые с 12 лет</span>
+              <span class="tour-pricing-calc-row-name"
+                >Взрослые с 12 лет
+                <span class="calc-price" data-type="adult" aria-label="Цена за человека"></span></span>
               <div class="tour-pricing-stepper" data-calc-key="adults" data-calc-min="1" data-calc-max="20">
                 <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше взрослых">−</button>
                 <span class="tour-pricing-step-value" id="calc-val-adults" aria-live="polite">1</span>
@@ -191,7 +194,8 @@
               </div>
             </div>
             <div class="tour-pricing-calc-row">
-              <span class="tour-pricing-calc-row-name">Дети 7–11 лет</span>
+              <span class="tour-pricing-calc-row-name"
+                >Дети 7–11 лет <span class="calc-price" data-type="child" aria-label="Цена за человека"></span></span>
               <div class="tour-pricing-stepper" data-calc-key="child7" data-calc-min="0" data-calc-max="20">
                 <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше детей 7–11">−</button>
                 <span class="tour-pricing-step-value" id="calc-val-child7" aria-live="polite">0</span>
@@ -199,7 +203,9 @@
               </div>
             </div>
             <div class="tour-pricing-calc-row">
-              <span class="tour-pricing-calc-row-name">Дети до 6 лет на руках</span>
+              <span class="tour-pricing-calc-row-name"
+                >Дети до 6 лет на руках
+                <span class="calc-price" data-type="babyFree" aria-label="Цена за человека"></span></span>
               <div class="tour-pricing-stepper" data-calc-key="baby" data-calc-min="0" data-calc-max="20">
                 <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше детей на руках">−</button>
                 <span class="tour-pricing-step-value" id="calc-val-baby" aria-live="polite">0</span>
@@ -207,7 +213,9 @@
               </div>
             </div>
             <div class="tour-pricing-calc-row">
-              <span class="tour-pricing-calc-row-name">Дети до 6 лет с отдельным местом</span>
+              <span class="tour-pricing-calc-row-name"
+                >Дети до 6 лет с отдельным местом
+                <span class="calc-price" data-type="babySeat" aria-label="Цена за человека"></span></span>
               <div class="tour-pricing-stepper" data-calc-key="babySeat" data-calc-min="0" data-calc-max="20">
                 <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше детей с местом">−</button>
                 <span class="tour-pricing-step-value" id="calc-val-babySeat" aria-live="polite">0</span>
@@ -217,7 +225,10 @@
           </div>
 
           <div class="tour-pricing-calc-total">
+            <div id="calc-breakdown" class="tour-pricing-calc-breakdown" aria-live="polite"></div>
             <p class="tour-pricing-calc-total-value" id="calc-total">Итого: 2400 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Предоплата после подтверждения: 500 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-balance">Остаток на месте: 1900 ₽</p>
             <p class="tour-pricing-calc-total-hint">Экологический сбор Рицинского национального парка уже включён в стоимость</p>
           </div>
 
@@ -229,8 +240,6 @@
             data-booking-page="Золотое кольцо Абхазии"
             >Оставить заявку</a>
         </div>
-
-        <p class="tour-price-highlight">Экологический сбор Рицинского национального парка 1000 ₽ уже включён в стоимость.</p>
       </div>
     </section>
 
@@ -374,8 +383,8 @@
       }
 
       var PRICES = {
-        adler: { adult: 2400, child7: 2100, baby: 0, babySeat: 1000 },
-        sochi: { adult: 2800, child7: 2500, baby: 0, babySeat: 1400 }
+        adler: { adult: 2400, child: 2100, babySeat: 1400, babyFree: 0 },
+        sochi: { adult: 2600, child: 2300, babySeat: 1600, babyFree: 0 }
       };
 
       var state = {
@@ -390,22 +399,89 @@
         return n.toLocaleString("ru-RU", { maximumFractionDigits: 0 }) + " ₽";
       }
 
+      function getSelectedLocation() {
+        return state.departure;
+      }
+
+      function updateDisplayedPrices() {
+        var location = getSelectedLocation();
+        var p = PRICES[location];
+        root.querySelectorAll(".calc-price").forEach(function (el) {
+          var type = el.getAttribute("data-type");
+          if (!type || p[type] === undefined) {
+            return;
+          }
+          el.textContent = "— " + p[type].toLocaleString("ru-RU") + " ₽";
+        });
+      }
+
+      function calculatePrepayment(adults, children) {
+        return (adults + children) * 500;
+      }
+
       function getTotal() {
         var p = PRICES[state.departure];
         return (
           state.adults * p.adult +
-          state.child7 * p.child7 +
-          state.baby * p.baby +
+          state.child7 * p.child +
+          state.baby * p.babyFree +
           state.babySeat * p.babySeat
         );
       }
 
+      function updateBreakdown() {
+        var container = document.getElementById("calc-breakdown");
+        if (!container) {
+          return;
+        }
+        var prices = PRICES[state.departure];
+        var adults = state.adults;
+        var children = state.child7;
+        var babySeat = state.babySeat;
+        var babyFree = state.baby;
+
+        var adultSum = adults * prices.adult;
+        var childSum = children * prices.child;
+        var babySeatSum = babySeat * prices.babySeat;
+        var totalPeople = adults + children + babySeat + babyFree;
+
+        if (totalPeople === 0) {
+          container.innerHTML = '<div class="calc-empty">Выберите состав группы</div>';
+          return;
+        }
+
+        var parts = [];
+        if (adults) {
+          parts.push("<div>Взрослые × " + adults + " = " + adultSum.toLocaleString("ru-RU") + " ₽</div>");
+        }
+        if (children) {
+          parts.push("<div>Дети 7–11 × " + children + " = " + childSum.toLocaleString("ru-RU") + " ₽</div>");
+        }
+        if (babySeat) {
+          parts.push(
+            "<div>Дети до 6 (место) × " + babySeat + " = " + babySeatSum.toLocaleString("ru-RU") + " ₽</div>"
+          );
+        }
+        parts.push('<div class="calc-total-people">Всего гостей: ' + totalPeople + "</div>");
+        container.innerHTML = parts.join("");
+      }
+
       function render() {
+        updateDisplayedPrices();
+
+        var total = getTotal();
+        var prepayment = calculatePrepayment(state.adults, state.child7);
+        var remainder = total - prepayment;
+
         document.getElementById("calc-val-adults").textContent = String(state.adults);
         document.getElementById("calc-val-child7").textContent = String(state.child7);
         document.getElementById("calc-val-baby").textContent = String(state.baby);
         document.getElementById("calc-val-babySeat").textContent = String(state.babySeat);
-        document.getElementById("calc-total").textContent = "Итого: " + formatMoney(getTotal());
+        document.getElementById("calc-total").textContent = "Итого: " + formatMoney(total);
+        document.getElementById("calc-booking").textContent = "Предоплата после подтверждения: " + formatMoney(prepayment);
+        document.getElementById("calc-balance").textContent = "Остаток на месте: " + formatMoney(remainder);
+
+        updateBreakdown();
       }
 
       root.querySelectorAll(".tour-pricing-chip").forEach(function (btn) {
