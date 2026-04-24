@@ -235,8 +235,15 @@
         return;
       }
 
+      const TOUR_PROGRAM_URL = {
+        "Золотое кольцо Абхазии": "pages/zolotoe-koltso-abkhazia.html",
+        "Термальный источник Кындыг": "pages/kyndyg-chernigovka.html",
+        "Джип-тур Гегский водопад": "pages/dzhip-gegskiy-vodopad.html",
+      };
+
       let lastFocusedElement = null;
       let selectedScrollTargetId = "";
+      let selectedProgramPageUrl = "";
       let bookingPhoneDigits = "";
 
       function showFormState() {
@@ -251,7 +258,9 @@
       }
 
       function openPopup(tourName) {
-        selectedTourNameEl.textContent = tourName || "Экскурсия";
+        const name = tourName || "Экскурсия";
+        selectedTourNameEl.textContent = name;
+        selectedProgramPageUrl = TOUR_PROGRAM_URL[name] || "";
         errorMessageEl.textContent = "";
         form.reset();
         bookingPhoneDigits = "";
@@ -509,14 +518,18 @@
       });
 
       successCloseBtn.addEventListener("click", closePopup);
-      successScrollBtn.addEventListener("click", () => {
+      successScrollBtn.addEventListener("click", function () {
+        if (selectedProgramPageUrl) {
+          window.location.href = selectedProgramPageUrl;
+          return;
+        }
         closePopup();
         const targetEl = selectedScrollTargetId ? document.getElementById(selectedScrollTargetId) : null;
         const fallbackEl = document.getElementById("tours");
         const destination = targetEl || fallbackEl;
 
         if (destination) {
-          requestAnimationFrame(() => {
+          requestAnimationFrame(function () {
             destination.scrollIntoView({ behavior: "smooth", block: "start" });
           });
         }
