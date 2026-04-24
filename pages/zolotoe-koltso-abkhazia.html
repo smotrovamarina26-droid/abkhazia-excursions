@@ -145,7 +145,7 @@
       </div>
     </section>
 
-    <section class="tour-section" id="tour-pricing">
+    <section class="tour-section">
       <div class="container">
         <h2>Стоимость экскурсии</h2>
         <div class="tour-price-cols">
@@ -168,6 +168,68 @@
             </ul>
           </div>
         </div>
+
+        <div class="tour-pricing-calc" id="tour-pricing">
+          <h3 class="tour-pricing-calc-title">Рассчитайте стоимость поездки</h3>
+
+          <div class="tour-pricing-calc-block">
+            <p class="tour-pricing-calc-label">Точка отправления</p>
+            <div class="tour-pricing-calc-chips" role="group" aria-label="Точка отправления">
+              <button type="button" class="tour-pricing-chip is-active" data-calc-departure="adler" aria-pressed="true">Адлер / Сириус</button>
+              <button type="button" class="tour-pricing-chip" data-calc-departure="sochi" aria-pressed="false">Сочи / Хоста</button>
+            </div>
+          </div>
+
+          <div class="tour-pricing-calc-block">
+            <p class="tour-pricing-calc-label">Количество участников</p>
+            <div class="tour-pricing-calc-row">
+              <span class="tour-pricing-calc-row-name">Взрослые с 12 лет</span>
+              <div class="tour-pricing-stepper" data-calc-key="adults" data-calc-min="1" data-calc-max="20">
+                <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше взрослых">−</button>
+                <span class="tour-pricing-step-value" id="calc-val-adults" aria-live="polite">1</span>
+                <button type="button" class="tour-pricing-step" data-calc-delta="1" aria-label="Больше взрослых">+</button>
+              </div>
+            </div>
+            <div class="tour-pricing-calc-row">
+              <span class="tour-pricing-calc-row-name">Дети 7–11 лет</span>
+              <div class="tour-pricing-stepper" data-calc-key="child7" data-calc-min="0" data-calc-max="20">
+                <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше детей 7–11">−</button>
+                <span class="tour-pricing-step-value" id="calc-val-child7" aria-live="polite">0</span>
+                <button type="button" class="tour-pricing-step" data-calc-delta="1" aria-label="Больше детей 7–11">+</button>
+              </div>
+            </div>
+            <div class="tour-pricing-calc-row">
+              <span class="tour-pricing-calc-row-name">Дети до 6 лет на руках</span>
+              <div class="tour-pricing-stepper" data-calc-key="baby" data-calc-min="0" data-calc-max="20">
+                <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше детей на руках">−</button>
+                <span class="tour-pricing-step-value" id="calc-val-baby" aria-live="polite">0</span>
+                <button type="button" class="tour-pricing-step" data-calc-delta="1" aria-label="Больше детей на руках">+</button>
+              </div>
+            </div>
+            <div class="tour-pricing-calc-row">
+              <span class="tour-pricing-calc-row-name">Дети до 6 лет с отдельным местом</span>
+              <div class="tour-pricing-stepper" data-calc-key="babySeat" data-calc-min="0" data-calc-max="20">
+                <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше детей с местом">−</button>
+                <span class="tour-pricing-step-value" id="calc-val-babySeat" aria-live="polite">0</span>
+                <button type="button" class="tour-pricing-step" data-calc-delta="1" aria-label="Больше детей с местом">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tour-pricing-calc-total">
+            <p class="tour-pricing-calc-total-value" id="calc-total">Итого: 2400 ₽</p>
+            <p class="tour-pricing-calc-total-hint">Экологический сбор Рицинского национального парка уже включён в стоимость</p>
+          </div>
+
+          <a
+            href="#"
+            class="card-book-btn tour-pricing-calc-cta"
+            data-tour-name="Золотое кольцо Абхазии"
+            data-booking-source="Сайт — калькулятор стоимости"
+            data-booking-page="Золотое кольцо Абхазии"
+            >Оставить заявку</a>
+        </div>
+
         <p class="tour-price-highlight">Экологический сбор Рицинского национального парка 1000 ₽ уже включён в стоимость.</p>
       </div>
     </section>
@@ -304,6 +366,92 @@
   </script>
   <script src="../config.js"></script>
   <script src="../booking-popup.js"></script>
+  <script>
+    (function () {
+      var root = document.getElementById("tour-pricing");
+      if (!root) {
+        return;
+      }
+
+      var PRICES = {
+        adler: { adult: 2400, child7: 2100, baby: 0, babySeat: 1000 },
+        sochi: { adult: 2800, child7: 2500, baby: 0, babySeat: 1400 }
+      };
+
+      var state = {
+        departure: "adler",
+        adults: 1,
+        child7: 0,
+        baby: 0,
+        babySeat: 0
+      };
+
+      function formatMoney(n) {
+        return n.toLocaleString("ru-RU", { maximumFractionDigits: 0 }) + " ₽";
+      }
+
+      function getTotal() {
+        var p = PRICES[state.departure];
+        return (
+          state.adults * p.adult +
+          state.child7 * p.child7 +
+          state.baby * p.baby +
+          state.babySeat * p.babySeat
+        );
+      }
+
+      function render() {
+        document.getElementById("calc-val-adults").textContent = String(state.adults);
+        document.getElementById("calc-val-child7").textContent = String(state.child7);
+        document.getElementById("calc-val-baby").textContent = String(state.baby);
+        document.getElementById("calc-val-babySeat").textContent = String(state.babySeat);
+        document.getElementById("calc-total").textContent = "Итого: " + formatMoney(getTotal());
+      }
+
+      root.querySelectorAll(".tour-pricing-chip").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var dep = btn.getAttribute("data-calc-departure");
+          if (!dep) {
+            return;
+          }
+          state.departure = dep;
+          root.querySelectorAll(".tour-pricing-chip").forEach(function (b) {
+            var on = b.getAttribute("data-calc-departure") === dep;
+            b.classList.toggle("is-active", on);
+            b.setAttribute("aria-pressed", on ? "true" : "false");
+          });
+          render();
+        });
+      });
+
+      root.querySelectorAll(".tour-pricing-stepper").forEach(function (stepper) {
+        var key = stepper.getAttribute("data-calc-key");
+        var minV = parseInt(stepper.getAttribute("data-calc-min"), 10);
+        var maxV = parseInt(stepper.getAttribute("data-calc-max"), 10);
+        stepper.addEventListener("click", function (e) {
+          var t = e.target;
+          if (!t.classList || !t.classList.contains("tour-pricing-step")) {
+            return;
+          }
+          var delta = parseInt(t.getAttribute("data-calc-delta"), 10);
+          if (isNaN(delta) || !state.hasOwnProperty(key)) {
+            return;
+          }
+          var v = state[key] + delta;
+          if (v < minV) {
+            v = minV;
+          }
+          if (v > maxV) {
+            v = maxV;
+          }
+          state[key] = v;
+          render();
+        });
+      });
+
+      render();
+    })();
+  </script>
   <script>
     (function () {
       var bar = document.getElementById("tour-sticky-bar");

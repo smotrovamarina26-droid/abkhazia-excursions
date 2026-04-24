@@ -28,6 +28,8 @@
   let selectedScrollTargetId = "";
   let selectedProgramPageUrl = "";
   let bookingPhoneDigits = "";
+  let pendingTelegramSource = null;
+  let pendingTelegramPage = null;
 
   function showFormState() {
     formState.classList.remove("is-hidden");
@@ -40,10 +42,19 @@
     successCloseBtn.focus();
   }
 
-  function openPopup(tourName) {
+  function openPopup(tourName, triggerEl) {
     const name = tourName || "Экскурсия";
     selectedTourNameEl.textContent = name;
     selectedProgramPageUrl = TOUR_PROGRAM_URL[name] || "";
+    if (triggerEl && triggerEl.getAttribute) {
+      const ds = triggerEl.getAttribute("data-booking-source");
+      const dp = triggerEl.getAttribute("data-booking-page");
+      pendingTelegramSource = ds != null && String(ds).trim() !== "" ? String(ds).trim() : null;
+      pendingTelegramPage = dp != null && String(dp).trim() !== "" ? String(dp).trim() : null;
+    } else {
+      pendingTelegramSource = null;
+      pendingTelegramPage = null;
+    }
     errorMessageEl.textContent = "";
     form.reset();
     bookingPhoneDigits = "";
@@ -68,7 +79,7 @@
     button.addEventListener("click", function (event) {
       event.preventDefault();
       selectedScrollTargetId = button.getAttribute("data-scroll-target") || "";
-      openPopup(button.getAttribute("data-tour-name"));
+      openPopup(button.getAttribute("data-tour-name"), button);
     });
   });
 
@@ -197,13 +208,17 @@
       second: "2-digit",
     });
     var sourceLine =
-      typeof window.BOOKING_TELEGRAM_SOURCE === "string" && window.BOOKING_TELEGRAM_SOURCE.trim()
-        ? window.BOOKING_TELEGRAM_SOURCE.trim()
-        : "Сайт — карточка экскурсии";
+      pendingTelegramSource != null
+        ? pendingTelegramSource
+        : typeof window.BOOKING_TELEGRAM_SOURCE === "string" && window.BOOKING_TELEGRAM_SOURCE.trim()
+          ? window.BOOKING_TELEGRAM_SOURCE.trim()
+          : "Сайт — карточка экскурсии";
     var pageLine =
-      typeof window.BOOKING_TELEGRAM_PAGE === "string" && window.BOOKING_TELEGRAM_PAGE.trim()
-        ? window.BOOKING_TELEGRAM_PAGE.trim()
-        : "Главная";
+      pendingTelegramPage != null
+        ? pendingTelegramPage
+        : typeof window.BOOKING_TELEGRAM_PAGE === "string" && window.BOOKING_TELEGRAM_PAGE.trim()
+          ? window.BOOKING_TELEGRAM_PAGE.trim()
+          : "Главная";
     return (
       "📩 Новая заявка\n\n" +
       "Источник: " +
