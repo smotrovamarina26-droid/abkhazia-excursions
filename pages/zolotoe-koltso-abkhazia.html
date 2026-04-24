@@ -227,8 +227,8 @@
           <div class="tour-pricing-calc-total">
             <div id="calc-breakdown" class="tour-pricing-calc-breakdown" aria-live="polite"></div>
             <p class="tour-pricing-calc-total-value" id="calc-total">Итого: 2400 ₽</p>
-            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Предоплата после подтверждения: 500 ₽</p>
-            <p class="tour-pricing-calc-prepay-line" id="calc-balance">Остаток на месте: 1900 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Бронирование по предоплате: 500 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-balance">Остальное на месте: 1900 ₽</p>
             <p class="tour-pricing-calc-total-hint">Экологический сбор Рицинского национального парка уже включён в стоимость</p>
           </div>
 
@@ -478,8 +478,8 @@
         document.getElementById("calc-val-baby").textContent = String(state.baby);
         document.getElementById("calc-val-babySeat").textContent = String(state.babySeat);
         document.getElementById("calc-total").textContent = "Итого: " + formatMoney(total);
-        document.getElementById("calc-booking").textContent = "Предоплата после подтверждения: " + formatMoney(prepayment);
-        document.getElementById("calc-balance").textContent = "Остаток на месте: " + formatMoney(remainder);
+        document.getElementById("calc-booking").textContent = "Бронирование по предоплате: " + formatMoney(prepayment);
+        document.getElementById("calc-balance").textContent = "Остальное на месте: " + formatMoney(remainder);
 
         updateBreakdown();
       }
@@ -532,25 +532,62 @@
     (function () {
       var bar = document.getElementById("tour-sticky-bar");
       var hero = document.getElementById("tour-hero");
+      var pricing = document.getElementById("tour-pricing");
       if (!bar || !hero) {
         return;
       }
       var minScrollY = 450;
+      var useIO = !!(pricing && typeof IntersectionObserver !== "undefined");
+      var pricingIntersects = false;
+
+      function isPricingInViewportRect() {
+        if (!pricing) {
+          return false;
+        }
+        var r = pricing.getBoundingClientRect();
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        return r.bottom > 0 && r.top < vh;
+      }
 
       function updateStickyBar() {
         var scrollY = window.scrollY || document.documentElement.scrollTop;
         var heroBottom = hero.getBoundingClientRect().bottom;
         var pastHero = heroBottom < 0;
         var scrolledEnough = scrollY >= minScrollY;
-        var show = pastHero && scrolledEnough;
+        var pricingBlocks = pricing
+          ? useIO
+            ? pricingIntersects
+            : isPricingInViewportRect()
+          : false;
+        var show = pastHero && scrolledEnough && !pricingBlocks;
         bar.classList.toggle("is-visible", show);
         document.body.classList.toggle("tour-sticky-bar-visible", show);
         bar.setAttribute("aria-hidden", show ? "false" : "true");
       }
 
+      if (pricing) {
+        pricingIntersects = isPricingInViewportRect();
+        if (useIO) {
+          new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                pricingIntersects = entry.isIntersecting;
+              });
+              updateStickyBar();
+            },
+            { root: null, threshold: 0 }
+          ).observe(pricing);
+        }
+      }
+
       updateStickyBar();
       window.addEventListener("scroll", updateStickyBar, { passive: true });
-      window.addEventListener("resize", updateStickyBar, { passive: true });
+      window.addEventListener("resize", function () {
+        if (useIO && pricing) {
+          pricingIntersects = isPricingInViewportRect();
+        }
+        updateStickyBar();
+      }, { passive: true });
     })();
   </script>
 </body>
