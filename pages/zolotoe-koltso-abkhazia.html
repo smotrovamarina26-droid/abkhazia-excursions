@@ -23,15 +23,21 @@
   <main>
     <header class="hero hero--tour" id="tour-hero">
       <div class="container">
-        <h1>Золотое кольцо Абхазии: Гагра, Рица, Новый Афон</h1>
+        <h1>
+          Золотое кольцо Абхазии:<br />
+          <span class="hero--tour-h1-subline">Гагра, Рица, Новый Афон</span>
+        </h1>
         <p class="subtitle">
           Классический однодневный тур по главным достопримечательностям Абхазии. За один день вы увидите яркую Гагру, сказочное озеро Рица и величественный Новый Афон.
         </p>
         <p class="hero--tour-note">Ежедневные выезды из Сочи, Адлера и Сириуса</p>
-        <p class="tour-hero-price">от 2400 ₽ за человека</p>
+        <p class="tour-hero-price">
+          <span class="tour-hero-price-main">от 2400 ₽ за человека</span>
+          <span class="tour-hero-price-note">включая все основные расходы</span>
+        </p>
         <div class="tour-hero-actions">
           <a href="#" class="card-book-btn tour-hero-cta" data-tour-name="Золотое кольцо Абхазии">Оставить заявку</a>
-          <a href="#tour-pricing" class="btn btn--outline tour-hero-secondary">Рассчитать стоимость</a>
+          <a href="#tour-pricing" class="tour-hero-secondary">Рассчитать стоимость</a>
         </div>
         <div class="tour-hero-tags" role="list">
           <span class="tour-hero-tag" role="listitem">Групповой формат</span>
@@ -55,12 +61,24 @@
 
     <section class="tour-section tour-section--muted" id="tour-audience">
       <div class="container">
-        <h2>Кому подойдёт</h2>
+        <h2>Кому точно понравится эта экскурсия</h2>
         <div class="tour-audience-grid">
-          <div class="tour-audience-card">Первый раз в Абхазии</div>
-          <div class="tour-audience-card">Семьям с детьми</div>
-          <div class="tour-audience-card">Тем, кто хочет максимум за день</div>
-          <div class="tour-audience-card">Любителям природы и истории</div>
+          <a href="#" class="tour-audience-card card-book-btn" data-tour-name="Золотое кольцо Абхазии">
+            <span class="tour-audience-card-title">Первый раз в Абхазии</span>
+            <span class="tour-audience-card-text">Идеальный маршрут, чтобы увидеть всё главное за 1 день</span>
+          </a>
+          <a href="#" class="tour-audience-card card-book-btn" data-tour-name="Золотое кольцо Абхазии">
+            <span class="tour-audience-card-title">Семьям с детьми</span>
+            <span class="tour-audience-card-text">Комфортная поездка без перегрузки, подходит детям</span>
+          </a>
+          <a href="#" class="tour-audience-card card-book-btn" data-tour-name="Золотое кольцо Абхазии">
+            <span class="tour-audience-card-title">Тем, кто хочет максимум за день</span>
+            <span class="tour-audience-card-text">Самый насыщенный маршрут среди всех экскурсий</span>
+          </a>
+          <a href="#" class="tour-audience-card card-book-btn" data-tour-name="Золотое кольцо Абхазии">
+            <span class="tour-audience-card-title">Любителям природы и истории</span>
+            <span class="tour-audience-card-text">Горы, озёра и древние места в одном туре</span>
+          </a>
         </div>
       </div>
     </section>
@@ -219,6 +237,19 @@
     </section>
   </main>
 
+  <aside class="tour-sticky-bar" id="tour-sticky-bar" aria-hidden="true" role="complementary" aria-label="Быстрое бронирование">
+    <div class="container tour-sticky-bar-inner">
+      <div class="tour-sticky-bar-price">
+        <span class="tour-sticky-bar-price-value">от 2400 ₽</span>
+        <span class="tour-sticky-bar-price-hint">за человека</span>
+      </div>
+      <div class="tour-sticky-bar-actions">
+        <a href="#tour-pricing" class="tour-sticky-bar-secondary">Рассчитать</a>
+        <a href="#" class="card-book-btn tour-sticky-bar-cta" data-tour-name="Золотое кольцо Абхазии">Забронировать</a>
+      </div>
+    </div>
+  </aside>
+
   <div class="popup-overlay" id="booking-overlay" aria-hidden="true">
     <div class="booking-popup" role="dialog" aria-modal="true" aria-labelledby="booking-title">
       <button class="booking-popup-close" type="button" id="booking-close" aria-label="Закрыть форму">×</button>
@@ -273,5 +304,30 @@
   </script>
   <script src="../config.js"></script>
   <script src="../booking-popup.js"></script>
+  <script>
+    (function () {
+      var bar = document.getElementById("tour-sticky-bar");
+      var hero = document.getElementById("tour-hero");
+      if (!bar || !hero) {
+        return;
+      }
+      var minScrollY = 450;
+
+      function updateStickyBar() {
+        var scrollY = window.scrollY || document.documentElement.scrollTop;
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        var pastHero = heroBottom < 0;
+        var scrolledEnough = scrollY >= minScrollY;
+        var show = pastHero && scrolledEnough;
+        bar.classList.toggle("is-visible", show);
+        document.body.classList.toggle("tour-sticky-bar-visible", show);
+        bar.setAttribute("aria-hidden", show ? "false" : "true");
+      }
+
+      updateStickyBar();
+      window.addEventListener("scroll", updateStickyBar, { passive: true });
+      window.addEventListener("resize", updateStickyBar, { passive: true });
+    })();
+  </script>
 </body>
 </html>

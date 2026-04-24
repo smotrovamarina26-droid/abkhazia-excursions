@@ -1000,6 +1000,13 @@ h2 {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.22;
+}
+
+.hero--tour h1 .hero--tour-h1-subline {
+  display: inline-block;
+  margin-top: 0.15em;
+  font-weight: inherit;
 }
 
 @media (max-width: 480px) {
@@ -1017,7 +1024,15 @@ h2 {
 }
 
 .tour-hero-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   margin: 0 0 18px;
+  text-align: center;
+}
+
+.tour-hero-price-main {
   color: #fff;
   font-size: 20px;
   font-weight: 700;
@@ -1026,16 +1041,35 @@ h2 {
   letter-spacing: 0.02em;
 }
 
+.tour-hero-price-note {
+  display: block;
+  max-width: 20em;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.86);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.01em;
+}
+
 @media (min-width: 481px) {
-  .tour-hero-price {
+  .tour-hero-price-main {
     font-size: 22px;
+  }
+
+  .tour-hero-price-note {
+    font-size: 14px;
   }
 }
 
 @media (min-width: 769px) {
   .tour-hero-price {
-    font-size: 24px;
     margin-bottom: 22px;
+    gap: 8px;
+  }
+
+  .tour-hero-price-main {
+    font-size: 24px;
   }
 }
 
@@ -1043,7 +1077,7 @@ h2 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 0;
   align-items: stretch;
   width: 100%;
   max-width: 100%;
@@ -1056,6 +1090,7 @@ h2 {
   text-align: center;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 
 .tour-hero-actions .tour-hero-cta,
@@ -1066,7 +1101,6 @@ h2 {
 .tour-hero-actions .tour-hero-cta:focus,
 .tour-hero-actions .tour-hero-cta:focus-visible {
   text-decoration: none;
-  box-sizing: border-box;
 }
 
 .tour-hero-actions .tour-hero-cta {
@@ -1074,10 +1108,75 @@ h2 {
   margin-top: 0;
 }
 
+/* Мобильная CTA: главный фокус — заявка */
+@media (max-width: 599px) {
+  .tour-hero-actions .tour-hero-cta {
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+}
+
+/* Вторичное действие: светлая «плашка» + тёмный текст — читаемо на любом участке фото, слабее оранжевой CTA */
 .tour-hero-actions .tour-hero-secondary {
   display: block;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  margin-top: 16px;
+  width: 100%;
+  min-height: 0;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #2a2418;
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.98);
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.18);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.tour-hero-actions .tour-hero-secondary,
+.tour-hero-actions .tour-hero-secondary:link,
+.tour-hero-actions .tour-hero-secondary:visited {
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  .tour-hero-actions .tour-hero-secondary {
+    background: rgba(255, 255, 255, 0.78);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.tour-hero-actions .tour-hero-secondary:hover {
+  color: #1a150f;
+  background: rgba(255, 255, 255, 0.96);
+  border-color: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.tour-hero-actions .tour-hero-secondary:active {
+  color: #0f0c09;
+  background: rgba(240, 236, 230, 0.96);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset, 0 2px 8px rgba(0, 0, 0, 0.12);
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-hero-actions .tour-hero-secondary:hover,
+  .tour-hero-actions .tour-hero-secondary:active {
+    transform: none;
+  }
+}
+
+.tour-hero-actions .tour-hero-secondary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 @media (min-width: 600px) {
@@ -1085,14 +1184,23 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 12px;
     width: auto;
     max-width: none;
   }
 
-  .tour-hero-actions .tour-hero-cta,
-  .tour-hero-actions .tour-hero-secondary {
-    width: auto;
+  .tour-hero-actions .tour-hero-cta {
     min-width: 200px;
+    width: auto;
+    flex: 0 1 auto;
+  }
+
+  .tour-hero-actions .tour-hero-secondary {
+    margin-top: 0;
+    width: auto;
+    min-width: 0;
+    padding: 8px 14px;
+    font-size: 14px;
     flex: 0 1 auto;
   }
 }
@@ -1189,22 +1297,61 @@ h2 {
   margin-top: 8px;
 }
 
-.tour-audience-card {
-  background: #fff;
-  border: 1px solid #ffe9d2;
-  border-radius: 16px;
+/* card-book-btn в сетке: оформление карточки, не оранжевой CTA */
+.tour-audience-grid a.tour-audience-card.card-book-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
   padding: 18px 20px;
   text-align: center;
-  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 122, 0, 0.12);
+  color: #2a2f36 !important;
   font-size: 16px;
-  color: #2a2f36;
+  font-weight: 600;
+  line-height: 1.35;
+  background: #fff;
+  background-image: none;
+  border: 1px solid #ffe9d2;
+  border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
-.tour-audience-card:hover {
+.tour-audience-grid a.tour-audience-card.card-book-btn:hover {
+  color: #1a1d22 !important;
+  background: #fffcf8;
+  background-image: none;
   border-color: #ffd3a3;
   transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+}
+
+.tour-audience-grid a.tour-audience-card.card-book-btn:focus-visible {
+  outline: 2px solid #ff7a00;
+  outline-offset: 3px;
+}
+
+.tour-audience-card-title {
+  display: block;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1d22;
+  line-height: 1.3;
+}
+
+.tour-audience-card-text {
+  display: block;
+  max-width: 32em;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5b636d;
+  line-height: 1.45;
 }
 
 .tour-program-block {
@@ -1437,5 +1584,138 @@ h2 {
 
   .tour-cta-inner h2 {
     font-size: 32px;
+  }
+}
+
+/* Sticky booking bar (страница экскурсии) */
+body.tour-sticky-bar-visible {
+  padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.tour-sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1500;
+  background: #fffdf9;
+  border-top: 1px solid #ffe4c8;
+  box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, 100%, 0);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.3s ease, visibility 0.3s;
+  padding-top: 10px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom, 0px));
+}
+
+.tour-sticky-bar.is-visible {
+  transform: translate3d(0, 0, 0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.tour-sticky-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.tour-sticky-bar-price {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 0 1 auto;
+  line-height: 1.2;
+}
+
+.tour-sticky-bar-price-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+}
+
+.tour-sticky-bar-price-hint {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b6f78;
+}
+
+.tour-sticky-bar-actions {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.tour-sticky-bar-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #b54f00;
+  text-decoration: none;
+  background: #fff;
+  border: 2px solid #ffcca8;
+  border-radius: 10px;
+  line-height: 1.2;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+
+.tour-sticky-bar-secondary:hover {
+  color: #9a4200;
+  background: #fff8f0;
+  border-color: #ffb078;
+  transform: translateY(-1px);
+}
+
+.tour-sticky-bar-secondary:active {
+  transform: translateY(0);
+  background: #fff0e0;
+}
+
+.tour-sticky-bar .tour-sticky-bar-cta.card-book-btn {
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  flex: 0 1 auto;
+  box-shadow: 0 8px 20px rgba(255, 122, 0, 0.28);
+}
+
+.tour-sticky-bar .tour-sticky-bar-cta.card-book-btn:hover {
+  box-shadow: 0 10px 22px rgba(255, 122, 0, 0.32);
+}
+
+@media (max-width: 380px) {
+  .tour-sticky-bar-price-value {
+    font-size: 16px;
+  }
+
+  .tour-sticky-bar-secondary,
+  .tour-sticky-bar .tour-sticky-bar-cta.card-book-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+    min-height: 38px;
   }
 }
