@@ -35,13 +35,13 @@
         <p class="hero-price">от 2400 ₽ за человека</p>
 
         <div class="hero-benefits">
-          <span>✔ Без скрытых доплат</span>
-          <span>✔ Экосбор уже включён</span>
-          <span>✔ Комфортный транспорт</span>
+          <div>Без скрытых доплат</div>
+          <div>Экосбор уже включён</div>
+          <div>Комфортный транспорт</div>
         </div>
         <div class="tour-hero-actions">
           <button type="button" class="card-book-btn btn-primary" data-tour-name="Золотое кольцо Абхазии">Оставить заявку</button>
-          <button type="button" class="btn-secondary" id="hero-calc-scroll-btn">Рассчитать стоимость</button>
+          <p class="hero-after-btn">Ответим в течение 5–10 минут после заявки</p>
         </div>
         <div class="tour-hero-tags" role="list">
           <span class="tour-hero-tag" role="listitem">Групповой формат</span>
@@ -534,17 +534,6 @@
       });
 
       render();
-    })();
-  </script>
-  <script>
-    (function () {
-      var heroCalcBtn = document.getElementById("hero-calc-scroll-btn");
-      var pricingSection = document.getElementById("tour-pricing");
-      if (heroCalcBtn && pricingSection) {
-        heroCalcBtn.addEventListener("click", function () {
-          pricingSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-      }
     })();
   </script>
   <script>

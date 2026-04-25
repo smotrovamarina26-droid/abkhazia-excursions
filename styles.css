@@ -1089,7 +1089,7 @@ h2 {
   align-items: stretch;
   width: 100%;
   max-width: 100%;
-  margin: 0 auto 22px;
+  margin: 0 auto 14px;
 }
 
 .tour-hero-actions .tour-hero-cta,
@@ -1232,27 +1232,66 @@ h2 {
 }
 
 .hero-price {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 16px;
 }
 
 .hero--tour .hero-benefits {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin: 12px 0 18px;
+  display: inline-block;
+  max-width: 260px;
+  margin: 18px auto;
   color: #fff;
-  font-size: 14px;
-  line-height: 1.35;
-  background: transparent;
-  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.12);
+  padding: 10px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(3px);
   min-height: 0;
   height: auto;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.hero--tour .hero-benefits ul {
+  padding: 0;
+  margin: 0;
 }
 
 .hero--tour .hero-benefits span {
-  display: block;
+  display: inline;
+}
+
+.hero--tour .hero-benefits li,
+.hero--tour .hero-benefits span {
+  color: #ffffff;
+  list-style: none;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.hero--tour .hero-benefits div {
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.hero--tour .hero-benefits .dot {
+  margin: 0 6px;
+  opacity: 0.6;
+}
+
+.hero-after-btn,
+.hero-subtext {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
 }
 
 .btn-primary {
@@ -1267,16 +1306,24 @@ h2 {
   font-family: inherit;
   font-size: 16px;
   cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 122, 0, 0.35);
+  transform: scale(1);
+  transition: 0.2s;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
 }
 
 .btn-secondary {
   width: 100%;
-  background: transparent;
-  border: 2px solid #ff7a00;
-  color: #ff7a00;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  opacity: 1;
   padding: 14px;
   border-radius: 12px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: inherit;
   font-size: 16px;
   cursor: pointer;
@@ -1306,22 +1353,27 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 9px;
+  gap: 10px;
   max-width: 640px;
-  margin: 0 auto;
+  margin: 6px auto 0;
   padding: 0;
   list-style: none;
 }
 
-.tour-hero-tag {
+.hero-tags {
+  margin-top: 6px;
+}
+
+.tour-hero-tag,
+.hero-tag {
   background: rgba(255, 255, 255, 0.96);
   color: #c45a00;
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 6px 10px;
+  border-radius: 20px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .tour-section {
