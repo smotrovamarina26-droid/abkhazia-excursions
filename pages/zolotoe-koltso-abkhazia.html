@@ -182,6 +182,12 @@
           </div>
 
           <div class="tour-pricing-calc-block">
+            <p class="tour-pricing-calc-label">Дата поездки</p>
+            <p class="tour-pricing-calc-subhint">Можно указать сейчас или уточнить после заявки</p>
+            <input type="date" id="calc-trip-date" class="tour-pricing-calc-date-input" />
+          </div>
+
+          <div class="tour-pricing-calc-block">
             <p class="tour-pricing-calc-label">Количество участников</p>
             <div class="tour-pricing-calc-row">
               <span class="tour-pricing-calc-row-name"
@@ -394,6 +400,7 @@
         baby: 0,
         babySeat: 0
       };
+      var tripDateInput = document.getElementById("calc-trip-date");
 
       function formatMoney(n) {
         return n.toLocaleString("ru-RU", { maximumFractionDigits: 0 }) + " ₽";
@@ -484,6 +491,43 @@
         updateBreakdown();
       }
 
+      function syncCalculatorBookingContext() {
+        window.BOOKING_CALCULATOR_CONTEXT = {
+          tripDate: tripDateInput ? tripDateInput.value : ""
+        };
+      }
+
+      function toDateInputValue(dt) {
+        var y = dt.getFullYear();
+        var m = String(dt.getMonth() + 1).padStart(2, "0");
+        var d = String(dt.getDate()).padStart(2, "0");
+        return y + "-" + m + "-" + d;
+      }
+
+      function getTomorrowDateValue() {
+        var now = new Date();
+        var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+        return toDateInputValue(tomorrow);
+      }
+
+      function sanitizeTripDate() {
+        if (!tripDateInput) {
+          return;
+        }
+        var minDate = tripDateInput.min || getTomorrowDateValue();
+        if (tripDateInput.value && tripDateInput.value < minDate) {
+          tripDateInput.value = "";
+        }
+      }
+
+      function setupTripDateMin() {
+        if (!tripDateInput) {
+          return;
+        }
+        tripDateInput.min = getTomorrowDateValue();
+        sanitizeTripDate();
+      }
+
       root.querySelectorAll(".tour-pricing-chip").forEach(function (btn) {
         btn.addEventListener("click", function () {
           var dep = btn.getAttribute("data-calc-departure");
@@ -526,6 +570,15 @@
       });
 
       render();
+      syncCalculatorBookingContext();
+      if (tripDateInput) {
+        setupTripDateMin();
+        tripDateInput.addEventListener("input", syncCalculatorBookingContext);
+        tripDateInput.addEventListener("change", function () {
+          sanitizeTripDate();
+          syncCalculatorBookingContext();
+        });
+      }
     })();
   </script>
   <script>

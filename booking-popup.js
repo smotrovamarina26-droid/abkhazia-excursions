@@ -198,6 +198,34 @@
     return true;
   }
 
+  function formatTripDate(dateRaw) {
+    if (typeof dateRaw !== "string") {
+      return "не указана";
+    }
+    var trimmed = dateRaw.trim();
+    if (!trimmed) {
+      return "не указана";
+    }
+    var m = trimmed.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) {
+      return trimmed;
+    }
+    return m[3] + "." + m[2] + "." + m[1];
+  }
+
+  function isCalculatorSourceLabel(source) {
+    return typeof source === "string" && source.toLowerCase().indexOf("калькулятор") !== -1;
+  }
+
+  function getCalculatorTripDateLine(sourceLine) {
+    if (!isCalculatorSourceLabel(sourceLine)) {
+      return null;
+    }
+    var ctx = window.BOOKING_CALCULATOR_CONTEXT || {};
+    var tripDate = formatTripDate(ctx.tripDate);
+    return "Дата поездки: " + tripDate;
+  }
+
   function buildTelegramMessage(tourName, displayName, phoneFormatted) {
     var timeStr = new Date().toLocaleString("ru-RU", {
       year: "numeric",
@@ -219,6 +247,7 @@
         : typeof window.BOOKING_TELEGRAM_PAGE === "string" && window.BOOKING_TELEGRAM_PAGE.trim()
           ? window.BOOKING_TELEGRAM_PAGE.trim()
           : "Главная";
+    var tripDateLine = getCalculatorTripDateLine(sourceLine);
     return (
       "📩 Новая заявка\n\n" +
       "Источник: " +
@@ -235,6 +264,7 @@
       "\n" +
       "Телефон: " +
       phoneFormatted +
+      (tripDateLine ? "\n" + tripDateLine : "") +
       "\n" +
       "Время: " +
       timeStr

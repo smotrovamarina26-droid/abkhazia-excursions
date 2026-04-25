@@ -1482,6 +1482,32 @@ h2 {
   margin: 0 0 10px;
 }
 
+.tour-pricing-calc-subhint {
+  margin: -4px 0 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #6b6f7a;
+}
+
+.tour-pricing-calc-date-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #2a2f36;
+  background: #fff;
+  border: 1px solid #ffcca8;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.tour-pricing-calc-date-input:focus {
+  outline: 2px solid #ffd7b5;
+  outline-offset: 1px;
+  border-color: #ffb882;
+}
+
 .tour-pricing-calc-chips {
   display: flex;
   flex-direction: column;
