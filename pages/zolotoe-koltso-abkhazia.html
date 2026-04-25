@@ -23,21 +23,25 @@
   <main>
     <header class="hero hero--tour" id="tour-hero">
       <div class="container">
-        <h1>
+        <h1 class="hero-title">
           Золотое кольцо Абхазии:<br />
-          <span class="hero--tour-h1-subline">Гагра, Рица, Новый Афон</span>
+          Гагра • Рица • Новый Афон
         </h1>
-        <p class="subtitle">
-          Классический однодневный тур по главным достопримечательностям Абхазии. За один день вы увидите яркую Гагру, сказочное озеро Рица и величественный Новый Афон.
-        </p>
-        <p class="hero--tour-note">Ежедневные выезды из Сочи, Адлера и Сириуса</p>
-        <p class="tour-hero-price">
-          <span class="tour-hero-price-main">от 2400 ₽ за человека</span>
-          <span class="tour-hero-price-note">включая все основные расходы</span>
-        </p>
+
+        <p class="hero-subtitle">За 1 день вы увидите главные места Абхазии</p>
+
+        <p class="hero-subtitle-small">Ежедневные выезды из Сочи, Адлера и Сириуса</p>
+
+        <p class="hero-price">от 2400 ₽ за человека</p>
+
+        <div class="hero-benefits">
+          <span>✔ Без скрытых доплат</span>
+          <span>✔ Экосбор уже включён</span>
+          <span>✔ Комфортный транспорт</span>
+        </div>
         <div class="tour-hero-actions">
-          <a href="#" class="card-book-btn tour-hero-cta" data-tour-name="Золотое кольцо Абхазии">Оставить заявку</a>
-          <a href="#tour-pricing" class="tour-hero-secondary">Рассчитать стоимость</a>
+          <button type="button" class="card-book-btn btn-primary" data-tour-name="Золотое кольцо Абхазии">Оставить заявку</button>
+          <button type="button" class="btn-secondary" id="hero-calc-scroll-btn">Рассчитать стоимость</button>
         </div>
         <div class="tour-hero-tags" role="list">
           <span class="tour-hero-tag" role="listitem">Групповой формат</span>
@@ -179,12 +183,6 @@
               <button type="button" class="tour-pricing-chip is-active" data-calc-departure="adler" aria-pressed="true">Адлер / Сириус</button>
               <button type="button" class="tour-pricing-chip" data-calc-departure="sochi" aria-pressed="false">Сочи / Хоста</button>
             </div>
-          </div>
-
-          <div class="tour-pricing-calc-block">
-            <p class="tour-pricing-calc-label">Дата поездки</p>
-            <p class="tour-pricing-calc-subhint">Можно указать сейчас или уточнить после заявки</p>
-            <input type="date" id="calc-trip-date" class="tour-pricing-calc-date-input" />
           </div>
 
           <div class="tour-pricing-calc-block">
@@ -347,6 +345,10 @@
             placeholder="+7 (___) ___-__-__"
             autocomplete="tel"
           />
+
+          <label for="booking-trip-date">Дата поездки (необязательно)</label>
+          <input id="booking-trip-date" name="trip_date" type="date" />
+          <p class="booking-date-note">Можно указать сейчас или уточнить позже</p>
           <p class="booking-error-message" id="booking-error-message" role="alert" aria-live="assertive"></p>
 
           <button type="submit" class="booking-submit-btn">Отправить заявку</button>
@@ -400,7 +402,6 @@
         baby: 0,
         babySeat: 0
       };
-      var tripDateInput = document.getElementById("calc-trip-date");
 
       function formatMoney(n) {
         return n.toLocaleString("ru-RU", { maximumFractionDigits: 0 }) + " ₽";
@@ -491,43 +492,6 @@
         updateBreakdown();
       }
 
-      function syncCalculatorBookingContext() {
-        window.BOOKING_CALCULATOR_CONTEXT = {
-          tripDate: tripDateInput ? tripDateInput.value : ""
-        };
-      }
-
-      function toDateInputValue(dt) {
-        var y = dt.getFullYear();
-        var m = String(dt.getMonth() + 1).padStart(2, "0");
-        var d = String(dt.getDate()).padStart(2, "0");
-        return y + "-" + m + "-" + d;
-      }
-
-      function getTomorrowDateValue() {
-        var now = new Date();
-        var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-        return toDateInputValue(tomorrow);
-      }
-
-      function sanitizeTripDate() {
-        if (!tripDateInput) {
-          return;
-        }
-        var minDate = tripDateInput.min || getTomorrowDateValue();
-        if (tripDateInput.value && tripDateInput.value < minDate) {
-          tripDateInput.value = "";
-        }
-      }
-
-      function setupTripDateMin() {
-        if (!tripDateInput) {
-          return;
-        }
-        tripDateInput.min = getTomorrowDateValue();
-        sanitizeTripDate();
-      }
-
       root.querySelectorAll(".tour-pricing-chip").forEach(function (btn) {
         btn.addEventListener("click", function () {
           var dep = btn.getAttribute("data-calc-departure");
@@ -570,13 +534,15 @@
       });
 
       render();
-      syncCalculatorBookingContext();
-      if (tripDateInput) {
-        setupTripDateMin();
-        tripDateInput.addEventListener("input", syncCalculatorBookingContext);
-        tripDateInput.addEventListener("change", function () {
-          sanitizeTripDate();
-          syncCalculatorBookingContext();
+    })();
+  </script>
+  <script>
+    (function () {
+      var heroCalcBtn = document.getElementById("hero-calc-scroll-btn");
+      var pricingSection = document.getElementById("tour-pricing");
+      if (heroCalcBtn && pricingSection) {
+        heroCalcBtn.addEventListener("click", function () {
+          pricingSection.scrollIntoView({ behavior: "smooth", block: "start" });
         });
       }
     })();

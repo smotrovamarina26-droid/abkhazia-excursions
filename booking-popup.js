@@ -11,6 +11,7 @@
   const errorMessageEl = document.getElementById("booking-error-message");
   const nameInput = document.getElementById("booking-name");
   const contactInput = document.getElementById("booking-contact");
+  const tripDateInput = document.getElementById("booking-trip-date");
   const bookButtons = document.querySelectorAll(".card-book-btn");
 
   if (!overlay || !popup || !formState || !form || !successState || !successCloseBtn || !successScrollBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
@@ -57,6 +58,7 @@
     }
     errorMessageEl.textContent = "";
     form.reset();
+    setupTripDateInput();
     bookingPhoneDigits = "";
     showFormState();
     overlay.classList.add("is-open");
@@ -200,11 +202,11 @@
 
   function formatTripDate(dateRaw) {
     if (typeof dateRaw !== "string") {
-      return "не указана";
+      return "";
     }
     var trimmed = dateRaw.trim();
     if (!trimmed) {
-      return "не указана";
+      return "";
     }
     var m = trimmed.match(/^(\d{4})-(\d{2})-(\d{2})$/);
     if (!m) {
@@ -213,16 +215,44 @@
     return m[3] + "." + m[2] + "." + m[1];
   }
 
-  function isCalculatorSourceLabel(source) {
-    return typeof source === "string" && source.toLowerCase().indexOf("калькулятор") !== -1;
+  function toDateInputValue(dt) {
+    var y = dt.getFullYear();
+    var m = String(dt.getMonth() + 1).padStart(2, "0");
+    var d = String(dt.getDate()).padStart(2, "0");
+    return y + "-" + m + "-" + d;
   }
 
-  function getCalculatorTripDateLine(sourceLine) {
-    if (!isCalculatorSourceLabel(sourceLine)) {
-      return null;
+  function getTomorrowDateValue() {
+    var now = new Date();
+    var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    return toDateInputValue(tomorrow);
+  }
+
+  function setupTripDateInput() {
+    if (!tripDateInput) {
+      return;
     }
-    var ctx = window.BOOKING_CALCULATOR_CONTEXT || {};
-    var tripDate = formatTripDate(ctx.tripDate);
+    tripDateInput.min = getTomorrowDateValue();
+  }
+
+  function sanitizeTripDateInput() {
+    if (!tripDateInput) {
+      return;
+    }
+    var minDate = tripDateInput.min || getTomorrowDateValue();
+    if (tripDateInput.value && tripDateInput.value < minDate) {
+      tripDateInput.value = "";
+    }
+  }
+
+  function getTripDateLine() {
+    if (!tripDateInput) {
+      return "";
+    }
+    var tripDate = formatTripDate(tripDateInput.value);
+    if (!tripDate) {
+      return "";
+    }
     return "Дата поездки: " + tripDate;
   }
 
@@ -247,7 +277,7 @@
         : typeof window.BOOKING_TELEGRAM_PAGE === "string" && window.BOOKING_TELEGRAM_PAGE.trim()
           ? window.BOOKING_TELEGRAM_PAGE.trim()
           : "Главная";
-    var tripDateLine = getCalculatorTripDateLine(sourceLine);
+    var tripDateLine = getTripDateLine();
     return (
       "📩 Новая заявка\n\n" +
       "Источник: " +
@@ -274,6 +304,7 @@
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
     applyPhoneInput();
+    sanitizeTripDateInput();
     if (!isPhoneValid()) {
       errorMessageEl.textContent = "Введите корректный номер телефона";
       contactInput.focus();
@@ -341,6 +372,12 @@
   contactInput.addEventListener("blur", function () {
     validatePhoneOnBlur();
   });
+
+  if (tripDateInput) {
+    setupTripDateInput();
+    tripDateInput.addEventListener("change", sanitizeTripDateInput);
+    tripDateInput.addEventListener("input", sanitizeTripDateInput);
+  }
 
   contactInput.addEventListener("keydown", function (e) {
     if (e.ctrlKey || e.metaKey || e.altKey) {
