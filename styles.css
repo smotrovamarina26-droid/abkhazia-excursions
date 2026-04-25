@@ -1499,7 +1499,11 @@ h2 {
   text-align: left;
   font-size: 20px;
   color: #ff7a00;
-  margin: 0 0 12px;
+  margin: 28px 0 12px;
+}
+
+.tour-program-intro {
+  margin: 0 0 28px;
 }
 
 .tour-list {
