@@ -501,6 +501,13 @@ h2 {
   color: #5b616d;
 }
 
+.booking-form-subtitle {
+  margin: -4px 0 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6b6f7a;
+}
+
 .booking-selected-tour strong {
   color: #1d2128;
 }

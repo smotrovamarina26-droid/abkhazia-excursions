@@ -14,7 +14,7 @@
   const tripDateInput = document.getElementById("booking-trip-date");
   const bookButtons = document.querySelectorAll(".card-book-btn");
 
-  if (!overlay || !popup || !formState || !form || !successState || !successCloseBtn || !successScrollBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
+  if (!overlay || !popup || !formState || !form || !successState || !successScrollBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
     return;
   }
 
@@ -40,7 +40,7 @@
   function showSuccessState() {
     formState.classList.add("is-hidden");
     successState.classList.add("is-visible");
-    successCloseBtn.focus();
+    successScrollBtn.focus();
   }
 
   function openPopup(tourName, triggerEl) {
@@ -392,7 +392,9 @@
     }
   });
 
-  successCloseBtn.addEventListener("click", closePopup);
+  if (successCloseBtn) {
+    successCloseBtn.addEventListener("click", closePopup);
+  }
   successScrollBtn.addEventListener("click", function () {
     if (selectedProgramPageUrl) {
       if (selectedProgramPageUrl.charAt(0) === "#") {

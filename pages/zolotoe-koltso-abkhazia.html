@@ -140,11 +140,16 @@
     <section class="tour-section tour-section--muted" id="tour-logistics">
       <div class="container">
         <h2>Как проходит поездка</h2>
+        <p>• Забираем вас утром от отеля или ближайшей удобной точки</p>
+        <p>• Доезжаем до границы и помогаем с прохождением</p>
+        <p>• После границы продолжаем маршрут на транспорте по Абхазии с гидом</p>
+        <p>• Посещаем основные локации Абхазии</p>
+        <p>• Вечером возвращаемся обратно</p>
         <div class="tour-info-grid">
           <div class="tour-info-card">Выезд: 05:30–06:30 — точное время сообщаем заранее после бронирования</div>
           <div class="tour-info-card">Продолжительность: 12–14 часов</div>
           <div class="tour-info-card">Возвращение: 19:00–20:00</div>
-          <div class="tour-info-card">Посадка: забираем от КПП отеля или ближайшей удобной точки по маршруту</div>
+          <div class="tour-info-card">Посадка: от отеля или ближайшей удобной точки</div>
           <div class="tour-info-card">Транспорт: комфортабельный Mercedes Sprinter (до 18 человек) — кондиционер и удобные сиденья</div>
         </div>
       </div>
@@ -343,7 +348,8 @@
     <div class="booking-popup" role="dialog" aria-modal="true" aria-labelledby="booking-title">
       <button class="booking-popup-close" type="button" id="booking-close" aria-label="Закрыть форму">×</button>
       <div class="booking-form-state" id="booking-form-state">
-        <h3 id="booking-title">Оставьте заявку — мы свяжемся с вами и расскажем все детали</h3>
+        <h3 id="booking-title">Оставьте заявку — свяжемся с вами и подтвердим бронирование</h3>
+        <p class="booking-form-subtitle">Ответим в течение 5–10 минут</p>
         <p class="booking-selected-tour">Вы выбрали: <strong id="selected-tour-name"></strong></p>
 
         <form id="booking-form" class="booking-form">
@@ -365,12 +371,11 @@
           <p class="booking-date-note">Можно указать сейчас или уточнить позже</p>
           <p class="booking-error-message" id="booking-error-message" role="alert" aria-live="assertive"></p>
 
-          <button type="submit" class="booking-submit-btn">Отправить заявку</button>
+          <button type="submit" class="booking-submit-btn">Забронировать экскурсию</button>
 
           <div class="booking-trust">
+            <p>✔ Подтвердим бронирование перед поездкой</p>
             <p>✔ Ежедневные выезды</p>
-            <p>✔ Подтвердим всё перед поездкой</p>
-            <p>✔ Ответим в течение 5–10 минут</p>
           </div>
           <p class="privacy-note">Мы не передаём ваши данные третьим лицам</p>
         </form>
@@ -380,11 +385,10 @@
         <div class="booking-success-icon" aria-hidden="true">✓</div>
         <h4>Заявка принята</h4>
         <p>
-          <span>Свяжемся с вами в течение 5–10 минут</span>
-          <span>и уточним детали поездки</span>
+          <span>Ожидайте звонка — свяжемся с вами в течение 5–10 минут и уточним детали поездки</span>
+          <span>Пожалуйста, будьте на связи</span>
           <span class="booking-success-note">Место за вами закреплено</span>
         </p>
-        <button type="button" class="booking-success-btn" id="booking-success-close">Спасибо</button>
         <button type="button" class="booking-success-secondary-btn" id="booking-success-scroll">Смотреть программу</button>
       </div>
     </div>
