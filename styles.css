@@ -88,6 +88,12 @@ img {
   white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+  .top-btn {
+    display: none;
+  }
+}
+
 .hero {
   margin-top: 68px;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
@@ -1522,6 +1528,24 @@ h2 {
   margin-bottom: 6px;
 }
 
+.tour-list-extra-options {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: #6b6f7a;
+}
+
+.tour-list-extra-options li {
+  margin-bottom: 5px;
+}
+
+.tour-list-extra-options li::before {
+  content: "— ";
+}
+
 .tour-program-footnote {
   margin-top: 20px;
   font-size: 15px;
@@ -1601,6 +1625,14 @@ h2 {
   margin: 0 0 20px;
   color: #1a1d22;
   font-weight: 700;
+}
+
+.tour-pricing-calc-subtitle {
+  margin: -10px 0 18px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #6b6f7a;
 }
 
 .tour-pricing-calc-block {
@@ -1801,6 +1833,18 @@ h2 {
   text-align: center;
   text-decoration: none;
   box-sizing: border-box;
+}
+
+.tour-pricing-calc-booking-note {
+  margin: 16px 0 12px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6b6f7a;
+}
+
+.tour-pricing-calc-booking-note + .tour-pricing-calc-cta {
+  margin-top: 0;
 }
 
 .tour-pricing-calc-cta,

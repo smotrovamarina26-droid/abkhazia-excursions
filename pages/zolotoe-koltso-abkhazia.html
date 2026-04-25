@@ -36,12 +36,11 @@
 
         <div class="hero-benefits">
           <div>Без скрытых доплат</div>
-          <div>Экосбор уже включён</div>
-          <div>Комфортный транспорт</div>
+          <div>Экосбор уже включён в цену</div>
         </div>
         <div class="tour-hero-actions">
-          <button type="button" class="card-book-btn btn-primary" data-tour-name="Золотое кольцо Абхазии">Оставить заявку</button>
-          <p class="hero-after-btn">Ответим в течение 5–10 минут после заявки</p>
+          <button type="button" class="card-book-btn btn-primary" data-tour-name="Золотое кольцо Абхазии">Забронировать экскурсию</button>
+          <p class="hero-after-btn">Свяжемся с вами в течение 5–10 минут и подтвердим бронирование</p>
         </div>
         <div class="tour-hero-tags" role="list">
           <span class="tour-hero-tag" role="listitem">Групповой формат</span>
@@ -237,8 +236,8 @@
             <p class="tour-pricing-calc-total-value" id="calc-total">Итого: 2400 ₽</p>
             <p class="tour-pricing-calc-prepay-line" id="calc-booking">Бронирование по предоплате: 500 ₽</p>
             <p class="tour-pricing-calc-prepay-line" id="calc-balance">Остальное на месте: 1900 ₽</p>
-            <p class="tour-pricing-calc-total-hint">Экологический сбор Рицинского национального парка уже включён в стоимость</p>
           </div>
+          <p class="tour-pricing-calc-booking-note">После заявки свяжемся с вами, уточним детали и подтвердим бронирование</p>
 
           <a
             href="#"
@@ -246,7 +245,7 @@
             data-tour-name="Золотое кольцо Абхазии"
             data-booking-source="Сайт — калькулятор стоимости"
             data-booking-page="Золотое кольцо Абхазии"
-            >Оставить заявку</a>
+            >Забронировать экскурсию</a>
         </div>
       </div>
     </section>
@@ -269,7 +268,16 @@
             <h3 class="tour-includes-subtitle">Дополнительно оплачивается</h3>
             <ul class="tour-list">
               <li>Обед, средний чек около 700 ₽</li>
-              <li>Дополнительные объекты по желанию</li>
+              <li>
+                Дополнительные объекты по желанию (посещение необязательно)
+                <ul class="tour-list-extra-options">
+                  <li>Тарзанка над рекой — 1000 ₽</li>
+                  <li>Дача Сталина — 300 ₽</li>
+                  <li>Водопад Молочный — 300 ₽</li>
+                  <li>Храм X века в селе Лыхны — 300 ₽</li>
+                  <li>Новоафонская пещера — 1000 ₽ (дети до 8 лет бесплатно)</li>
+                </ul>
+              </li>
               <li>Личные расходы</li>
             </ul>
           </div>
@@ -279,13 +287,13 @@
 
     <section class="tour-section" id="tour-what-to-bring">
       <div class="container">
-        <h2>Что взять с собой</h2>
+        <h2>Что важно взять с собой</h2>
         <ul class="tour-list">
           <li>Паспорт</li>
-          <li>Удобную одежду и обувь</li>
-          <li>Деньги на обед и дополнительные услуги</li>
-          <li>Зарядку или power bank</li>
-          <li>Лекарства при необходимости</li>
+          <li>Свидетельство о рождении ребёнка, если едете с детьми</li>
+          <li>Наличные деньги — в Абхазии не везде принимают карты</li>
+          <li>Воду в дорогу</li>
+          <li>Зонт или дождевик — на случай дождя</li>
         </ul>
       </div>
     </section>
@@ -295,12 +303,13 @@
         <details class="tour-accordion">
           <summary class="tour-accordion-summary">Правила пересечения границы</summary>
           <div class="tour-accordion-body">
+            <p>Пересечение границы обычно проходит быстро и без сложностей при наличии документов</p>
             <ul class="tour-list tour-list--compact">
-              <li>Для взрослых и детей 14–18 лет нужен общегражданский или загранпаспорт</li>
-              <li>Для детей до 14 лет нужно свидетельство о рождении с отметкой о гражданстве РФ или загранпаспорт</li>
+              <li>Для взрослых и детей 14–18 лет достаточно иметь общегражданский или загранпаспорт</li>
+              <li>Для детей до 14 лет понадобится свидетельство о рождении с отметкой о гражданстве РФ или загранпаспорт</li>
               <li>Если ребёнок едет с одним из родителей, согласие второго не требуется</li>
-              <li>Если ребёнок едет с третьими лицами, нужна нотариальная доверенность от родителей</li>
-              <li>Перед поездкой стоит проверить задолженности</li>
+              <li>Если ребёнок едет с третьими лицами, понадобится нотариальная доверенность от родителей</li>
+              <li>Перед поездкой рекомендуем проверить задолженности — при их наличии возможны сложности при пересечении границы</li>
             </ul>
           </div>
         </details>
@@ -309,9 +318,10 @@
 
     <section class="tour-cta" id="tour-cta">
       <div class="container tour-cta-inner">
-        <h2>Хотите увидеть главные места Абхазии за один день?</h2>
-        <p>Оставьте заявку — мы свяжемся с вами, уточним детали поездки и подскажем удобный вариант выезда.</p>
-        <a href="#" class="card-book-btn card-book-btn--inline" data-tour-name="Золотое кольцо Абхазии">Оставить заявку</a>
+        <h2>За один день вы увидите главные места Абхазии — без спешки и суеты</h2>
+        <p>Подберём удобный выезд, заберём из отеля и всё организуем — вам остаётся только наслаждаться поездкой и видами Абхазии</p>
+        <p>Свяжемся с вами после заявки и подтвердим все детали</p>
+        <a href="#" class="card-book-btn card-book-btn--inline" data-tour-name="Золотое кольцо Абхазии">Забронировать экскурсию</a>
       </div>
     </section>
   </main>
@@ -455,6 +465,7 @@
         var adultSum = adults * prices.adult;
         var childSum = children * prices.child;
         var babySeatSum = babySeat * prices.babySeat;
+        var babyFreeSum = babyFree * prices.babyFree;
         var totalPeople = adults + children + babySeat + babyFree;
 
         if (totalPeople === 0) {
@@ -469,9 +480,14 @@
         if (children) {
           parts.push("<div>Дети 7–11 × " + children + " = " + childSum.toLocaleString("ru-RU") + " ₽</div>");
         }
+        if (babyFree) {
+          parts.push(
+            "<div>Дети до 6 лет на руках × " + babyFree + " = " + babyFreeSum.toLocaleString("ru-RU") + " ₽</div>"
+          );
+        }
         if (babySeat) {
           parts.push(
-            "<div>Дети до 6 (место) × " + babySeat + " = " + babySeatSum.toLocaleString("ru-RU") + " ₽</div>"
+            "<div>Дети до 6 лет с местом × " + babySeat + " = " + babySeatSum.toLocaleString("ru-RU") + " ₽</div>"
           );
         }
         parts.push('<div class="calc-total-people">Всего гостей: ' + totalPeople + "</div>");
