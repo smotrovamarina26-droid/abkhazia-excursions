@@ -453,6 +453,15 @@ h2 {
   box-shadow: 0 14px 26px rgba(255, 122, 0, 0.32);
 }
 
+.card-book-btn,
+.card-book-btn:hover,
+.card-book-btn:focus,
+.card-book-btn:focus-visible,
+.card-book-btn:active,
+.card-book-btn:visited {
+  text-decoration: none;
+}
+
 .card-book-note {
   margin: 9px 0 10px;
   font-size: 12px;
@@ -647,6 +656,19 @@ h2 {
   margin-top: 10px;
 }
 
+.booking-submit-btn + .privacy-note {
+  margin-top: 16px;
+}
+
+.tour-page--golden-ring .booking-error-message {
+  min-height: 0;
+  margin: 0;
+}
+
+.tour-page--golden-ring .booking-submit-btn {
+  margin-top: 10px;
+}
+
 .booking-error-message {
   min-height: 18px;
   margin: 2px 0 0;
@@ -710,6 +732,19 @@ h2 {
   color: #6b7280;
 }
 
+.tour-page--golden-ring .booking-success-state p {
+  display: block;
+  max-width: 26rem;
+  margin: 0 auto 16px;
+}
+
+@media (max-width: 480px) {
+  .tour-page--golden-ring .booking-success-state p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
 .booking-success-btn {
   width: 100%;
   border: none;
@@ -741,12 +776,14 @@ h2 {
   background: #fffaf2;
   cursor: pointer;
   transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease;
+  text-decoration: none;
 }
 
 .booking-success-secondary-btn:hover {
   border-color: #ffac59;
   background: #fff3e4;
   transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .booking-success-secondary-btn:focus {
@@ -756,8 +793,7 @@ h2 {
 .booking-success-secondary-btn:focus-visible {
   border-color: #ff9f42;
   box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.22);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration: none;
 }
 
 .booking-success-secondary-btn:active {
@@ -765,6 +801,7 @@ h2 {
   background: #fff1de;
   box-shadow: 0 1px 3px rgba(179, 88, 0, 0.14) inset;
   transform: translateY(0);
+  text-decoration: none;
 }
 
 .card-image {
@@ -1890,6 +1927,22 @@ h2 {
   .tour-page--golden-ring #tour-program .tour-list li {
     margin-bottom: 6px;
   }
+
+  .tour-page--golden-ring #tour-what-to-bring .tour-list {
+    line-height: 1.5;
+  }
+
+  .tour-page--golden-ring #tour-what-to-bring .tour-list li {
+    margin-bottom: 6px;
+  }
+
+  .tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list {
+    line-height: 1.5;
+  }
+
+  .tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list li {
+    margin-bottom: 6px;
+  }
 }
 
 .tour-page--golden-ring #tour-program .tour-list {
@@ -1903,6 +1956,48 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-program .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--golden-ring #tour-what-to-bring .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--golden-ring #tour-what-to-bring .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--golden-ring #tour-what-to-bring .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list li::before {
   content: "";
   position: absolute;
   top: 0.62em;
@@ -2689,12 +2784,79 @@ h2 {
   gap: 28px;
   margin-top: 12px;
   text-align: left;
+  align-items: stretch;
+}
+
+.tour-includes-card {
+  background: #fff;
+  border: 1px solid #ffc891;
+  border-radius: 16px;
+  padding: 18px 20px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .tour-includes-subtitle {
   font-size: 18px;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   color: #1a1d22;
+}
+
+#tour-includes .tour-includes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #3a3f4a;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+#tour-includes .tour-includes-list > li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+#tour-includes .tour-includes-list > li:last-child {
+  margin-bottom: 0;
+}
+
+#tour-includes .tour-includes-list > li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-includes-list-nested {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0 0 0 0;
+  font-size: 14px;
+  line-height: 1.48;
+  color: #5b6068;
+}
+
+.tour-includes-list-nested li {
+  position: relative;
+  padding-left: 1.1em;
+  margin-bottom: 3px;
+}
+
+.tour-includes-list-nested li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-includes-list-nested li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #9a9ea6;
+  font-weight: 400;
 }
 
 .tour-accordion {
@@ -2793,6 +2955,15 @@ h2 {
   width: 100%;
   max-width: 300px;
   margin: 0 auto;
+}
+
+.tour-cta .card-book-btn--inline,
+.tour-cta .card-book-btn--inline:hover,
+.tour-cta .card-book-btn--inline:focus,
+.tour-cta .card-book-btn--inline:focus-visible,
+.tour-cta .card-book-btn--inline:active,
+.tour-cta .card-book-btn--inline:visited {
+  text-decoration: none;
 }
 
 @media (min-width: 600px) {
@@ -2943,6 +3114,15 @@ body.tour-sticky-bar-visible {
   white-space: nowrap;
   flex: 0 1 auto;
   box-shadow: 0 8px 20px rgba(255, 122, 0, 0.28);
+}
+
+.tour-sticky-bar .tour-sticky-bar-cta.card-book-btn,
+.tour-sticky-bar .tour-sticky-bar-cta.card-book-btn:hover,
+.tour-sticky-bar .tour-sticky-bar-cta.card-book-btn:focus,
+.tour-sticky-bar .tour-sticky-bar-cta.card-book-btn:focus-visible,
+.tour-sticky-bar .tour-sticky-bar-cta.card-book-btn:active,
+.tour-sticky-bar .tour-sticky-bar-cta.card-book-btn:visited {
+  text-decoration: none;
 }
 
 .tour-sticky-bar .tour-sticky-bar-cta.card-book-btn:hover {
