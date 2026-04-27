@@ -89,6 +89,14 @@ img {
   white-space: nowrap;
 }
 
+.top-btn:focus {
+  outline: none;
+}
+
+.top-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.24);
+}
+
 @media (max-width: 768px) {
   .topbar {
     padding: 8px 0;
@@ -2432,6 +2440,24 @@ h2 {
 
 .tour-accordion[open] .tour-accordion-summary::after {
   transform: translateY(-50%) rotate(180deg);
+}
+
+.tour-page a:focus,
+.tour-page button:focus,
+.tour-page summary:focus {
+  outline: none;
+}
+
+.tour-page a:focus-visible,
+.tour-page button:focus-visible,
+.tour-page summary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.22);
+  border-radius: 10px;
+}
+
+.tour-page .tour-accordion-summary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.22);
+  border-radius: 12px;
 }
 
 .tour-accordion-body {
