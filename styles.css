@@ -2270,6 +2270,38 @@ h2 {
   background: #ff7a00;
 }
 
+.tour-page--golden-ring .tour-price-cols .tour-price-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--golden-ring .tour-price-cols .tour-price-list li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.tour-page--golden-ring .tour-price-cols .tour-price-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--golden-ring section.tour-section:has(#tour-pricing) h2 {
+  text-align: center;
+}
+
+.tour-page--golden-ring section.tour-section:has(#tour-pricing) h2 + p {
+  text-align: center;
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .tour-logistics-brief {
   margin-top: 12px;
   background: #fff;
