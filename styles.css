@@ -2524,6 +2524,24 @@ h2 {
   white-space: nowrap;
 }
 
+.tour-page--golden-ring .tour-pricing-calc .calc-price::before {
+  content: "— ";
+  font-weight: 600;
+  color: #555;
+}
+
+@media (max-width: 640px) {
+  .tour-page--golden-ring .tour-pricing-calc .calc-price {
+    display: block;
+    margin-left: 0;
+    margin-top: 2px;
+  }
+
+  .tour-page--golden-ring .tour-pricing-calc .calc-price::before {
+    content: none;
+  }
+}
+
 .tour-pricing-calc-breakdown {
   margin: 0 0 14px;
   padding: 12px 14px;
@@ -2581,6 +2599,15 @@ h2 {
 
 .tour-pricing-calc-total-value + .tour-pricing-calc-prepay-line {
   margin-top: 4px;
+}
+
+.tour-pricing-calc-prepay-hint {
+  margin: 6px 0 10px;
+  max-width: 40em;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #6b7280;
 }
 
 .tour-pricing-calc-prepay-note {

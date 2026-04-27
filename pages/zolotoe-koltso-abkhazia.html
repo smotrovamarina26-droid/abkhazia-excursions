@@ -198,7 +198,7 @@
 
         <div class="tour-pricing-calc" id="tour-pricing">
           <h3 class="tour-pricing-calc-title">Рассчитайте стоимость поездки</h3>
-          <p class="tour-pricing-calc-subtitle">Выберите параметры и узнайте итоговую стоимость</p>
+          <p class="tour-pricing-calc-subtitle">Выберите точку отправления и количество гостей — итог посчитается автоматически</p>
 
           <div class="tour-pricing-calc-block">
             <p class="tour-pricing-calc-label">Точка отправления</p>
@@ -254,7 +254,8 @@
           <div class="tour-pricing-calc-total">
             <div id="calc-breakdown" class="tour-pricing-calc-breakdown" aria-live="polite"></div>
             <p class="tour-pricing-calc-total-value" id="calc-total">Итого: 2400 ₽</p>
-            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Бронирование по предоплате: 500 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Предоплата для бронирования: 500 ₽</p>
+            <p class="tour-pricing-calc-prepay-hint">Предоплата — 500 ₽ за каждого взрослого и ребёнка 7–11 лет. За детей до 6 лет предоплата не требуется.</p>
             <p class="tour-pricing-calc-prepay-line" id="calc-balance">Остальное на месте: 1900 ₽</p>
           </div>
           <p class="tour-pricing-calc-booking-note">После заявки свяжемся с вами, уточним детали и подтвердим бронирование</p>
@@ -477,7 +478,7 @@
           if (!type || p[type] === undefined) {
             return;
           }
-          el.textContent = "— " + p[type].toLocaleString("ru-RU") + " ₽";
+          el.textContent = p[type].toLocaleString("ru-RU") + " ₽";
         });
       }
 
@@ -550,7 +551,7 @@
         document.getElementById("calc-val-baby").textContent = String(state.baby);
         document.getElementById("calc-val-babySeat").textContent = String(state.babySeat);
         document.getElementById("calc-total").textContent = "Итого: " + formatMoney(total);
-        document.getElementById("calc-booking").textContent = "Бронирование по предоплате: " + formatMoney(prepayment);
+        document.getElementById("calc-booking").textContent = "Предоплата для бронирования: " + formatMoney(prepayment);
         document.getElementById("calc-balance").textContent = "Остальное на месте: " + formatMoney(remainder);
 
         updateBreakdown();
