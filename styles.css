@@ -1821,6 +1821,49 @@ h2 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+.tour-page--golden-ring .hero-subtitle {
+  margin-bottom: 10px;
+}
+
+.tour-page--golden-ring .hero-subtitle-small {
+  margin-bottom: 14px;
+}
+
+.tour-page--golden-ring .hero-price {
+  margin-bottom: 14px;
+}
+
+.tour-page--golden-ring .tour-hero-actions {
+  margin-bottom: 10px;
+}
+
+.tour-page--golden-ring .btn-primary {
+  margin-bottom: 8px;
+}
+
+.tour-page--golden-ring .hero-after-btn {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0.9;
+}
+
+.tour-page--golden-ring .tour-hero-tags {
+  margin-top: 22px;
+}
+
+.tour-page--golden-ring .tour-hero-tag {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #c45a00;
+  line-height: 1.2;
+}
+
 .tour-section {
   padding: 48px 0;
 }
