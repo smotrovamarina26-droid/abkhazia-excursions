@@ -80,17 +80,34 @@ img {
   margin-left: auto;
   background: #ff7a00;
   color: #fff;
-  padding: 10px 14px;
+  padding: 9px 12px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
 @media (max-width: 768px) {
+  .topbar {
+    padding: 8px 0;
+  }
+
+  .topbar-content {
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+
+  .logo {
+    max-width: 122px;
+    font-size: 15px;
+  }
+
   .top-btn {
-    display: none;
+    display: inline-block;
+    padding: 8px 11px;
+    font-size: 13px;
   }
 }
 
@@ -331,7 +348,13 @@ img {
 }
 
 .card[id] {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 88px;
+}
+
+#tours,
+#advantages,
+#contacts {
+  scroll-margin-top: 88px;
 }
 
 .card:target {
@@ -1063,6 +1086,10 @@ h2 {
 }
 
 @media (min-width: 769px) {
+  .topbar {
+    top: 8px;
+  }
+
   .topbar-content {
     justify-content: space-between;
     gap: 20px;
@@ -1167,6 +1194,16 @@ h2 {
     margin-top: 40px;
   }
 
+  .card[id] {
+    scroll-margin-top: 108px;
+  }
+
+  #tours,
+  #advantages,
+  #contacts {
+    scroll-margin-top: 108px;
+  }
+
   .final-cta {
     padding-bottom: 62px;
   }
@@ -1241,6 +1278,10 @@ h2 {
 }
 
 @media (min-width: 1025px) {
+  .topbar {
+    top: 10px;
+  }
+
   .container {
     padding-left: 24px;
     padding-right: 24px;
