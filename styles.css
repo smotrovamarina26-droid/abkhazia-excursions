@@ -1864,6 +1864,24 @@ h2 {
   line-height: 1.2;
 }
 
+.tour-page--golden-ring #tour-description .tour-prose p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.tour-page--golden-ring #tour-description .tour-prose p:first-child {
+  font-weight: 600;
+}
+
+.tour-page--golden-ring #tour-description {
+  padding-bottom: 36px;
+}
+
+.tour-page--golden-ring #tour-audience {
+  padding-top: 28px;
+}
+
 .tour-section {
   padding: 48px 0;
 }
