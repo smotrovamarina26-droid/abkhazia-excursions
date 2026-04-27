@@ -1882,6 +1882,37 @@ h2 {
   padding-top: 28px;
 }
 
+@media (max-width: 640px) {
+  .tour-page--golden-ring #tour-program .tour-list {
+    line-height: 1.5;
+  }
+
+  .tour-page--golden-ring #tour-program .tour-list li {
+    margin-bottom: 6px;
+  }
+}
+
+.tour-page--golden-ring #tour-program .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--golden-ring #tour-program .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--golden-ring #tour-program .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
 .tour-section {
   padding: 48px 0;
 }
@@ -1959,6 +1990,25 @@ h2 {
   font-size: 15px;
   line-height: 1.55;
   color: #3a3f4a;
+}
+
+.tour-review-title {
+  margin: 0 0 6px;
+  font-size: 17px;
+  line-height: 1.3;
+  color: #1a1d22;
+}
+
+.tour-page--golden-ring .tour-review-card {
+  border: 1px solid #ffe4c8;
+  padding: 14px 14px 13px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.tour-page--golden-ring .tour-review-text {
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .tour-reviews-footnote {
@@ -2138,6 +2188,132 @@ h2 {
   line-height: 1.5;
   color: #2f333c;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.tour-logistics-intro {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #3a3f4a;
+}
+
+.tour-logistics-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.tour-logistics-step-card {
+  background: #fff;
+  border: 1px solid #ffe4c8;
+  border-radius: 14px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.tour-logistics-step-card h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #1a1d22;
+}
+
+.tour-logistics-step-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5260;
+}
+
+.tour-logistics-accordion {
+  margin-top: 0;
+}
+
+.tour-logistics-accordion .tour-accordion-body p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #3a3f4a;
+}
+
+.tour-logistics-accordion .tour-accordion-body p:last-child {
+  margin-bottom: 0;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-list li {
+  position: relative;
+  margin-bottom: 6px;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-logistics-brief {
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid #ffe4c8;
+  border-radius: 14px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.tour-logistics-brief h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  line-height: 1.3;
+  color: #1a1d22;
+}
+
+.tour-logistics-brief-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tour-logistics-brief-list li {
+  position: relative;
+  margin: 0 0 7px;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #3a3f4a;
+}
+
+.tour-logistics-brief-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-logistics-brief-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
 }
 
 .tour-price-cols {
@@ -2572,6 +2748,10 @@ h2 {
   .tour-includes-cols {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
+  }
+
+  .tour-logistics-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
