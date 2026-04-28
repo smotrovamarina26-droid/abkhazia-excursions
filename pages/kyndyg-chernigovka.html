@@ -513,6 +513,19 @@
     </footer>
   </main>
 
+  <aside class="tour-sticky-bar" id="tour-sticky-bar" aria-hidden="true" role="complementary" aria-label="Быстрое бронирование">
+    <div class="container tour-sticky-bar-inner">
+      <div class="tour-sticky-bar-price">
+        <span class="tour-sticky-bar-price-value">от 2400 ₽</span>
+        <span class="tour-sticky-bar-price-hint">за человека</span>
+      </div>
+      <div class="tour-sticky-bar-actions">
+        <a href="#tour-pricing" class="tour-sticky-bar-secondary">Рассчитать</a>
+        <a href="#" class="card-book-btn tour-sticky-bar-cta" data-tour-name="Термальный источник Кындыг">Забронировать</a>
+      </div>
+    </div>
+  </aside>
+
   <div class="popup-overlay" id="booking-overlay" aria-hidden="true">
     <div class="booking-popup" role="dialog" aria-modal="true" aria-labelledby="booking-title">
       <button class="booking-popup-close" type="button" id="booking-close" aria-label="Закрыть форму">×</button>
@@ -840,6 +853,68 @@
 
       setActive(0);
       syncFromScroll();
+    })();
+  </script>
+  <script>
+    (function () {
+      var bar = document.getElementById("tour-sticky-bar");
+      var hero = document.getElementById("tour-hero");
+      var pricing = document.getElementById("tour-pricing");
+      if (!bar || !hero) {
+        return;
+      }
+      var minScrollY = 450;
+      var useIO = !!(pricing && typeof IntersectionObserver !== "undefined");
+      var pricingIntersects = false;
+
+      function isPricingInViewportRect() {
+        if (!pricing) {
+          return false;
+        }
+        var r = pricing.getBoundingClientRect();
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+        return r.bottom > 0 && r.top < vh;
+      }
+
+      function updateStickyBar() {
+        var scrollY = window.scrollY || document.documentElement.scrollTop;
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        var pastHero = heroBottom < 0;
+        var scrolledEnough = scrollY >= minScrollY;
+        var pricingBlocks = pricing
+          ? useIO
+            ? pricingIntersects
+            : isPricingInViewportRect()
+          : false;
+        var show = pastHero && scrolledEnough && !pricingBlocks;
+        bar.classList.toggle("is-visible", show);
+        document.body.classList.toggle("tour-sticky-bar-visible", show);
+        bar.setAttribute("aria-hidden", show ? "false" : "true");
+      }
+
+      if (pricing) {
+        pricingIntersects = isPricingInViewportRect();
+        if (useIO) {
+          new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                pricingIntersects = entry.isIntersecting;
+              });
+              updateStickyBar();
+            },
+            { root: null, threshold: 0 }
+          ).observe(pricing);
+        }
+      }
+
+      updateStickyBar();
+      window.addEventListener("scroll", updateStickyBar, { passive: true });
+      window.addEventListener("resize", function () {
+        if (useIO && pricing) {
+          pricingIntersects = isPricingInViewportRect();
+        }
+        updateStickyBar();
+      }, { passive: true });
     })();
   </script>
 </body>
