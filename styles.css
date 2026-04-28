@@ -1908,6 +1908,126 @@ h2 {
   margin-right: auto;
 }
 
+/* Тур «Джип-тур на Гегский водопад и озеро Рица»: hero, шапка и полоса «назад» */
+.tour-page--gega .topbar .menu {
+  display: none !important;
+}
+
+.tour-page--gega a.logo,
+.tour-page--gega a.logo:link,
+.tour-page--gega a.logo:visited,
+.tour-page--gega a.logo:hover,
+.tour-page--gega a.logo:active {
+  text-decoration: none;
+  color: #111;
+}
+
+.tour-page--gega a.logo:focus-visible {
+  text-decoration: none;
+  color: #111;
+}
+
+.tour-page--gega .tour-back-to-all__link,
+.tour-page--gega .tour-back-to-all__link:link,
+.tour-page--gega .tour-back-to-all__link:visited,
+.tour-page--gega .tour-back-to-all__link:hover,
+.tour-page--gega .tour-back-to-all__link:active,
+.tour-page--gega .tour-back-to-all__link:focus,
+.tour-page--gega .tour-back-to-all__link:focus-visible {
+  text-decoration: none;
+}
+
+.tour-page--gega .tour-back-to-all__link:link,
+.tour-page--gega .tour-back-to-all__link:visited {
+  color: #4a4f58;
+}
+
+.tour-page--gega .tour-back-to-all__link:hover {
+  color: #2c3038;
+}
+
+.tour-page--gega .tour-back-to-all__link:link .tour-back-to-all__mark,
+.tour-page--gega .tour-back-to-all__link:visited .tour-back-to-all__mark {
+  color: #ff7a00;
+}
+
+.tour-page--gega .tour-back-to-all__link:hover .tour-back-to-all__mark,
+.tour-page--gega .tour-back-to-all__link:focus-visible .tour-back-to-all__mark {
+  color: #e86d00;
+}
+
+.tour-page--gega .tour-back-to-all {
+  margin-top: 68px;
+  padding: 1px 0 4px;
+  background: #faf9f7;
+  border-bottom: 1px solid #ede6dc;
+}
+
+.tour-page--gega .hero.hero--tour {
+  margin-top: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),
+    url("images/gega-jeep/gega-hero.jpg");
+  background-size: cover;
+  background-position: center 42%;
+}
+
+@media (min-width: 481px) {
+  .tour-page--gega .tour-back-to-all {
+    margin-top: 70px;
+  }
+}
+
+@media (min-width: 769px) {
+  .tour-page--gega .tour-back-to-all {
+    margin-top: 76px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .tour-page--gega .tour-back-to-all {
+    margin-top: 80px;
+  }
+}
+
+.tour-page--gega .hero-subtitle {
+  margin-bottom: 10px;
+}
+
+.tour-page--gega .hero-price {
+  margin-bottom: 14px;
+}
+
+.tour-page--gega .tour-hero-actions {
+  margin-bottom: 10px;
+}
+
+.tour-page--gega .btn-primary {
+  margin-bottom: 8px;
+}
+
+.tour-page--gega .hero-after-btn {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0.9;
+}
+
+.tour-page--gega .tour-hero-tags {
+  margin-top: 22px;
+}
+
+.tour-page--gega .tour-hero-tag {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #c45a00;
+  line-height: 1.2;
+}
+
 .tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list {
   list-style: none;
   padding-left: 0;

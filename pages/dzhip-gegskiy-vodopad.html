@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Джип-тур на Гегский водопад и озеро Рица — экскурсия из Сочи и Адлера</title>
+  <meta
+    name="description"
+    content="Горная Абхазия, Гегский водопад и озеро Рица на джип-туре из Сочи и Адлера. Комфортный маршрут в УАЗ Патриот."
+  />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="tour-page tour-page--gega">
+  <header class="topbar">
+    <div class="container topbar-content">
+      <a href="../index.html" class="logo">Мандариныч Тур</a>
+      <nav class="menu">
+        <a href="../index.html#tours">Экскурсии</a>
+        <a href="../index.html#advantages">Преимущества</a>
+        <a href="#">Отзывы</a>
+      </nav>
+      <a href="#" class="top-btn" data-open-contact-modal="true">Связаться</a>
+    </div>
+  </header>
+
+  <main>
+    <nav class="tour-back-to-all" aria-label="К списку экскурсий">
+      <div class="container">
+        <a class="tour-back-to-all__link" href="../index.html#tours">
+          <span class="tour-back-to-all__mark" aria-hidden="true">←</span> Все экскурсии
+        </a>
+      </div>
+    </nav>
+
+    <header class="hero hero--tour" id="tour-hero">
+      <div class="container">
+        <h1 class="hero-title">Джип-тур на Гегский водопад</h1>
+
+        <p class="hero-subtitle">Горная Абхазия, озеро Рица, водопады и купание в Гагре</p>
+        <p class="hero-subtitle-small">Ежедневные выезды из Сочи, Адлера и Сириуса</p>
+        <p class="hero-price">от 2800 ₽ за человека</p>
+
+        <div class="tour-hero-actions">
+          <button type="button" class="card-book-btn btn-primary" data-tour-name="Джип-тур на Гегский водопад и озеро Рица">
+            Забронировать экскурсию
+          </button>
+          <p class="hero-after-btn">Ответим в течение 5–10 минут и уточним детали</p>
+        </div>
+
+        <div class="tour-hero-tags" role="list">
+          <span class="tour-hero-tag" role="listitem">УАЗ Патриот</span>
+          <span class="tour-hero-tag" role="listitem">До 8 человек в джипе</span>
+          <span class="tour-hero-tag" role="listitem">12–14 часов</span>
+          <span class="tour-hero-tag" role="listitem">Можно с детьми</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="tour-section" id="tour-description">
+      <div class="container tour-section-inner">
+        <h2>Описание тура</h2>
+        <div class="tour-prose">
+          <p><strong>Это динамичный джип-тур по горной Абхазии — для тех, кто хочет увидеть Гегский водопад, озеро Рица, водопады и красивые смотровые точки в одном маршруте.</strong></p>
+
+          <p>Вы проедете по живописным дорогам Абхазии, остановитесь у Белых скал, в Гагре, у Голубого озера, у водопадов и главной точки маршрута — Гегского водопада. Поездка проходит на УАЗ Патриот: в одном джипе до 8 пассажиров.</p>
+
+          <p>Маршрут построен так, чтобы день получился насыщенным, но понятным: будут природные локации, дегустации, озеро Рица, горные виды и купание в Гагре в конце поездки.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="popup-overlay" id="booking-overlay" aria-hidden="true">
+    <div class="booking-popup" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+      <button class="booking-popup-close" type="button" id="booking-close" aria-label="Закрыть форму">×</button>
+      <div class="booking-form-state" id="booking-form-state">
+        <h3 id="booking-title">Оставьте заявку</h3>
+        <p class="booking-form-subtitle">Ответим в течение 5–10 минут и уточним детали</p>
+        <p class="booking-selected-tour">Вы выбрали: <strong id="selected-tour-name"></strong></p>
+
+        <form id="booking-form" class="booking-form">
+          <label for="booking-name">Как к вам обращаться?</label>
+          <input id="booking-name" name="name" type="text" autocomplete="name" />
+
+          <label for="booking-contact">Телефон для связи</label>
+          <input
+            id="booking-contact"
+            name="contact"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (___) ___-__-__"
+            autocomplete="tel"
+          />
+
+          <label for="booking-trip-date">Дата поездки (необязательно)</label>
+          <input id="booking-trip-date" name="trip_date" type="date" />
+          <p class="booking-date-note">Можно указать сейчас или уточнить позже</p>
+          <p class="booking-error-message" id="booking-error-message" role="alert" aria-live="assertive"></p>
+
+          <button type="submit" class="booking-submit-btn">Забронировать экскурсию</button>
+          <p class="privacy-note">Мы не передаём ваши данные третьим лицам</p>
+        </form>
+      </div>
+
+      <div class="booking-success-state" id="booking-success-state" role="status" aria-live="polite">
+        <div class="booking-success-icon" aria-hidden="true">✓</div>
+        <h4>Заявка принята</h4>
+        <p>Свяжемся с вами в течение 5–10 минут, уточним детали и подтвердим бронирование.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-overlay" id="contact-overlay" aria-hidden="true">
+    <div class="contact-sheet" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+      <button class="contact-sheet-close" type="button" id="contact-close" aria-label="Закрыть окно">×</button>
+      <h3 id="contact-title">Связаться с нами</h3>
+      <p>Выберите удобный способ</p>
+      <div class="contact-sheet-actions">
+        <a href="https://t.me/Marina_Sochi_Adler" target="_blank" rel="noopener noreferrer" class="contact-sheet-btn">Telegram</a>
+        <a href="https://max.ru/u/f9LHodD0cOLcIavsnmkmUaQOuLh2m5zb_CNUB02shmV-u5GIclKKnWoflec" target="_blank" rel="noopener noreferrer" class="contact-sheet-btn">MAX</a>
+        <a href="tel:+79678007552" class="contact-sheet-btn">Позвонить нам</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.BOOKING_TELEGRAM_SOURCE = "Сайт — страница экскурсии";
+    window.BOOKING_TELEGRAM_PAGE = "Джип-тур на Гегский водопад и озеро Рица";
+    window.BOOKING_TOUR_PROGRAM_OVERRIDES = {
+      "Джип-тур на Гегский водопад и озеро Рица": "#tour-hero"
+    };
+  </script>
+  <script src="../config.js"></script>
+  <script src="../booking-popup.js"></script>
+  <script src="../contact-modal.js"></script>
+</body>
+</html>
