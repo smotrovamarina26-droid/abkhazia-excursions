@@ -2028,6 +2028,177 @@ h2 {
   line-height: 1.2;
 }
 
+.tour-page--gega #tour-program .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--gega #tour-program .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--gega #tour-program .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--gega #tour-logistics .tour-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.tour-page--gega #tour-logistics .tour-list li {
+  position: relative;
+  margin-bottom: 6px;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.tour-page--gega #tour-logistics .tour-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-page--gega #tour-logistics .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-card {
+  margin: 14px auto 14px;
+  max-width: 800px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #ffe4c8;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-card__img-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #e8edf2;
+  line-height: 0;
+}
+
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.tour-page--gega #tour-pricing h2 {
+  text-align: center;
+}
+
+.tour-page--gega #tour-pricing h2 + p {
+  text-align: center;
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-page--gega .tour-price-cols .tour-price-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--gega .tour-price-cols .tour-price-list li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.tour-page--gega .tour-price-cols .tour-price-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--gega .tour-pricing-calc .calc-price::before {
+  content: "— ";
+  font-weight: 600;
+  color: #555;
+}
+
+.tour-page--gega #tour-what-to-bring .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--gega #tour-what-to-bring .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--gega #tour-what-to-bring .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--gega #tour-border-rules .tour-accordion-body .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--gega #tour-border-rules .tour-accordion-body .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--gega #tour-border-rules .tour-accordion-body .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+@media (max-width: 640px) {
+  .tour-page--gega .tour-pricing-calc .calc-price {
+    display: block;
+    margin-left: 0;
+    margin-top: 2px;
+  }
+
+  .tour-page--gega .tour-pricing-calc .calc-price::before {
+    content: none;
+  }
+}
+
 .tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list {
   list-style: none;
   padding-left: 0;

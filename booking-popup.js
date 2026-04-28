@@ -22,6 +22,7 @@
     "Золотое кольцо Абхазии": "pages/zolotoe-koltso-abkhazia.html",
     "Термальный источник Кындыг": "pages/kyndyg-chernigovka.html",
     "Джип-тур Гегский водопад": "pages/dzhip-gegskiy-vodopad.html",
+    "Джип-тур на Гегский водопад": "pages/dzhip-gegskiy-vodopad.html",
   };
   const TOUR_PROGRAM_URL = Object.assign({}, defaultTourProgramUrl, window.BOOKING_TOUR_PROGRAM_OVERRIDES || {});
 
