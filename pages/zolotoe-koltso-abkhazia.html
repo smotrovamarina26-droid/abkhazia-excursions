@@ -66,6 +66,92 @@
       </div>
     </section>
 
+    <section class="tour-section tour-route-carousel" id="tour-route-photos" aria-labelledby="tour-route-photos-title">
+      <div class="container">
+        <h2 id="tour-route-photos-title">Что увидите на маршруте</h2>
+        <p class="tour-route-carousel__subtitle">
+          Гагра, Голубое озеро, Рица, Новый Афон и другие красивые места поездки
+        </p>
+        <div class="tour-route-carousel__frame">
+          <div class="tour-route-carousel__track" id="tour-route-carousel-track" tabindex="0" role="region" aria-roledescription="карусель" aria-label="Фото маршрута">
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/zolotoe-koltso/gagra-kolonnada.png"
+                  alt="Гагра"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Гагра</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/zolotoe-koltso/goluboe-ozero.jpg"
+                  alt="Голубое озеро"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Голубое озеро</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/zolotoe-koltso/ozero-ritsa.jpg"
+                  alt="Озеро Рица"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Озеро Рица</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/zolotoe-koltso/noviy-afon.jpg"
+                  alt="Новый Афон"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Новый Афон</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/zolotoe-koltso/vodopady-abkhazia.jpg"
+                  alt="Водопады Абхазии"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Рукотворный водопад</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="tour-route-carousel__controls">
+          <div class="tour-route-carousel__dots" id="tour-route-carousel-dots" role="group" aria-label="Навигация по фото"></div>
+        </div>
+      </div>
+    </section>
+
     <section class="tour-section tour-section--muted" id="tour-audience">
       <div class="container">
         <h2>Эта экскурсия для вас, если:</h2>
@@ -153,6 +239,20 @@
             <li>По Абхазии: микроавтобус Mercedes до 18 человек</li>
           </ul>
         </div>
+
+        <figure class="tour-logistics-sprinter-card">
+          <div class="tour-logistics-sprinter-card__img-wrap">
+            <img
+              src="../images/zolotoe-koltso/mercedes-sprinter.png"
+              alt="Mercedes Sprinter для экскурсии по Абхазии"
+              width="960"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              class="tour-logistics-sprinter-card__img"
+            />
+          </div>
+        </figure>
 
         <details class="tour-accordion tour-logistics-accordion">
           <summary class="tour-accordion-summary">Как проходит день по шагам?</summary>
@@ -630,6 +730,109 @@
       });
 
       render();
+    })();
+  </script>
+  <script>
+    (function () {
+      var section = document.getElementById("tour-route-photos");
+      if (!section) {
+        return;
+      }
+      var track = document.getElementById("tour-route-carousel-track");
+      var dotsRoot = document.getElementById("tour-route-carousel-dots");
+      if (!track || !dotsRoot) {
+        return;
+      }
+
+      var slides = track.querySelectorAll(".tour-route-carousel__slide");
+      var n = slides.length;
+      if (!n) {
+        return;
+      }
+
+      var dotButtons = [];
+      for (var i = 0; i < n; i++) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "tour-route-carousel__dot";
+        btn.setAttribute("aria-label", "Показать фото " + (i + 1) + " из " + n);
+        (function (index) {
+          btn.addEventListener("click", function () {
+            goTo(index);
+          });
+        })(i);
+        dotsRoot.appendChild(btn);
+        dotButtons.push(btn);
+      }
+
+      function goTo(index) {
+        if (index < 0 || index >= n) {
+          return;
+        }
+        var w = track.clientWidth;
+        track.scrollTo({ left: index * w, behavior: "smooth" });
+      }
+
+      function setActive(index) {
+        index = Math.max(0, Math.min(index, n - 1));
+        dotButtons.forEach(function (b, j) {
+          var on = j === index;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-current", on ? "true" : "false");
+        });
+      }
+
+      function syncFromScroll() {
+        var w = track.clientWidth;
+        if (w <= 0) {
+          return;
+        }
+        var i = Math.round(track.scrollLeft / w);
+        setActive(i);
+      }
+
+      var ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            syncFromScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      track.addEventListener("scroll", onScroll, { passive: true });
+      track.addEventListener("scrollend", syncFromScroll, { passive: true });
+
+      window.addEventListener(
+        "resize",
+        function () {
+          var w = track.clientWidth;
+          if (w <= 0) {
+            return;
+          }
+          var i = Math.round(track.scrollLeft / w);
+          track.scrollLeft = i * w;
+          syncFromScroll();
+        },
+        { passive: true }
+      );
+
+      track.addEventListener("keydown", function (e) {
+        var w = track.clientWidth;
+        var i = Math.round(track.scrollLeft / w);
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          goTo(Math.min(i + 1, n - 1));
+        } else if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          goTo(Math.max(i - 1, 0));
+        }
+      });
+
+      setActive(0);
+      syncFromScroll();
     })();
   </script>
   <script>

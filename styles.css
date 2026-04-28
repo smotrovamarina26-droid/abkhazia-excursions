@@ -1498,7 +1498,8 @@ h2 {
 
 /* --- Страница экскурсии --- */
 .tour-page main section[id],
-.tour-page main #tour-pricing {
+.tour-page main #tour-pricing,
+.tour-page main #tour-pricing-kyndyg {
   scroll-margin-top: 90px;
 }
 
@@ -1620,6 +1621,279 @@ h2 {
 @media (min-width: 1025px) {
   .tour-page--golden-ring .tour-back-to-all {
     margin-top: 80px;
+  }
+}
+
+/* Тур «Термальный источник Кындыг»: hero, шапка и полоса «назад» — те же приёмы, что у «Золотого кольца» */
+.tour-page--kyndyg .topbar .menu {
+  display: none !important;
+}
+
+.tour-page--kyndyg a.logo,
+.tour-page--kyndyg a.logo:link,
+.tour-page--kyndyg a.logo:visited,
+.tour-page--kyndyg a.logo:hover,
+.tour-page--kyndyg a.logo:active {
+  text-decoration: none;
+  color: #111;
+}
+
+.tour-page--kyndyg a.logo:focus-visible {
+  text-decoration: none;
+  color: #111;
+}
+
+.tour-page--kyndyg .tour-back-to-all__link,
+.tour-page--kyndyg .tour-back-to-all__link:link,
+.tour-page--kyndyg .tour-back-to-all__link:visited,
+.tour-page--kyndyg .tour-back-to-all__link:hover,
+.tour-page--kyndyg .tour-back-to-all__link:active,
+.tour-page--kyndyg .tour-back-to-all__link:focus,
+.tour-page--kyndyg .tour-back-to-all__link:focus-visible {
+  text-decoration: none;
+}
+
+.tour-page--kyndyg .tour-back-to-all__link:link,
+.tour-page--kyndyg .tour-back-to-all__link:visited {
+  color: #4a4f58;
+}
+
+.tour-page--kyndyg .tour-back-to-all__link:hover {
+  color: #2c3038;
+}
+
+.tour-page--kyndyg .tour-back-to-all__link:link .tour-back-to-all__mark,
+.tour-page--kyndyg .tour-back-to-all__link:visited .tour-back-to-all__mark {
+  color: #ff7a00;
+}
+
+.tour-page--kyndyg .tour-back-to-all__link:hover .tour-back-to-all__mark,
+.tour-page--kyndyg .tour-back-to-all__link:focus-visible .tour-back-to-all__mark {
+  color: #e86d00;
+}
+
+.tour-page--kyndyg .tour-back-to-all {
+  margin-top: 68px;
+  padding: 1px 0 4px;
+  background: #faf9f7;
+  border-bottom: 1px solid #ede6dc;
+}
+
+.tour-page--kyndyg .hero.hero--tour {
+  margin-top: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("images/kyndyg/kyndyg-hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 481px) {
+  .tour-page--kyndyg .tour-back-to-all {
+    margin-top: 70px;
+  }
+}
+
+@media (min-width: 769px) {
+  .tour-page--kyndyg .tour-back-to-all {
+    margin-top: 76px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .tour-page--kyndyg .tour-back-to-all {
+    margin-top: 80px;
+  }
+}
+
+.tour-page--kyndyg .hero-subtitle {
+  margin-bottom: 10px;
+}
+
+.tour-page--kyndyg .hero-subtitle-small {
+  margin-bottom: 14px;
+}
+
+.tour-page--kyndyg .hero-price {
+  margin-bottom: 14px;
+}
+
+.tour-page--kyndyg .tour-hero-actions {
+  margin-bottom: 10px;
+}
+
+.tour-page--kyndyg .btn-primary {
+  margin-bottom: 8px;
+}
+
+.tour-page--kyndyg .hero-after-btn {
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0.9;
+}
+
+.tour-page--kyndyg .tour-hero-tags {
+  margin-top: 22px;
+}
+
+.tour-page--kyndyg .tour-hero-tag {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #c45a00;
+  line-height: 1.2;
+}
+
+.tour-page--kyndyg #tour-description .tour-prose p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.tour-page--kyndyg #tour-description .tour-prose p:first-child {
+  font-weight: 600;
+}
+
+.tour-page--kyndyg #tour-description {
+  padding-bottom: 36px;
+}
+
+@media (max-width: 640px) {
+  .tour-page--kyndyg #tour-program .tour-list {
+    line-height: 1.5;
+  }
+
+  .tour-page--kyndyg #tour-program .tour-list li {
+    margin-bottom: 6px;
+  }
+}
+
+.tour-page--kyndyg #tour-program .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--kyndyg #tour-program .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--kyndyg #tour-program .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--kyndyg #tour-logistics .tour-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.tour-page--kyndyg #tour-logistics .tour-list li {
+  position: relative;
+  margin-bottom: 6px;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.tour-page--kyndyg #tour-logistics .tour-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-page--kyndyg #tour-logistics .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card {
+  margin: 14px auto 14px;
+  max-width: 800px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #ffe4c8;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #e8edf2;
+  line-height: 0;
+}
+
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.tour-page--kyndyg #tour-pricing-kyndyg h2 + p {
+  text-align: center;
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list li {
+  position: relative;
+  padding-left: 15px;
+}
+
+.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--kyndyg .tour-pricing-calc .calc-price::before {
+  content: "— ";
+  font-weight: 600;
+  color: #555;
+}
+
+@media (max-width: 640px) {
+  .tour-page--kyndyg .tour-pricing-calc .calc-price {
+    display: block;
+    margin-left: 0;
+    margin-top: 2px;
+  }
+
+  .tour-page--kyndyg .tour-pricing-calc .calc-price::before {
+    content: none;
   }
 }
 
@@ -2176,10 +2450,133 @@ h2 {
 }
 
 #tour-description h2,
+#tour-route-photos h2,
 #tour-program h2,
 #tour-pricing h2,
+#tour-pricing-kyndyg h2,
 #tour-what-to-bring h2 {
   text-align: center;
+}
+
+/* Карусель маршрута — «Золотое кольцо Абхазии», «Термальный источник Кындыг» */
+#tour-route-photos .tour-route-carousel__subtitle {
+  text-align: center;
+  max-width: 36em;
+  margin: 0 auto 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #5b636d;
+}
+
+#tour-route-photos .tour-route-carousel__frame {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #ffe4c8;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+#tour-route-photos .tour-route-carousel__track {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  scrollbar-width: thin;
+}
+
+#tour-route-photos .tour-route-carousel__track:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px rgba(255, 122, 0, 0.28);
+}
+
+#tour-route-photos .tour-route-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  max-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  margin: 0;
+}
+
+#tour-route-photos .tour-route-carousel__img-wrap {
+  position: relative;
+  width: 100%;
+  height: clamp(200px, 48vw, 300px);
+  max-height: 300px;
+  overflow: hidden;
+  background: #e8edf2;
+}
+
+#tour-route-photos .tour-route-carousel__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#tour-route-photos .tour-route-carousel__caption {
+  padding: 12px 14px 14px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1d22;
+  background: #fffaf4;
+  border-top: 1px solid #ffe9d2;
+}
+
+#tour-route-photos .tour-route-carousel__controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+#tour-route-photos .tour-route-carousel__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+#tour-route-photos .tour-route-carousel__dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #d8dce3;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#tour-route-photos .tour-route-carousel__dot:hover {
+  background: #b8c0cc;
+}
+
+#tour-route-photos .tour-route-carousel__dot:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.35);
+}
+
+#tour-route-photos .tour-route-carousel__dot.is-active {
+  background: #ff7a00;
+  transform: scale(1.15);
+}
+
+@media (min-width: 768px) {
+  #tour-route-photos .tour-route-carousel__img-wrap {
+    height: clamp(240px, 36vw, 320px);
+    max-height: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #tour-route-photos .tour-route-carousel__track {
+    scroll-behavior: auto;
+  }
 }
 
 .tour-reviews-subtitle {
@@ -2582,6 +2979,36 @@ h2 {
   height: 6px;
   border-radius: 50%;
   background: #ff7a00;
+}
+
+/* Визуально как карточка фото в «Что увидите на маршруте» (#tour-route-carousel__frame) */
+.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card {
+  margin: 14px auto 14px;
+  max-width: 800px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #ffe4c8;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card__img-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #e8edf2;
+  line-height: 0;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .tour-price-cols {
