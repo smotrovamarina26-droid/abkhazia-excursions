@@ -117,6 +117,10 @@ a.logo:focus-visible {
   box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.24);
 }
 
+.topbar-all-tours {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .topbar {
     padding: 8px 0;
@@ -1297,6 +1301,39 @@ h2 {
     margin-left: 0;
   }
 
+  .tour-page--golden-ring .topbar-all-tours,
+  .tour-page--kyndyg .topbar-all-tours,
+  .tour-page--gega .topbar-all-tours {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 12px;
+    color: #4a4f58;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .tour-page--golden-ring .topbar-all-tours:hover,
+  .tour-page--kyndyg .topbar-all-tours:hover,
+  .tour-page--gega .topbar-all-tours:hover {
+    color: #2c3038;
+    text-decoration: none;
+  }
+
+  .tour-page--golden-ring .tour-back-to-all,
+  .tour-page--kyndyg .tour-back-to-all,
+  .tour-page--gega .tour-back-to-all {
+    display: none;
+  }
+
+  .tour-page--golden-ring .hero.hero--tour,
+  .tour-page--kyndyg .hero.hero--tour,
+  .tour-page--gega .hero.hero--tour {
+    margin-top: 84px;
+  }
+
   .hero {
     margin-top: 76px;
     padding: 106px 0 96px;
@@ -1483,6 +1520,12 @@ h2 {
     padding: 110px 0;
   }
 
+  .tour-page--golden-ring .hero.hero--tour,
+  .tour-page--kyndyg .hero.hero--tour,
+  .tour-page--gega .hero.hero--tour {
+    margin-top: 88px;
+  }
+
   .hero h1 {
     font-size: 42px;
   }
@@ -1552,6 +1595,9 @@ h2 {
 
 .tour-back-to-all {
   text-align: left;
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
 }
 
 .tour-page--golden-ring .tour-back-to-all {
@@ -1571,6 +1617,9 @@ h2 {
   text-decoration: none;
   line-height: 1.25;
   -webkit-tap-highlight-color: rgba(255, 122, 0, 0.12);
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
 }
 
 .tour-back-to-all__link:hover {
@@ -1614,13 +1663,13 @@ h2 {
 
 @media (min-width: 769px) {
   .tour-page--golden-ring .tour-back-to-all {
-    margin-top: 76px;
+    margin-top: 84px;
   }
 }
 
 @media (min-width: 1025px) {
   .tour-page--golden-ring .tour-back-to-all {
-    margin-top: 80px;
+    margin-top: 88px;
   }
 }
 
@@ -1695,13 +1744,13 @@ h2 {
 
 @media (min-width: 769px) {
   .tour-page--kyndyg .tour-back-to-all {
-    margin-top: 76px;
+    margin-top: 84px;
   }
 }
 
 @media (min-width: 1025px) {
   .tour-page--kyndyg .tour-back-to-all {
-    margin-top: 80px;
+    margin-top: 88px;
   }
 }
 
@@ -1979,13 +2028,13 @@ h2 {
 
 @media (min-width: 769px) {
   .tour-page--gega .tour-back-to-all {
-    margin-top: 76px;
+    margin-top: 84px;
   }
 }
 
 @media (min-width: 1025px) {
   .tour-page--gega .tour-back-to-all {
-    margin-top: 80px;
+    margin-top: 88px;
   }
 }
 
