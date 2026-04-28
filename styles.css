@@ -445,6 +445,22 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.card-image-link {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card-title-link,
+.card-title-link:link,
+.card-title-link:visited,
+.card-title-link:hover,
+.card-title-link:active {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .card p {
   margin-bottom: 10px;
   overflow-wrap: anywhere;
