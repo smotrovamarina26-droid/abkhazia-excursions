@@ -1770,6 +1770,14 @@ h2 {
   .tour-page--kyndyg #tour-program .tour-list li {
     margin-bottom: 6px;
   }
+
+  .tour-page--kyndyg #tour-border-rules .tour-accordion-body .tour-list {
+    line-height: 1.5;
+  }
+
+  .tour-page--kyndyg #tour-border-rules .tour-accordion-body .tour-list li {
+    margin-bottom: 6px;
+  }
 }
 
 .tour-page--kyndyg #tour-program .tour-list {
@@ -1816,6 +1824,48 @@ h2 {
   position: absolute;
   top: 0.6em;
   left: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--kyndyg #tour-what-to-bring .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--kyndyg #tour-what-to-bring .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--kyndyg #tour-what-to-bring .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
+.tour-page--kyndyg #tour-border-rules .tour-accordion-body .tour-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tour-page--kyndyg #tour-border-rules .tour-accordion-body .tour-list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tour-page--kyndyg #tour-border-rules .tour-accordion-body .tour-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
