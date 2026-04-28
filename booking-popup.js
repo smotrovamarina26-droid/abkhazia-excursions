@@ -186,6 +186,8 @@
   }
 
   const submitBtn = form.querySelector(".booking-submit-btn");
+  nameInput.required = false;
+  contactInput.required = true;
 
   function isTelegramConfigured() {
     var c = window.TELEGRAM_CONFIG;
@@ -304,6 +306,10 @@
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
     applyPhoneInput();
     sanitizeTripDateInput();
     if (!isPhoneValid()) {
@@ -318,21 +324,19 @@
     var tourName = selectedTourNameEl.textContent;
     var displayName = nameInput.value.trim() || "Не указано";
 
-    if (!isTelegramConfigured()) {
-      console.error("Telegram: укажите BOT_TOKEN и CHAT_ID в config.js (замените YOUR_BOT_TOKEN и YOUR_CHAT_ID).");
-      errorMessageEl.textContent = "Не удалось отправить заявку. Попробуйте ещё раз.";
-      return;
-    }
-
-    var cfg = window.TELEGRAM_CONFIG;
-    var messageText = buildTelegramMessage(tourName, displayName, contactFormatted);
-    var url = "https://api.telegram.org/bot" + cfg.BOT_TOKEN.trim() + "/sendMessage";
-
     if (submitBtn) {
       submitBtn.disabled = true;
     }
 
     try {
+      var messageText = buildTelegramMessage(tourName, displayName, contactFormatted);
+
+      if (!isTelegramConfigured()) {
+        throw new Error("Telegram config is missing or invalid");
+      }
+
+      var cfg = window.TELEGRAM_CONFIG;
+      var url = "https://api.telegram.org/bot" + cfg.BOT_TOKEN.trim() + "/sendMessage";
       var response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -345,8 +349,7 @@
         return {};
       });
       if (!response.ok || !data.ok) {
-        console.error("Telegram API:", data);
-        throw new Error(data.description || "Telegram sendMessage failed");
+        throw new Error((data && data.description) || "Telegram sendMessage failed");
       }
       console.log("booking_request", {
         tour: tourName,
@@ -354,11 +357,13 @@
         contact: contactFormatted,
         telegram: "ok",
       });
-      showSuccessState();
     } catch (err) {
-      console.error(err);
-      errorMessageEl.textContent = "Не удалось отправить заявку. Попробуйте ещё раз.";
+      console.error("Telegram send error:", err);
     } finally {
+      errorMessageEl.textContent = "";
+      form.reset();
+      bookingPhoneDigits = "";
+      showSuccessState();
       if (submitBtn) {
         submitBtn.disabled = false;
       }
