@@ -179,6 +179,13 @@ a.logo:focus-visible {
   margin-bottom: 0.35em;
 }
 
+.hero-trust-line {
+  margin: 14px 0 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
 .btn {
   display: inline-block;
   background: linear-gradient(135deg, #ff7a00, #ff9500);
@@ -261,6 +268,7 @@ a.logo:focus-visible {
 
 .scenario-card {
   display: block;
+  min-width: 0;
   text-decoration: none;
   color: #222;
   background: #fffaf4;
@@ -295,6 +303,19 @@ a.logo:focus-visible {
   transition: color 0.24s ease;
 }
 
+.scenario-hit-badge {
+  display: inline-block;
+  margin: 6px 0 0;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #b84d00;
+  background: rgba(255, 122, 0, 0.14);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .scenario-icon {
   font-size: 15px;
   line-height: 1;
@@ -306,6 +327,7 @@ a.logo:focus-visible {
   color: #666;
   font-size: 14px;
   line-height: 1.45;
+  white-space: nowrap;
   transition: color 0.24s ease;
 }
 
@@ -424,6 +446,21 @@ h2 {
   line-height: 1.2;
 }
 
+.tours-lead {
+  text-align: center;
+  margin: 16px auto 18px;
+  max-width: 36em;
+  padding: 0 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4a5159;
+}
+
+.tours h2 {
+  margin-top: 0;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -469,6 +506,15 @@ h2 {
 .card p {
   margin-bottom: 10px;
   overflow-wrap: anywhere;
+}
+
+.card .card-trust-mini {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6b7380;
 }
 
 .card a {
@@ -862,14 +908,18 @@ h2 {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: flex-start;
-  gap: 9px;
+  gap: 12px;
   margin: 14px 0;
 }
 
 .card-tags span {
-  flex: 0 1 auto;
-  min-width: 0;
-  max-width: calc((100% - 9px) / 2);
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: fit-content;
+  max-width: none;
+  min-width: min-content;
+  white-space: nowrap;
   box-sizing: border-box;
   background: #fff4e8;
   color: #ff7a00;
@@ -878,7 +928,6 @@ h2 {
   font-size: 13px;
   font-weight: 600;
   line-height: 1.3;
-  overflow-wrap: break-word;
 }
 
 .card-tags span.card-tag--nowrap {
@@ -886,12 +935,6 @@ h2 {
   max-width: none;
   min-width: min-content;
   white-space: nowrap;
-}
-
-@media (max-width: 380px) {
-  .card-tags span {
-    max-width: 100%;
-  }
 }
 
 .price {
