@@ -411,6 +411,8 @@ a.logo:focus-visible {
 }
 
 #tours,
+#how-excursions-work,
+#trust-safe-abkhazia,
 #how-trip,
 #advantages,
 #faq,
@@ -463,6 +465,177 @@ h2 {
 
 .tours h2 {
   margin-top: 0;
+}
+
+.trust-how-work {
+  padding: 44px 0 48px;
+  border-top: 1px solid #f0e8de;
+  background: #fffdfa;
+}
+
+.trust-how-work h2 {
+  margin-bottom: 12px;
+}
+
+.trust-how-work__lead {
+  text-align: center;
+  margin: 0 auto 24px;
+  max-width: 40em;
+  padding: 0 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4a5159;
+}
+
+.trust-how-work__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.trust-how-work__item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 16px 16px;
+  background: #fff;
+  border: 1px solid #ffe9d2;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.trust-how-work__icon {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  border-radius: 50%;
+  background: #fff7ed;
+  border: 1px solid #ffe4c4;
+}
+
+.trust-how-work__body {
+  min-width: 0;
+}
+
+.trust-how-work__body strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  color: #1d2128;
+}
+
+.trust-how-work__body p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #5f636d;
+}
+
+.trust-how-work__footer {
+  text-align: center;
+  margin: 24px auto 0;
+  max-width: 44em;
+  padding: 14px 14px 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #6b7280;
+}
+
+.trust-safety-block {
+  padding: 44px 0 48px;
+  background: #f6f9fc;
+}
+
+.trust-safety-block__card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 22px;
+  background: #fff;
+  border: 1px solid #e8edf3;
+  border-radius: 18px;
+  box-shadow:
+    0 1px 0 rgba(255, 155, 80, 0.12),
+    0 12px 36px rgba(30, 50, 80, 0.08);
+}
+
+.trust-safety-block__card h2 {
+  margin: 0 0 18px;
+  text-align: left;
+  font-size: 23px;
+  line-height: 1.28;
+  color: #1a2430;
+}
+
+.trust-safety-block__content {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #454c58;
+}
+
+.trust-safety-block__content p {
+  margin: 0 0 14px;
+}
+
+.trust-safety-block__content p:last-child {
+  margin-bottom: 0;
+}
+
+.trust-safety-block__list {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.trust-safety-block__list li {
+  position: relative;
+  margin-bottom: 6px;
+  padding-left: 1.35em;
+  line-height: 1.5;
+}
+
+.trust-safety-block__list li:last-child {
+  margin-bottom: 0;
+}
+
+.trust-safety-block__list--risks li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  width: 1em;
+  color: #7a8494;
+}
+
+.trust-safety-block__list--checks li::before {
+  content: "\2714";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #238d4a;
+}
+
+.trust-safety-block__tagline {
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid #eef2f6;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #29303a;
+  text-align: left;
 }
 
 .trip-flow {
@@ -1918,6 +2091,19 @@ h2 {
     margin-top: 40px;
   }
 
+  .trust-how-work__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .trust-how-work__lead {
+    margin-bottom: 26px;
+  }
+
+  .trust-how-work {
+    padding: 52px 0 56px;
+  }
+
   .faq .faq-intro {
     margin: -14px auto 28px;
     font-size: 17px;
@@ -1941,6 +2127,8 @@ h2 {
   }
 
   #tours,
+  #how-excursions-work,
+  #trust-safe-abkhazia,
   #how-trip,
   #advantages,
   #faq,
