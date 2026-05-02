@@ -411,7 +411,9 @@ a.logo:focus-visible {
 }
 
 #tours,
+#how-trip,
 #advantages,
+#faq,
 #reviews,
 #how-tours,
 #contacts {
@@ -461,6 +463,92 @@ h2 {
 
 .tours h2 {
   margin-top: 0;
+}
+
+.trip-flow {
+  padding: 36px 0 44px;
+}
+
+.trip-flow-card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 20px 18px 22px;
+  background: #fffaf4;
+  border: 1px solid #ffe3c8;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.trip-flow-card h2 {
+  margin-bottom: 12px;
+}
+
+.trip-flow-lead {
+  margin: 0 auto 16px;
+  max-width: none;
+  padding: 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #5f636d;
+}
+
+.trip-flow-steps-intro {
+  margin: 0 0 8px;
+  padding-left: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #3a3f47;
+}
+
+.trip-flow-steps {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: decimal;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #3a3f47;
+}
+
+.trip-flow-steps li {
+  margin: 0 0 8px;
+  padding-left: 6px;
+}
+
+.trip-flow-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.trip-flow-important {
+  margin-top: 16px;
+  padding-top: 36px;
+  border-top: 1px solid #ffe9d2;
+  text-align: center;
+}
+
+.trip-flow-important-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trip-flow-important-list li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #666c78;
+  background: #fff;
+  border: 1px solid #ffe9d2;
+  border-radius: 999px;
 }
 
 .cards {
@@ -1011,35 +1099,6 @@ h2 {
   margin-right: 0.3em;
 }
 
-.testimonials-grid .testimonial-photo-wrap {
-  margin: 18px 0 0;
-  padding: 0;
-}
-
-.testimonials-grid .testimonial-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.testimonials-grid .testimonial-photo-caption {
-  margin: 8px 0 0;
-  padding: 0;
-  font-size: 13px;
-  line-height: 1.45;
-  font-weight: 400;
-  color: #959aa6;
-}
-
-@media (min-width: 769px) {
-  .testimonials-grid .testimonial-photo-wrap {
-    margin-top: 20px;
-  }
-}
-
 .how-tours-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1059,6 +1118,103 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.faq .faq-intro {
+  text-align: center;
+  margin: -10px auto 22px;
+  max-width: 36em;
+  padding: 0 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4a5159;
+}
+
+.faq .faq-list {
+  max-width: 720px;
+  margin: 16px auto 0;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+  border: 1px solid #ffe9d2;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-item[open] {
+  border-color: #ffd3a3;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+}
+
+.faq-summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #111;
+  cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq-summary:focus {
+  outline: none;
+}
+
+.faq-summary:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(255, 122, 0, 0.45);
+  border-radius: 16px;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  margin-top: 6px;
+  border-right: 2px solid #ff7a00;
+  border-bottom: 2px solid #ff7a00;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] .faq-summary::after {
+  margin-top: 10px;
+  transform: rotate(-135deg);
+}
+
+.faq-answer {
+  padding: 0 18px 16px;
+}
+
+.faq-answer p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #5f636d;
+  overflow-wrap: anywhere;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
 }
 
 .final-cta {
@@ -1509,6 +1665,38 @@ h2 {
     font-size: 34px;
   }
 
+  .trip-flow {
+    padding: 46px 0 58px;
+  }
+
+  .trip-flow-card {
+    padding: 24px 24px 26px;
+    max-width: 600px;
+  }
+
+  .trip-flow-card h2 {
+    margin-bottom: 16px;
+  }
+
+  .trip-flow-lead {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .trip-flow-steps {
+    font-size: 15px;
+    padding-left: 22px;
+  }
+
+  .trip-flow-steps-intro {
+    padding-left: 22px;
+  }
+
+  .trip-flow-important {
+    margin-top: 18px;
+    padding-top: 40px;
+  }
+
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
@@ -1561,12 +1749,32 @@ h2 {
     margin-top: 40px;
   }
 
+  .faq .faq-intro {
+    margin: -14px auto 28px;
+    font-size: 17px;
+  }
+
+  .faq .faq-list {
+    margin-top: 22px;
+  }
+
+  .faq-summary {
+    padding: 18px 22px;
+    font-size: 18px;
+  }
+
+  .faq-answer {
+    padding: 0 22px 18px;
+  }
+
   .card[id] {
     scroll-margin-top: 108px;
   }
 
   #tours,
+  #how-trip,
   #advantages,
+  #faq,
   #reviews,
   #how-tours,
   #contacts {
