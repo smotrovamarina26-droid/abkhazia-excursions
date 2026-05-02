@@ -5,7 +5,6 @@
   const formState = document.getElementById("booking-form-state");
   const form = document.getElementById("booking-form");
   const successState = document.getElementById("booking-success-state");
-  const successCloseBtn = document.getElementById("booking-success-close");
   const successScrollBtn = document.getElementById("booking-success-scroll");
   const selectedTourNameEl = document.getElementById("selected-tour-name");
   const errorMessageEl = document.getElementById("booking-error-message");
@@ -18,17 +17,7 @@
     return;
   }
 
-  const defaultTourProgramUrl = {
-    "Золотое кольцо Абхазии": "pages/zolotoe-koltso-abkhazia.html",
-    "Термальный источник Кындыг": "pages/kyndyg-chernigovka.html",
-    "Джип-тур Гегский водопад": "pages/dzhip-gegskiy-vodopad.html",
-    "Джип-тур на Гегский водопад": "pages/dzhip-gegskiy-vodopad.html",
-  };
-  const TOUR_PROGRAM_URL = Object.assign({}, defaultTourProgramUrl, window.BOOKING_TOUR_PROGRAM_OVERRIDES || {});
-
   let lastFocusedElement = null;
-  let selectedScrollTargetId = "";
-  let selectedProgramPageUrl = "";
   let bookingPhoneDigits = "";
   let pendingTelegramSource = null;
   let pendingTelegramPage = null;
@@ -47,7 +36,6 @@
   function openPopup(tourName, triggerEl) {
     const name = tourName || "Экскурсия";
     selectedTourNameEl.textContent = name;
-    selectedProgramPageUrl = TOUR_PROGRAM_URL[name] || "";
     if (triggerEl && triggerEl.getAttribute) {
       const ds = triggerEl.getAttribute("data-booking-source");
       const dp = triggerEl.getAttribute("data-booking-page");
@@ -81,7 +69,6 @@
   bookButtons.forEach(function (button) {
     button.addEventListener("click", function (event) {
       event.preventDefault();
-      selectedScrollTargetId = button.getAttribute("data-scroll-target") || "";
       openPopup(button.getAttribute("data-tour-name"), button);
     });
   });
@@ -398,29 +385,14 @@
     }
   });
 
-  if (successCloseBtn) {
-    successCloseBtn.addEventListener("click", closePopup);
-  }
   successScrollBtn.addEventListener("click", function () {
-    if (selectedProgramPageUrl) {
-      if (selectedProgramPageUrl.charAt(0) === "#") {
-        closePopup();
-        var hashTarget = document.querySelector(selectedProgramPageUrl);
-        if (hashTarget) {
-          requestAnimationFrame(function () {
-            hashTarget.scrollIntoView({ behavior: "smooth", block: "start" });
-          });
-        }
-        return;
-      }
-      window.location.href = selectedProgramPageUrl;
+    closePopup();
+    var path = (window.location.pathname || "").replace(/\\/g, "/");
+    if (/\/pages\/[^/]+\.html$/i.test(path)) {
+      window.location.href = new URL("../index.html#tours", window.location.href).href;
       return;
     }
-    closePopup();
-    var targetEl = selectedScrollTargetId ? document.getElementById(selectedScrollTargetId) : null;
-    var fallbackEl = document.getElementById("tours");
-    var destination = targetEl || fallbackEl;
-
+    var destination = document.getElementById("tours");
     if (destination) {
       requestAnimationFrame(function () {
         destination.scrollIntoView({ behavior: "smooth", block: "start" });

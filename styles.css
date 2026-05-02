@@ -747,6 +747,77 @@ h2 {
   color: #1d2128;
 }
 
+.booking-intro {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #5a616c;
+}
+
+.booking-urgent-line {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #8b9199;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0 4px;
+}
+
+.booking-urgent-line__prefix {
+  text-align: center;
+}
+
+.booking-urgent-line__phone {
+  flex: 0 0 100%;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.booking-urgent-line__phone a {
+  white-space: nowrap;
+}
+
+.booking-urgent-line a {
+  color: #c45a00;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.booking-urgent-line a:hover {
+  text-decoration: underline;
+}
+
+.booking-urgent-line a:focus {
+  outline: none;
+}
+
+.booking-urgent-line a:focus-visible {
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.35);
+}
+
+@media (max-width: 480px) {
+  .booking-urgent-line {
+    font-size: 11px;
+    line-height: 1.4;
+    row-gap: 3px;
+  }
+
+  .booking-urgent-line__phone {
+    padding-top: 1px;
+  }
+}
+
+@media (max-width: 360px) {
+  .booking-urgent-line {
+    font-size: 10px;
+  }
+}
+
 .booking-form-state.is-hidden {
   display: none;
 }
@@ -819,16 +890,12 @@ h2 {
   box-shadow: 0 8px 18px rgba(255, 122, 0, 0.2);
 }
 
-.booking-trust {
-  margin-top: 4px;
-  padding: 0;
-}
-
-.booking-trust p {
-  margin: 0;
-  color: #6d7380;
-  font-size: 14px;
-  line-height: 1.45;
+.booking-submit-note {
+  margin: 8px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #9ca3af;
+  text-align: center;
 }
 
 .privacy-note {
@@ -837,8 +904,8 @@ h2 {
   margin-top: 10px;
 }
 
-.booking-submit-btn + .privacy-note {
-  margin-top: 16px;
+.booking-urgent-line + .privacy-note {
+  margin-top: 12px;
 }
 
 .tour-page--golden-ring .booking-error-message {
@@ -847,7 +914,7 @@ h2 {
 }
 
 .tour-page--golden-ring .booking-submit-btn {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .booking-error-message {
@@ -897,30 +964,22 @@ h2 {
   color: #1e2430;
 }
 
-.booking-success-state p {
+.booking-success-lead {
   margin: 0 0 18px;
   color: #606674;
   font-size: 16px;
   line-height: 1.45;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
 }
 
-.booking-success-state p .booking-success-note {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.tour-page--golden-ring .booking-success-state p {
-  display: block;
+.tour-page--golden-ring .booking-success-lead {
   max-width: 26rem;
-  margin: 0 auto 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 18px;
 }
 
 @media (max-width: 480px) {
-  .tour-page--golden-ring .booking-success-state p {
+  .tour-page--golden-ring .booking-success-lead {
     font-size: 15px;
     line-height: 1.4;
   }
