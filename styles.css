@@ -725,6 +725,16 @@ h2 {
   cursor: pointer;
 }
 
+.booking-popup-close:focus {
+  outline: none;
+}
+
+.booking-popup-close:focus-visible {
+  outline: none;
+  border-color: #ff9f42;
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.22);
+}
+
 .booking-popup h3 {
   font-size: 22px;
   line-height: 1.35;
@@ -890,6 +900,15 @@ h2 {
   box-shadow: 0 8px 18px rgba(255, 122, 0, 0.2);
 }
 
+.booking-submit-btn:focus {
+  outline: none;
+}
+
+.booking-submit-btn:focus-visible:not(:disabled) {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 159, 66, 0.45), 0 12px 24px rgba(255, 122, 0, 0.28);
+}
+
 .booking-submit-note {
   margin: 8px 0 0;
   font-size: 11px;
@@ -1002,6 +1021,19 @@ h2 {
 .booking-success-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 30px rgba(255, 122, 0, 0.34);
+}
+
+.booking-success-btn:focus {
+  outline: none;
+}
+
+.booking-success-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 159, 66, 0.45), 0 12px 24px rgba(255, 122, 0, 0.28);
+}
+
+.booking-success-btn:focus-visible:hover {
+  box-shadow: 0 0 0 3px rgba(255, 159, 66, 0.45), 0 16px 30px rgba(255, 122, 0, 0.34);
 }
 
 .booking-success-secondary-btn {
