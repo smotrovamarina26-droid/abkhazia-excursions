@@ -602,6 +602,38 @@ a.logo:focus-visible {
   margin-top: 10px;
 }
 
+.payment-block {
+  padding: 40px 0;
+}
+
+.payment-card {
+  background: #fffaf5;
+  border: 1px solid #f3c7a3;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.payment-card h2 {
+  margin-bottom: 12px;
+}
+
+.payment-card p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.payment-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.payment-note {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
 .card[id] {
   scroll-margin-top: 88px;
 }
