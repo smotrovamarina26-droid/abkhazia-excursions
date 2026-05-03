@@ -996,6 +996,37 @@ h2 {
   text-decoration: none;
 }
 
+.card-image-link--hit {
+  position: relative;
+}
+
+.card-hit-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #7a3300;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 186, 120, 0.9);
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+  pointer-events: none;
+}
+
+.card .card-price-lead {
+  margin: 2px 0 6px;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #8b91a0;
+}
+
 .card-title-link,
 .card-title-link:link,
 .card-title-link:visited,
@@ -1018,6 +1049,11 @@ h2 {
   font-weight: 400;
   line-height: 1.4;
   color: #6b7380;
+}
+
+.card .card-trust-mini.card-trust-mini--stars {
+  font-weight: 400;
+  color: #8b91a0;
 }
 
 .card a {
@@ -1062,6 +1098,10 @@ h2 {
   line-height: 1.4;
   color: #8a909a;
   text-align: left;
+}
+
+#tour-kyndyg .card-book-note {
+  color: #8b91a0;
 }
 
 .card-program-link {
