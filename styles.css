@@ -45,6 +45,7 @@ img {
 }
 
 .topbar-content {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -96,8 +97,88 @@ a.logo:focus-visible {
   white-space: nowrap;
 }
 
-.top-btn {
+.topbar .menu a {
+  font-size: 13px;
+}
+
+.topbar-trailing {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin-left: auto;
+  flex-shrink: 0;
+}
+
+.topbar-burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: #ff7a00;
+  font-family: inherit;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topbar-burger-graphic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 22px;
+}
+
+.topbar-burger-lines {
+  display: block;
+  color: #ff7a00;
+}
+
+.topbar-burger-x {
+  display: none;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+  color: #ff7a00;
+}
+
+.topbar-content.is-menu-open .topbar-burger-lines {
+  display: none;
+}
+
+.topbar-content.is-menu-open .topbar-burger-x {
+  display: block;
+}
+
+.topbar-burger:focus,
+.topbar-burger:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.topbar-burger:focus-visible {
+  color: #e56f00;
+}
+
+.top-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-left: 0;
   background: #ff7a00;
   color: #fff;
   padding: 9px 12px;
@@ -107,6 +188,7 @@ a.logo:focus-visible {
   font-size: 13px;
   line-height: 1.2;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(255, 122, 0, 0.25);
 }
 
 .top-btn:focus {
@@ -114,7 +196,7 @@ a.logo:focus-visible {
 }
 
 .top-btn:focus-visible {
-  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.24);
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.24), 0 2px 8px rgba(255, 122, 0, 0.25);
 }
 
 .topbar-all-tours {
@@ -127,6 +209,9 @@ a.logo:focus-visible {
   }
 
   .topbar-content {
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: visible;
     padding: 10px 12px;
     border-radius: 14px;
   }
@@ -136,8 +221,66 @@ a.logo:focus-visible {
     font-size: 15px;
   }
 
+  .topbar-burger {
+    display: inline-flex;
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .topbar-burger-graphic {
+    width: 26px;
+    height: 20px;
+  }
+
+  .topbar-burger-lines {
+    width: 26px;
+    height: 18px;
+  }
+
+  .topbar-burger-x {
+    font-size: 28px;
+  }
+
+  .topbar .menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 2px;
+    margin: 0;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #ffe5cc;
+    border-radius: 14px;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  }
+
+  .topbar-content.is-menu-open > .menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .topbar .menu a {
+    font-size: 17px;
+    padding: 12px 8px;
+    white-space: normal;
+    border-radius: 8px;
+  }
+
   .top-btn {
-    display: inline-block;
     padding: 8px 11px;
     font-size: 13px;
   }
@@ -1937,7 +2080,7 @@ h2 {
 
   .menu {
     display: flex;
-    gap: 14px;
+    gap: 10px 12px;
     flex-wrap: wrap;
   }
 
@@ -2285,10 +2428,6 @@ h2 {
   scroll-margin-top: 90px;
 }
 
-.tour-page--golden-ring .topbar .menu {
-  display: none !important;
-}
-
 .tour-page--golden-ring a.logo,
 .tour-page--golden-ring a.logo:link,
 .tour-page--golden-ring a.logo:visited,
@@ -2413,10 +2552,6 @@ h2 {
 }
 
 /* Тур «Термальный источник Кындыг»: hero, шапка и полоса «назад» — те же приёмы, что у «Золотого кольца» */
-.tour-page--kyndyg .topbar .menu {
-  display: none !important;
-}
-
 .tour-page--kyndyg a.logo,
 .tour-page--kyndyg a.logo:link,
 .tour-page--kyndyg a.logo:visited,
@@ -2697,10 +2832,6 @@ h2 {
 }
 
 /* Тур «Джип-тур на Гегский водопад и озеро Рица»: hero, шапка и полоса «назад» */
-.tour-page--gega .topbar .menu {
-  display: none !important;
-}
-
 .tour-page--gega a.logo,
 .tour-page--gega a.logo:link,
 .tour-page--gega a.logo:visited,

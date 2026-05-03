@@ -10,14 +10,42 @@
 <body class="tour-page tour-page--kyndyg">
   <header class="topbar">
     <div class="container topbar-content">
-      <a href="../index.html" class="logo">Мандариныч Тур</a>
+      <a href="../index.html" class="logo">Экскурсии&nbsp;в Абхазию</a>
       <a href="../index.html#tours" class="topbar-all-tours">Все экскурсии</a>
-      <nav class="menu">
+      <nav class="menu" id="topbar-nav" aria-label="Навигация по странице">
         <a href="../index.html#tours">Экскурсии</a>
-        <a href="../index.html#advantages">Преимущества</a>
-        <a href="#">Отзывы</a>
+        <a href="#tour-logistics">Как проходит</a>
+        <a href="#tour-reviews">Отзывы</a>
+        <a href="#tour-border-rules">Вопросы</a>
+        <a href="../index.html#contacts">Контакты</a>
       </nav>
-      <a href="#" class="top-btn" data-open-contact-modal="true">Связаться</a>
+      <div class="topbar-trailing">
+        <a href="#" class="top-btn" data-open-contact-modal="true">Связаться</a>
+        <button
+          type="button"
+          class="topbar-burger"
+          id="topbar-burger"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="topbar-nav"
+        >
+          <span class="topbar-burger-graphic" aria-hidden="true">
+            <svg
+              class="topbar-burger-lines"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 22"
+              width="28"
+              height="20"
+              fill="none"
+            >
+              <line x1="2" y1="3" x2="30" y2="3" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+              <line x1="2" y1="11" x2="30" y2="11" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+              <line x1="2" y1="19" x2="30" y2="19" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            </svg>
+            <span class="topbar-burger-x">×</span>
+          </span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -604,6 +632,7 @@
   <script src="../config.js"></script>
   <script src="../booking-popup.js"></script>
   <script src="../contact-modal.js"></script>
+  <script src="../topbar-menu.js"></script>
   <script>
     (function () {
       var root = document.getElementById("tour-pricing");
