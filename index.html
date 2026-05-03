@@ -71,10 +71,21 @@
   </header>
 
   <section class="hero-benefits">
-    <div class="container hero-benefits-list">
-      <span class="hero-benefit hero-benefit--secondary">Поможем быстро пройти границу</span>
-      <span class="hero-benefit hero-benefit--secondary">Точка посадки рядом с вами</span>
-      <span class="hero-benefit hero-benefit--secondary">Сопровождение на всём маршруте</span>
+    <div class="container">
+      <ul class="hero-benefits-checklist">
+        <li class="hero-benefits-checklist__item">
+          <span class="hero-benefits-checklist__check" aria-hidden="true">✓</span>
+          <span class="hero-benefits-checklist__text">Забираем от отеля или рядом с ним</span>
+        </li>
+        <li class="hero-benefits-checklist__item">
+          <span class="hero-benefits-checklist__check" aria-hidden="true">✓</span>
+          <span class="hero-benefits-checklist__text">Помогаем быстро пройти границу</span>
+        </li>
+        <li class="hero-benefits-checklist__item">
+          <span class="hero-benefits-checklist__check" aria-hidden="true">✓</span>
+          <span class="hero-benefits-checklist__text">Сопровождаем на всём маршруте</span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -84,20 +95,20 @@
         <h2>Что вам больше хочется в Абхазии?</h2>
         <div class="scenario-cards">
           <a href="#tour-golden-ring" class="scenario-card scenario-card--max">
+            <span class="scenario-hit-badge">🔥 Хит</span>
             <h3>Увидеть максимум</h3>
-            <span class="scenario-hit-badge">Хит</span>
             <p>Гагра, Рица, Новый Афон — всё за 1 день</p>
-            <span class="scenario-cta" aria-hidden="true">Выбрать →</span>
+            <span class="scenario-cta" aria-hidden="true"><span class="scenario-cta__label">Выбрать</span><span class="scenario-cta__arrow">→</span></span>
           </a>
           <a href="#tour-kyndyg" class="scenario-card scenario-card--relax">
             <h3>Отдохнуть и расслабиться</h3>
             <p>Горячие источники и спокойный отдых</p>
-            <span class="scenario-cta" aria-hidden="true">Выбрать →</span>
+            <span class="scenario-cta" aria-hidden="true"><span class="scenario-cta__label">Выбрать</span><span class="scenario-cta__arrow">→</span></span>
           </a>
           <a href="#tour-gega-jeep" class="scenario-card scenario-card--drive">
             <h3>Получить драйв и эмоции</h3>
             <p>Джип-тур в горы и на Гегский водопад</p>
-            <span class="scenario-cta" aria-hidden="true">Выбрать →</span>
+            <span class="scenario-cta" aria-hidden="true"><span class="scenario-cta__label">Выбрать</span><span class="scenario-cta__arrow">→</span></span>
           </a>
         </div>
       </div>
@@ -113,66 +124,78 @@
         <div class="cards">
 
           <article id="tour-golden-ring" class="card">
-            <a href="pages/zolotoe-koltso-abkhazia.html" class="card-image-link card-image-link--hit">
-              <span class="card-hit-badge">🔥 Хит</span>
-              <img src="images/ritsa-card.jpg" alt="Озеро Рица" class="card-image">
-            </a>
-            <h3><a href="pages/zolotoe-koltso-abkhazia.html" class="card-title-link">Золотое кольцо Абхазии</a></h3>
-            <p>За 1 день — все главные места Абхазии: Гагра, Рица, Новый Афон</p>
-            <p class="card-trust-mini card-trust-mini--stars">Более 1000 туристов уже выбрали этот маршрут</p>
-          
-            <div class="card-tags">
-              <span>Топ-маршрут</span>
-              <span>Для первого знакомства</span>
-              <span>Профессиональный гид</span>
+            <div class="card-section card-section--lead">
+              <a href="pages/zolotoe-koltso-abkhazia.html" class="card-image-link card-image-link--hit">
+                <span class="card-hit-badge">🔥 Хит</span>
+                <img src="images/ritsa-card.jpg" alt="Озеро Рица" class="card-image">
+              </a>
+              <h3><a href="pages/zolotoe-koltso-abkhazia.html" class="card-title-link">Золотое кольцо Абхазии</a></h3>
+              <p>За 1 день — все главные места Абхазии: Гагра, Рица, Новый Афон</p>
             </div>
-          
-            <p class="card-price-lead">Выезды каждый день</p>
-            <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
-            <a href="#" class="card-book-btn" data-tour-name="Золотое кольцо Абхазии" data-scroll-target="tour-golden-ring">Забронировать место</a>
-            <p class="card-book-note">На ближайшие даты осталось мало мест</p>
-            <a href="pages/zolotoe-koltso-abkhazia.html" class="card-program-link">Подробнее об экскурсии →</a>
+            <div class="card-section card-section--highlights">
+              <p class="card-trust-mini card-trust-mini--stars">Более 1000 туристов уже выбрали этот маршрут</p>
+              <div class="card-tags">
+                <span>Топ-маршрут</span>
+                <span>Для первого знакомства</span>
+                <span>Профессиональный гид</span>
+              </div>
+            </div>
+            <div class="card-section card-section--booking">
+              <p class="card-price-lead">Выезды каждый день</p>
+              <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
+              <a href="#" class="card-book-btn" data-tour-name="Золотое кольцо Абхазии" data-scroll-target="tour-golden-ring">Забронировать место</a>
+              <p class="card-book-note">На ближайшие даты осталось мало мест</p>
+              <a href="pages/zolotoe-koltso-abkhazia.html" class="card-program-link">Подробнее об экскурсии →</a>
+            </div>
           </article>
 
           <article id="tour-kyndyg" class="card">
-            <a href="pages/kyndyg-chernigovka.html" class="card-image-link">
-              <img src="images/kyndyg-card.jpg" alt="Термальный источник Кындыг" class="card-image">
-            </a>
-            <h3><a href="pages/kyndyg-chernigovka.html" class="card-title-link">Термальные источники Кындыг</a></h3>
-            <p>Горячие источники и прогулка в Сухуме</p>
-            <p>2 часа купания в термальных бассейнах</p>
-          
-            <div class="card-tags">
-              <span>Отдых и восстановление</span>
-              <span>Купание</span>
-              <span class="card-tag--nowrap">Спокойный формат поездки</span>
+            <div class="card-section card-section--lead">
+              <a href="pages/kyndyg-chernigovka.html" class="card-image-link">
+                <img src="images/kyndyg-card.jpg" alt="Термальный источник Кындыг" class="card-image">
+              </a>
+              <h3><a href="pages/kyndyg-chernigovka.html" class="card-title-link">Термальные источники Кындыг</a></h3>
+              <p>Горячие источники и прогулка в Сухуме</p>
+              <p>2 часа купания в термальных бассейнах</p>
             </div>
-          
-            <p class="card-price-lead">Выезды по чётным числам</p>
-            <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
-            <a href="#" class="card-book-btn" data-tour-name="Термальный источник Кындыг" data-scroll-target="tour-kyndyg">Забронировать место</a>
-            <p class="card-book-note">Лучше бронировать заранее</p>
-            <a href="pages/kyndyg-chernigovka.html" class="card-program-link">Подробнее об экскурсии →</a>
+            <div class="card-section card-section--highlights">
+              <div class="card-tags">
+                <span>Отдых и восстановление</span>
+                <span>Купание</span>
+                <span class="card-tag--nowrap">Спокойный формат поездки</span>
+              </div>
+            </div>
+            <div class="card-section card-section--booking">
+              <p class="card-price-lead">Выезды по чётным числам</p>
+              <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
+              <a href="#" class="card-book-btn" data-tour-name="Термальный источник Кындыг" data-scroll-target="tour-kyndyg">Забронировать место</a>
+              <p class="card-book-note">Лучше бронировать заранее</p>
+              <a href="pages/kyndyg-chernigovka.html" class="card-program-link">Подробнее об экскурсии →</a>
+            </div>
           </article>
 
           <article id="tour-gega-jeep" class="card">
-            <a href="pages/dzhip-gegskiy-vodopad.html" class="card-image-link">
-              <img src="images/gega-jeep-card.jpg" alt="Джип-тур на Гегский водопад" class="card-image">
-            </a>
-            <h3><a href="pages/dzhip-gegskiy-vodopad.html" class="card-title-link">Джип-тур Гегский водопад</a></h3>
-            <p>Поездка на джипах по бездорожью к Гегскому водопаду и озеру Рица</p>
-          
-            <div class="card-tags">
-              <span>Яркие эмоции</span>
-              <span>Небольшие группы</span>
-              <span>Экстрим и драйв</span>
+            <div class="card-section card-section--lead">
+              <a href="pages/dzhip-gegskiy-vodopad.html" class="card-image-link">
+                <img src="images/gega-jeep-card.jpg" alt="Джип-тур на Гегский водопад" class="card-image">
+              </a>
+              <h3><a href="pages/dzhip-gegskiy-vodopad.html" class="card-title-link">Джип-тур Гегский водопад</a></h3>
+              <p>Поездка на джипах по бездорожью к Гегскому водопаду и озеру Рица</p>
             </div>
-          
-            <p class="card-price-lead">Выезды каждый день</p>
-            <p class="price">от 2800 ₽<span class="price-per-person">за человека</span></p>
-            <a href="#" class="card-book-btn" data-tour-name="Джип-тур Гегский водопад" data-scroll-target="tour-gega-jeep">Забронировать место</a>
-            <p class="card-book-note">На ближайшие даты осталось мало мест</p>
-            <a href="pages/dzhip-gegskiy-vodopad.html" class="card-program-link">Подробнее об экскурсии →</a>
+            <div class="card-section card-section--highlights">
+              <div class="card-tags">
+                <span>Яркие эмоции</span>
+                <span>Небольшие группы</span>
+                <span>Экстрим и драйв</span>
+              </div>
+            </div>
+            <div class="card-section card-section--booking">
+              <p class="card-price-lead">Выезды каждый день</p>
+              <p class="price">от 2800 ₽<span class="price-per-person">за человека</span></p>
+              <a href="#" class="card-book-btn" data-tour-name="Джип-тур Гегский водопад" data-scroll-target="tour-gega-jeep">Забронировать место</a>
+              <p class="card-book-note">На ближайшие даты осталось мало мест</p>
+              <a href="pages/dzhip-gegskiy-vodopad.html" class="card-program-link">Подробнее об экскурсии →</a>
+            </div>
           </article>
 
         </div>
