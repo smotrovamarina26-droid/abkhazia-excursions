@@ -549,6 +549,59 @@ a.logo:focus-visible {
   box-shadow: 0 14px 26px rgba(255, 122, 0, 0.14), 0 10px 20px rgba(0, 0, 0, 0.07);
 }
 
+.booking-process {
+  padding: 40px 0;
+}
+
+.booking-card {
+  background: #fffaf5;
+  border: 1px solid #f3c7a3;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.booking-card h2 {
+  margin-bottom: 12px;
+}
+
+.booking-card p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.booking-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 16px 0;
+}
+
+.feature {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 11px 12px;
+  background: rgba(255, 138, 61, 0.07);
+  border-radius: 10px;
+}
+
+.feature .icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.mandarin-note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
 .card[id] {
   scroll-margin-top: 88px;
 }
