@@ -819,6 +819,7 @@ a.logo:focus-visible {
 #trust-who-helps,
 #how-booking,
 #how-trip,
+#trip-documents,
 #advantages,
 #faq,
 #reviews,
@@ -1139,6 +1140,89 @@ h2 {
   background: #fff;
   border: 1px solid #ffe9d2;
   border-radius: 999px;
+}
+
+.trip-documents {
+  padding: 28px 0 32px;
+  background: #fffdfa;
+  border-top: 1px solid #f0e8de;
+}
+
+.trip-documents__card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  background: #fffaf5;
+  border: 1px solid #f3c7a3;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(255, 140, 80, 0.07);
+}
+
+.trip-documents__card h2 {
+  margin-bottom: 10px;
+}
+
+.trip-documents__lead {
+  text-align: center;
+  margin: 0 auto 10px;
+  max-width: 40em;
+  padding: 0 6px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #4a5159;
+}
+
+.trip-documents__intro {
+  margin: 0 auto 14px;
+  max-width: 52em;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #454c58;
+}
+
+.trip-documents__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin: 0 0 13px;
+}
+
+.trip-documents__item {
+  padding: 11px 12px;
+  background: #fff;
+  border: 1px solid #ffe9d2;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.trip-documents__item-title {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.32;
+  color: #1d2128;
+}
+
+.trip-documents__item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.52;
+  color: #5f636d;
+}
+
+.trip-documents__note {
+  margin: 0;
+  padding: 11px 12px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fffef9 0%, #fff9f3 100%);
+  border: 1px solid #ffd8b8;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #29303a;
+  text-align: center;
 }
 
 .cards {
@@ -1853,8 +1937,8 @@ h2 {
 }
 
 .testimonials-grid .testimonial-author {
-  white-space: nowrap;
-  overflow-wrap: normal;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .testimonials-grid .testimonial-stars {
@@ -1867,8 +1951,8 @@ h2 {
 
 .testimonials .reviews-subtitle {
   text-align: center;
-  margin: 0 auto 20px;
-  max-width: 36em;
+  margin: 0 auto 10px;
+  max-width: 40em;
   padding: 0 6px;
   font-size: 16px;
   font-weight: 400;
@@ -1876,8 +1960,104 @@ h2 {
   color: #4a5159;
 }
 
+.testimonials-avito-trust {
+  max-width: 520px;
+  margin: 0 auto 16px;
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #3a3f47;
+  background: #fff8ef;
+  border: 1px solid #ffd8b8;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.testimonials-avito-cta {
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.testimonials-avito-cta .btn {
+  display: inline-block;
+}
+
+.testimonials-avito-caption {
+  text-align: center;
+  margin: 0 auto 22px;
+  max-width: 38em;
+  padding: 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #8a9099;
+}
+
+.testimonial-source {
+  margin: 4px 0 10px;
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 500;
+  color: #9a9fa8;
+}
+
 .testimonials .testimonials-grid {
   margin-top: 0;
+}
+
+.testimonials-show-more {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin: 6px auto 2px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  cursor: pointer;
+  background: #fff;
+  color: #e56700;
+  border: 2px solid #ffb366;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.testimonials-show-more:hover {
+  transform: translateY(-2px);
+  border-color: #ff9a3c;
+  box-shadow: 0 10px 22px rgba(255, 154, 60, 0.18);
+}
+
+.testimonials-show-more:focus,
+.testimonials-show-more:focus-visible {
+  outline: none;
+}
+
+.testimonials-show-more:focus-visible {
+  border-color: #ff9a3c;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    gap: 13px;
+    margin-top: 22px;
+  }
+
+  .testimonials .trust-item {
+    padding: 15px 15px;
+  }
+
+  .testimonials .trust-item strong {
+    margin-bottom: 8px;
+  }
+
+  .testimonials .testimonial-source {
+    margin: 3px 0 8px;
+  }
 }
 
 .how-tours-grid {
@@ -2643,8 +2823,24 @@ h2 {
   }
 
   .testimonials .reviews-subtitle {
-    margin-bottom: 26px;
+    margin-bottom: 12px;
     font-size: 17px;
+  }
+
+  .testimonials-avito-trust {
+    margin-bottom: 18px;
+    font-size: 15px;
+    padding: 14px 18px;
+  }
+
+  .testimonials-avito-cta {
+    margin-bottom: 12px;
+  }
+
+  .testimonials-avito-caption {
+    margin-bottom: 28px;
+    font-size: 14px;
+    max-width: 42em;
   }
 
   .testimonials .testimonials-grid {
@@ -2689,6 +2885,29 @@ h2 {
     padding: 15px 16px;
   }
 
+  .trip-documents__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .trip-documents {
+    padding: 38px 0 44px;
+  }
+
+  .trip-documents__card {
+    padding: 24px 22px;
+  }
+
+  .trip-documents__item {
+    padding: 13px 14px;
+  }
+
+  .trip-documents__note {
+    font-size: 16px;
+    padding: 15px 16px;
+  }
+
   .faq .faq-intro {
     margin: -14px auto 28px;
     font-size: 17px;
@@ -2714,6 +2933,7 @@ h2 {
   #tours,
   #how-booking,
   #how-trip,
+  #trip-documents,
   #advantages,
   #faq,
   #reviews,
