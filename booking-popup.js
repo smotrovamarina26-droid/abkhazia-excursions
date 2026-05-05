@@ -311,9 +311,15 @@
     var tourName = selectedTourNameEl.textContent;
     var displayName = nameInput.value.trim() || "Не указано";
 
+    var savedSubmitLabel = submitBtn ? submitBtn.textContent : "";
     if (submitBtn) {
       submitBtn.disabled = true;
     }
+
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function () {
+      controller.abort();
+    }, 10000);
 
     try {
       var messageText = buildTelegramMessage(tourName, displayName, contactFormatted);
@@ -331,6 +337,7 @@
           chat_id: cfg.CHAT_ID.trim(),
           text: messageText,
         }),
+        signal: controller.signal,
       });
       var data = await response.json().catch(function () {
         return {};
@@ -344,16 +351,25 @@
         contact: contactFormatted,
         telegram: "ok",
       });
-    } catch (err) {
-      console.error("Telegram send error:", err);
-    } finally {
+
       errorMessageEl.textContent = "";
       form.reset();
       bookingPhoneDigits = "";
       showSuccessState();
       if (submitBtn) {
         submitBtn.disabled = false;
+        submitBtn.textContent = savedSubmitLabel;
       }
+    } catch (err) {
+      console.error("Telegram send error:", err);
+      errorMessageEl.textContent =
+        "Не удалось отправить заявку. Попробуйте ещё раз или напишите нам в WhatsApp, Telegram или Max.";
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = savedSubmitLabel;
+      }
+    } finally {
+      clearTimeout(timeoutId);
     }
   });
 
