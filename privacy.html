@@ -79,34 +79,29 @@
       color: #333946;
     }
 
-    .privacy-contacts a {
-      color: #ff7a00;
-      text-decoration: none;
-      font-weight: 600;
+    .privacy-card .direct-contact-phone {
+      margin: 0 0 14px;
+      max-width: 34em;
+      text-align: left;
     }
 
-    .privacy-contacts a:hover {
+    .privacy-card .direct-contact-actions {
+      margin: 0;
+      max-width: 420px;
+    }
+
+    .privacy-card p.terms-back {
+      margin: 32px 0 12px;
+    }
+
+    .privacy-card p.terms-back a {
       color: #d96a00;
-      text-decoration: underline;
-    }
-
-    .privacy-back {
-      margin-top: 8px;
-      display: inline-block;
-      background: linear-gradient(135deg, #ff7a00, #ff9500);
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 12px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 15px;
-      box-shadow: 0 10px 22px rgba(255, 122, 0, 0.25);
-      transition: transform 0.24s ease, box-shadow 0.24s ease;
     }
 
-    .privacy-back:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 26px rgba(255, 122, 0, 0.32);
+    .privacy-card p.terms-back a:hover {
+      text-decoration: underline;
     }
 
     @media (min-width: 481px) {
@@ -175,15 +170,35 @@
 
       <h2>7. Контакты</h2>
       <p>По вопросам обработки персональных данных можно связаться с нами:</p>
-      <ul class="privacy-list privacy-contacts">
-        <li>Написать в Макс: <a href="https://max.ru/u/f9LHodD0cOLcIavsnmkmUaQOuLh2m5zb_CNUB02shmV-u5GIclKKnWoflec" target="_blank" rel="noopener noreferrer">https://max.ru/u/f9LHodD0cOLcIavsnmkmUaQOuLh2m5zb_CNUB02shmV-u5GIclKKnWoflec</a></li>
-        <li>Телефон: <a href="tel:+79678007552">+7 967 800-75-52</a></li>
-      </ul>
+      <p class="direct-contact-phone">
+        Телефон: <a href="tel:+79678007552">+7 967 800-75-52</a>
+      </p>
+      <div class="direct-contact-actions">
+        <a href="tel:+79678007552" class="contact-sheet-btn contact-sheet-btn--primary">Позвонить</a>
+        <a
+          href="https://wa.me/79678007552"
+          class="contact-sheet-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >WhatsApp</a>
+        <a
+          href="https://t.me/Marina_Sochi_Adler"
+          class="contact-sheet-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Telegram</a>
+        <a
+          href="https://max.ru/u/f9LHodD0cOLcIavsnmkmUaQOuLh2m5zb_CNUB02shmV-u5GIclKKnWoflec"
+          class="contact-sheet-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Max</a>
+      </div>
 
       <h2>8. Изменение политики</h2>
       <p>Мы можем обновлять настоящую Политику конфиденциальности. Актуальная версия всегда размещается на этой странице.</p>
 
-      <a href="index.html" class="privacy-back">Вернуться на главную</a>
+      <p class="terms-back"><a href="index.html" class="terms-back-link">← Вернуться на главную</a></p>
     </article>
   </main>
 
