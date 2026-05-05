@@ -2429,6 +2429,38 @@ h2 {
   font-size: 13px;
 }
 
+.site-footer-doc span[aria-hidden="true"] {
+  display: inline;
+}
+
+.site-footer-legal {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid #f0dfcd;
+  border-radius: 12px;
+  background: #fffdf9;
+}
+
+.site-footer-legal p + p {
+  margin-top: 4px;
+}
+
+.site-footer-legal p {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6a707a;
+}
+
+.site-footer-legal a {
+  color: #d96a00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer-legal a:hover {
+  text-decoration: underline;
+}
+
 .site-footer-doc a {
   color: #7a808a;
   text-decoration: none;
@@ -3068,6 +3100,17 @@ h2 {
 
   .booking-success-state h4 {
     font-size: 27px;
+  }
+
+  .site-footer-doc {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .site-footer-doc span[aria-hidden="true"] {
+    display: none;
   }
 }
 
