@@ -29,22 +29,17 @@
     max: "https://max.ru/u/f9LHodD0cOLclavsnmkmUaQOu5GlclKKnWoflec",
   };
 
-  function bindSubmitErrorContactButtons() {
-    var actions = errorMessageEl.querySelector(".contact-sheet-actions");
-    if (!actions) {
+  function handleSubmitErrorContactNavigation(event) {
+    var link = event.target && event.target.closest ? event.target.closest("[data-submit-error-contact]") : null;
+    if (!link || !errorMessageEl.contains(link)) {
       return;
     }
-    var buttons = actions.querySelectorAll("button[data-booking-contact-href]");
-    buttons.forEach(function (btn) {
-      btn.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        var href = btn.getAttribute("data-booking-contact-href");
-        if (href) {
-          window.location.href = href;
-        }
-      });
-    });
+    event.preventDefault();
+    event.stopPropagation();
+    var href = link.getAttribute("href");
+    if (href) {
+      window.location.href = href;
+    }
   }
 
   function clearErrorMessage() {
@@ -61,20 +56,28 @@
     errorMessageEl.innerHTML =
       '<p class="booking-error-text">Не удалось отправить заявку автоматически. Напишите нам удобным способом — мы быстро поможем забронировать экскурсию.</p>' +
       '<div class="contact-sheet-actions">' +
-      '<button type="button" class="contact-sheet-btn" data-booking-contact-href="' +
+      '<a href="' +
       CONTACT_LINKS.whatsapp +
-      '">Написать в WhatsApp</button>' +
-      '<button type="button" class="contact-sheet-btn" data-booking-contact-href="' +
+      '" class="contact-sheet-btn" data-submit-error-contact>Написать в WhatsApp</a>' +
+      '<a href="' +
       CONTACT_LINKS.telegram +
-      '">Написать в Telegram</button>' +
-      '<button type="button" class="contact-sheet-btn" data-booking-contact-href="' +
+      '" class="contact-sheet-btn" data-submit-error-contact>Написать в Telegram</a>' +
+      '<a href="' +
       CONTACT_LINKS.max +
-      '">Написать в Max</button>' +
-      '<button type="button" class="contact-sheet-btn contact-sheet-btn--primary" data-booking-contact-href="' +
+      '" class="contact-sheet-btn" data-submit-error-contact>Написать в Max</a>' +
+      '<a href="' +
       CONTACT_LINKS.phone +
-      '">Позвонить</button>' +
-      "</div>";
-    bindSubmitErrorContactButtons();
+      '" class="contact-sheet-btn contact-sheet-btn--primary" data-submit-error-contact>Позвонить</a>' +
+      "</div>" +
+      '<p class="booking-error-text booking-error-text--fallback">Если кнопки не открылись, напишите нам: <a href="' +
+      CONTACT_LINKS.whatsapp +
+      '" data-submit-error-contact>WhatsApp</a>, <a href="' +
+      CONTACT_LINKS.telegram +
+      '" data-submit-error-contact>Telegram</a>, <a href="' +
+      CONTACT_LINKS.max +
+      '" data-submit-error-contact>Max</a> или позвоните <a href="' +
+      CONTACT_LINKS.phone +
+      '" data-submit-error-contact>+7 967 800-75-52</a>.</p>';
   }
 
   function showFormState() {
@@ -131,6 +134,8 @@
   if (closeBtn) {
     closeBtn.addEventListener("click", closePopup);
   }
+  errorMessageEl.addEventListener("click", handleSubmitErrorContactNavigation);
+  errorMessageEl.addEventListener("touchend", handleSubmitErrorContactNavigation);
 
   overlay.addEventListener("click", function (event) {
     if (event.target === overlay) {
