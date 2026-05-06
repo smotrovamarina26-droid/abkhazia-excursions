@@ -19,10 +19,11 @@
 
   let lastFocusedElement = null;
   let bookingPhoneDigits = "";
-  let pendingTelegramSource = null;
-  let pendingTelegramPage = null;
+  let pendingBookingSource = null;
+  let pendingBookingPage = null;
   let hasSubmitErrorState = false;
   const SUBMIT_ERROR_CALL_HREF = "tel:+79678007552";
+  const BOOKING_API_URL = "https://abkhazia-excursions.vercel.app/api/telegram-booking";
 
   function handleSubmitErrorContactNavigation(event) {
     var link = event.target && event.target.closest ? event.target.closest("[data-submit-error-contact]") : null;
@@ -74,11 +75,11 @@
     if (triggerEl && triggerEl.getAttribute) {
       const ds = triggerEl.getAttribute("data-booking-source");
       const dp = triggerEl.getAttribute("data-booking-page");
-      pendingTelegramSource = ds != null && String(ds).trim() !== "" ? String(ds).trim() : null;
-      pendingTelegramPage = dp != null && String(dp).trim() !== "" ? String(dp).trim() : null;
+      pendingBookingSource = ds != null && String(ds).trim() !== "" ? String(ds).trim() : null;
+      pendingBookingPage = dp != null && String(dp).trim() !== "" ? String(dp).trim() : null;
     } else {
-      pendingTelegramSource = null;
-      pendingTelegramPage = null;
+      pendingBookingSource = null;
+      pendingBookingPage = null;
     }
     resetSubmitErrorState();
     form.reset();
@@ -238,20 +239,6 @@
     showSubmitButton();
   }
 
-  function isTelegramConfigured() {
-    var c = window.TELEGRAM_CONFIG;
-    if (!c || typeof c.BOT_TOKEN !== "string" || typeof c.CHAT_ID !== "string") {
-      return false;
-    }
-    if (!c.BOT_TOKEN.trim() || !c.CHAT_ID.trim()) {
-      return false;
-    }
-    if (c.BOT_TOKEN === "YOUR_BOT_TOKEN" || c.CHAT_ID === "YOUR_CHAT_ID") {
-      return false;
-    }
-    return true;
-  }
-
   function formatTripDate(dateRaw) {
     if (typeof dateRaw !== "string") {
       return "";
@@ -297,60 +284,37 @@
     }
   }
 
-  function getTripDateLine() {
-    if (!tripDateInput) {
+  function fieldOrEmpty(value) {
+    if (value == null) {
       return "";
     }
-    var tripDate = formatTripDate(tripDateInput.value);
-    if (!tripDate) {
-      return "";
-    }
-    return "Дата поездки: " + tripDate;
+    return String(value).trim();
   }
 
-  function buildTelegramMessage(tourName, displayName, phoneFormatted) {
-    var timeStr = new Date().toLocaleString("ru-RU", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    });
-    var sourceLine =
-      pendingTelegramSource != null
-        ? pendingTelegramSource
-        : typeof window.BOOKING_TELEGRAM_SOURCE === "string" && window.BOOKING_TELEGRAM_SOURCE.trim()
-          ? window.BOOKING_TELEGRAM_SOURCE.trim()
-          : "Сайт — карточка экскурсии";
-    var pageLine =
-      pendingTelegramPage != null
-        ? pendingTelegramPage
-        : typeof window.BOOKING_TELEGRAM_PAGE === "string" && window.BOOKING_TELEGRAM_PAGE.trim()
-          ? window.BOOKING_TELEGRAM_PAGE.trim()
-          : "Главная";
-    var tripDateLine = getTripDateLine();
-    return (
-      "📩 Новая заявка\n\n" +
-      "Источник: " +
-      sourceLine +
-      "\n" +
-      "Страница: " +
-      pageLine +
-      "\n" +
-      "Экскурсия: " +
-      tourName +
-      "\n" +
-      "Имя: " +
-      displayName +
-      "\n" +
-      "Телефон: " +
-      phoneFormatted +
-      (tripDateLine ? "\n" + tripDateLine : "") +
-      "\n" +
-      "Время: " +
-      timeStr
-    );
+  function buildBookingPayload(tourName, nameStr, phoneStr) {
+    var source =
+      pendingBookingSource != null
+        ? fieldOrEmpty(pendingBookingSource)
+        : typeof window.BOOKING_TELEGRAM_SOURCE === "string"
+          ? fieldOrEmpty(window.BOOKING_TELEGRAM_SOURCE)
+          : "";
+    var page =
+      pendingBookingPage != null
+        ? fieldOrEmpty(pendingBookingPage)
+        : typeof window.BOOKING_TELEGRAM_PAGE === "string"
+          ? fieldOrEmpty(window.BOOKING_TELEGRAM_PAGE)
+          : "";
+    var dateVal =
+      tripDateInput && typeof tripDateInput.value === "string" ? formatTripDate(tripDateInput.value) : "";
+    return {
+      name: fieldOrEmpty(nameStr),
+      phone: fieldOrEmpty(phoneStr),
+      tour: fieldOrEmpty(tourName),
+      source: source,
+      page: page,
+      date: dateVal,
+      comment: "",
+    };
   }
 
   form.addEventListener("submit", async function (event) {
@@ -371,7 +335,7 @@
     var digits = getNormalizedPhoneDigits();
     var contactFormatted = "+" + digits;
     var tourName = selectedTourNameEl.textContent;
-    var displayName = nameInput.value.trim() || "Не указано";
+    var displayName = nameInput.value.trim();
 
     var savedSubmitLabel = submitBtn ? submitBtn.textContent : "";
     if (submitBtn) {
@@ -384,34 +348,24 @@
     }, 10000);
 
     try {
-      var messageText = buildTelegramMessage(tourName, displayName, contactFormatted);
-
-      if (!isTelegramConfigured()) {
-        throw new Error("Telegram config is missing or invalid");
-      }
-
-      var cfg = window.TELEGRAM_CONFIG;
-      var url = "https://api.telegram.org/bot" + cfg.BOT_TOKEN.trim() + "/sendMessage";
-      var response = await fetch(url, {
+      var payload = buildBookingPayload(tourName, displayName, contactFormatted);
+      var response = await fetch(BOOKING_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: cfg.CHAT_ID.trim(),
-          text: messageText,
-        }),
+        body: JSON.stringify(payload),
         signal: controller.signal,
       });
       var data = await response.json().catch(function () {
         return {};
       });
-      if (!response.ok || !data.ok) {
-        throw new Error((data && data.description) || "Telegram sendMessage failed");
+      if (!response.ok || data.ok !== true) {
+        throw new Error((data && data.error) || (data && data.description) || "Booking request failed");
       }
       console.log("booking_request", {
         tour: tourName,
-        name: displayName,
+        name: displayName || "",
         contact: contactFormatted,
-        telegram: "ok",
+        api: "ok",
       });
 
       clearErrorMessage();
@@ -424,7 +378,7 @@
         submitBtn.textContent = savedSubmitLabel;
       }
     } catch (err) {
-      console.error("Telegram send error:", err);
+      console.error("Booking submit error:", err);
       setSubmitErrorWithContacts();
       if (submitBtn) {
         submitBtn.textContent = savedSubmitLabel;
