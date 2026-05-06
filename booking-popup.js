@@ -21,6 +21,39 @@
   let bookingPhoneDigits = "";
   let pendingTelegramSource = null;
   let pendingTelegramPage = null;
+  const CONTACT_LINKS = {
+    phone: "tel:+79678007552",
+    whatsapp: "https://wa.me/79678007552",
+    telegram: "https://t.me/Marina_Sochi_Adler",
+    max: "https://max.ru/u/f9LHodD0cOLcIavsnmkmUaQOuLh2m5zb_CNUB02shmV-u5GIclKKnWoflec",
+  };
+
+  function clearErrorMessage() {
+    errorMessageEl.textContent = "";
+  }
+
+  function setErrorMessageText(message) {
+    errorMessageEl.textContent = message;
+  }
+
+  function setSubmitErrorWithContacts() {
+    errorMessageEl.innerHTML =
+      '<p class="booking-error-text">Не удалось отправить заявку автоматически. Напишите нам удобным способом — мы быстро поможем забронировать экскурсию.</p>' +
+      '<div class="contact-sheet-actions">' +
+      '<a href="' +
+      CONTACT_LINKS.whatsapp +
+      '" target="_blank" rel="noopener noreferrer" class="contact-sheet-btn">Написать в WhatsApp</a>' +
+      '<a href="' +
+      CONTACT_LINKS.telegram +
+      '" target="_blank" rel="noopener noreferrer" class="contact-sheet-btn">Написать в Telegram</a>' +
+      '<a href="' +
+      CONTACT_LINKS.max +
+      '" target="_blank" rel="noopener noreferrer" class="contact-sheet-btn">Написать в Max</a>' +
+      '<a href="' +
+      CONTACT_LINKS.phone +
+      '" class="contact-sheet-btn contact-sheet-btn--primary">Позвонить</a>' +
+      "</div>";
+  }
 
   function showFormState() {
     formState.classList.remove("is-hidden");
@@ -45,7 +78,7 @@
       pendingTelegramSource = null;
       pendingTelegramPage = null;
     }
-    errorMessageEl.textContent = "";
+    clearErrorMessage();
     form.reset();
     setupTripDateInput();
     bookingPhoneDigits = "";
@@ -162,13 +195,13 @@
     applyPhoneInput();
     var d = getNormalizedPhoneDigits();
     if (d.length === 0) {
-      errorMessageEl.textContent = "";
+      clearErrorMessage();
       return;
     }
     if (!isPhoneValid()) {
-      errorMessageEl.textContent = "Введите корректный номер телефона";
+      setErrorMessageText("Введите корректный номер телефона");
     } else {
-      errorMessageEl.textContent = "";
+      clearErrorMessage();
     }
   }
 
@@ -300,12 +333,12 @@
     applyPhoneInput();
     sanitizeTripDateInput();
     if (!isPhoneValid()) {
-      errorMessageEl.textContent = "Введите корректный номер телефона";
+      setErrorMessageText("Введите корректный номер телефона");
       contactInput.focus();
       return;
     }
 
-    errorMessageEl.textContent = "";
+    clearErrorMessage();
     var digits = getNormalizedPhoneDigits();
     var contactFormatted = "+" + digits;
     var tourName = selectedTourNameEl.textContent;
@@ -352,7 +385,7 @@
         telegram: "ok",
       });
 
-      errorMessageEl.textContent = "";
+      clearErrorMessage();
       form.reset();
       bookingPhoneDigits = "";
       showSuccessState();
@@ -362,8 +395,7 @@
       }
     } catch (err) {
       console.error("Telegram send error:", err);
-      errorMessageEl.textContent =
-        "Не удалось отправить заявку. Попробуйте ещё раз или напишите нам в WhatsApp, Telegram или Max.";
+      setSubmitErrorWithContacts();
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = savedSubmitLabel;
@@ -375,7 +407,7 @@
 
   contactInput.addEventListener("input", function () {
     applyPhoneInput();
-    errorMessageEl.textContent = "";
+    clearErrorMessage();
   });
 
   contactInput.addEventListener("blur", function () {
