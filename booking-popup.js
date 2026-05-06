@@ -22,12 +22,7 @@
   let pendingTelegramSource = null;
   let pendingTelegramPage = null;
   let hasSubmitErrorState = false;
-  const CONTACT_LINKS = {
-    phone: "tel:+79678007552",
-    whatsapp: "https://wa.me/79678007552",
-    telegram: "https://t.me/Marina_Sochi_Adler",
-    max: "https://max.ru/u/f9LHodD0cOLclavsnmkmUaQOu5GlclKKnWoflec",
-  };
+  const SUBMIT_ERROR_CALL_HREF = "tel:+79678007552";
 
   function handleSubmitErrorContactNavigation(event) {
     var link = event.target && event.target.closest ? event.target.closest("[data-submit-error-contact]") : null;
@@ -54,30 +49,12 @@
     hasSubmitErrorState = true;
     hideSubmitButton();
     errorMessageEl.innerHTML =
-      '<p class="booking-error-text">Не удалось отправить заявку автоматически. Напишите нам удобным способом — мы быстро поможем забронировать экскурсию.</p>' +
+      '<p class="booking-error-text">Не удалось отправить заявку автоматически. Позвоните нам — мы быстро поможем забронировать экскурсию.</p>' +
       '<div class="contact-sheet-actions">' +
       '<a href="' +
-      CONTACT_LINKS.whatsapp +
-      '" class="contact-sheet-btn" data-submit-error-contact>Написать в WhatsApp</a>' +
-      '<a href="' +
-      CONTACT_LINKS.telegram +
-      '" class="contact-sheet-btn" data-submit-error-contact>Написать в Telegram</a>' +
-      '<a href="' +
-      CONTACT_LINKS.max +
-      '" class="contact-sheet-btn" data-submit-error-contact>Написать в Max</a>' +
-      '<a href="' +
-      CONTACT_LINKS.phone +
+      SUBMIT_ERROR_CALL_HREF +
       '" class="contact-sheet-btn contact-sheet-btn--primary" data-submit-error-contact>Позвонить</a>' +
-      "</div>" +
-      '<p class="booking-error-text booking-error-text--fallback">Если кнопки не открылись, напишите нам: <a href="' +
-      CONTACT_LINKS.whatsapp +
-      '" data-submit-error-contact>WhatsApp</a>, <a href="' +
-      CONTACT_LINKS.telegram +
-      '" data-submit-error-contact>Telegram</a>, <a href="' +
-      CONTACT_LINKS.max +
-      '" data-submit-error-contact>Max</a> или позвоните <a href="' +
-      CONTACT_LINKS.phone +
-      '" data-submit-error-contact>+7 967 800-75-52</a>.</p>';
+      "</div>";
   }
 
   function showFormState() {
