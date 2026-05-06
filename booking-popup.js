@@ -37,6 +37,8 @@
   }
 
   function setSubmitErrorWithContacts() {
+    hasSubmitErrorState = true;
+    hideSubmitButton();
     errorMessageEl.innerHTML =
       '<p class="booking-error-text">Не удалось отправить заявку автоматически. Напишите нам удобным способом — мы быстро поможем забронировать экскурсию.</p>' +
       '<div class="contact-sheet-actions">' +
@@ -78,7 +80,7 @@
       pendingTelegramSource = null;
       pendingTelegramPage = null;
     }
-    clearErrorMessage();
+    resetSubmitErrorState();
     form.reset();
     setupTripDateInput();
     bookingPhoneDigits = "";
@@ -206,8 +208,31 @@
   }
 
   const submitBtn = form.querySelector(".booking-submit-btn");
+  let hasSubmitErrorState = false;
   nameInput.required = false;
   contactInput.required = true;
+
+  function showSubmitButton() {
+    if (!submitBtn) {
+      return;
+    }
+    submitBtn.style.display = "";
+    submitBtn.disabled = false;
+  }
+
+  function hideSubmitButton() {
+    if (!submitBtn) {
+      return;
+    }
+    submitBtn.style.display = "none";
+    submitBtn.disabled = true;
+  }
+
+  function resetSubmitErrorState() {
+    hasSubmitErrorState = false;
+    clearErrorMessage();
+    showSubmitButton();
+  }
 
   function isTelegramConfigured() {
     var c = window.TELEGRAM_CONFIG;
@@ -388,6 +413,7 @@
       clearErrorMessage();
       form.reset();
       bookingPhoneDigits = "";
+      hasSubmitErrorState = false;
       showSuccessState();
       if (submitBtn) {
         submitBtn.disabled = false;
@@ -397,7 +423,6 @@
       console.error("Telegram send error:", err);
       setSubmitErrorWithContacts();
       if (submitBtn) {
-        submitBtn.disabled = false;
         submitBtn.textContent = savedSubmitLabel;
       }
     } finally {
@@ -407,7 +432,17 @@
 
   contactInput.addEventListener("input", function () {
     applyPhoneInput();
+    if (hasSubmitErrorState) {
+      resetSubmitErrorState();
+      return;
+    }
     clearErrorMessage();
+  });
+
+  nameInput.addEventListener("input", function () {
+    if (hasSubmitErrorState) {
+      resetSubmitErrorState();
+    }
   });
 
   contactInput.addEventListener("blur", function () {
