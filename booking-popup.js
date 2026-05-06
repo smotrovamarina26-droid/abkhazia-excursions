@@ -21,12 +21,31 @@
   let bookingPhoneDigits = "";
   let pendingTelegramSource = null;
   let pendingTelegramPage = null;
+  let hasSubmitErrorState = false;
   const CONTACT_LINKS = {
     phone: "tel:+79678007552",
     whatsapp: "https://wa.me/79678007552",
     telegram: "https://t.me/Marina_Sochi_Adler",
-    max: "https://max.ru/u/f9LHodD0cOLcIavsnmkmUaQOuLh2m5zb_CNUB02shmV-u5GIclKKnWoflec",
+    max: "https://max.ru/u/f9LHodD0cOLclavsnmkmUaQOu5GlclKKnWoflec",
   };
+
+  function bindSubmitErrorContactButtons() {
+    var actions = errorMessageEl.querySelector(".contact-sheet-actions");
+    if (!actions) {
+      return;
+    }
+    var buttons = actions.querySelectorAll("button[data-booking-contact-href]");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var href = btn.getAttribute("data-booking-contact-href");
+        if (href) {
+          window.location.href = href;
+        }
+      });
+    });
+  }
 
   function clearErrorMessage() {
     errorMessageEl.textContent = "";
@@ -42,19 +61,20 @@
     errorMessageEl.innerHTML =
       '<p class="booking-error-text">Не удалось отправить заявку автоматически. Напишите нам удобным способом — мы быстро поможем забронировать экскурсию.</p>' +
       '<div class="contact-sheet-actions">' +
-      '<a href="' +
+      '<button type="button" class="contact-sheet-btn" data-booking-contact-href="' +
       CONTACT_LINKS.whatsapp +
-      '" target="_blank" rel="noopener noreferrer" class="contact-sheet-btn">Написать в WhatsApp</a>' +
-      '<a href="' +
+      '">Написать в WhatsApp</button>' +
+      '<button type="button" class="contact-sheet-btn" data-booking-contact-href="' +
       CONTACT_LINKS.telegram +
-      '" target="_blank" rel="noopener noreferrer" class="contact-sheet-btn">Написать в Telegram</a>' +
-      '<a href="' +
+      '">Написать в Telegram</button>' +
+      '<button type="button" class="contact-sheet-btn" data-booking-contact-href="' +
       CONTACT_LINKS.max +
-      '" target="_blank" rel="noopener noreferrer" class="contact-sheet-btn">Написать в Max</a>' +
-      '<a href="' +
+      '">Написать в Max</button>' +
+      '<button type="button" class="contact-sheet-btn contact-sheet-btn--primary" data-booking-contact-href="' +
       CONTACT_LINKS.phone +
-      '" class="contact-sheet-btn contact-sheet-btn--primary">Позвонить</a>' +
+      '">Позвонить</button>' +
       "</div>";
+    bindSubmitErrorContactButtons();
   }
 
   function showFormState() {
@@ -195,6 +215,9 @@
 
   function validatePhoneOnBlur() {
     applyPhoneInput();
+    if (hasSubmitErrorState) {
+      return;
+    }
     var d = getNormalizedPhoneDigits();
     if (d.length === 0) {
       clearErrorMessage();
@@ -208,7 +231,6 @@
   }
 
   const submitBtn = form.querySelector(".booking-submit-btn");
-  let hasSubmitErrorState = false;
   nameInput.required = false;
   contactInput.required = true;
 
