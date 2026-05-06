@@ -49,7 +49,7 @@
     hasSubmitErrorState = true;
     hideSubmitButton();
     errorMessageEl.innerHTML =
-      '<p class="booking-error-text">Не удалось отправить заявку автоматически. Позвоните нам — мы быстро поможем забронировать экскурсию.</p>' +
+      '<p class="booking-error-text">Не удалось отправить заявку автоматически. Позвоните нам — поможем забронировать экскурсию.</p>' +
       '<div class="contact-sheet-actions">' +
       '<a href="' +
       SUBMIT_ERROR_CALL_HREF +
