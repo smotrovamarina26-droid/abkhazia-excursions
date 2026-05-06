@@ -293,17 +293,14 @@
 
   function buildBookingPayload(tourName, nameStr, phoneStr) {
     var source =
-      pendingBookingSource != null
-        ? fieldOrEmpty(pendingBookingSource)
-        : typeof window.BOOKING_TELEGRAM_SOURCE === "string"
-          ? fieldOrEmpty(window.BOOKING_TELEGRAM_SOURCE)
-          : "";
+      fieldOrEmpty(pendingBookingSource) ||
+      (typeof window.BOOKING_TELEGRAM_SOURCE === "string" ? fieldOrEmpty(window.BOOKING_TELEGRAM_SOURCE) : "") ||
+      "Сайт — карточка экскурсии";
     var page =
-      pendingBookingPage != null
-        ? fieldOrEmpty(pendingBookingPage)
-        : typeof window.BOOKING_TELEGRAM_PAGE === "string"
-          ? fieldOrEmpty(window.BOOKING_TELEGRAM_PAGE)
-          : "";
+      fieldOrEmpty(pendingBookingPage) ||
+      (typeof window.BOOKING_TELEGRAM_PAGE === "string" ? fieldOrEmpty(window.BOOKING_TELEGRAM_PAGE) : "") ||
+      (typeof document !== "undefined" ? fieldOrEmpty(document.title) : "") ||
+      "Главная";
     var dateVal =
       tripDateInput && typeof tripDateInput.value === "string" ? formatTripDate(tripDateInput.value) : "";
     return {
