@@ -335,7 +335,7 @@
     <section class="tour-section" id="tour-pricing">
       <div class="container">
         <h2>Стоимость экскурсии</h2>
-        <p>Стоимость зависит от точки отправления и количества гостей.</p>
+        <p>Стоимость зависит от точки отправления и количества гостей. Экологический сбор на озеро Рица уже включён.</p>
         <div class="tour-price-cols">
           <div class="tour-price-col">
             <h3 class="tour-price-col-title">Из Адлера и Сириуса</h3>
@@ -392,8 +392,8 @@
           <div class="tour-pricing-calc-total">
             <div id="calc-breakdown" class="tour-pricing-calc-breakdown" aria-live="polite"></div>
             <p class="tour-pricing-calc-total-value" id="calc-total">Итого: 2800 ₽</p>
-            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Предоплата для бронирования: 500 ₽</p>
-            <p class="tour-pricing-calc-prepay-hint">Предоплата — 500 ₽ за каждого участника.</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Сумма бронирования: 500 ₽</p>
+            <p class="tour-pricing-calc-prepay-hint">Сумма бронирования — 500 ₽ за каждого участника.</p>
             <p class="tour-pricing-calc-prepay-line" id="calc-balance">Остальное на месте: 2300 ₽</p>
           </div>
 
@@ -454,14 +454,34 @@
         <details class="tour-accordion" id="tour-border-rules">
           <summary class="tour-accordion-summary">Правила пересечения границы</summary>
           <div class="tour-accordion-body">
-            <p>При наличии документов пересечение границы обычно проходит спокойно. Перед поездкой рекомендуем проверить актуальные требования.</p>
-            <ul class="tour-list tour-list--compact">
-              <li>Для взрослых и детей 14–18 лет достаточно иметь общегражданский или загранпаспорт</li>
-              <li>Для детей до 14 лет понадобится свидетельство о рождении с отметкой о гражданстве РФ или загранпаспорт</li>
-              <li>Если ребёнок едет с одним из родителей, согласие второго не требуется</li>
-              <li>Если ребёнок едет с третьими лицами, понадобится нотариальная доверенность от родителей</li>
-              <li>Перед поездкой рекомендуем проверить задолженности — при их наличии возможны сложности при пересечении границы</li>
-            </ul>
+            <p>Для поездки в Абхазию документы нужны всем туристам, включая детей. Проверьте их заранее — до бронирования поездки.</p>
+            <div class="trip-documents__grid">
+              <div class="trip-documents__item">
+                <h3 class="trip-documents__item-title">Взрослые и дети 14–18 лет</h3>
+                <p>Нужен оригинал паспорта РФ или загранпаспорт.</p>
+              </div>
+              <div class="trip-documents__item">
+                <h3 class="trip-documents__item-title">Дети до 14 лет</h3>
+                <p>Понадобится свидетельство о рождении с отметкой о гражданстве РФ или загранпаспорт.</p>
+              </div>
+              <div class="trip-documents__item">
+                <h3 class="trip-documents__item-title">Если ребёнок едет с родителем</h3>
+                <p>Если ребёнок едет с одним из родителей, согласие второго родителя не требуется.</p>
+              </div>
+              <div class="trip-documents__item">
+                <h3 class="trip-documents__item-title">Если ребёнок едет с третьими лицами</h3>
+                <p>Если ребёнок едет с бабушкой, родственниками, сопровождающим или другими третьими лицами, нужна нотариальная доверенность от родителей.</p>
+              </div>
+              <div class="trip-documents__item">
+                <h3 class="trip-documents__item-title">Иностранные граждане</h3>
+                <p>Для иностранных граждан нужны паспорт и открытая многоразовая виза. Перед бронированием обязательно уточните возможность поездки у консультанта.</p>
+              </div>
+              <div class="trip-documents__item">
+                <h3 class="trip-documents__item-title">Задолженности и ограничения</h3>
+                <p>Через границу могут не пропустить, если в отношении туриста есть судебное решение о взыскании задолженностей: кредиты, штрафы и другие долги.</p>
+              </div>
+            </div>
+            <p class="trip-documents__note">Проверьте документы и ограничения заранее. Если сомневаетесь — напишите нам, подскажем.</p>
           </div>
         </details>
       </div>
@@ -785,7 +805,7 @@
         document.getElementById("calc-val-adults").textContent = String(state.adults);
         document.getElementById("calc-val-child").textContent = String(state.child);
         document.getElementById("calc-total").textContent = "Итого: " + formatMoney(total);
-        document.getElementById("calc-booking").textContent = "Предоплата для бронирования: " + formatMoney(prepayment);
+        document.getElementById("calc-booking").textContent = "Сумма бронирования: " + formatMoney(prepayment);
         document.getElementById("calc-balance").textContent = "Остальное на месте: " + formatMoney(remainder);
         updateBreakdown();
       }
