@@ -56,12 +56,28 @@ function normalizePhone(phone) {
   return phone.replace(/\D/g, "");
 }
 
-function isValidName(name) {
+function validateOptionalName(name) {
+  if (name == null) {
+    return null;
+  }
   if (typeof name !== "string") {
-    return false;
+    return "Invalid name";
+  }
+  if (name.trim().length > 200) {
+    return "Invalid name";
+  }
+  return null;
+}
+
+function displayBookingName(name) {
+  if (name == null) {
+    return "не указано";
+  }
+  if (typeof name !== "string") {
+    return "не указано";
   }
   var t = name.trim();
-  return t.length >= 1 && t.length <= 200;
+  return t.length ? t : "не указано";
 }
 
 function isValidPhoneDigits(digits) {
@@ -81,7 +97,7 @@ function buildTelegramText(body) {
   var lines = [
     "📩 Новая заявка с сайта",
     "",
-    "Имя: " + String(body.name || "").trim(),
+    "Имя: " + displayBookingName(body.name),
     "Телефон: " + String(body.phone || "").trim(),
     "Экскурсия: " + (body.tour != null ? String(body.tour).trim() : "—"),
     "Источник: " + (body.source != null ? String(body.source).trim() : "—"),
@@ -132,11 +148,11 @@ module.exports = async function handler(req, res) {
     return json(res, 400, { ok: false, error: "Invalid JSON" });
   }
 
-  var name = body.name;
-  var phoneRaw = body.phone;
-  if (!isValidName(name)) {
-    return json(res, 400, { ok: false, error: "Invalid name" });
+  var nameErr = validateOptionalName(body.name);
+  if (nameErr) {
+    return json(res, 400, { ok: false, error: nameErr });
   }
+  var phoneRaw = body.phone;
   var digits = normalizePhone(phoneRaw);
   if (!isValidPhoneDigits(digits)) {
     return json(res, 400, { ok: false, error: "Invalid phone" });
