@@ -143,7 +143,16 @@
             <div class="card-section card-section--booking">
               <p class="card-price-lead">Выезды каждый день</p>
               <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
-              <a href="#" class="card-book-btn" data-tour-name="Золотое кольцо Абхазии" data-scroll-target="tour-golden-ring">Забронировать место</a>
+              <button
+                type="button"
+                class="card-book-btn"
+                data-booking-tour="Золотое кольцо Абхазии"
+                data-tour-name="Золотое кольцо Абхазии"
+                data-booking-source="Сайт — главная страница"
+                data-booking-page="Главная"
+              >
+                Забронировать место
+              </button>
               <p class="card-book-note">Лучше бронировать заранее</p>
               <a href="pages/zolotoe-koltso-abkhazia.html" class="card-program-link">Подробнее об экскурсии →</a>
             </div>
@@ -168,7 +177,16 @@
             <div class="card-section card-section--booking">
               <p class="card-price-lead">Выезды по чётным числам</p>
               <p class="price">от 2400 ₽<span class="price-per-person">за человека</span></p>
-              <a href="#" class="card-book-btn" data-tour-name="Термальный источник Кындыг" data-scroll-target="tour-kyndyg">Забронировать место</a>
+              <button
+                type="button"
+                class="card-book-btn"
+                data-booking-tour="Термальный источник Кындыг"
+                data-tour-name="Термальный источник Кындыг"
+                data-booking-source="Сайт — главная страница"
+                data-booking-page="Главная"
+              >
+                Забронировать место
+              </button>
               <p class="card-book-note">Лучше бронировать заранее</p>
               <a href="pages/kyndyg-chernigovka.html" class="card-program-link">Подробнее об экскурсии →</a>
             </div>
@@ -192,7 +210,16 @@
             <div class="card-section card-section--booking">
               <p class="card-price-lead">Выезды каждый день</p>
               <p class="price">от 2800 ₽<span class="price-per-person">за человека</span></p>
-              <a href="#" class="card-book-btn" data-tour-name="Джип-тур Гегский водопад" data-scroll-target="tour-gega-jeep">Забронировать место</a>
+              <button
+                type="button"
+                class="card-book-btn"
+                data-booking-tour="Джип-тур Гегский водопад"
+                data-tour-name="Джип-тур Гегский водопад"
+                data-booking-source="Сайт — главная страница"
+                data-booking-page="Главная"
+              >
+                Забронировать место
+              </button>
               <p class="card-book-note">Лучше бронировать заранее</p>
               <a href="pages/dzhip-gegskiy-vodopad.html" class="card-program-link">Подробнее об экскурсии →</a>
             </div>
@@ -260,37 +287,38 @@
       <div class="container">
         <div class="booking-card">
           <h2 id="how-booking-title">Как проходит бронирование</h2>
-          <p class="booking-card__lead">
-            Вы оставляете заявку — мы связываемся с вами, отвечаем на вопросы и фиксируем место в группе. Накануне поездки организатор сообщает точное время выезда и ближайшую удобную точку посадки.
-          </p>
-          <ul class="trust-how-work__grid booking-card__steps">
-            <li class="trust-how-work__item">
-              <div class="trust-how-work__body">
-                <strong>Выбираете экскурсию</strong>
-                <p>Смотрите маршрут, цену и программу — если сомневаетесь, мы поможем подобрать вариант.</p>
+          <ol class="booking-steps">
+            <li class="booking-steps__item">
+              <span class="booking-steps__num" aria-hidden="true">1</span>
+              <div class="booking-steps__body">
+                <strong class="booking-steps__title">Вы оставляете заявку</strong>
+                <p class="booking-steps__text">Указываете телефон и, если хотите, имя. Заявка сразу приходит нам.</p>
               </div>
             </li>
-            <li class="trust-how-work__item">
-              <div class="trust-how-work__body">
-                <strong>Оставляете заявку</strong>
-                <p>Указываете имя и телефон — мы связываемся обычно в течение 5–10 минут.</p>
+            <li class="booking-steps__item">
+              <span class="booking-steps__num" aria-hidden="true">2</span>
+              <div class="booking-steps__body">
+                <strong class="booking-steps__title">Мы связываемся с вами</strong>
+                <p class="booking-steps__text">Обычно отвечаем в течение 5–10 минут, уточняем экскурсию и количество гостей.</p>
               </div>
             </li>
-            <li class="trust-how-work__item">
-              <div class="trust-how-work__body">
-                <strong>Фиксируем место</strong>
-                <p>После бронирования места закрепляем вас в группе и передаём заявку организатору.</p>
+            <li class="booking-steps__item">
+              <span class="booking-steps__num" aria-hidden="true">3</span>
+              <div class="booking-steps__body">
+                <strong class="booking-steps__title">Подтверждаем детали</strong>
+                <p class="booking-steps__text">Согласуем дату, время выезда и удобную точку посадки.</p>
               </div>
             </li>
-            <li class="trust-how-work__item">
-              <div class="trust-how-work__body">
-                <strong>Получаете детали выезда</strong>
-                <p>Накануне экскурсии вам сообщают точное время и точку посадки.</p>
+            <li class="booking-steps__item">
+              <span class="booking-steps__num" aria-hidden="true">4</span>
+              <div class="booking-steps__body">
+                <strong class="booking-steps__title">Оплата после подтверждения</strong>
+                <p class="booking-steps__text">Сначала всё уточняем, затем фиксируем место по условиям бронирования.</p>
               </div>
             </li>
-          </ul>
+          </ol>
           <p class="booking-card__outro">
-            Вы заранее понимаете, как всё проходит, кто с вами свяжется и когда ждать детали поездки.
+            Вы заранее понимаете, кто с вами свяжется, когда ждать детали поездки и как подтвердить место.
           </p>
         </div>
       </div>

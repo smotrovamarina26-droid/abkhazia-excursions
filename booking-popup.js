@@ -11,8 +11,6 @@
   const nameInput = document.getElementById("booking-name");
   const contactInput = document.getElementById("booking-contact");
   const tripDateInput = document.getElementById("booking-trip-date");
-  const bookButtons = document.querySelectorAll(".card-book-btn");
-
   if (!overlay || !popup || !formState || !form || !successState || !successScrollBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
     return;
   }
@@ -102,12 +100,30 @@
     }
   }
 
-  bookButtons.forEach(function (button) {
-    button.addEventListener("click", function (event) {
+  document.addEventListener(
+    "click",
+    function (event) {
+      var t = event.target;
+      if (!t || typeof t.closest !== "function") {
+        return;
+      }
+      var trigger = t.closest(".card-book-btn");
+      if (!trigger) {
+        return;
+      }
+      if (trigger.closest("#booking-overlay")) {
+        return;
+      }
+      if (trigger.disabled === true) {
+        return;
+      }
       event.preventDefault();
-      openPopup(button.getAttribute("data-tour-name"), button);
-    });
-  });
+      event.stopPropagation();
+      var tourName = trigger.getAttribute("data-booking-tour") || trigger.getAttribute("data-tour-name");
+      openPopup(tourName, trigger);
+    },
+    true
+  );
 
   if (closeBtn) {
     closeBtn.addEventListener("click", closePopup);
