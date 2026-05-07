@@ -904,7 +904,7 @@ h2 {
 }
 
 .transport-info {
-  padding: 18px 0 28px;
+  padding: 16px 0 20px;
   background: transparent;
 }
 
@@ -914,7 +914,7 @@ h2 {
 }
 
 .transport-info__title {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   text-align: center;
   font-size: 26px;
   font-weight: 700;
@@ -923,7 +923,7 @@ h2 {
 }
 
 .transport-info__lead {
-  margin: 0 auto 18px;
+  margin: 0 auto 16px;
   max-width: 42em;
   padding: 0 6px;
   text-align: center;
@@ -936,12 +936,12 @@ h2 {
 .transport-info__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 22px;
+  gap: 18px;
 }
 
 .transport-info__card {
   margin: 0;
-  padding: 22px;
+  padding: 18px;
   background: #fffdf9;
   border: 1px solid #ffe9d2;
   border-radius: 18px;
@@ -1001,11 +1001,14 @@ h2 {
   gap: 8px;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .transport-info__badge {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
   padding: 8px 12px;
   border-radius: 999px;
   font-size: 13px;
@@ -1017,20 +1020,21 @@ h2 {
 }
 
 .transport-info__submedia {
-  margin: 0;
+  margin: 8px 0 0;
   padding: 0;
   border: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
 }
 
 .transport-info__caption {
-  margin: 0;
-  font-size: 13px;
+  margin: 11px 0 0;
+  font-size: 15px;
   line-height: 1.45;
-  color: #737984;
+  color: #959aa3;
   text-align: center;
+  font-weight: 400;
 }
 
 .transport-info__card-title {
@@ -1049,14 +1053,34 @@ h2 {
 }
 
 @media (min-width: 640px) {
+  .transport-info {
+    padding: 18px 0 28px;
+  }
+
+  .transport-info__title {
+    margin: 0 0 12px;
+  }
+
+  .transport-info__lead {
+    margin: 0 auto 18px;
+  }
+
   .transport-info__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
     align-items: start;
   }
 
+  .transport-info__card {
+    padding: 22px;
+  }
+
   .transport-info__card--media {
     gap: 18px;
+  }
+
+  .transport-info__submedia {
+    margin-top: 6px;
   }
 }
 
