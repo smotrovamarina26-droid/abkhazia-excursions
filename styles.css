@@ -868,18 +868,19 @@ a.logo:focus-visible {
 }
 
 .payment-block {
-  padding: 40px 0;
+  padding: 28px 0 32px;
 }
 
 .payment-card {
   background: #fffaf5;
   border: 1px solid #f3c7a3;
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px 18px;
 }
 
 .payment-card h2 {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .payment-card p {
@@ -887,30 +888,98 @@ a.logo:focus-visible {
   line-height: 1.5;
 }
 
+.payment-card p.payment-lead {
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #3f4753;
+}
+
 .payment-features {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin: 16px 0;
+  gap: 10px;
+  margin: 12px 0 14px;
 }
 
 .payment-features .feature {
   align-items: flex-start;
+  padding: 11px 12px;
+  background: #fff;
+  border: 1px solid #ffe9d2;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-.payment-note {
-  margin-top: 10px;
-  font-weight: 500;
+.payment-features .feature > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.payment-features .feature strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 5px;
+  color: #1d2128;
+}
+
+.payment-features .feature br {
+  display: none;
+}
+
+.payment-features .feature div {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #5f636d;
+}
+
+.payment-trust-list {
+  margin-top: 12px;
 }
 
 @media (max-width: 768px) {
+  .payment-block {
+    padding: 18px 0 22px;
+  }
+
+  .payment-card {
+    padding: 14px 12px;
+  }
+
+  .payment-card h2 {
+    margin-bottom: 8px;
+  }
+
+  .payment-card p.payment-lead {
+    font-size: 14px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
   .payment-features {
-    gap: 10px;
-    margin: 14px 0;
+    gap: 8px;
+    margin: 10px 0 12px;
   }
 
   .payment-features .feature {
     padding: 9px 10px;
+    border-radius: 12px;
+  }
+
+  .payment-features .feature strong {
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+
+  .payment-features .feature div {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .payment-trust-list {
+    margin-top: 10px;
   }
 
   #advantages .trust-items {
