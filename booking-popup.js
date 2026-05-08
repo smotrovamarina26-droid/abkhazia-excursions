@@ -4,6 +4,8 @@
   const closeBtn = document.getElementById("booking-close");
   const formState = document.getElementById("booking-form-state");
   const form = document.getElementById("booking-form");
+  const titleEl = document.getElementById("booking-title");
+  const introEl = formState ? formState.querySelector(".booking-intro") : null;
   const successState = document.getElementById("booking-success-state");
   const successScrollBtn = document.getElementById("booking-success-scroll");
   const selectedTourNameEl = document.getElementById("selected-tour-name");
@@ -11,7 +13,7 @@
   const nameInput = document.getElementById("booking-name");
   const contactInput = document.getElementById("booking-contact");
   const tripDateInput = document.getElementById("booking-trip-date");
-  if (!overlay || !popup || !formState || !form || !successState || !successScrollBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
+  if (!overlay || !popup || !formState || !form || !titleEl || !introEl || !successState || !successScrollBtn || !selectedTourNameEl || !nameInput || !contactInput || !errorMessageEl) {
     return;
   }
 
@@ -22,6 +24,22 @@
   let hasSubmitErrorState = false;
   const SUBMIT_ERROR_CALL_HREF = "tel:+79678007552";
   const BOOKING_API_URL = "https://abkhazia-excursions.vercel.app/api/telegram-booking";
+  const DEFAULT_POPUP_TITLE = "Забронировать экскурсию";
+  const DEFAULT_POPUP_INTRO_HTML =
+    'Оставьте имя и телефон — свяжемся с вами в течение <span style="white-space: nowrap;">5–10 минут</span> и уточним детали поездки.';
+  const LEAD_POPUP_TITLE = "Оставить заявку";
+  const LEAD_POPUP_INTRO =
+    "Оставьте имя и телефон — свяжемся с вами в течение 5–10 минут и поможем подобрать экскурсию.";
+
+  function applyPopupCopy(mode) {
+    if (mode === "lead") {
+      titleEl.textContent = LEAD_POPUP_TITLE;
+      introEl.textContent = LEAD_POPUP_INTRO;
+      return;
+    }
+    titleEl.textContent = DEFAULT_POPUP_TITLE;
+    introEl.innerHTML = DEFAULT_POPUP_INTRO_HTML;
+  }
 
   function handleSubmitErrorContactNavigation(event) {
     var link = event.target && event.target.closest ? event.target.closest("[data-submit-error-contact]") : null;
@@ -69,6 +87,8 @@
 
   function openPopup(tourName, triggerEl) {
     const name = tourName || "Экскурсия";
+    const isLeadFlow = !!(triggerEl && triggerEl.getAttribute && triggerEl.getAttribute("data-booking-flow") === "lead");
+    applyPopupCopy(isLeadFlow ? "lead" : "default");
     selectedTourNameEl.textContent = name;
     if (triggerEl && triggerEl.getAttribute) {
       const ds = triggerEl.getAttribute("data-booking-source");
