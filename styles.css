@@ -754,7 +754,8 @@ a.logo:focus-visible {
 }
 
 @media (min-width: 640px) {
-  .booking-card {
+  .booking-card,
+  .trust-who-helps__card {
     padding: 22px 24px;
   }
 
@@ -982,6 +983,56 @@ a.logo:focus-visible {
     margin-top: 10px;
   }
 
+  .trust-who-helps {
+    padding: 18px 0 22px;
+  }
+
+  .trust-who-helps__card {
+    padding: 14px 12px;
+  }
+
+  .trust-who-helps__card h2 {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .trust-who-helps__intro {
+    margin-bottom: 12px;
+  }
+
+  .trust-who-helps__intro p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #3f4753;
+  }
+
+  .trust-who-helps__intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  .trust-who-helps__grid {
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .trust-who-helps__item {
+    padding: 9px 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  }
+
+  .trust-who-helps__item-title {
+    font-size: 15px;
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
+
+  .trust-who-helps__item p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
   #advantages .trust-items {
     gap: 12px;
     margin-top: 22px;
@@ -997,32 +1048,32 @@ a.logo:focus-visible {
 }
 
 .trust-who-helps {
-  padding: 32px 0;
+  padding: 28px 0 32px;
 }
 
 .trust-who-helps__card {
   background: #fffaf5;
   border: 1px solid #f3c7a3;
   border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 8px 22px rgba(255, 140, 80, 0.07);
+  padding: 20px 18px;
 }
 
 .trust-who-helps__card h2 {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .trust-who-helps__intro {
   max-width: 52em;
-  margin: 0 auto 16px;
+  margin: 0 auto 14px;
   text-align: left;
 }
 
 .trust-who-helps__intro p {
-  margin: 0 0 9px;
+  margin: 0 0 8px;
   font-size: 15px;
-  line-height: 1.52;
-  color: #454c58;
+  line-height: 1.5;
+  color: #3f4753;
 }
 
 .trust-who-helps__intro p:last-child {
@@ -1033,43 +1084,30 @@ a.logo:focus-visible {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  margin: 0 0 14px;
+  margin: 0;
 }
 
 .trust-who-helps__item {
-  padding: 13px 14px;
+  padding: 11px 12px;
   background: #fff;
   border: 1px solid #ffe9d2;
   border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .trust-who-helps__item-title {
-  margin: 0 0 6px;
-  font-size: 15px;
+  margin: 0 0 5px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.32;
+  line-height: 1.3;
   color: #1d2128;
 }
 
 .trust-who-helps__item p {
   margin: 0;
   font-size: 14px;
-  line-height: 1.52;
+  line-height: 1.45;
   color: #5f636d;
-}
-
-.trust-who-helps__tagline {
-  margin: 0;
-  padding: 13px 14px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, #fffef9 0%, #fff9f3 100%);
-  border: 1px solid #ffd8b8;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.5;
-  color: #29303a;
-  text-align: center;
 }
 
 .card[id] {
@@ -1547,15 +1585,15 @@ h2 {
   text-align: center;
   margin: 20px 0 0;
   padding: 0 4px;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.45;
-  color: #3a3f47;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #5f636d;
 }
 
 .trip-flow-important {
   margin-top: 16px;
-  padding-top: 36px;
+  padding-top: 24px;
   border-top: 1px solid #ffe9d2;
   text-align: center;
 }
@@ -1564,7 +1602,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 10px;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1573,14 +1611,15 @@ h2 {
 .trip-flow-important-list li {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   margin: 0;
-  padding: 5px 10px;
+  padding: 8px 12px;
   font-size: 13px;
   font-weight: 600;
   line-height: 1.3;
-  color: #666c78;
-  background: #fff;
-  border: 1px solid #ffe9d2;
+  color: #ff7a00;
+  background: #fff7ed;
+  border: 1px solid #ffe4c4;
   border-radius: 999px;
 }
 
@@ -3257,13 +3296,13 @@ h2 {
   }
 
   .trip-flow-outro {
-    font-size: 16px;
+    font-size: 15px;
     margin-top: 22px;
   }
 
   .trip-flow-important {
     margin-top: 18px;
-    padding-top: 40px;
+    padding-top: 27px;
   }
 
   .cards {
@@ -3373,21 +3412,11 @@ h2 {
 
   .trust-who-helps__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-    margin-bottom: 18px;
+    gap: 10px;
   }
 
   .trust-who-helps {
-    padding: 38px 0 40px;
-  }
-
-  .trust-who-helps__card {
-    padding: 24px 22px;
-  }
-
-  .trust-who-helps__tagline {
-    font-size: 16px;
-    padding: 15px 16px;
+    padding: 32px 0 36px;
   }
 
   .trip-documents__grid {
