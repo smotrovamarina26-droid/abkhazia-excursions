@@ -1862,18 +1862,6 @@ h2 {
   box-shadow: 0 0 0 3px rgba(255, 143, 66, 0.52), 0 14px 26px rgba(255, 122, 0, 0.32);
 }
 
-.card-book-note {
-  margin: 9px 0 10px;
-  font-size: 12px;
-  line-height: 1.4;
-  color: #8a909a;
-  text-align: left;
-}
-
-#tour-kyndyg .card-book-note {
-  color: #8b91a0;
-}
-
 .card-program-link {
   display: inline-block;
   color: #ff7a00 !important;
@@ -1894,6 +1882,10 @@ h2 {
 .card-program-link:active {
   color: #d96a00 !important;
   opacity: 1;
+}
+
+.card .card-section--booking .card-program-link {
+  margin-top: 14px;
 }
 
 .back-to-tours-strip {
@@ -2360,6 +2352,19 @@ h2 {
   max-width: none;
   min-width: min-content;
   white-space: nowrap;
+}
+
+.card-meta-line {
+  margin: 10px 0 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #5c646e;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .price {
