@@ -2450,6 +2450,10 @@ h2 {
   margin-right: 0.3em;
 }
 
+.testimonials-grid .trust-item strong.testimonial-author {
+  margin-bottom: 0;
+}
+
 .testimonials h2 {
   margin-bottom: 12px;
 }
@@ -2469,15 +2473,42 @@ h2 {
   max-width: 520px;
   margin: 0 auto 16px;
   padding: 12px 14px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
-  color: #3a3f47;
   background: #fff8ef;
   border: 1px solid #ffd8b8;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.avito-rating-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.testimonials .avito-stars {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #f7b500;
+}
+
+.avito-meta-line {
+  margin-top: 6px;
+
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #5f6675;
 }
 
 .testimonials-avito-cta {
@@ -2500,12 +2531,13 @@ h2 {
   color: #8a9099;
 }
 
-.testimonial-source {
-  margin: 4px 0 10px;
-  font-size: 12px;
+.testimonials .testimonial-route {
+  margin: 6px 0 10px;
+  padding: 0;
+  font-size: 14px;
   line-height: 1.35;
-  font-weight: 500;
-  color: #9a9fa8;
+  font-weight: 400;
+  color: #6b7280;
 }
 
 .testimonials .testimonials-grid {
@@ -2556,12 +2588,13 @@ h2 {
     padding: 15px 15px;
   }
 
-  .testimonials .trust-item strong {
-    margin-bottom: 8px;
+  .testimonials .trust-item strong.testimonial-author {
+    margin-bottom: 0;
   }
 
-  .testimonials .testimonial-source {
-    margin: 3px 0 8px;
+  .testimonials .testimonial-route {
+    margin: 5px 0 8px;
+    font-size: 13px;
   }
 }
 
@@ -3378,7 +3411,6 @@ h2 {
 
   .testimonials-avito-trust {
     margin-bottom: 18px;
-    font-size: 15px;
     padding: 14px 18px;
   }
 
