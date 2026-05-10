@@ -6232,3 +6232,62 @@ body.tour-sticky-bar-visible {
     min-height: 38px;
   }
 }
+
+/* Плавающая кнопка звонка (только мобильные) */
+.mobile-call-fab {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-call-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: fixed;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #ff7a00;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+    z-index: 1600;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body.tour-sticky-bar-visible .mobile-call-fab {
+    bottom: calc(16px + 4.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  #booking-overlay.is-open ~ .mobile-call-fab,
+  #contact-overlay.is-open ~ .mobile-call-fab {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .mobile-call-fab:focus {
+    outline: none;
+  }
+
+  .mobile-call-fab:focus-visible {
+    outline: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18), 0 0 0 3px rgba(255, 122, 0, 0.35);
+  }
+
+  .mobile-call-fab__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+  }
+
+  .mobile-call-fab__icon svg {
+    display: block;
+  }
+}
