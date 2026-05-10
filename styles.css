@@ -640,8 +640,10 @@ a.logo:focus-visible {
   padding: 20px 18px;
 }
 
-.booking-card h2 {
-  margin-bottom: 14px;
+.booking-card h2,
+.payment-card h2,
+.trust-who-helps__card h2 {
+  margin-bottom: 12px;
   text-align: center;
 }
 
@@ -656,7 +658,7 @@ a.logo:focus-visible {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .booking-steps__item {
@@ -664,7 +666,7 @@ a.logo:focus-visible {
   align-items: flex-start;
   gap: 12px;
   margin: 0;
-  padding: 11px 12px;
+  padding: 10px 12px;
   background: #fff;
   border: 1px solid #ffe9d2;
   border-radius: 14px;
@@ -692,20 +694,30 @@ a.logo:focus-visible {
   flex: 1;
 }
 
-.booking-steps__title {
-  display: block;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 0 0 5px;
+.booking-steps__title,
+.payment-features .feature strong,
+.trust-who-helps__item-title,
+.transport-info__card-title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
   color: #1d2128;
 }
 
-.booking-card .booking-steps__text {
+.booking-steps__title {
+  display: block;
+  margin: 0 0 4px;
+}
+
+.booking-card .booking-steps__text,
+.payment-features .feature > div,
+.trust-who-helps__item p,
+.transport-info__card-text {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.45;
-  color: #5f636d;
+  font-size: 15px;
+  line-height: 1.43;
+  color: #6b7179;
+  overflow-wrap: anywhere;
 }
 
 .booking-card p.booking-card__outro {
@@ -763,9 +775,12 @@ a.logo:focus-visible {
 }
 
 @media (min-width: 640px) {
-  .booking-card,
-  .trust-who-helps__card {
+  .booking-card {
     padding: 22px 24px;
+  }
+
+  .trust-who-helps__card {
+    padding: 17px 19px;
   }
 
   .booking-card__cta {
@@ -787,10 +802,6 @@ a.logo:focus-visible {
     padding: 14px 12px;
   }
 
-  .booking-card h2 {
-    margin-bottom: 10px;
-  }
-
   .booking-steps {
     gap: 8px;
   }
@@ -805,16 +816,6 @@ a.logo:focus-visible {
     width: 26px;
     height: 26px;
     font-size: 13px;
-  }
-
-  .booking-steps__title {
-    font-size: 15px;
-    margin-bottom: 3px;
-  }
-
-  .booking-card .booking-steps__text {
-    font-size: 13px;
-    line-height: 1.4;
   }
 
   .booking-trust-list {
@@ -888,18 +889,13 @@ a.logo:focus-visible {
   padding: 20px 18px;
 }
 
-.payment-card h2 {
-  margin-bottom: 10px;
-  text-align: center;
-}
-
 .payment-card p {
   margin-bottom: 12px;
   line-height: 1.5;
 }
 
 .payment-card p.payment-lead {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-size: 15px;
   line-height: 1.5;
   color: #3f4753;
@@ -908,17 +904,22 @@ a.logo:focus-visible {
 .payment-features {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 12px 0 14px;
+  gap: 8px;
+  margin: 10px 0 12px;
 }
 
 .payment-features .feature {
   align-items: flex-start;
-  padding: 11px 12px;
+  padding: 10px 12px;
   background: #fff;
   border: 1px solid #ffe9d2;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.payment-features .feature strong {
+  display: block;
+  margin-bottom: 4px;
 }
 
 .payment-features .feature > div {
@@ -926,23 +927,8 @@ a.logo:focus-visible {
   flex: 1;
 }
 
-.payment-features .feature strong {
-  display: block;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 5px;
-  color: #1d2128;
-}
-
 .payment-features .feature br {
   display: none;
-}
-
-.payment-features .feature div {
-  font-size: 14px;
-  line-height: 1.45;
-  color: #5f636d;
 }
 
 .payment-trust-list {
@@ -958,13 +944,9 @@ a.logo:focus-visible {
     padding: 14px 12px;
   }
 
-  .payment-card h2 {
-    margin-bottom: 8px;
-  }
-
   .payment-card p.payment-lead {
-    font-size: 14px;
-    line-height: 1.45;
+    font-size: 15px;
+    line-height: 1.5;
     margin-bottom: 12px;
   }
 
@@ -978,16 +960,6 @@ a.logo:focus-visible {
     border-radius: 12px;
   }
 
-  .payment-features .feature strong {
-    font-size: 15px;
-    margin-bottom: 3px;
-  }
-
-  .payment-features .feature div {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
   .payment-trust-list {
     margin-top: 10px;
   }
@@ -997,12 +969,7 @@ a.logo:focus-visible {
   }
 
   .trust-who-helps__card {
-    padding: 14px 12px;
-  }
-
-  .trust-who-helps__card h2 {
-    margin-bottom: 8px;
-    text-align: center;
+    padding: 10px 10px;
   }
 
   .trust-who-helps__intro {
@@ -1010,9 +977,9 @@ a.logo:focus-visible {
   }
 
   .trust-who-helps__intro p {
-    margin-bottom: 8px;
-    font-size: 14px;
-    line-height: 1.45;
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 1.5;
     color: #3f4753;
   }
 
@@ -1029,17 +996,6 @@ a.logo:focus-visible {
     padding: 9px 10px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  }
-
-  .trust-who-helps__item-title {
-    font-size: 15px;
-    margin-bottom: 3px;
-    line-height: 1.3;
-  }
-
-  .trust-who-helps__item p {
-    font-size: 13px;
-    line-height: 1.4;
   }
 
   #advantages .trust-items {
@@ -1064,22 +1020,17 @@ a.logo:focus-visible {
   background: #fffaf5;
   border: 1px solid #f3c7a3;
   border-radius: 16px;
-  padding: 20px 18px;
-}
-
-.trust-who-helps__card h2 {
-  margin-bottom: 10px;
-  text-align: center;
+  padding: 15px 14px;
 }
 
 .trust-who-helps__intro {
   max-width: 52em;
-  margin: 0 auto 14px;
+  margin: 0 auto 12px;
   text-align: left;
 }
 
 .trust-who-helps__intro p {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   font-size: 15px;
   line-height: 1.5;
   color: #3f4753;
@@ -1092,12 +1043,12 @@ a.logo:focus-visible {
 .trust-who-helps__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 8px;
   margin: 0;
 }
 
 .trust-who-helps__item {
-  padding: 11px 12px;
+  padding: 10px 12px;
   background: #fff;
   border: 1px solid #ffe9d2;
   border-radius: 14px;
@@ -1105,18 +1056,7 @@ a.logo:focus-visible {
 }
 
 .trust-who-helps__item-title {
-  margin: 0 0 5px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #1d2128;
-}
-
-.trust-who-helps__item p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.45;
-  color: #5f636d;
+  margin: 0 0 4px;
 }
 
 .card[id] {
@@ -1191,24 +1131,19 @@ h2 {
   margin-right: auto;
 }
 
-.transport-info__title {
-  margin: 0 0 10px;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #1f2430;
+.transport-info .transport-info__title {
+  margin-top: 0;
 }
 
 .transport-info__lead {
-  margin: 0 auto 16px;
-  max-width: 42em;
+  margin: 0 auto 18px;
+  max-width: 36em;
   padding: 0 6px;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.55;
-  color: #5f636d;
+  line-height: 1.5;
+  color: #4a5159;
 }
 
 .transport-info__grid {
@@ -1260,16 +1195,8 @@ h2 {
 .transport-info__body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   padding: 0;
-  margin: 0;
-}
-
-.transport-info__body .transport-info__card-title {
-  margin: 0;
-}
-
-.transport-info__body .transport-info__card-text {
   margin: 0;
 }
 
@@ -1282,58 +1209,28 @@ h2 {
   align-items: center;
 }
 
-.transport-info__badge {
-  display: inline-flex;
-  align-items: center;
-  flex: 0 0 auto;
-  width: fit-content;
-  max-width: none;
-  min-width: min-content;
-  white-space: nowrap;
-  box-sizing: border-box;
-  padding: 8px 11px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.38;
-  letter-spacing: 0.01em;
-  color: #ff7a00;
-  background: #fff4e8;
-  border: none;
-}
-
 .transport-info__submedia {
-  margin: 5px 0 0;
+  margin: 0;
   padding: 0;
   border: 0;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
 .transport-info__caption {
   margin: 0;
   padding: 0 6px;
   font-size: 12px;
-  line-height: 1.42;
-  color: #959ca8;
+  line-height: 1.45;
+  color: #9aa1ad;
   text-align: center;
   font-weight: 400;
 }
 
 .transport-info__card-title {
-  margin: 0 0 8px;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #222;
-}
-
-.transport-info__card-text {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #5f636d;
+  margin: 0 0 4px;
+  overflow-wrap: anywhere;
 }
 
 @media (min-width: 640px) {
@@ -1341,12 +1238,8 @@ h2 {
     padding: 18px 0 28px;
   }
 
-  .transport-info__title {
-    margin: 0 0 12px;
-  }
-
   .transport-info__lead {
-    margin: 0 auto 18px;
+    margin: 0 auto 20px;
   }
 
   .transport-info__grid {
@@ -1361,10 +1254,6 @@ h2 {
 
   .transport-info__card--media {
     gap: 14px;
-  }
-
-  .transport-info__submedia {
-    margin-top: 4px;
   }
 }
 
@@ -2347,7 +2236,8 @@ h2 {
   margin: 12px 0 0;
 }
 
-.card-tags span {
+.card-tags span,
+.transport-info__badge {
   display: inline-flex;
   align-items: center;
   flex: 0 0 auto;
@@ -3460,7 +3350,7 @@ h2 {
 
   .trust-who-helps__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 8px;
   }
 
   .trust-who-helps {
@@ -6257,10 +6147,7 @@ body.tour-sticky-bar-visible {
     gap: 10px;
   }
 
-  .card-tags span {
-    padding: 8px 10px;
-  }
-
+  .card-tags span,
   .transport-info__badge {
     padding: 8px 10px;
   }
