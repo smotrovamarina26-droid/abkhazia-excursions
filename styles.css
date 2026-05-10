@@ -6233,6 +6233,97 @@ body.tour-sticky-bar-visible {
   }
 }
 
+/*
+ * Главная страница (≤768px): плотнее расстояния между крупными секциями.
+ * Селекторы main > … не затрагивают страницы экскурсий. Внутренние отступы .card не меняются.
+ */
+@media (max-width: 768px) {
+  .hero-benefits {
+    padding: 32px 0 18px;
+  }
+
+  main > .quick-scenarios {
+    padding: 32px 0 10px;
+  }
+
+  main > .tours {
+    padding: 43px 0;
+  }
+
+  main > .tours .tours-lead {
+    margin-top: 14px;
+    margin-bottom: 15px;
+  }
+
+  main > .transport-info {
+    padding: 13px 0 17px;
+  }
+
+  main > .booking-process {
+    padding: 18px 0 21px;
+  }
+
+  main > .payment-block {
+    padding: 15px 0 19px;
+  }
+
+  main > .trust-who-helps {
+    padding: 15px 0 19px;
+  }
+
+  main > .trip-flow {
+    padding: 29px 0 36px;
+  }
+
+  main > .trip-documents {
+    padding: 22px 0 26px;
+  }
+
+  main > .advantages {
+    padding: 43px 0;
+  }
+
+  main > .back-to-tours-strip {
+    padding: 7px 0 6px;
+  }
+
+  main > .final-cta {
+    padding-bottom: 36px;
+  }
+
+  main > .direct-contact {
+    padding-bottom: 36px;
+  }
+
+  main .advantages.faq > .container > h2 {
+    margin-bottom: 22px;
+  }
+
+  main .advantages.faq .faq-intro {
+    margin: -8px auto 18px;
+  }
+
+  main .advantages.faq .faq-list {
+    margin-top: 12px;
+  }
+
+  main .advantages.testimonials .testimonials-avito-caption {
+    margin-bottom: 17px;
+  }
+
+  main .advantages.testimonials .testimonials-grid {
+    margin-top: 20px;
+  }
+
+  main .advantages.how-tours > .container > h2 {
+    margin-bottom: 22px;
+  }
+
+  main .advantages.how-tours .how-tours-grid {
+    margin-top: 22px;
+  }
+}
+
 /* Плавающая кнопка звонка (только мобильные) */
 .mobile-call-fab {
   display: none;
