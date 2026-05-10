@@ -252,9 +252,9 @@ a.logo:focus-visible {
     flex-direction: column;
     align-items: stretch;
     flex-wrap: nowrap;
-    gap: 2px;
+    gap: 4px;
     margin: 0;
-    padding: 10px 12px;
+    padding: 8px 10px;
     background: #fff;
     border: 1px solid #ffe5cc;
     border-radius: 14px;
@@ -264,6 +264,11 @@ a.logo:focus-visible {
     transform: translateY(-8px);
     pointer-events: none;
     transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+    max-height: min(400px, calc(100vh - 152px));
+    max-height: min(400px, calc(100dvh - 152px));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .topbar-content.is-menu-open > .menu {
@@ -274,10 +279,52 @@ a.logo:focus-visible {
   }
 
   .topbar .menu a {
-    font-size: 17px;
-    padding: 12px 8px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 48px;
+    padding: 10px 12px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
     white-space: normal;
-    border-radius: 8px;
+    border-radius: 10px;
+    color: #2c2c2c;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .topbar .menu a.menu-link--primary {
+    font-size: 22px;
+    font-weight: 700;
+    color: #141414;
+  }
+
+  .topbar-content.is-menu-open .topbar-burger {
+    padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .topbar-content.is-menu-open .topbar-burger-graphic {
+    width: 44px;
+    height: 44px;
+  }
+
+  .topbar-content.is-menu-open .topbar-burger-x {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .topbar:has(.topbar-content.is-menu-open) {
+    z-index: 1700;
   }
 
   .top-btn {
@@ -288,7 +335,14 @@ a.logo:focus-visible {
 
 .hero {
   margin-top: 68px;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.46) 30%,
+      rgba(0, 0, 0, 0.43) 62%,
+      rgba(0, 0, 0, 0.41) 100%
+    ),
     url("images/ritsa.jpg");
   background-size: cover;
   background-position: center;
@@ -302,6 +356,7 @@ a.logo:focus-visible {
   line-height: 1.2;
   margin-bottom: 16px;
   overflow-wrap: anywhere;
+  text-shadow: 0 0.06em 0.28em rgba(0, 0, 0, 0.35);
 }
 
 .hero-subline {
@@ -317,8 +372,15 @@ a.logo:focus-visible {
   margin: 0 auto 24px;
 }
 
-.hero .subtitle br {
+.hero .subtitle {
+  text-shadow: 0 0.05em 0.22em rgba(0, 0, 0, 0.3);
+}
+
+.hero .subtitle .hero-subtitle-line {
   display: block;
+}
+
+.hero .subtitle .hero-subtitle-line:first-child {
   margin-bottom: 0.35em;
 }
 
@@ -327,6 +389,7 @@ a.logo:focus-visible {
   padding: 0;
   font-size: 14px;
   line-height: 1.35;
+  text-shadow: 0 0.05em 0.2em rgba(0, 0, 0, 0.3);
 }
 
 .btn {
@@ -6220,6 +6283,12 @@ body.tour-sticky-bar-visible {
   box-shadow: 0 0 0 3px rgba(255, 143, 66, 0.52), 0 10px 22px rgba(255, 122, 0, 0.32);
 }
 
+@media (max-width: 360px) {
+  .hero .subtitle {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 380px) {
   .tour-sticky-bar-price-value {
     font-size: 16px;
@@ -6238,6 +6307,10 @@ body.tour-sticky-bar-visible {
  * Селекторы main > … не затрагивают страницы экскурсий. Внутренние отступы .card не меняются.
  */
 @media (max-width: 768px) {
+  .hero .subtitle .hero-subtitle-line {
+    white-space: nowrap;
+  }
+
   .hero-benefits {
     padding: 32px 0 18px;
   }
