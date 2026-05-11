@@ -2300,20 +2300,24 @@ h2 {
   color: #222;
 }
 
-.testimonials .avito-stars {
-  display: inline-flex;
-  align-items: center;
-  align-self: center;
-  font-size: 13px;
+.avito-rating-label {
+  font-weight: 500;
+  color: #5f6675;
+}
+
+.avito-rating-value {
+  font-weight: 700;
+  color: #222;
+}
+
+.avito-star {
+  font-size: 18px;
   line-height: 1;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: #f7b500;
+  color: #ff7a00;
 }
 
 .avito-meta-line {
   margin-top: 6px;
-
   text-align: center;
   font-size: 16px;
   font-weight: 600;
@@ -2322,7 +2326,7 @@ h2 {
 
 .testimonials-avito-cta {
   text-align: center;
-  margin: 0 0 12px;
+  margin: 0 0 4px;
 }
 
 .testimonials-avito-cta .btn {
@@ -2332,7 +2336,7 @@ h2 {
 .testimonials-avito-caption {
   text-align: center;
   margin: 0 auto 22px;
-  max-width: 38em;
+  max-width: 28em;
   padding: 0 10px;
   font-size: 13px;
   line-height: 1.5;
@@ -3205,13 +3209,13 @@ h2 {
   }
 
   .testimonials-avito-cta {
-    margin-bottom: 12px;
+    margin-bottom: 4px;
   }
 
   .testimonials-avito-caption {
     margin-bottom: 28px;
     font-size: 14px;
-    max-width: 42em;
+    max-width: 30em;
   }
 
   .testimonials .testimonials-grid {
