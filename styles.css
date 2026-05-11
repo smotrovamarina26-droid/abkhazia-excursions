@@ -843,6 +843,21 @@ a.logo:focus-visible {
     font-size: 14px;
     line-height: 1.4;
   }
+
+  .trip-documents__card {
+    padding: 14px 12px;
+  }
+
+  .trip-documents__item {
+    padding: 9px 10px;
+    border-radius: 12px;
+  }
+
+  .trip-documents__note {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
 }
 
 .booking-features {
@@ -1446,7 +1461,7 @@ h2 {
 .trip-documents__card {
   max-width: 900px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 20px 18px;
   background: #fffaf5;
   border: 1px solid #f3c7a3;
   border-radius: 16px;
@@ -1454,69 +1469,53 @@ h2 {
 }
 
 .trip-documents__card h2 {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 .trip-documents__lead {
-  text-align: center;
-  margin: 0 auto 10px;
-  max-width: 40em;
-  padding: 0 6px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.45;
-  color: #4a5159;
-}
-
-.trip-documents__intro {
-  margin: 0 auto 14px;
-  max-width: 52em;
-  text-align: left;
+  margin: 0 0 12px;
   font-size: 15px;
-  line-height: 1.55;
-  color: #454c58;
+  line-height: 1.5;
+  color: #3f4753;
 }
 
 .trip-documents__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
-  margin: 0 0 13px;
+  margin: 0;
 }
 
 .trip-documents__item {
-  padding: 11px 12px;
+  padding: 10px 12px;
   background: #fff;
   border: 1px solid #ffe9d2;
   border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .trip-documents__item-title {
-  margin: 0 0 6px;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.32;
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
   color: #1d2128;
 }
 
 .trip-documents__item p {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.52;
-  color: #5f636d;
+  font-size: 15px;
+  line-height: 1.43;
+  color: #6b7179;
 }
 
 .trip-documents__note {
-  margin: 0;
-  padding: 11px 12px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, #fffef9 0%, #fff9f3 100%);
-  border: 1px solid #ffd8b8;
+  margin: 14px 0 0;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.5;
-  color: #29303a;
+  color: #454c58;
   text-align: center;
 }
 
@@ -2434,6 +2433,10 @@ h2 {
   object-position: center 38%;
 }
 
+.advantages.faq {
+  padding: 32px 0;
+}
+
 .faq .faq-intro {
   text-align: center;
   margin: -10px auto 22px;
@@ -3117,6 +3120,10 @@ h2 {
     padding: 64px 0;
   }
 
+  .advantages.faq {
+    padding: 44px 0;
+  }
+
   .quick-scenarios {
     padding: 52px 0 16px;
   }
@@ -3232,25 +3239,11 @@ h2 {
 
   .trip-documents__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-    margin-bottom: 18px;
-  }
-
-  .trip-documents {
-    padding: 38px 0 44px;
+    gap: 8px;
   }
 
   .trip-documents__card {
-    padding: 24px 22px;
-  }
-
-  .trip-documents__item {
-    padding: 13px 14px;
-  }
-
-  .trip-documents__note {
-    font-size: 16px;
-    padding: 15px 16px;
+    padding: 22px 24px;
   }
 
   .faq .faq-intro {
@@ -6091,11 +6084,15 @@ body.tour-sticky-bar-visible {
 
 
   main > .trip-documents {
-    padding: 22px 0 26px;
+    padding: 18px 0 21px;
   }
 
   main > .advantages {
     padding: 43px 0;
+  }
+
+  main > .advantages.faq {
+    padding: 27px 0;
   }
 
   main > .back-to-tours-strip {
