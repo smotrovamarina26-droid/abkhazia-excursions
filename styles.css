@@ -252,13 +252,13 @@ a.logo:focus-visible {
     flex-direction: column;
     align-items: stretch;
     flex-wrap: nowrap;
-    gap: 4px;
+    gap: 0;
     margin: 0;
-    padding: 8px 10px;
-    background: #fff;
-    border: 1px solid #ffe5cc;
-    border-radius: 14px;
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+    padding: 18px 16px 20px;
+    background: #fffdf9;
+    border: 1px solid rgba(255, 140, 40, 0.16);
+    border-radius: 22px;
+    box-shadow: 0 14px 34px rgba(25, 25, 25, 0.08);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
@@ -278,26 +278,29 @@ a.logo:focus-visible {
     pointer-events: auto;
   }
 
-  .topbar .menu a {
+  .topbar .menu a,
+  .topbar .menu a.menu-link--primary,
+  .topbar .menu a.menu-link--secondary {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    min-height: 48px;
-    padding: 10px 12px;
+    min-height: 44px;
+    padding: 8px 10px;
     font-size: 20px;
-    font-weight: 600;
-    line-height: 1.3;
+    font-weight: 650;
+    line-height: 1.25;
     white-space: normal;
-    border-radius: 10px;
-    color: #2c2c2c;
+    border-radius: 12px;
+    color: #202226;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    transition: color 0.2s ease, background 0.2s ease;
   }
 
-  .topbar .menu a.menu-link--primary {
-    font-size: 22px;
-    font-weight: 700;
-    color: #141414;
+  .topbar .menu a:hover,
+  .topbar .menu a:active {
+    color: #ff6b00;
+    background: rgba(255, 122, 0, 0.06);
   }
 
   .topbar-content.is-menu-open .topbar-burger {
