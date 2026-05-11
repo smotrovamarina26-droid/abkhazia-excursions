@@ -2483,7 +2483,7 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 12px;
+  padding: 14px 12px;
   border: none;
   background: transparent;
   font-size: 17px;
@@ -2528,7 +2528,7 @@ h2 {
 }
 
 .faq-answer {
-  padding: 0 12px 12px;
+  padding: 0 12px 14px;
 }
 
 .faq-answer p {
@@ -3256,11 +3256,11 @@ h2 {
   }
 
   .faq-summary {
-    padding: 12px 14px;
+    padding: 16px 14px;
   }
 
   .faq-answer {
-    padding: 0 14px 14px;
+    padding: 0 14px 16px;
   }
 
   .card[id] {
@@ -6111,11 +6111,11 @@ body.tour-sticky-bar-visible {
   }
 
   main .advantages.faq .faq-summary {
-    padding: 9px 10px;
+    padding: 12px 10px;
   }
 
   main .advantages.faq .faq-answer {
-    padding: 0 10px 10px;
+    padding: 0 10px 12px;
   }
 
   main .advantages.testimonials .testimonials-avito-caption {
