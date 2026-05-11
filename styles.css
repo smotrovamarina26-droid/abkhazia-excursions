@@ -2484,6 +2484,10 @@ h2 {
   }
 }
 
+.advantages.how-tours {
+  padding: 36px 0 32px;
+}
+
 .how-tours-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2621,7 +2625,7 @@ h2 {
 }
 
 .final-cta {
-  padding: 0 0 44px;
+  padding: 12px 0 44px;
 }
 
 .final-cta-card {
@@ -6171,7 +6175,7 @@ body.tour-sticky-bar-visible {
   }
 
   main > .final-cta {
-    padding-bottom: 36px;
+    padding: 15px 0 36px;
   }
 
   main > .direct-contact {
@@ -6200,6 +6204,10 @@ body.tour-sticky-bar-visible {
 
   main .advantages.testimonials .testimonials-grid {
     margin-top: 20px;
+  }
+
+  main .advantages.how-tours {
+    padding: 35px 0 21px;
   }
 
   main .advantages.how-tours > .container > h2 {
