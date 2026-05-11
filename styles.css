@@ -2256,26 +2256,32 @@ h2 {
 }
 
 .testimonials-grid .testimonial-stars {
-  margin-right: 0.3em;
+  margin-right: 0.2em;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  color: #ff7a00;
 }
 
 .testimonials-grid .trust-item strong.testimonial-author {
   margin-bottom: 0;
 }
 
+.advantages.testimonials {
+  padding: 36px 0 32px;
+}
+
 .testimonials h2 {
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .testimonials .reviews-subtitle {
-  text-align: center;
-  margin: 0 auto 10px;
-  max-width: 40em;
-  padding: 0 6px;
-  font-size: 16px;
-  font-weight: 400;
+  margin: 0 0 12px;
+  font-size: 15px;
   line-height: 1.5;
-  color: #4a5159;
+  color: #3f4753;
+  text-align: center;
 }
 
 .testimonials-avito-trust {
@@ -2301,13 +2307,17 @@ h2 {
 }
 
 .avito-rating-label {
-  font-weight: 500;
-  color: #5f6675;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #1d2128;
 }
 
 .avito-rating-value {
-  font-weight: 700;
-  color: #222;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #1d2128;
 }
 
 .avito-star {
@@ -2319,9 +2329,9 @@ h2 {
 .avito-meta-line {
   margin-top: 6px;
   text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  color: #5f6675;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1d2128;
 }
 
 .testimonials-avito-cta {
@@ -2335,7 +2345,7 @@ h2 {
 
 .testimonials-avito-caption {
   text-align: center;
-  margin: 0 auto 22px;
+  margin: 14px auto 22px;
   max-width: 28em;
   padding: 0 10px;
   font-size: 13px;
@@ -2345,40 +2355,101 @@ h2 {
 }
 
 .testimonials .testimonial-route {
-  margin: 6px 0 10px;
+  margin: 4px 0 10px;
   padding: 0;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.35;
   font-weight: 400;
-  color: #6b7280;
+  color: #b0b5bd;
 }
 
 .testimonials .testimonials-grid {
   margin-top: 0;
+  gap: 8px;
+}
+
+.testimonials .trust-item {
+  padding: 10px 12px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.testimonials .trust-item:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.testimonials .trust-item strong.testimonial-author {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #1d2128;
+}
+
+.testimonials .trust-item p {
+  font-size: 15px;
+  line-height: 1.43;
+  color: #6b7179;
+}
+
+.testimonial-body {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.testimonial-body.is-expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.testimonial-toggle {
+  display: none;
+  margin-top: 6px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #ff7a00;
+  cursor: pointer;
+}
+
+.testimonial-toggle:hover {
+  text-decoration: underline;
+}
+
+.testimonial-toggle.is-visible {
+  display: inline-block;
 }
 
 .testimonials-show-more {
   grid-column: 1 / -1;
   justify-self: center;
-  margin: 6px auto 2px;
-  padding: 12px 24px;
+  margin: 8px auto 0;
+  padding: 14px 24px;
   border-radius: 12px;
   font-family: inherit;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.3;
   cursor: pointer;
   background: #fff;
   color: #e56700;
-  border: 2px solid #ffb366;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #ffb366;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .testimonials-show-more:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   border-color: #ff9a3c;
-  box-shadow: 0 10px 22px rgba(255, 154, 60, 0.18);
+  box-shadow: 0 4px 12px rgba(255, 154, 60, 0.14);
 }
 
 .testimonials-show-more:focus,
@@ -2393,21 +2464,23 @@ h2 {
 
 @media (max-width: 768px) {
   .testimonials-grid {
-    gap: 13px;
+    gap: 8px;
     margin-top: 22px;
   }
 
   .testimonials .trust-item {
-    padding: 15px 15px;
+    padding: 9px 10px;
+    border-radius: 12px;
   }
 
   .testimonials .trust-item strong.testimonial-author {
     margin-bottom: 0;
+    font-size: 17px;
   }
 
   .testimonials .testimonial-route {
-    margin: 5px 0 8px;
-    font-size: 13px;
+    margin: 4px 0 8px;
+    font-size: 12px;
   }
 }
 
@@ -3194,13 +3267,8 @@ h2 {
 
   .testimonials-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+    gap: 8px;
     margin-top: 40px;
-  }
-
-  .testimonials .reviews-subtitle {
-    margin-bottom: 12px;
-    font-size: 17px;
   }
 
   .testimonials-avito-trust {
@@ -6120,6 +6188,10 @@ body.tour-sticky-bar-visible {
 
   main .advantages.faq .faq-answer {
     padding: 0 10px 12px;
+  }
+
+  main .advantages.testimonials {
+    padding: 35px 0 21px;
   }
 
   main .advantages.testimonials .testimonials-avito-caption {
