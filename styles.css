@@ -5495,6 +5495,16 @@ h2 {
   margin-right: auto;
 }
 
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-title {
+  font-size: calc(1.25rem - 5px);
+  line-height: 1.22;
+  margin: 0 0 12px;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-subtitle {
+  margin: -12px 0 18px;
+}
+
 .tour-logistics-brief {
   margin-top: 12px;
   background: #fff;
@@ -5904,6 +5914,73 @@ h2 {
   border-radius: 12px;
   padding: 14px 16px;
   line-height: 1.45;
+}
+
+/* Плашка экосбора — только «Золотое кольцо» */
+.tour-page--golden-ring .tour-price-highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #3a3f4a;
+  background: #fff8f0;
+  border: 1px solid rgba(255, 111, 0, 0.15);
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+.tour-page--golden-ring .tour-price-highlight__bar {
+  flex-shrink: 0;
+  width: 3px;
+  height: 36px;
+  align-self: center;
+  border-radius: 3px;
+  background: #ff6f00;
+  transform: translateY(3px);
+}
+
+.tour-page--golden-ring .tour-price-highlight__eco {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.tour-page--golden-ring .tour-price-highlight__eco-line1,
+.tour-page--golden-ring .tour-price-highlight__eco-line2 {
+  display: block;
+}
+
+.tour-page--golden-ring .tour-price-highlight__eco-line1 {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 400;
+}
+
+.tour-page--golden-ring .tour-price-highlight__eco-line2 {
+  font-size: inherit;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .tour-page--golden-ring .tour-price-highlight {
+    margin-top: 14px;
+    padding: 15px 18px;
+    gap: 9px;
+    font-size: 16px;
+    line-height: 1.48;
+  }
+
+  .tour-page--golden-ring .tour-price-highlight__bar {
+    height: 34px;
+  }
 }
 
 .tour-includes-cols {

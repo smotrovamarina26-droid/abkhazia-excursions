@@ -379,7 +379,7 @@
     <section class="tour-section">
       <div class="container">
         <h2>Стоимость экскурсии</h2>
-        <p>Стоимость зависит от точки отправления и количества гостей. Обязательные платежи уже включены.</p>
+        <p>Стоимость зависит от точки отправления и количества гостей</p>
         <div class="tour-price-cols">
           <div class="tour-price-col">
             <h3 class="tour-price-col-title">Из Адлера и Сириуса</h3>
@@ -387,20 +387,26 @@
               <li>Взрослый с 12 лет — 2400 ₽</li>
               <li>Детский 7–11 лет — 2100 ₽</li>
               <li>Дети до 6 лет на руках — бесплатно</li>
-              <li>Дети до 6 лет с отдельным местом — 1400 ₽</li>
+              <li>Дети до 6 лет с местом — 1000 ₽</li>
             </ul>
           </div>
           <div class="tour-price-col">
             <h3 class="tour-price-col-title">Из Сочи и Хосты</h3>
             <ul class="tour-price-list">
-              <li>Взрослый с 12 лет — 2600 ₽</li>
-              <li>Детский 7–11 лет — 2300 ₽</li>
+              <li>Взрослый с 12 лет — 2800 ₽</li>
+              <li>Детский 7–11 лет — 2500 ₽</li>
               <li>Дети до 6 лет на руках — бесплатно</li>
-              <li>Дети до 6 лет с отдельным местом — 1600 ₽</li>
+              <li>Дети до 6 лет с местом — 1400 ₽</li>
             </ul>
           </div>
         </div>
-        <p class="tour-price-highlight">Экосбор Рицинского нацпарка — 1000 ₽ уже включён</p>
+        <p class="tour-price-highlight">
+          <span class="tour-price-highlight__bar" aria-hidden="true"></span>
+          <span class="tour-price-highlight__eco">
+            <span class="tour-price-highlight__eco-line1">Экосбор на озере Рица — 1000 ₽</span>
+            <span class="tour-price-highlight__eco-line2">Уже включён</span>
+          </span>
+        </p>
 
         <div class="tour-pricing-calc" id="tour-pricing">
           <h3 class="tour-pricing-calc-title">Рассчитайте стоимость поездки</h3>
@@ -447,7 +453,7 @@
             </div>
             <div class="tour-pricing-calc-row">
               <span class="tour-pricing-calc-row-name"
-                >Дети до 6 лет с отдельным местом
+                >Дети до 6 лет с местом
                 <span class="calc-price" data-type="babySeat" aria-label="Цена за человека"></span></span>
               <div class="tour-pricing-stepper" data-calc-key="babySeat" data-calc-min="0" data-calc-max="20">
                 <button type="button" class="tour-pricing-step" data-calc-delta="-1" aria-label="Меньше детей с местом">−</button>
@@ -777,8 +783,8 @@
       }
 
       var PRICES = {
-        adler: { adult: 2400, child: 2100, babySeat: 1400, babyFree: 0 },
-        sochi: { adult: 2600, child: 2300, babySeat: 1600, babyFree: 0 }
+        adler: { adult: 2400, child: 2100, babySeat: 1000, babyFree: 0 },
+        sochi: { adult: 2800, child: 2500, babySeat: 1400, babyFree: 0 }
       };
 
       var state = {
