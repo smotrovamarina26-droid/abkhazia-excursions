@@ -1820,70 +1820,6 @@ h2 {
   color: #5a616c;
 }
 
-.booking-urgent-line {
-  margin: 8px 0 0;
-  font-size: 12px;
-  line-height: 1.45;
-  color: #8b9199;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: baseline;
-  gap: 0 4px;
-}
-
-.booking-urgent-line__prefix {
-  text-align: center;
-}
-
-.booking-urgent-line__phone {
-  flex: 0 0 100%;
-  text-align: center;
-  margin-top: 2px;
-}
-
-.booking-urgent-line__phone a {
-  white-space: nowrap;
-}
-
-.booking-urgent-line a {
-  color: #c45a00;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.booking-urgent-line a:hover {
-  text-decoration: underline;
-}
-
-.booking-urgent-line a:focus {
-  outline: none;
-}
-
-.booking-urgent-line a:focus-visible {
-  border-radius: 4px;
-  box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.35);
-}
-
-@media (max-width: 480px) {
-  .booking-urgent-line {
-    font-size: 11px;
-    line-height: 1.4;
-    row-gap: 3px;
-  }
-
-  .booking-urgent-line__phone {
-    padding-top: 1px;
-  }
-}
-
-@media (max-width: 360px) {
-  .booking-urgent-line {
-    font-size: 10px;
-  }
-}
-
 .booking-form-state.is-hidden {
   display: none;
 }
@@ -1985,10 +1921,6 @@ h2 {
   margin-top: 10px;
 }
 
-.booking-urgent-line + .privacy-note {
-  margin-top: 12px;
-}
-
 .tour-page--golden-ring .booking-error-message {
   min-height: 0;
   margin: 0;
@@ -2003,13 +1935,6 @@ h2 {
   margin: 2px 0 0;
   font-size: 13px;
   color: #cc3a1e;
-}
-
-.booking-date-note {
-  margin: -4px 0 0;
-  font-size: 12px;
-  line-height: 1.4;
-  color: #6b6f7a;
 }
 
 .booking-success-state {
