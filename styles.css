@@ -4707,13 +4707,52 @@ h2 {
   padding-top: 28px;
 }
 
+/* Плотнее стык «Описание» → галерея; только верх секции, контент галереи без изменений */
+.tour-page--golden-ring #tour-tourists-gallery.tour-section {
+  padding-top: calc(48px - 18px);
+}
+
+.tour-page--golden-ring #tour-audience h2 {
+  font-size: 23px;
+  line-height: 1.16;
+}
+
+.tour-page--golden-ring #tour-route-photos h2 {
+  font-size: 23px;
+  line-height: 1.16;
+}
+
+.tour-page--golden-ring #tour-route-photos.tour-section {
+  padding-top: calc(48px - 28px);
+}
+
+@media (min-width: 769px) {
+  .tour-page--golden-ring #tour-tourists-gallery.tour-section {
+    padding-top: calc(64px - 18px);
+  }
+
+  .tour-page--golden-ring #tour-audience h2 {
+    font-size: 29px;
+    line-height: 1.2;
+  }
+
+  .tour-page--golden-ring #tour-route-photos h2 {
+    font-size: 29px;
+    line-height: 1.2;
+  }
+
+  .tour-page--golden-ring #tour-route-photos.tour-section {
+    padding-top: calc(64px - 28px);
+  }
+}
+
 @media (max-width: 640px) {
   .tour-page--golden-ring #tour-program .tour-list {
-    line-height: 1.5;
+    line-height: 1.46;
   }
 
   .tour-page--golden-ring #tour-program .tour-list li {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .tour-page--golden-ring #tour-what-to-bring .tour-list {
@@ -4736,11 +4775,13 @@ h2 {
 .tour-page--golden-ring #tour-program .tour-list {
   list-style: none;
   padding-left: 0;
+  line-height: 1.54;
 }
 
 .tour-page--golden-ring #tour-program .tour-list li {
   position: relative;
   padding-left: 16px;
+  margin-bottom: 5px;
 }
 
 .tour-page--golden-ring #tour-program .tour-list li::before {
@@ -4820,6 +4861,10 @@ h2 {
 #tour-includes h2,
 .tour-section--muted h2 {
   text-align: center;
+}
+
+#tour-audience h2 {
+  margin-bottom: 18px;
 }
 
 #tour-description h2,
@@ -5173,7 +5218,7 @@ h2 {
   width: 100%;
   min-width: 0;
   margin: 0;
-  padding: 18px 20px;
+  padding: 11px 20px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -5383,6 +5428,27 @@ h2 {
   height: 6px;
   border-radius: 50%;
   background: #ff7a00;
+}
+
+/* «Как проходит поездка» — только Золотое кольцо: заголовок как у «Программа дня» */
+.tour-page--golden-ring #tour-logistics h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-logistics-intro {
+  margin-bottom: 20px;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-logistics-brief {
+  margin-top: 0;
+}
+
+@media (min-width: 769px) {
+  .tour-page--golden-ring #tour-logistics h2 {
+    font-size: 34px;
+  }
 }
 
 .tour-page--golden-ring .tour-price-cols .tour-price-list {
