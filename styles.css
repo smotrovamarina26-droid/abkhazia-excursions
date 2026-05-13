@@ -4755,20 +4755,16 @@ h2 {
     margin-bottom: 4px;
   }
 
-  .tour-page--golden-ring #tour-what-to-bring .tour-list {
-    line-height: 1.5;
+  .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list {
+    line-height: 1.55;
   }
 
-  .tour-page--golden-ring #tour-what-to-bring .tour-list li {
-    margin-bottom: 6px;
+  .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li {
+    margin-bottom: 10px;
   }
 
-  .tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list {
-    line-height: 1.5;
-  }
-
-  .tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list li {
-    margin-bottom: 6px;
+  .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -4795,20 +4791,33 @@ h2 {
   background: #ff7a00;
 }
 
-.tour-page--golden-ring #tour-what-to-bring .tour-list {
+.tour-page--golden-ring #tour-what-to-bring .tour-includes-card {
+  margin-top: 12px;
+}
+
+.tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list {
   list-style: none;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
+  color: #3a3f4a;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
-.tour-page--golden-ring #tour-what-to-bring .tour-list li {
+.tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li {
   position: relative;
-  padding-left: 16px;
+  padding-left: 18px;
+  margin-bottom: 10px;
 }
 
-.tour-page--golden-ring #tour-what-to-bring .tour-list li::before {
+.tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li::before {
   content: "";
   position: absolute;
-  top: 0.62em;
+  top: 0.55em;
   left: 2px;
   width: 6px;
   height: 6px;
@@ -4816,25 +4825,130 @@ h2 {
   background: #ff7a00;
 }
 
-.tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list {
+/* Документы / граница — компактная карточка (только «Золотое кольцо») */
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 18px 20px 20px;
+  background: #fff;
+  border: 1px solid #ffc891;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__title {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 4.5vw, 28px);
+  line-height: 1.25;
+  font-weight: 700;
+  text-align: center;
+  color: #1a1d22;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__lead {
+  margin: 0 auto 16px;
+  max-width: 36em;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #4a5058;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list {
   list-style: none;
-  padding-left: 0;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 36em;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2a2f36;
 }
 
-.tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list li {
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list > li {
+  margin-bottom: 10px;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list > li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__details {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f0e8df;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__details:focus,
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__details:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary {
   position: relative;
-  padding-left: 16px;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0 40px 0 0;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #2d333b;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.tour-page--golden-ring #tour-border-rules .tour-accordion-body .tour-list li::before {
-  content: "";
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary:focus,
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary::-webkit-details-marker {
+  display: none;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary-text {
+  display: block;
+  text-align: left;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary::after {
+  content: "▼";
   position: absolute;
-  top: 0.62em;
-  left: 2px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff7a00;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #ff7a00;
+  transition: transform 0.2s ease;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__details[open] .tour-border-docs-card__summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__more {
+  padding-top: 12px;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list--more {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #454b55;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list--more > li {
+  margin-bottom: 8px;
+}
+
+.tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list--more > li:last-child {
+  margin-bottom: 0;
 }
 
 .tour-section {
