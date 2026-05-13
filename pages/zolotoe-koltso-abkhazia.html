@@ -466,11 +466,10 @@
           <div class="tour-pricing-calc-total">
             <div id="calc-breakdown" class="tour-pricing-calc-breakdown" aria-live="polite"></div>
             <p class="tour-pricing-calc-total-value" id="calc-total">Итого: 2400 ₽</p>
-            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Сумма бронирования: 500 ₽</p>
-            <p class="tour-pricing-calc-prepay-hint">Сумма бронирования — 500 ₽ за каждого взрослого и ребёнка 7–11 лет. За детей до 6 лет сумма бронирования не требуется.</p>
-            <p class="tour-pricing-calc-prepay-line" id="calc-balance">Остальное на месте: 1900 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Бронь: 500 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-balance">К оплате на экскурсии: 1900 ₽</p>
           </div>
-          <p class="tour-pricing-calc-booking-note">После заявки свяжемся с вами, уточним детали и подтвердим бронирование</p>
+          <p class="tour-pricing-calc-booking-note">После заявки свяжемся с вами и подтвердим бронирование</p>
 
           <button
             type="button"
@@ -498,22 +497,20 @@
               <li>Сопровождение экскурсовода на маршруте</li>
               <li>Дегустация местных продуктов</li>
               <li>Лёгкий завтрак: чай и свежая выпечка</li>
-              <li>Экологический сбор Рицинского национального парка</li>
+              <li>Экосбор на озере Рица</li>
             </ul>
           </div>
           <div class="tour-includes-card">
             <h3 class="tour-includes-subtitle">Дополнительно по желанию</h3>
             <ul class="tour-includes-list">
               <li>Обед, средний чек около 700 ₽</li>
-              <li>
-                Дополнительные объекты по желанию — посещение необязательно
-                <ul class="tour-includes-list-nested">
-                  <li>Тарзанка над рекой — 1000 ₽</li>
-                  <li>Дача Сталина — 300 ₽</li>
-                  <li>Водопад Молочный — 300 ₽</li>
-                  <li>Храм X века в селе Лыхны — 300 ₽</li>
-                  <li>Новоафонская пещера — 1000 ₽, дети до 8 лет бесплатно</li>
-                </ul>
+              <li>Тарзанка над рекой — 1000 ₽</li>
+              <li>Дача Сталина — 300 ₽</li>
+              <li>Молочный водопад — 300 ₽</li>
+              <li>Храм X века в Лыхны — 300 ₽</li>
+              <li class="tour-includes-extra-with-subnote">
+                <span class="tour-includes-extra-with-subnote__line">Новоафонская пещера — 1000 ₽</span>
+                <span class="tour-includes-extra-with-subnote__note">Дети до 8 лет бесплатно</span>
               </li>
               <li>Личные расходы</li>
             </ul>
@@ -884,8 +881,8 @@
         document.getElementById("calc-val-baby").textContent = String(state.baby);
         document.getElementById("calc-val-babySeat").textContent = String(state.babySeat);
         document.getElementById("calc-total").textContent = "Итого: " + formatMoney(total);
-        document.getElementById("calc-booking").textContent = "Сумма бронирования: " + formatMoney(prepayment);
-        document.getElementById("calc-balance").textContent = "Остальное на месте: " + formatMoney(remainder);
+        document.getElementById("calc-booking").textContent = "Бронь: " + formatMoney(prepayment);
+        document.getElementById("calc-balance").textContent = "К оплате на экскурсии: " + formatMoney(remainder);
 
         updateBreakdown();
       }

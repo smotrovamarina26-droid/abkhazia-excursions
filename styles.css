@@ -5505,6 +5505,82 @@ h2 {
   margin: -12px 0 18px;
 }
 
+/* Счётчики гостей в калькуляторе — легче и компактнее (только «Золотое кольцо») */
+.tour-page--golden-ring #tour-pricing .tour-pricing-stepper {
+  border-radius: 10px;
+  border: 1px solid #efe6df;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-step {
+  min-width: 40px;
+  min-height: 44px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #b54f00;
+  background: #fffdfb;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-step:hover {
+  background: #fff7f0;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-step:active {
+  background: #fff2e8;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-step-value {
+  min-width: 34px;
+  padding: 0 7px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 44px;
+  border-left: 1px solid #f2ebe6;
+  border-right: 1px solid #f2ebe6;
+}
+
+/* «Количество участников»: плотнее строки, без изменения кегля (только «Золотое кольцо») */
+.tour-page--golden-ring #tour-pricing > div:nth-of-type(2).tour-pricing-calc-block {
+  margin-bottom: 16px;
+}
+
+.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .tour-pricing-calc-label {
+  margin-bottom: 8px;
+}
+
+.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .tour-pricing-calc-row {
+  margin-bottom: 8px;
+  gap: 8px 10px;
+}
+
+.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .calc-price {
+  margin-left: 4px;
+}
+
+/* Итоговый блок калькулятора — чуть легче (только «Золотое кольцо») */
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total {
+  padding-top: 14px;
+  border-top-color: #ebe6df;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total-value {
+  margin-bottom: 8px;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total-value + .tour-pricing-calc-prepay-line {
+  margin-top: 2px;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-prepay-line {
+  margin-top: 4px;
+  font-weight: 500;
+  color: #5a5f68;
+}
+
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-booking-note {
+  margin: 12px 0 10px;
+  color: #737984;
+}
+
 .tour-logistics-brief {
   margin-top: 12px;
   background: #fff;
@@ -5772,6 +5848,11 @@ h2 {
 
   .tour-page--golden-ring .tour-pricing-calc .calc-price::before {
     content: none;
+  }
+
+  .tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .calc-price {
+    margin-left: 0;
+    margin-top: 1px;
   }
 }
 
@@ -6062,6 +6143,34 @@ h2 {
   top: 0;
   color: #9a9ea6;
   font-weight: 400;
+}
+
+/* «Что включено» — второй столбец: пещера с припиской (только «Золотое кольцо») */
+.tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote__note {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  line-height: 1.38;
+  font-weight: 400;
+  color: #8a9199;
+}
+
+@media (max-width: 599px) {
+  .tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li {
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+
+  .tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .tour-accordion {
