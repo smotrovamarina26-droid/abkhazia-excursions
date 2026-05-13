@@ -5445,6 +5445,18 @@ h2 {
   margin-top: 0;
 }
 
+.tour-page--golden-ring #tour-logistics .tour-logistics-accordion {
+  margin-block: 0;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-logistics-accordion + .tour-logistics-accordion {
+  margin-top: 6px;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-logistics-accordion .tour-accordion-summary {
+  padding: 12px 40px 12px 20px;
+}
+
 @media (min-width: 769px) {
   .tour-page--golden-ring #tour-logistics h2 {
     font-size: 34px;
