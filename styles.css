@@ -4666,16 +4666,13 @@ h2 {
   padding-bottom: 36px;
 }
 
-.tour-page--golden-ring #tour-audience {
+.tour-page--golden-ring #tour-audience,
+.tour-page--kyndyg #tour-audience {
   padding-top: 28px;
 }
 
-/* Плотнее стык «Описание» → галерея; только верх секции, контент галереи без изменений */
-.tour-page--golden-ring #tour-tourists-gallery.tour-section {
-  padding-top: calc(48px - 18px);
-}
-
-.tour-page--golden-ring #tour-audience h2 {
+.tour-page--golden-ring #tour-audience h2,
+.tour-page--kyndyg #tour-audience h2 {
   font-size: 23px;
   line-height: 1.16;
 }
@@ -4689,12 +4686,19 @@ h2 {
   padding-top: calc(48px - 28px);
 }
 
+.tour-page--golden-ring #tour-tourists-gallery.tour-section,
+.tour-page--kyndyg #tour-tourists-gallery.tour-section {
+  padding-top: calc(48px - 18px);
+}
+
 @media (min-width: 769px) {
-  .tour-page--golden-ring #tour-tourists-gallery.tour-section {
+  .tour-page--golden-ring #tour-tourists-gallery.tour-section,
+  .tour-page--kyndyg #tour-tourists-gallery.tour-section {
     padding-top: calc(64px - 18px);
   }
 
-  .tour-page--golden-ring #tour-audience h2 {
+  .tour-page--golden-ring #tour-audience h2,
+  .tour-page--kyndyg #tour-audience h2 {
     font-size: 29px;
     line-height: 1.2;
   }
