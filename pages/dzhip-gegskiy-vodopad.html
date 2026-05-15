@@ -403,10 +403,10 @@
       </div>
     </section>
 
-    <section class="tour-section" id="tour-pricing">
+    <section class="tour-section">
       <div class="container">
         <h2>Стоимость экскурсии</h2>
-        <p>Стоимость зависит от точки отправления и количества гостей. Экологический сбор на озеро Рица уже включён.</p>
+        <p>Стоимость зависит от точки отправления и количества гостей.</p>
         <div class="tour-price-cols">
           <div class="tour-price-col">
             <h3 class="tour-price-col-title">Из Адлера и Сириуса</h3>
@@ -423,9 +423,15 @@
             </ul>
           </div>
         </div>
-        <p class="tour-price-highlight">Экологический сбор на озеро Рица — 1000 ₽ уже включён в стоимость</p>
+        <p class="tour-price-highlight">
+          <span class="tour-price-highlight__bar" aria-hidden="true"></span>
+          <span class="tour-price-highlight__eco">
+            <span class="tour-price-highlight__eco-line1">Экосбор на озере Рица — 1000 ₽</span>
+            <span class="tour-price-highlight__eco-line2">Уже включён</span>
+          </span>
+        </p>
 
-        <div class="tour-pricing-calc" id="tour-pricing-calc">
+        <div class="tour-pricing-calc" id="tour-pricing">
           <h3 class="tour-pricing-calc-title">Рассчитайте стоимость поездки</h3>
           <p class="tour-pricing-calc-subtitle">Выберите точку отправления и количество гостей — итог посчитается автоматически</p>
 
@@ -463,10 +469,10 @@
           <div class="tour-pricing-calc-total">
             <div id="calc-breakdown" class="tour-pricing-calc-breakdown" aria-live="polite"></div>
             <p class="tour-pricing-calc-total-value" id="calc-total">Итого: 2800 ₽</p>
-            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Сумма бронирования: 500 ₽</p>
-            <p class="tour-pricing-calc-prepay-hint">Сумма бронирования — 500 ₽ за каждого участника.</p>
-            <p class="tour-pricing-calc-prepay-line" id="calc-balance">Остальное на месте: 2300 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-booking">Бронь: 500 ₽</p>
+            <p class="tour-pricing-calc-prepay-line" id="calc-balance">К оплате на экскурсии: 2300 ₽</p>
           </div>
+          <p class="tour-pricing-calc-booking-note">После заявки свяжемся с вами и подтвердим бронирование</p>
 
           <button
             type="button"
@@ -607,7 +613,7 @@
         <span class="tour-sticky-bar-price-hint">за человека</span>
       </div>
       <div class="tour-sticky-bar-actions">
-        <a href="#tour-pricing-calc" class="tour-sticky-bar-secondary">Рассчитать</a>
+        <a href="#tour-pricing" class="tour-sticky-bar-secondary">Рассчитать</a>
         <button
           type="button"
           class="card-book-btn tour-sticky-bar-cta"
@@ -719,7 +725,7 @@
     (function () {
       var bar = document.getElementById("tour-sticky-bar");
       var hero = document.getElementById("tour-hero");
-      var pricing = document.getElementById("tour-pricing-calc");
+      var pricing = document.getElementById("tour-pricing");
       if (!bar || !hero) {
         return;
       }
@@ -783,7 +789,7 @@
   </script>
   <script>
     (function () {
-      var root = document.getElementById("tour-pricing-calc");
+      var root = document.getElementById("tour-pricing");
       if (!root) {
         return;
       }
@@ -819,8 +825,8 @@
         return state.adults * p.adult + state.child * p.child;
       }
 
-      function calculatePrepayment() {
-        return (state.adults + state.child) * 500;
+      function calculatePrepayment(adults, children) {
+        return (adults + children) * 500;
       }
 
       function updateBreakdown() {
@@ -830,16 +836,23 @@
         }
 
         var p = PRICES[state.departure];
-        var adultSum = state.adults * p.adult;
-        var childSum = state.child * p.child;
-        var totalPeople = state.adults + state.child;
+        var adults = state.adults;
+        var children = state.child;
+        var adultSum = adults * p.adult;
+        var childSum = children * p.child;
+        var totalPeople = adults + children;
         var parts = [];
 
-        if (state.adults > 0) {
-          parts.push("<div>Взрослые × " + state.adults + " = " + adultSum.toLocaleString("ru-RU") + " ₽</div>");
+        if (totalPeople === 0) {
+          container.innerHTML = '<div class="calc-empty">Выберите состав группы</div>';
+          return;
         }
-        if (state.child > 0) {
-          parts.push("<div>Дети 3–11 лет × " + state.child + " = " + childSum.toLocaleString("ru-RU") + " ₽</div>");
+
+        if (adults) {
+          parts.push("<div>Взрослые × " + adults + " = " + adultSum.toLocaleString("ru-RU") + " ₽</div>");
+        }
+        if (children) {
+          parts.push("<div>Дети 3–11 лет × " + children + " = " + childSum.toLocaleString("ru-RU") + " ₽</div>");
         }
         parts.push('<div class="calc-total-people">Всего гостей: ' + totalPeople + "</div>");
         container.innerHTML = parts.join("");
@@ -848,14 +861,14 @@
       function render() {
         updateDisplayedPrices();
         var total = getTotal();
-        var prepayment = calculatePrepayment();
+        var prepayment = calculatePrepayment(state.adults, state.child);
         var remainder = total - prepayment;
 
         document.getElementById("calc-val-adults").textContent = String(state.adults);
         document.getElementById("calc-val-child").textContent = String(state.child);
         document.getElementById("calc-total").textContent = "Итого: " + formatMoney(total);
-        document.getElementById("calc-booking").textContent = "Сумма бронирования: " + formatMoney(prepayment);
-        document.getElementById("calc-balance").textContent = "Остальное на месте: " + formatMoney(remainder);
+        document.getElementById("calc-booking").textContent = "Бронь: " + formatMoney(prepayment);
+        document.getElementById("calc-balance").textContent = "К оплате на экскурсии: " + formatMoney(remainder);
         updateBreakdown();
       }
 
