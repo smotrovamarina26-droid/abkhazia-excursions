@@ -3798,64 +3798,6 @@ h2 {
   }
 }
 
-.tour-page--gega #tour-logistics .tour-list {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.tour-page--gega #tour-logistics .tour-list li {
-  position: relative;
-  margin-bottom: 6px;
-  padding-left: 15px;
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-.tour-page--gega #tour-logistics .tour-list li:last-child {
-  margin-bottom: 0;
-}
-
-.tour-page--gega #tour-logistics .tour-list li::before {
-  content: "";
-  position: absolute;
-  top: 0.6em;
-  left: 1px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff7a00;
-}
-
-.tour-page--gega #tour-logistics .tour-logistics-sprinter-card {
-  margin: 14px auto 14px;
-  max-width: 800px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #ffe4c8;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
-  background: #fff;
-}
-
-.tour-page--gega #tour-logistics .tour-logistics-sprinter-card__img-wrap {
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #e8edf2;
-  line-height: 0;
-}
-
-.tour-page--gega #tour-logistics .tour-logistics-sprinter-card__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-
 .tour-page--gega #tour-pricing h2 {
   text-align: center;
 }
@@ -5306,14 +5248,16 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-logistics .tour-list,
-.tour-page--kyndyg #tour-logistics .tour-list {
+.tour-page--kyndyg #tour-logistics .tour-list,
+.tour-page--gega #tour-logistics .tour-list {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-list li,
-.tour-page--kyndyg #tour-logistics .tour-list li {
+.tour-page--kyndyg #tour-logistics .tour-list li,
+.tour-page--gega #tour-logistics .tour-list li {
   position: relative;
   margin-bottom: 6px;
   padding-left: 15px;
@@ -5322,12 +5266,14 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-logistics .tour-list li:last-child,
-.tour-page--kyndyg #tour-logistics .tour-list li:last-child {
+.tour-page--kyndyg #tour-logistics .tour-list li:last-child,
+.tour-page--gega #tour-logistics .tour-list li:last-child {
   margin-bottom: 0;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-list li::before,
-.tour-page--kyndyg #tour-logistics .tour-list li::before {
+.tour-page--kyndyg #tour-logistics .tour-list li::before,
+.tour-page--gega #tour-logistics .tour-list li::before {
   content: "";
   position: absolute;
   top: 0.6em;
@@ -5338,42 +5284,49 @@ h2 {
   background: #ff7a00;
 }
 
-/* «Как проходит поездка» — «Золотое кольцо», «Кындыг» */
+/* «Как проходит поездка» — «Золотое кольцо», «Кындыг», джип-тур */
 .tour-page--golden-ring #tour-logistics h2,
-.tour-page--kyndyg #tour-logistics h2 {
+.tour-page--kyndyg #tour-logistics h2,
+.tour-page--gega #tour-logistics h2 {
   font-size: 28px;
   line-height: 1.2;
   font-weight: 700;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-intro,
-.tour-page--kyndyg #tour-logistics .tour-logistics-intro {
+.tour-page--kyndyg #tour-logistics .tour-logistics-intro,
+.tour-page--gega #tour-logistics .tour-logistics-intro {
   margin-bottom: 20px;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-brief,
-.tour-page--kyndyg #tour-logistics .tour-logistics-brief {
+.tour-page--kyndyg #tour-logistics .tour-logistics-brief,
+.tour-page--gega #tour-logistics .tour-logistics-brief {
   margin-top: 0;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-accordion,
-.tour-page--kyndyg #tour-logistics .tour-logistics-accordion {
+.tour-page--kyndyg #tour-logistics .tour-logistics-accordion,
+.tour-page--gega #tour-logistics .tour-logistics-accordion {
   margin-block: 0;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-accordion + .tour-logistics-accordion,
-.tour-page--kyndyg #tour-logistics .tour-logistics-accordion + .tour-logistics-accordion {
+.tour-page--kyndyg #tour-logistics .tour-logistics-accordion + .tour-logistics-accordion,
+.tour-page--gega #tour-logistics .tour-logistics-accordion + .tour-logistics-accordion {
   margin-top: 6px;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-accordion .tour-accordion-summary,
-.tour-page--kyndyg #tour-logistics .tour-logistics-accordion .tour-accordion-summary {
+.tour-page--kyndyg #tour-logistics .tour-logistics-accordion .tour-accordion-summary,
+.tour-page--gega #tour-logistics .tour-logistics-accordion .tour-accordion-summary {
   padding: 12px 40px 12px 20px;
 }
 
 @media (min-width: 769px) {
   .tour-page--golden-ring #tour-logistics h2,
-  .tour-page--kyndyg #tour-logistics h2 {
+  .tour-page--kyndyg #tour-logistics h2,
+  .tour-page--gega #tour-logistics h2 {
     font-size: 34px;
   }
 }
@@ -5565,7 +5518,8 @@ h2 {
 
 /* Визуально как карточка фото в «Что увидите на маршруте» (#tour-route-carousel__frame) */
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-card {
   margin: 14px auto 14px;
   max-width: 800px;
   border-radius: 16px;
@@ -5576,7 +5530,8 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card__img-wrap,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img-wrap {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img-wrap,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-card__img-wrap {
   box-sizing: border-box;
   width: 100%;
   margin: 0;
@@ -5587,7 +5542,8 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card__img,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-card__img {
   display: block;
   width: 100%;
   height: auto;
