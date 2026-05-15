@@ -3798,27 +3798,6 @@ h2 {
   }
 }
 
-.tour-page--gega #tour-program .tour-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.tour-page--gega #tour-program .tour-list li {
-  position: relative;
-  padding-left: 16px;
-}
-
-.tour-page--gega #tour-program .tour-list li::before {
-  content: "";
-  position: absolute;
-  top: 0.62em;
-  left: 2px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff7a00;
-}
-
 .tour-page--gega #tour-logistics .tour-list {
   list-style: none;
   margin: 0;
@@ -4571,12 +4550,14 @@ h2 {
 
 @media (max-width: 640px) {
   .tour-page--golden-ring #tour-program .tour-list,
-  .tour-page--kyndyg #tour-program .tour-list {
+  .tour-page--kyndyg #tour-program .tour-list,
+  .tour-page--gega #tour-program .tour-list {
     line-height: 1.46;
   }
 
   .tour-page--golden-ring #tour-program .tour-list li,
-  .tour-page--kyndyg #tour-program .tour-list li {
+  .tour-page--kyndyg #tour-program .tour-list li,
+  .tour-page--gega #tour-program .tour-list li {
     margin-bottom: 4px;
   }
 
@@ -4597,21 +4578,24 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-program .tour-list,
-.tour-page--kyndyg #tour-program .tour-list {
+.tour-page--kyndyg #tour-program .tour-list,
+.tour-page--gega #tour-program .tour-list {
   list-style: none;
   padding-left: 0;
   line-height: 1.54;
 }
 
 .tour-page--golden-ring #tour-program .tour-list li,
-.tour-page--kyndyg #tour-program .tour-list li {
+.tour-page--kyndyg #tour-program .tour-list li,
+.tour-page--gega #tour-program .tour-list li {
   position: relative;
   padding-left: 16px;
   margin-bottom: 5px;
 }
 
 .tour-page--golden-ring #tour-program .tour-list li::before,
-.tour-page--kyndyg #tour-program .tour-list li::before {
+.tour-page--kyndyg #tour-program .tour-list li::before,
+.tour-page--gega #tour-program .tour-list li::before {
   content: "";
   position: absolute;
   top: 0.62em;
