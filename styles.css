@@ -4501,7 +4501,8 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-route-photos h2,
-.tour-page--kyndyg #tour-route-photos h2 {
+.tour-page--kyndyg #tour-route-photos h2,
+.tour-page--gega #tour-route-photos h2 {
   font-size: 23px;
   line-height: 1.16;
   font-weight: 700;
@@ -4510,7 +4511,8 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-route-photos.tour-section,
-.tour-page--kyndyg #tour-route-photos.tour-section {
+.tour-page--kyndyg #tour-route-photos.tour-section,
+.tour-page--gega #tour-route-photos.tour-section {
   padding-top: calc(48px - 28px);
   padding-bottom: 48px;
 }
@@ -4536,13 +4538,15 @@ h2 {
   }
 
   .tour-page--golden-ring #tour-route-photos h2,
-  .tour-page--kyndyg #tour-route-photos h2 {
+  .tour-page--kyndyg #tour-route-photos h2,
+  .tour-page--gega #tour-route-photos h2 {
     font-size: 29px;
     line-height: 1.2;
   }
 
   .tour-page--golden-ring #tour-route-photos.tour-section,
-  .tour-page--kyndyg #tour-route-photos.tour-section {
+  .tour-page--kyndyg #tour-route-photos.tour-section,
+  .tour-page--gega #tour-route-photos.tour-section {
     padding-top: calc(64px - 28px);
     padding-bottom: 64px;
   }
@@ -4829,7 +4833,7 @@ h2 {
   text-align: center;
 }
 
-/* Карусель маршрута — «Золотое кольцо», «Кындыг» (одинаковые стили) */
+/* Карусель маршрута — «Золотое кольцо», «Кындыг», джип-тур (общие правила через #tour-route-photos) */
 .tour-page--golden-ring #tour-route-photos .tour-route-carousel__subtitle,
 .tour-page--kyndyg #tour-route-photos .tour-route-carousel__subtitle,
 #tour-route-photos .tour-route-carousel__subtitle {
