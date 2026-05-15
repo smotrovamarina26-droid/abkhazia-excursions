@@ -3723,14 +3723,6 @@ h2 {
 }
 
 @media (max-width: 640px) {
-  .tour-page--kyndyg #tour-program .tour-list {
-    line-height: 1.5;
-  }
-
-  .tour-page--kyndyg #tour-program .tour-list li {
-    margin-bottom: 6px;
-  }
-
   .tour-page--kyndyg #tour-border-rules .tour-accordion-body .tour-list {
     line-height: 1.5;
   }
@@ -3738,27 +3730,6 @@ h2 {
   .tour-page--kyndyg #tour-border-rules .tour-accordion-body .tour-list li {
     margin-bottom: 6px;
   }
-}
-
-.tour-page--kyndyg #tour-program .tour-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.tour-page--kyndyg #tour-program .tour-list li {
-  position: relative;
-  padding-left: 16px;
-}
-
-.tour-page--kyndyg #tour-program .tour-list li::before {
-  content: "";
-  position: absolute;
-  top: 0.62em;
-  left: 2px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff7a00;
 }
 
 .tour-page--kyndyg #tour-logistics .tour-list {
@@ -4677,12 +4648,14 @@ h2 {
   line-height: 1.16;
 }
 
-.tour-page--golden-ring #tour-route-photos h2 {
+.tour-page--golden-ring #tour-route-photos h2,
+.tour-page--kyndyg #tour-route-photos h2 {
   font-size: 23px;
   line-height: 1.16;
 }
 
-.tour-page--golden-ring #tour-route-photos.tour-section {
+.tour-page--golden-ring #tour-route-photos.tour-section,
+.tour-page--kyndyg #tour-route-photos.tour-section {
   padding-top: calc(48px - 28px);
 }
 
@@ -4703,22 +4676,26 @@ h2 {
     line-height: 1.2;
   }
 
-  .tour-page--golden-ring #tour-route-photos h2 {
+  .tour-page--golden-ring #tour-route-photos h2,
+  .tour-page--kyndyg #tour-route-photos h2 {
     font-size: 29px;
     line-height: 1.2;
   }
 
-  .tour-page--golden-ring #tour-route-photos.tour-section {
+  .tour-page--golden-ring #tour-route-photos.tour-section,
+  .tour-page--kyndyg #tour-route-photos.tour-section {
     padding-top: calc(64px - 28px);
   }
 }
 
 @media (max-width: 640px) {
-  .tour-page--golden-ring #tour-program .tour-list {
+  .tour-page--golden-ring #tour-program .tour-list,
+  .tour-page--kyndyg #tour-program .tour-list {
     line-height: 1.46;
   }
 
-  .tour-page--golden-ring #tour-program .tour-list li {
+  .tour-page--golden-ring #tour-program .tour-list li,
+  .tour-page--kyndyg #tour-program .tour-list li {
     margin-bottom: 4px;
   }
 
@@ -4735,19 +4712,22 @@ h2 {
   }
 }
 
-.tour-page--golden-ring #tour-program .tour-list {
+.tour-page--golden-ring #tour-program .tour-list,
+.tour-page--kyndyg #tour-program .tour-list {
   list-style: none;
   padding-left: 0;
   line-height: 1.54;
 }
 
-.tour-page--golden-ring #tour-program .tour-list li {
+.tour-page--golden-ring #tour-program .tour-list li,
+.tour-page--kyndyg #tour-program .tour-list li {
   position: relative;
   padding-left: 16px;
   margin-bottom: 5px;
 }
 
-.tour-page--golden-ring #tour-program .tour-list li::before {
+.tour-page--golden-ring #tour-program .tour-list li::before,
+.tour-page--kyndyg #tour-program .tour-list li::before {
   content: "";
   position: absolute;
   top: 0.62em;
