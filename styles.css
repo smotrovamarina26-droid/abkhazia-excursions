@@ -3732,35 +3732,6 @@ h2 {
   }
 }
 
-.tour-page--kyndyg #tour-logistics .tour-list {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.tour-page--kyndyg #tour-logistics .tour-list li {
-  position: relative;
-  margin-bottom: 6px;
-  padding-left: 15px;
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-.tour-page--kyndyg #tour-logistics .tour-list li:last-child {
-  margin-bottom: 0;
-}
-
-.tour-page--kyndyg #tour-logistics .tour-list li::before {
-  content: "";
-  position: absolute;
-  top: 0.6em;
-  left: 1px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff7a00;
-}
-
 .tour-page--kyndyg #tour-what-to-bring .tour-list {
   list-style: none;
   padding-left: 0;
@@ -3801,35 +3772,6 @@ h2 {
   height: 6px;
   border-radius: 50%;
   background: #ff7a00;
-}
-
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card {
-  margin: 14px auto 14px;
-  max-width: 800px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #ffe4c8;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
-  background: #fff;
-}
-
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img-wrap {
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #e8edf2;
-  line-height: 0;
-}
-
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center;
 }
 
 .tour-page--kyndyg #tour-pricing-kyndyg h2 + p {
@@ -4652,11 +4594,15 @@ h2 {
 .tour-page--kyndyg #tour-route-photos h2 {
   font-size: 23px;
   line-height: 1.16;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .tour-page--golden-ring #tour-route-photos.tour-section,
 .tour-page--kyndyg #tour-route-photos.tour-section {
   padding-top: calc(48px - 28px);
+  padding-bottom: 48px;
 }
 
 .tour-page--golden-ring #tour-tourists-gallery.tour-section,
@@ -4685,6 +4631,7 @@ h2 {
   .tour-page--golden-ring #tour-route-photos.tour-section,
   .tour-page--kyndyg #tour-route-photos.tour-section {
     padding-top: calc(64px - 28px);
+    padding-bottom: 64px;
   }
 }
 
@@ -4936,7 +4883,9 @@ h2 {
   text-align: center;
 }
 
-/* Карусель маршрута — «Золотое кольцо Абхазии», «Термальные источники Кындыг» */
+/* Карусель маршрута — «Золотое кольцо», «Кындыг» (одинаковые стили) */
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__subtitle,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__subtitle,
 #tour-route-photos .tour-route-carousel__subtitle {
   text-align: center;
   max-width: 36em;
@@ -4946,6 +4895,8 @@ h2 {
   color: #5b636d;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__frame,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__frame,
 #tour-route-photos .tour-route-carousel__frame {
   border-radius: 16px;
   overflow: hidden;
@@ -4954,6 +4905,8 @@ h2 {
   background: #fff;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__track,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__track,
 #tour-route-photos .tour-route-carousel__track {
   display: flex;
   overflow-x: auto;
@@ -4966,11 +4919,15 @@ h2 {
   scrollbar-width: thin;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__track:focus-visible,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__track:focus-visible,
 #tour-route-photos .tour-route-carousel__track:focus-visible {
   outline: none;
   box-shadow: inset 0 0 0 3px rgba(255, 122, 0, 0.28);
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__slide,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__slide,
 #tour-route-photos .tour-route-carousel__slide {
   flex: 0 0 100%;
   min-width: 100%;
@@ -4980,6 +4937,8 @@ h2 {
   margin: 0;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__img-wrap,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__img-wrap,
 #tour-route-photos .tour-route-carousel__img-wrap {
   position: relative;
   width: 100%;
@@ -4989,6 +4948,8 @@ h2 {
   background: #e8edf2;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__img,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__img,
 #tour-route-photos .tour-route-carousel__img {
   width: 100%;
   height: 100%;
@@ -4996,6 +4957,8 @@ h2 {
   object-position: center;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__caption,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__caption,
 #tour-route-photos .tour-route-carousel__caption {
   padding: 12px 14px 14px;
   text-align: center;
@@ -5006,12 +4969,16 @@ h2 {
   border-top: 1px solid #ffe9d2;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__controls,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__controls,
 #tour-route-photos .tour-route-carousel__controls {
   display: flex;
   justify-content: center;
   margin-top: 14px;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__dots,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__dots,
 #tour-route-photos .tour-route-carousel__dots {
   display: flex;
   flex-wrap: wrap;
@@ -5019,6 +4986,8 @@ h2 {
   gap: 8px;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__dot,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__dot,
 #tour-route-photos .tour-route-carousel__dot {
   width: 9px;
   height: 9px;
@@ -5030,21 +4999,29 @@ h2 {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__dot:hover,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__dot:hover,
 #tour-route-photos .tour-route-carousel__dot:hover {
   background: #b8c0cc;
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__dot:focus-visible,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__dot:focus-visible,
 #tour-route-photos .tour-route-carousel__dot:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.35);
 }
 
+.tour-page--golden-ring #tour-route-photos .tour-route-carousel__dot.is-active,
+.tour-page--kyndyg #tour-route-photos .tour-route-carousel__dot.is-active,
 #tour-route-photos .tour-route-carousel__dot.is-active {
   background: #ff7a00;
   transform: scale(1.15);
 }
 
 @media (min-width: 768px) {
+  .tour-page--golden-ring #tour-route-photos .tour-route-carousel__img-wrap,
+  .tour-page--kyndyg #tour-route-photos .tour-route-carousel__img-wrap,
   #tour-route-photos .tour-route-carousel__img-wrap {
     height: clamp(240px, 36vw, 320px);
     max-height: 320px;
@@ -5052,6 +5029,8 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .tour-page--golden-ring #tour-route-photos .tour-route-carousel__track,
+  .tour-page--kyndyg #tour-route-photos .tour-route-carousel__track,
   #tour-route-photos .tour-route-carousel__track {
     scroll-behavior: auto;
   }
@@ -5376,13 +5355,15 @@ h2 {
   margin-bottom: 0;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-list {
+.tour-page--golden-ring #tour-logistics .tour-list,
+.tour-page--kyndyg #tour-logistics .tour-list {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-list li {
+.tour-page--golden-ring #tour-logistics .tour-list li,
+.tour-page--kyndyg #tour-logistics .tour-list li {
   position: relative;
   margin-bottom: 6px;
   padding-left: 15px;
@@ -5390,11 +5371,13 @@ h2 {
   line-height: 1.45;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-list li:last-child {
+.tour-page--golden-ring #tour-logistics .tour-list li:last-child,
+.tour-page--kyndyg #tour-logistics .tour-list li:last-child {
   margin-bottom: 0;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-list li::before {
+.tour-page--golden-ring #tour-logistics .tour-list li::before,
+.tour-page--kyndyg #tour-logistics .tour-list li::before {
   content: "";
   position: absolute;
   top: 0.6em;
@@ -5405,35 +5388,42 @@ h2 {
   background: #ff7a00;
 }
 
-/* «Как проходит поездка» — только Золотое кольцо: заголовок как у «Программа дня» */
-.tour-page--golden-ring #tour-logistics h2 {
+/* «Как проходит поездка» — «Золотое кольцо», «Кындыг» */
+.tour-page--golden-ring #tour-logistics h2,
+.tour-page--kyndyg #tour-logistics h2 {
   font-size: 28px;
   line-height: 1.2;
   font-weight: 700;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-logistics-intro {
+.tour-page--golden-ring #tour-logistics .tour-logistics-intro,
+.tour-page--kyndyg #tour-logistics .tour-logistics-intro {
   margin-bottom: 20px;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-logistics-brief {
+.tour-page--golden-ring #tour-logistics .tour-logistics-brief,
+.tour-page--kyndyg #tour-logistics .tour-logistics-brief {
   margin-top: 0;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-logistics-accordion {
+.tour-page--golden-ring #tour-logistics .tour-logistics-accordion,
+.tour-page--kyndyg #tour-logistics .tour-logistics-accordion {
   margin-block: 0;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-logistics-accordion + .tour-logistics-accordion {
+.tour-page--golden-ring #tour-logistics .tour-logistics-accordion + .tour-logistics-accordion,
+.tour-page--kyndyg #tour-logistics .tour-logistics-accordion + .tour-logistics-accordion {
   margin-top: 6px;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-logistics-accordion .tour-accordion-summary {
+.tour-page--golden-ring #tour-logistics .tour-logistics-accordion .tour-accordion-summary,
+.tour-page--kyndyg #tour-logistics .tour-logistics-accordion .tour-accordion-summary {
   padding: 12px 40px 12px 20px;
 }
 
 @media (min-width: 769px) {
-  .tour-page--golden-ring #tour-logistics h2 {
+  .tour-page--golden-ring #tour-logistics h2,
+  .tour-page--kyndyg #tour-logistics h2 {
     font-size: 34px;
   }
 }
@@ -5603,7 +5593,8 @@ h2 {
 }
 
 /* Визуально как карточка фото в «Что увидите на маршруте» (#tour-route-carousel__frame) */
-.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card {
+.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card,
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card {
   margin: 14px auto 14px;
   max-width: 800px;
   border-radius: 16px;
@@ -5613,7 +5604,8 @@ h2 {
   background: #fff;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card__img-wrap {
+.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card__img-wrap,
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img-wrap {
   box-sizing: border-box;
   width: 100%;
   margin: 0;
@@ -5623,7 +5615,8 @@ h2 {
   line-height: 0;
 }
 
-.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card__img {
+.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-card__img,
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-card__img {
   display: block;
   width: 100%;
   height: auto;
