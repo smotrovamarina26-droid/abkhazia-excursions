@@ -3774,13 +3774,6 @@ h2 {
   background: #ff7a00;
 }
 
-.tour-page--kyndyg #tour-pricing-kyndyg h2 + p {
-  text-align: center;
-  max-width: 36em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* Тур «Джип-тур на Гегский водопад и озеро Рица»: hero, шапка и полоса «назад» */
 .tour-page--gega a.logo,
 .tour-page--gega a.logo:link,
@@ -4063,45 +4056,6 @@ h2 {
   }
 
   .tour-page--gega .tour-pricing-calc .calc-price::before {
-    content: none;
-  }
-}
-
-.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list li {
-  position: relative;
-  padding-left: 15px;
-}
-
-.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list li::before {
-  content: "";
-  position: absolute;
-  top: 0.6em;
-  left: 1px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff7a00;
-}
-
-.tour-page--kyndyg .tour-pricing-calc .calc-price::before {
-  content: "— ";
-  font-weight: 600;
-  color: #555;
-}
-
-@media (max-width: 640px) {
-  .tour-page--kyndyg .tour-pricing-calc .calc-price {
-    display: block;
-    margin-left: 0;
-    margin-top: 2px;
-  }
-
-  .tour-page--kyndyg .tour-pricing-calc .calc-price::before {
     content: none;
   }
 }
@@ -5428,17 +5382,20 @@ h2 {
   }
 }
 
-.tour-page--golden-ring .tour-price-cols .tour-price-list {
+.tour-page--golden-ring .tour-price-cols .tour-price-list,
+.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list {
   list-style: none;
   padding-left: 0;
 }
 
-.tour-page--golden-ring .tour-price-cols .tour-price-list li {
+.tour-page--golden-ring .tour-price-cols .tour-price-list li,
+.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list li {
   position: relative;
   padding-left: 15px;
 }
 
-.tour-page--golden-ring .tour-price-cols .tour-price-list li::before {
+.tour-page--golden-ring .tour-price-cols .tour-price-list li::before,
+.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list li::before {
   content: "";
   position: absolute;
   top: 0.6em;
@@ -5449,34 +5406,40 @@ h2 {
   background: #ff7a00;
 }
 
-.tour-page--golden-ring section.tour-section:has(#tour-pricing) h2 {
+.tour-page--golden-ring section.tour-section:has(#tour-pricing) h2,
+.tour-page--kyndyg #tour-pricing-kyndyg h2 {
   text-align: center;
 }
 
-.tour-page--golden-ring section.tour-section:has(#tour-pricing) h2 + p {
+.tour-page--golden-ring section.tour-section:has(#tour-pricing) h2 + p,
+.tour-page--kyndyg #tour-pricing-kyndyg h2 + p {
   text-align: center;
   max-width: 36em;
   margin-left: auto;
   margin-right: auto;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-calc-title {
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-title,
+.tour-page--kyndyg #tour-pricing .tour-pricing-calc-title {
   font-size: calc(1.25rem - 5px);
   line-height: 1.22;
   margin: 0 0 12px;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-calc-subtitle {
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-subtitle,
+.tour-page--kyndyg #tour-pricing .tour-pricing-calc-subtitle {
   margin: -12px 0 18px;
 }
 
-/* Счётчики гостей в калькуляторе — легче и компактнее (только «Золотое кольцо») */
-.tour-page--golden-ring #tour-pricing .tour-pricing-stepper {
+/* Счётчики гостей в калькуляторе — «Золотое кольцо», «Кындыг» */
+.tour-page--golden-ring #tour-pricing .tour-pricing-stepper,
+.tour-page--kyndyg #tour-pricing .tour-pricing-stepper {
   border-radius: 10px;
   border: 1px solid #efe6df;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-step {
+.tour-page--golden-ring #tour-pricing .tour-pricing-step,
+.tour-page--kyndyg #tour-pricing .tour-pricing-step {
   min-width: 40px;
   min-height: 44px;
   font-size: 1.125rem;
@@ -5485,15 +5448,18 @@ h2 {
   background: #fffdfb;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-step:hover {
+.tour-page--golden-ring #tour-pricing .tour-pricing-step:hover,
+.tour-page--kyndyg #tour-pricing .tour-pricing-step:hover {
   background: #fff7f0;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-step:active {
+.tour-page--golden-ring #tour-pricing .tour-pricing-step:active,
+.tour-page--kyndyg #tour-pricing .tour-pricing-step:active {
   background: #fff2e8;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-step-value {
+.tour-page--golden-ring #tour-pricing .tour-pricing-step-value,
+.tour-page--kyndyg #tour-pricing .tour-pricing-step-value {
   min-width: 34px;
   padding: 0 7px;
   font-size: 15px;
@@ -5503,45 +5469,54 @@ h2 {
   border-right: 1px solid #f2ebe6;
 }
 
-/* «Количество участников»: плотнее строки, без изменения кегля (только «Золотое кольцо») */
-.tour-page--golden-ring #tour-pricing > div:nth-of-type(2).tour-pricing-calc-block {
+/* «Количество участников»: плотнее строки — «Золотое кольцо», «Кындыг» */
+.tour-page--golden-ring #tour-pricing > div:nth-of-type(2).tour-pricing-calc-block,
+.tour-page--kyndyg #tour-pricing > div:nth-of-type(2).tour-pricing-calc-block {
   margin-bottom: 16px;
 }
 
-.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .tour-pricing-calc-label {
+.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .tour-pricing-calc-label,
+.tour-page--kyndyg #tour-pricing > div:nth-of-type(2) .tour-pricing-calc-label {
   margin-bottom: 8px;
 }
 
-.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .tour-pricing-calc-row {
+.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .tour-pricing-calc-row,
+.tour-page--kyndyg #tour-pricing > div:nth-of-type(2) .tour-pricing-calc-row {
   margin-bottom: 8px;
   gap: 8px 10px;
 }
 
-.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .calc-price {
+.tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .calc-price,
+.tour-page--kyndyg #tour-pricing > div:nth-of-type(2) .calc-price {
   margin-left: 4px;
 }
 
-/* Итоговый блок калькулятора — чуть легче (только «Золотое кольцо») */
-.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total {
+/* Итоговый блок калькулятора — «Золотое кольцо», «Кындыг» */
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total,
+.tour-page--kyndyg #tour-pricing .tour-pricing-calc-total {
   padding-top: 14px;
   border-top-color: #ebe6df;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total-value {
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total-value,
+.tour-page--kyndyg #tour-pricing .tour-pricing-calc-total-value {
   margin-bottom: 8px;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total-value + .tour-pricing-calc-prepay-line {
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-total-value + .tour-pricing-calc-prepay-line,
+.tour-page--kyndyg #tour-pricing .tour-pricing-calc-total-value + .tour-pricing-calc-prepay-line {
   margin-top: 2px;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-calc-prepay-line {
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-prepay-line,
+.tour-page--kyndyg #tour-pricing .tour-pricing-calc-prepay-line {
   margin-top: 4px;
   font-weight: 500;
   color: #5a5f68;
 }
 
-.tour-page--golden-ring #tour-pricing .tour-pricing-calc-booking-note {
+.tour-page--golden-ring #tour-pricing .tour-pricing-calc-booking-note,
+.tour-page--kyndyg #tour-pricing .tour-pricing-calc-booking-note {
   margin: 12px 0 10px;
   color: #737984;
 }
@@ -5801,24 +5776,28 @@ h2 {
   white-space: nowrap;
 }
 
-.tour-page--golden-ring .tour-pricing-calc .calc-price::before {
+.tour-page--golden-ring .tour-pricing-calc .calc-price::before,
+.tour-page--kyndyg .tour-pricing-calc .calc-price::before {
   content: "— ";
   font-weight: 600;
   color: #555;
 }
 
 @media (max-width: 640px) {
-  .tour-page--golden-ring .tour-pricing-calc .calc-price {
+  .tour-page--golden-ring .tour-pricing-calc .calc-price,
+  .tour-page--kyndyg .tour-pricing-calc .calc-price {
     display: block;
     margin-left: 0;
     margin-top: 2px;
   }
 
-  .tour-page--golden-ring .tour-pricing-calc .calc-price::before {
+  .tour-page--golden-ring .tour-pricing-calc .calc-price::before,
+  .tour-page--kyndyg .tour-pricing-calc .calc-price::before {
     content: none;
   }
 
-  .tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .calc-price {
+  .tour-page--golden-ring #tour-pricing > div:nth-of-type(2) .calc-price,
+  .tour-page--kyndyg #tour-pricing > div:nth-of-type(2) .calc-price {
     margin-left: 0;
     margin-top: 1px;
   }
@@ -5965,8 +5944,9 @@ h2 {
   line-height: 1.45;
 }
 
-/* Плашка экосбора — только «Золотое кольцо» */
-.tour-page--golden-ring .tour-price-highlight {
+/* Информационная плашка под ценами — «Золотое кольцо», «Кындыг» */
+.tour-page--golden-ring .tour-price-highlight,
+.tour-page--kyndyg .tour-price-highlight {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -5983,7 +5963,8 @@ h2 {
   box-shadow: none;
 }
 
-.tour-page--golden-ring .tour-price-highlight__bar {
+.tour-page--golden-ring .tour-price-highlight__bar,
+.tour-page--kyndyg .tour-price-highlight__bar {
   flex-shrink: 0;
   width: 3px;
   height: 36px;
@@ -5993,7 +5974,8 @@ h2 {
   transform: translateY(3px);
 }
 
-.tour-page--golden-ring .tour-price-highlight__eco {
+.tour-page--golden-ring .tour-price-highlight__eco,
+.tour-page--kyndyg .tour-price-highlight__eco {
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -6002,24 +5984,29 @@ h2 {
 }
 
 .tour-page--golden-ring .tour-price-highlight__eco-line1,
-.tour-page--golden-ring .tour-price-highlight__eco-line2 {
+.tour-page--golden-ring .tour-price-highlight__eco-line2,
+.tour-page--kyndyg .tour-price-highlight__eco-line1,
+.tour-page--kyndyg .tour-price-highlight__eco-line2 {
   display: block;
 }
 
-.tour-page--golden-ring .tour-price-highlight__eco-line1 {
+.tour-page--golden-ring .tour-price-highlight__eco-line1,
+.tour-page--kyndyg .tour-price-highlight__eco-line1 {
   font-size: inherit;
   line-height: inherit;
   font-weight: 400;
 }
 
-.tour-page--golden-ring .tour-price-highlight__eco-line2 {
+.tour-page--golden-ring .tour-price-highlight__eco-line2,
+.tour-page--kyndyg .tour-price-highlight__eco-line2 {
   font-size: inherit;
   line-height: 1.4;
   font-weight: 700;
 }
 
 @media (max-width: 640px) {
-  .tour-page--golden-ring .tour-price-highlight {
+  .tour-page--golden-ring .tour-price-highlight,
+  .tour-page--kyndyg .tour-price-highlight {
     margin-top: 14px;
     padding: 15px 18px;
     gap: 9px;
@@ -6027,7 +6014,8 @@ h2 {
     line-height: 1.48;
   }
 
-  .tour-page--golden-ring .tour-price-highlight__bar {
+  .tour-page--golden-ring .tour-price-highlight__bar,
+  .tour-page--kyndyg .tour-price-highlight__bar {
     height: 34px;
   }
 }
