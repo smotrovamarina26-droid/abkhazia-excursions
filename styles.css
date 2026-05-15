@@ -3798,45 +3798,6 @@ h2 {
   }
 }
 
-.tour-page--gega .hero-subtitle {
-  margin-bottom: 10px;
-}
-
-.tour-page--gega .hero-price {
-  margin-bottom: 14px;
-}
-
-.tour-page--gega .tour-hero-actions {
-  margin-bottom: 10px;
-}
-
-.tour-page--gega .btn-primary {
-  margin-bottom: 8px;
-}
-
-.tour-page--gega .hero-after-btn {
-  margin-top: 6px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.95);
-  opacity: 0.9;
-}
-
-.tour-page--gega .tour-hero-tags {
-  margin-top: 22px;
-}
-
-.tour-page--gega .tour-hero-tag {
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #c45a00;
-  line-height: 1.2;
-}
-
 .tour-page--gega #tour-program .tour-list {
   list-style: none;
   padding-left: 0;
@@ -4028,6 +3989,11 @@ h2 {
 @media (max-width: 480px) {
   .hero--tour h1 {
     font-size: 22px;
+  }
+
+  .tour-page--golden-ring #tour-hero h1,
+  .tour-page--gega #tour-hero h1 {
+    font-size: clamp(26px, 7vw, 32px);
   }
 }
 
@@ -4401,59 +4367,92 @@ h2 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.tour-page--golden-ring .hero--tour h1 {
+/* Hero «Золотое кольцо», «Джип-тур» (#tour-hero) */
+.tour-page--golden-ring #tour-hero h1,
+.tour-page--gega #tour-hero h1 {
   font-size: clamp(26px, 7vw, 32px);
   line-height: 1.15;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0.06em 0.28em rgba(0, 0, 0, 0.35);
+  overflow-wrap: anywhere;
   white-space: nowrap;
+  max-width: 900px;
+  margin: 0 auto 16px;
 }
 
-.tour-page--golden-ring .hero-subtitle-small {
+.tour-page--golden-ring #tour-hero .hero-subtitle-small,
+.tour-page--gega #tour-hero .hero-subtitle-small {
   font-size: 17px;
   font-weight: 400;
+  color: #fff;
   opacity: 0.9;
-  margin-bottom: 6px;
+  margin: 0 0 6px;
 }
 
-.tour-page--golden-ring .hero-subtitle {
+.tour-page--golden-ring #tour-hero .hero-subtitle,
+.tour-page--gega #tour-hero .hero-subtitle {
   font-size: 17px;
   font-weight: 400;
   line-height: 1.45;
-  margin-bottom: 14px;
+  color: #fff;
+  margin: 0 0 14px;
 }
 
-.tour-page--golden-ring .hero-price {
+.tour-page--golden-ring #tour-hero .hero-price,
+.tour-page--gega #tour-hero .hero-price {
   display: flex;
   align-items: baseline;
   justify-content: center;
   gap: 6px;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
+  color: #fff;
 }
 
-.tour-page--golden-ring .hero-price-per {
+.tour-page--golden-ring #tour-hero .hero-price-per,
+.tour-page--gega #tour-hero .hero-price-per {
   font-size: 15px;
   font-weight: 500;
+  color: #fff;
   opacity: 0.75;
   position: relative;
   top: -1px;
 }
 
-.tour-page--golden-ring .tour-hero-actions {
+.tour-page--golden-ring #tour-hero .tour-hero-actions,
+.tour-page--gega #tour-hero .tour-hero-actions {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
+  width: 100%;
+  max-width: 100%;
 }
 
-.tour-page--golden-ring .btn-primary {
+.tour-page--golden-ring #tour-hero .btn-primary,
+.tour-page--gega #tour-hero .btn-primary {
   width: 100%;
   max-width: 300px;
   margin-bottom: 0;
 }
 
-.tour-page--golden-ring .tour-hero-tags {
-  margin-top: 16px;
+.tour-page--golden-ring #tour-hero .tour-hero-tags,
+.tour-page--gega #tour-hero .tour-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 7px;
+  margin: 16px auto 0;
+  max-width: 640px;
+  padding: 0;
 }
 
-.tour-page--golden-ring .tour-hero-tag {
+.tour-page--golden-ring #tour-hero .tour-hero-tag,
+.tour-page--gega #tour-hero .tour-hero-tag {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
   padding: 5px 12px;
   border-radius: 999px;
   font-size: 12px;
@@ -4465,6 +4464,20 @@ h2 {
   box-shadow: none;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+}
+
+/* Hero-плашки «Джип-тур»: на мобильных — 2×2, ширина по тексту */
+@media (max-width: 768px) {
+  .tour-page--gega #tour-hero .tour-hero-tags::after {
+    content: "";
+    flex-basis: 100%;
+    width: 0;
+    order: 1;
+  }
+
+  .tour-page--gega #tour-hero .tour-hero-tag:nth-child(n + 3) {
+    order: 2;
+  }
 }
 
 .tour-page--golden-ring #tour-description .tour-prose p {
@@ -4481,13 +4494,29 @@ h2 {
   padding-bottom: 36px;
 }
 
+.tour-page--gega #tour-description .tour-prose p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.tour-page--gega #tour-description .tour-prose p:first-child {
+  font-weight: 600;
+}
+
+.tour-page--gega #tour-description {
+  padding-bottom: 36px;
+}
+
 .tour-page--golden-ring #tour-audience,
-.tour-page--kyndyg #tour-audience {
+.tour-page--kyndyg #tour-audience,
+.tour-page--gega #tour-audience {
   padding-top: 28px;
 }
 
 .tour-page--golden-ring #tour-audience h2,
-.tour-page--kyndyg #tour-audience h2 {
+.tour-page--kyndyg #tour-audience h2,
+.tour-page--gega #tour-audience h2 {
   font-size: 23px;
   line-height: 1.16;
 }
@@ -4508,18 +4537,21 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-tourists-gallery.tour-section,
-.tour-page--kyndyg #tour-tourists-gallery.tour-section {
+.tour-page--kyndyg #tour-tourists-gallery.tour-section,
+.tour-page--gega #tour-tourists-gallery.tour-section {
   padding-top: calc(48px - 18px);
 }
 
 @media (min-width: 769px) {
   .tour-page--golden-ring #tour-tourists-gallery.tour-section,
-  .tour-page--kyndyg #tour-tourists-gallery.tour-section {
+  .tour-page--kyndyg #tour-tourists-gallery.tour-section,
+  .tour-page--gega #tour-tourists-gallery.tour-section {
     padding-top: calc(64px - 18px);
   }
 
   .tour-page--golden-ring #tour-audience h2,
-  .tour-page--kyndyg #tour-audience h2 {
+  .tour-page--kyndyg #tour-audience h2,
+  .tour-page--gega #tour-audience h2 {
     font-size: 29px;
     line-height: 1.2;
   }
