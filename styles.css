@@ -3798,48 +3798,6 @@ h2 {
   }
 }
 
-.tour-page--gega #tour-what-to-bring .tour-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.tour-page--gega #tour-what-to-bring .tour-list li {
-  position: relative;
-  padding-left: 16px;
-}
-
-.tour-page--gega #tour-what-to-bring .tour-list li::before {
-  content: "";
-  position: absolute;
-  top: 0.62em;
-  left: 2px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff7a00;
-}
-
-.tour-page--gega #tour-border-rules .tour-accordion-body .tour-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.tour-page--gega #tour-border-rules .tour-accordion-body .tour-list li {
-  position: relative;
-  padding-left: 16px;
-}
-
-.tour-page--gega #tour-border-rules .tour-accordion-body .tour-list li::before {
-  content: "";
-  position: absolute;
-  top: 0.62em;
-  left: 2px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff7a00;
-}
-
 .hero--tour {
   text-align: center;
 }
@@ -4458,17 +4416,20 @@ h2 {
   }
 
   .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list,
-  .tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list {
+  .tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list,
+  .tour-page--gega #tour-what-to-bring .tour-includes-card .tour-list {
     line-height: 1.55;
   }
 
   .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li,
-  .tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li {
+  .tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li,
+  .tour-page--gega #tour-what-to-bring .tour-includes-card .tour-list li {
     margin-bottom: 10px;
   }
 
   .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li:last-child,
-  .tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li:last-child {
+  .tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li:last-child,
+  .tour-page--gega #tour-what-to-bring .tour-includes-card .tour-list li:last-child {
     margin-bottom: 0;
   }
 }
@@ -4503,12 +4464,14 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-what-to-bring .tour-includes-card,
-.tour-page--kyndyg #tour-what-to-bring .tour-includes-card {
+.tour-page--kyndyg #tour-what-to-bring .tour-includes-card,
+.tour-page--gega #tour-what-to-bring .tour-includes-card {
   margin-top: 12px;
 }
 
 .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list,
-.tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list {
+.tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list,
+.tour-page--gega #tour-what-to-bring .tour-includes-card .tour-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -4518,19 +4481,22 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li,
-.tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li {
+.tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li,
+.tour-page--gega #tour-what-to-bring .tour-includes-card .tour-list li {
   position: relative;
   padding-left: 18px;
   margin-bottom: 10px;
 }
 
 .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li:last-child,
-.tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li:last-child {
+.tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li:last-child,
+.tour-page--gega #tour-what-to-bring .tour-includes-card .tour-list li:last-child {
   margin-bottom: 0;
 }
 
 .tour-page--golden-ring #tour-what-to-bring .tour-includes-card .tour-list li::before,
-.tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li::before {
+.tour-page--kyndyg #tour-what-to-bring .tour-includes-card .tour-list li::before,
+.tour-page--gega #tour-what-to-bring .tour-includes-card .tour-list li::before {
   content: "";
   position: absolute;
   top: 0.55em;
@@ -4541,9 +4507,10 @@ h2 {
   background: #ff7a00;
 }
 
-/* Документы / граница — компактная карточка («Золотое кольцо», «Кындыг») */
+/* Документы / граница — компактная карточка («Золотое кольцо», «Кындыг», джип-тур) */
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card,
+.tour-page--gega #tour-border-rules .tour-border-docs-card {
   max-width: 800px;
   margin: 0 auto;
   padding: 18px 20px 20px;
@@ -4554,7 +4521,8 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__title,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__title {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__title,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__title {
   margin: 0 0 12px;
   font-size: clamp(22px, 4.5vw, 28px);
   line-height: 1.25;
@@ -4564,7 +4532,8 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__lead,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__lead {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__lead,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__lead {
   margin: 0 auto 16px;
   max-width: 36em;
   text-align: center;
@@ -4574,7 +4543,8 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__list {
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -4586,17 +4556,20 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list > li,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list > li {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list > li,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__list > li {
   margin-bottom: 10px;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list > li:last-child,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list > li:last-child {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list > li:last-child,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__list > li:last-child {
   margin-bottom: 0;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__details,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__details {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__details,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__details {
   margin-top: 16px;
   padding-top: 14px;
   border-top: 1px solid #f0e8df;
@@ -4607,14 +4580,17 @@ h2 {
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__details:focus,
 .tour-page--kyndyg #tour-border-rules .tour-border-docs-card__details:focus,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__details:focus,
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__details:focus-visible,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__details:focus-visible {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__details:focus-visible,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__details:focus-visible {
   outline: none;
   box-shadow: none;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__summary {
   position: relative;
   display: block;
   list-style: none;
@@ -4631,25 +4607,30 @@ h2 {
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary:focus,
 .tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary:focus,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__summary:focus,
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary:focus-visible,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary:focus-visible {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary:focus-visible,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__summary:focus-visible {
   outline: none;
   box-shadow: none;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary::-webkit-details-marker,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary::-webkit-details-marker {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary::-webkit-details-marker,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__summary::-webkit-details-marker {
   display: none;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary-text,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary-text {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary-text,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__summary-text {
   display: block;
   text-align: left;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__summary::after,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary::after {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__summary::after,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__summary::after {
   content: "▼";
   position: absolute;
   right: 18px;
@@ -4661,29 +4642,34 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__details[open] .tour-border-docs-card__summary::after,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__details[open] .tour-border-docs-card__summary::after {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__details[open] .tour-border-docs-card__summary::after,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__details[open] .tour-border-docs-card__summary::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__more,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__more {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__more,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__more {
   padding-top: 12px;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list--more,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list--more {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list--more,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__list--more {
   font-size: 15px;
   line-height: 1.45;
   color: #454b55;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list--more > li,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list--more > li {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list--more > li,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__list--more > li {
   margin-bottom: 8px;
 }
 
 .tour-page--golden-ring #tour-border-rules .tour-border-docs-card__list--more > li:last-child,
-.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list--more > li:last-child {
+.tour-page--kyndyg #tour-border-rules .tour-border-docs-card__list--more > li:last-child,
+.tour-page--gega #tour-border-rules .tour-border-docs-card__list--more > li:last-child {
   margin-bottom: 0;
 }
 
@@ -6011,6 +5997,90 @@ h2 {
   background: #ff7a00;
 }
 
+/* «Что включено» — джип-тур: те же параметры секции и карточек, что на страницах «Золотое кольцо» / «Кындыг» */
+.tour-page--gega #tour-includes h2 {
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .tour-page--gega #tour-includes h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .tour-page--gega #tour-includes h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+}
+
+.tour-page--gega #tour-includes .tour-includes-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 12px;
+  text-align: left;
+  align-items: stretch;
+}
+
+@media (min-width: 600px) {
+  .tour-page--gega #tour-includes .tour-includes-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+.tour-page--gega #tour-includes .tour-includes-card {
+  background: #fff;
+  border: 1px solid #ffc891;
+  border-radius: 16px;
+  padding: 18px 20px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.tour-page--gega #tour-includes .tour-includes-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 14px;
+  color: #1a1d22;
+}
+
+.tour-page--gega #tour-includes .tour-includes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #3a3f4a;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.tour-page--gega #tour-includes .tour-includes-list > li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+
+.tour-page--gega #tour-includes .tour-includes-list > li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-page--gega #tour-includes .tour-includes-list > li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff7a00;
+}
+
 .tour-includes-list-nested {
   list-style: none;
   margin: 8px 0 0;
@@ -6040,14 +6110,18 @@ h2 {
 }
 
 /* «Что включено» — второй столбец: пещера с припиской (только «Золотое кольцо») */
-.tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote {
+.tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote,
+.tour-page--kyndyg #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote,
+.tour-page--gega #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
 }
 
-.tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote__note {
+.tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote__note,
+.tour-page--kyndyg #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote__note,
+.tour-page--gega #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-extra-with-subnote__note {
   display: block;
   margin-top: 5px;
   font-size: 13px;
@@ -6058,13 +6132,15 @@ h2 {
 
 @media (max-width: 599px) {
   .tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li,
-  .tour-page--kyndyg #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li {
+  .tour-page--kyndyg #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li,
+  .tour-page--gega #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li {
     margin-bottom: 12px;
     line-height: 1.55;
   }
 
   .tour-page--golden-ring #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li:last-child,
-  .tour-page--kyndyg #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li:last-child {
+  .tour-page--kyndyg #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li:last-child,
+  .tour-page--gega #tour-includes .tour-includes-cols > .tour-includes-card:last-child .tour-includes-list > li:last-child {
     margin-bottom: 0;
   }
 }
