@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --micro-duration: 0.2s;
+  --micro-ease: ease;
+}
+
 html,
 body {
   width: 100%;
@@ -130,6 +135,11 @@ a.logo:focus-visible {
   -webkit-appearance: none;
   appearance: none;
   -webkit-tap-highlight-color: transparent;
+  transition: transform var(--micro-duration) var(--micro-ease), color var(--micro-duration) var(--micro-ease);
+}
+
+.topbar-burger:active {
+  transform: scale(0.98);
 }
 
 .topbar-burger-graphic {
@@ -189,6 +199,22 @@ a.logo:focus-visible {
   line-height: 1.2;
   white-space: nowrap;
   box-shadow: 0 2px 8px rgba(255, 122, 0, 0.25);
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    filter var(--micro-duration) var(--micro-ease);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.top-btn:hover {
+  filter: brightness(0.94);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 122, 0, 0.32);
+}
+
+.top-btn:active {
+  transform: scale(0.98);
+  filter: none;
 }
 
 .top-btn:focus {
@@ -339,7 +365,7 @@ body.is-mobile-menu-open {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
-    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    transition: color var(--micro-duration) var(--micro-ease);
   }
 
   .topbar .menu-nav__link:last-child,
@@ -355,6 +381,7 @@ body.is-mobile-menu-open {
     flex: 1 1 auto;
     min-width: 0;
     font-weight: 700;
+    transition: color var(--micro-duration) var(--micro-ease);
   }
 
   /* Nav labels — match .scenario-card h3 («Что вам больше хочется…») */
@@ -381,21 +408,28 @@ body.is-mobile-menu-open {
     line-height: 1;
     color: rgba(255, 122, 0, 0.58);
     transform: translateX(0);
-    transition: transform 0.2s ease, color 0.2s ease;
+    transition:
+      transform var(--micro-duration) var(--micro-ease),
+      color var(--micro-duration) var(--micro-ease);
   }
 
   .topbar .menu-nav__link:hover,
   .topbar .menu-nav__link:active,
   .topbar .menu > a:hover,
   .topbar .menu > a:active {
-    color: #1f2328;
-    background: rgba(255, 122, 0, 0.05);
+    color: #1a1d22;
+    background: transparent;
+  }
+
+  .topbar .menu-nav__link:hover .menu-nav__label,
+  .topbar .menu-nav__link:active .menu-nav__label {
+    color: #1a1d22;
   }
 
   .topbar .menu-nav__link:hover .menu-nav__arrow,
   .topbar .menu-nav__link:active .menu-nav__arrow {
-    color: rgba(255, 122, 0, 0.82);
-    transform: translateX(2px);
+    color: #ff7a00;
+    transform: translateX(3px);
   }
 
   .topbar .menu-cta {
@@ -435,7 +469,13 @@ body.is-mobile-menu-open {
     text-align: center;
     text-decoration: none;
     white-space: normal;
-    transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+    transition:
+      border-color var(--micro-duration) var(--micro-ease),
+      background-color var(--micro-duration) var(--micro-ease),
+      transform var(--micro-duration) var(--micro-ease),
+      box-shadow var(--micro-duration) var(--micro-ease),
+      filter var(--micro-duration) var(--micro-ease);
+    -webkit-tap-highlight-color: transparent;
   }
 
   .topbar .menu-cta__btn--primary {
@@ -446,8 +486,14 @@ body.is-mobile-menu-open {
   }
 
   .topbar .menu-cta__btn--primary:hover {
+    filter: brightness(0.96);
     transform: translateY(-1px);
     box-shadow: 0 10px 24px rgba(255, 122, 0, 0.3);
+  }
+
+  .topbar .menu-cta__btn--primary:active {
+    transform: scale(0.98);
+    filter: none;
   }
 
   .topbar .menu-cta__btn--secondary {
@@ -461,6 +507,10 @@ body.is-mobile-menu-open {
     border-color: #ffb778;
     background: #fff2e3;
     transform: translateY(-1px);
+  }
+
+  .topbar .menu-cta__btn--secondary:active {
+    transform: scale(0.98);
   }
 
   .topbar .menu-cta__btn:focus {
@@ -578,13 +628,22 @@ body.is-mobile-menu-open {
   font-weight: bold;
   font-size: 16px;
   box-shadow: 0 12px 25px rgba(255, 122, 0, 0.28);
-  transition: 0.3s ease;
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    filter var(--micro-duration) var(--micro-ease);
   -webkit-tap-highlight-color: transparent;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 32px rgba(255, 122, 0, 0.35);
+  filter: brightness(0.96);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(255, 122, 0, 0.34);
+}
+
+.btn:active {
+  transform: scale(0.98);
+  filter: none;
 }
 
 .btn:focus {
@@ -681,22 +740,25 @@ body.is-mobile-menu-open {
   padding: 14px 16px;
   box-shadow: none;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    border-color var(--micro-duration) var(--micro-ease);
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   touch-action: manipulation;
 }
 
 .scenario-card:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   border-color: rgba(255, 122, 0, 0.32);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
 }
 
 .scenario-card:active {
-  transform: translateY(0);
+  transform: scale(0.99);
   border-color: rgba(255, 122, 0, 0.35);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 }
 
 .scenario-card:focus {
@@ -1362,6 +1424,20 @@ h2 {
   border: 1px solid rgba(255, 140, 40, 0.13);
   border-radius: 18px;
   box-shadow: 0 4px 12px rgba(25, 25, 25, 0.025);
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    border-color var(--micro-duration) var(--micro-ease);
+}
+
+.transport-info__card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 140, 40, 0.22);
+  box-shadow: 0 8px 20px rgba(25, 25, 25, 0.06);
+}
+
+.transport-info__card:active {
+  transform: scale(0.99);
 }
 
 .transport-info__card--media {
@@ -1719,13 +1795,21 @@ h2 {
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease);
   min-width: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.card:active {
+  transform: scale(0.99);
 }
 
 .card-section--highlights {
@@ -1832,7 +1916,10 @@ h2 {
   font-weight: 700;
   font-family: inherit;
   box-shadow: 0 10px 22px rgba(255, 122, 0, 0.25);
-  transition: transform 0.24s ease, box-shadow 0.24s ease;
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    filter var(--micro-duration) var(--micro-ease);
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
@@ -1840,8 +1927,14 @@ h2 {
 }
 
 .card-book-btn:hover {
+  filter: brightness(0.96);
   transform: translateY(-2px);
   box-shadow: 0 14px 26px rgba(255, 122, 0, 0.32);
+}
+
+.card-book-btn:active {
+  transform: scale(0.98);
+  filter: none;
 }
 
 .card-book-btn,
@@ -2486,11 +2579,22 @@ h2 {
   padding: 10px 12px;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    border-color var(--micro-duration) var(--micro-ease);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .testimonials .trust-item:hover {
-  transform: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transform: translateY(-2px);
+  border-color: #ffe0c4;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.testimonials .trust-item:active {
+  transform: scale(0.99);
 }
 
 .testimonials .trust-item strong.testimonial-author {
@@ -2557,13 +2661,22 @@ h2 {
   color: #e56700;
   border: 1px solid #ffb366;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    border-color var(--micro-duration) var(--micro-ease),
+    background-color var(--micro-duration) var(--micro-ease);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .testimonials-show-more:hover {
   transform: translateY(-1px);
   border-color: #ff9a3c;
   box-shadow: 0 4px 12px rgba(255, 154, 60, 0.14);
+}
+
+.testimonials-show-more:active {
+  transform: scale(0.98);
 }
 
 .testimonials-show-more:focus,
@@ -3124,13 +3237,23 @@ h2 {
   font-size: 15px;
   font-weight: 700;
   line-height: 1.25;
-  transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease;
+  transition:
+    border-color var(--micro-duration) var(--micro-ease),
+    background-color var(--micro-duration) var(--micro-ease),
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    filter var(--micro-duration) var(--micro-ease);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .contact-sheet-btn:hover {
   border-color: #ffb778;
   background: #fff2e3;
   transform: translateY(-1px);
+}
+
+.contact-sheet-btn:active {
+  transform: scale(0.98);
 }
 
 .contact-sheet-btn:focus {
@@ -3152,8 +3275,14 @@ h2 {
 .contact-sheet-btn.contact-sheet-btn--primary:hover {
   background: linear-gradient(135deg, #ff850f, #ff9f20);
   border: none;
+  filter: brightness(0.96);
   transform: translateY(-2px);
   box-shadow: 0 16px 30px rgba(255, 122, 0, 0.34);
+}
+
+.contact-sheet-btn.contact-sheet-btn--primary:active {
+  transform: scale(0.98);
+  filter: none;
 }
 
 .contact-sheet-btn.contact-sheet-btn--primary:focus-visible {
@@ -3310,11 +3439,12 @@ h2 {
     line-height: 1.2;
     color: #333;
     background: transparent;
+    transition: color var(--micro-duration) var(--micro-ease);
   }
 
   .topbar .menu-nav__link:hover,
   .topbar .menu-nav__link:active {
-    color: #333;
+    color: #e56f00;
     background: transparent;
   }
 
@@ -4353,11 +4483,21 @@ h2 {
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(255, 122, 0, 0.35);
   transform: scale(1);
-  transition: 0.2s;
+  transition:
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease),
+    filter var(--micro-duration) var(--micro-ease);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.96);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(255, 122, 0, 0.38);
 }
 
 .btn-primary:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
+  filter: none;
 }
 
 .btn-primary:focus {
@@ -6982,18 +7122,15 @@ body.tour-sticky-bar-visible {
   transform: translateY(0);
 }
 
-.tours-scroll-fab:hover {
+.tours-scroll-fab.is-visible:hover {
   border-color: rgba(255, 122, 0, 0.55);
   background: #fff8ef;
   box-shadow: 0 4px 14px rgba(255, 122, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.07);
-}
-
-.tours-scroll-fab:active {
-  transform: translateY(1px);
+  transform: translateY(-1px);
 }
 
 .tours-scroll-fab.is-visible:active {
-  transform: translateY(1px);
+  transform: translateY(0) scale(0.98);
 }
 
 .tours-scroll-fab:focus {
@@ -7046,6 +7183,20 @@ body.tour-sticky-bar-visible {
     z-index: 1600;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    transition:
+      transform var(--micro-duration) var(--micro-ease),
+      box-shadow var(--micro-duration) var(--micro-ease),
+      filter var(--micro-duration) var(--micro-ease);
+  }
+
+  .mobile-call-fab:hover {
+    filter: brightness(0.94);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  }
+
+  .mobile-call-fab:active {
+    transform: scale(0.98);
+    filter: none;
   }
 
   body.tour-sticky-bar-visible .mobile-call-fab {
@@ -7280,5 +7431,151 @@ body.is-photo-lightbox-open {
 
   .photo-lightbox__nav--next {
     right: 8px;
+  }
+}
+
+/* Микро-анимации главной: hover только на устройствах с точным указателем */
+@media (hover: hover) and (pointer: fine) {
+  .scenario-card:active {
+    transform: translateY(-2px) scale(0.99);
+  }
+
+  .card:active {
+    transform: translateY(-2px) scale(0.99);
+  }
+
+  .transport-info__card:active {
+    transform: translateY(-2px) scale(0.99);
+  }
+
+  .testimonials .trust-item:active {
+    transform: translateY(-2px) scale(0.99);
+  }
+}
+
+@media (hover: none) {
+  .scenario-card:hover,
+  .card:hover,
+  .transport-info__card:hover,
+  .testimonials .trust-item:hover {
+    transform: none;
+  }
+
+  .scenario-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 140, 40, 0.16);
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .transport-info__card:hover {
+    box-shadow: 0 4px 12px rgba(25, 25, 25, 0.025);
+    border-color: rgba(255, 140, 40, 0.13);
+  }
+
+  .testimonials .trust-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border-color: #ffe9d2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .btn:hover,
+  .btn:active,
+  .top-btn,
+  .top-btn:hover,
+  .top-btn:active,
+  .card-book-btn,
+  .card-book-btn:hover,
+  .card-book-btn:active,
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .contact-sheet-btn,
+  .contact-sheet-btn:hover,
+  .contact-sheet-btn:active,
+  .contact-sheet-btn.contact-sheet-btn--primary,
+  .contact-sheet-btn.contact-sheet-btn--primary:hover,
+  .contact-sheet-btn.contact-sheet-btn--primary:active,
+  .testimonials-show-more,
+  .testimonials-show-more:hover,
+  .testimonials-show-more:active,
+  .card,
+  .card:hover,
+  .card:active,
+  .scenario-card,
+  .scenario-card:hover,
+  .scenario-card:active,
+  .transport-info__card,
+  .transport-info__card:hover,
+  .transport-info__card:active,
+  .testimonials .trust-item,
+  .testimonials .trust-item:hover,
+  .testimonials .trust-item:active,
+  .tours-scroll-fab,
+  .tours-scroll-fab.is-visible,
+  .tours-scroll-fab.is-visible:hover,
+  .tours-scroll-fab.is-visible:active,
+  .mobile-call-fab,
+  .mobile-call-fab:hover,
+  .mobile-call-fab:active,
+  .scenario-card .scenario-cta__arrow,
+  .scenario-card:hover .scenario-cta__arrow,
+  .scenario-card:active .scenario-cta__arrow,
+  .scenario-card:focus-visible .scenario-cta__arrow {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+
+  .card:target {
+    animation: none;
+  }
+
+  .topbar .menu-nav__link,
+  .topbar .menu-nav__label,
+  .topbar .menu-nav__arrow,
+  .topbar .menu-nav__link:hover .menu-nav__arrow,
+  .topbar .menu-nav__link:active .menu-nav__arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .topbar .menu-cta__btn,
+  .topbar .menu-cta__btn--primary,
+  .topbar .menu-cta__btn--secondary,
+  .topbar .menu-cta__btn--primary:hover,
+  .topbar .menu-cta__btn--primary:active,
+  .topbar .menu-cta__btn--secondary:hover,
+  .topbar .menu-cta__btn--secondary:active {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .topbar-burger,
+  .topbar-burger:active {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .topbar .menu {
+    transition: opacity 0.01ms linear, visibility 0.01ms linear;
+  }
+
+  .topbar-content.is-menu-open > .menu {
+    transform: none;
+  }
+
+  .topbar-menu-backdrop {
+    transition: opacity 0.01ms linear, visibility 0.01ms linear;
   }
 }
