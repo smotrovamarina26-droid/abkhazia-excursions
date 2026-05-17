@@ -21,10 +21,12 @@
     '<div class="photo-lightbox__backdrop" data-lightbox-close></div>' +
     '<div class="photo-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Просмотр фото">' +
     '<button type="button" class="photo-lightbox__close" aria-label="Закрыть">×</button>' +
-    '<button type="button" class="photo-lightbox__nav photo-lightbox__nav--prev" aria-label="Предыдущее фото">‹</button>' +
-    '<button type="button" class="photo-lightbox__nav photo-lightbox__nav--next" aria-label="Следующее фото">›</button>' +
     '<figure class="photo-lightbox__figure">' +
+    '<div class="photo-lightbox__media">' +
+    '<button type="button" class="photo-lightbox__nav photo-lightbox__nav--prev" aria-label="Предыдущее фото">‹</button>' +
     '<img class="photo-lightbox__img" alt="" decoding="async">' +
+    '<button type="button" class="photo-lightbox__nav photo-lightbox__nav--next" aria-label="Следующее фото">›</button>' +
+    "</div>" +
     '<figcaption class="photo-lightbox__caption"></figcaption>' +
     "</figure></div>";
   document.body.appendChild(root);
