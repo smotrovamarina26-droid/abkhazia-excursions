@@ -1,4 +1,58 @@
 (function () {
+  function getAuthorName(authorEl) {
+    var stars = authorEl.querySelector(".testimonial-stars");
+    var name = authorEl.textContent.replace(/\s+/g, " ").trim();
+    if (stars) {
+      name = name.replace(stars.textContent, "").trim();
+    }
+    return name;
+  }
+
+  function getAuthorInitial(authorEl) {
+    var name = getAuthorName(authorEl);
+    var match = name.match(/[A-Za-zА-Яа-яЁё]/);
+    return match ? match[0].toLocaleUpperCase("ru-RU") : "?";
+  }
+
+  function initTestimonialAvatars() {
+    var grid = document.querySelector(".testimonials .testimonials-grid");
+    if (!grid) {
+      return;
+    }
+
+    grid.querySelectorAll(".trust-item").forEach(function (item) {
+      if (item.querySelector(".testimonial-head")) {
+        return;
+      }
+
+      var author = item.querySelector(".testimonial-author");
+      if (!author) {
+        return;
+      }
+
+      var route = item.querySelector(".testimonial-route");
+      var head = document.createElement("div");
+      var avatar = document.createElement("span");
+      var meta = document.createElement("div");
+
+      head.className = "testimonial-head";
+      avatar.className = "testimonial-avatar avatar-circle";
+      avatar.setAttribute("aria-hidden", "true");
+      avatar.textContent = getAuthorInitial(author);
+      meta.className = "testimonial-head__meta";
+
+      head.appendChild(avatar);
+      meta.appendChild(author);
+      if (route) {
+        meta.appendChild(route);
+      }
+      head.appendChild(meta);
+      item.insertBefore(head, item.firstChild);
+    });
+  }
+
+  initTestimonialAvatars();
+
   var btn = document.getElementById("testimonials-show-more");
   if (!btn) return;
 
