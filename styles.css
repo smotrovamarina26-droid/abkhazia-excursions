@@ -311,7 +311,7 @@ body.is-mobile-menu-open {
   }
 
   .topbar .menu.menu--home {
-    padding-bottom: 16px;
+    padding: 12px 14px 14px;
   }
 
   .topbar .menu-nav__link,
@@ -352,6 +352,19 @@ body.is-mobile-menu-open {
     font-weight: 700;
   }
 
+  /* Nav labels — match .scenario-card h3 («Что вам больше хочется…») */
+  .topbar .menu.menu--home .menu-nav__link {
+    padding: 7px 2px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #222;
+  }
+
+  .topbar .menu.menu--home .menu-nav__arrow {
+    font-size: 18px;
+  }
+
   .topbar .menu > a:not(.menu-nav__link) {
     font-weight: 700;
   }
@@ -383,7 +396,7 @@ body.is-mobile-menu-open {
   .topbar .menu-cta {
     margin-top: 12px;
     margin-bottom: 0;
-    padding: 12px 12px 10px;
+    padding: 10px 12px 10px;
     background: #fffaf5;
     border: 1px solid rgba(255, 140, 40, 0.2);
     border-radius: 16px;
@@ -391,18 +404,11 @@ body.is-mobile-menu-open {
   }
 
   .topbar .menu-cta__title {
-    margin: 0 0 4px;
+    margin: 0 0 10px;
     font-size: 15px;
     font-weight: 700;
     line-height: 1.3;
     color: #1e2430;
-  }
-
-  .topbar .menu-cta__text {
-    margin: 0 0 10px;
-    font-size: 13px;
-    line-height: 1.4;
-    color: #636a77;
   }
 
   .topbar .menu-cta__actions {
@@ -411,10 +417,9 @@ body.is-mobile-menu-open {
     gap: 13px;
   }
 
-  .topbar .menu-cta__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* Typography & layout match .contact-sheet-btn in «Связаться с нами» */
+  .topbar .menu-cta .menu-cta__btn {
+    display: block;
     box-sizing: border-box;
     width: 100%;
     padding: 11px 14px;
@@ -424,7 +429,8 @@ body.is-mobile-menu-open {
     line-height: 1.25;
     text-align: center;
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    white-space: normal;
+    transition: border-color 0.22s ease, background-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
   }
 
   .topbar .menu-cta__btn--primary {
