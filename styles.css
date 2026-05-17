@@ -2602,11 +2602,26 @@ h2 {
   padding: 36px 0 32px;
 }
 
+.advantages.how-tours h2 {
+  margin-bottom: 10px;
+}
+
+.how-tours-hint {
+  margin: 0 auto 16px;
+  max-width: 28em;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: center;
+  color: #636a77;
+}
+
 .how-tours-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 0;
 }
 
 .how-tours-grid__cell {
@@ -2622,6 +2637,22 @@ h2 {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.28s ease;
+  transform-origin: center center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .how-tours-grid__cell img {
+    cursor: zoom-in;
+  }
+
+  .how-tours-grid__cell:hover img {
+    transform: scale(1.02);
+  }
+}
+
+.how-tours-grid__cell img:active {
+  transform: scale(0.98);
 }
 
 .how-tours-img--ritsa-lake {
@@ -3446,10 +3477,15 @@ h2 {
     margin-top: 0;
   }
 
+  .how-tours-hint {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+
   .how-tours-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
-    margin-top: 40px;
+    margin-top: 0;
   }
 
   .trust-how-work__grid {
@@ -6896,11 +6932,12 @@ body.tour-sticky-bar-visible {
   }
 
   main .advantages.how-tours > .container > h2 {
-    margin-bottom: 22px;
+    margin-bottom: 8px;
   }
 
-  main .advantages.how-tours .how-tours-grid {
-    margin-top: 22px;
+  main .advantages.how-tours .how-tours-hint {
+    margin-bottom: 14px;
+    font-size: 13px;
   }
 }
 
@@ -7040,11 +7077,6 @@ body.tour-sticky-bar-visible {
   .mobile-call-fab__icon svg {
     display: block;
   }
-}
-
-/* Fullscreen-просмотр фото — только «Фото с маршрутов по Абхазии» */
-.how-tours-grid__cell img {
-  cursor: zoom-in;
 }
 
 html.is-photo-lightbox-open,
