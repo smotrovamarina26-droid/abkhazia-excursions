@@ -27,6 +27,7 @@
     '<img class="photo-lightbox__img" alt="" decoding="async">' +
     '<button type="button" class="photo-lightbox__nav photo-lightbox__nav--next" aria-label="Следующее фото">›</button>' +
     "</div>" +
+    '<p class="photo-lightbox__counter" aria-live="polite" hidden></p>' +
     '<figcaption class="photo-lightbox__caption"></figcaption>' +
     "</figure></div>";
   document.body.appendChild(root);
@@ -38,6 +39,7 @@
   var nextBtn = root.querySelector(".photo-lightbox__nav--next");
   var imageEl = root.querySelector(".photo-lightbox__img");
   var captionEl = root.querySelector(".photo-lightbox__caption");
+  var counterEl = root.querySelector(".photo-lightbox__counter");
 
   function buildRoutesGallery() {
     var nodes = main.querySelectorAll(ROUTES_SELECTOR);
@@ -99,6 +101,17 @@
     nextBtn.disabled = currentIndex >= currentGallery.length - 1;
   }
 
+  function updateCounter() {
+    var hasMany = currentGallery.length > 1;
+    counterEl.hidden = !hasMany;
+    if (hasMany) {
+      counterEl.textContent =
+        String(currentIndex + 1) + " / " + String(currentGallery.length);
+    } else {
+      counterEl.textContent = "";
+    }
+  }
+
   function renderSlide() {
     var slide = currentGallery[currentIndex];
     if (!slide) {
@@ -110,6 +123,7 @@
     captionEl.textContent = slide.alt;
     captionEl.hidden = !slide.alt;
     updateNav();
+    updateCounter();
   }
 
   function open(index) {
