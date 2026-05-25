@@ -5310,7 +5310,7 @@ h2 {
 
 .tour-tourists-gallery__slider {
   display: flex;
-  gap: 15px;
+  gap: 16px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -5319,9 +5319,9 @@ h2 {
   overscroll-behavior-x: contain;
   touch-action: pan-x;
   scrollbar-width: none;
-  padding: 4px 4px 8px;
-  scroll-padding-left: 4px;
-  scroll-padding-right: 4px;
+  padding: 4px 16px 8px;
+  scroll-padding-left: 16px;
+  scroll-padding-right: 16px;
 }
 
 .tour-tourists-gallery__slider::-webkit-scrollbar {
@@ -5335,7 +5335,7 @@ h2 {
 }
 
 .tour-tourists-gallery__card {
-  flex: 0 0 85vw;
+  flex: 0 0 calc(100% - 32px);
   max-width: 420px;
   scroll-snap-align: center;
   scroll-snap-stop: always;
@@ -5345,34 +5345,14 @@ h2 {
   overflow: hidden;
   background: #fff;
   margin: 0;
+  aspect-ratio: 4 / 5;
 }
 
-.tour-tourists-gallery__placeholder {
+.tour-tourists-gallery__card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(145deg, #f5f0ea 0%, #ebe5dd 50%, #f0ece6 100%);
-}
-
-.tour-tourists-gallery__placeholder-text {
-  font-size: 15px;
-  color: #a09484;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  text-align: center;
-  padding: 0 16px;
-}
-
-.tour-tourists-gallery__caption {
-  padding: 12px 14px 14px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: #7a7062;
-  border-top: 1px solid rgba(255, 140, 40, 0.1);
-  background: #fffcf9;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @media (min-width: 769px) {
@@ -5384,7 +5364,7 @@ h2 {
   }
 
   .tour-tourists-gallery__card {
-    flex: 0 0 380px;
+    flex: 0 0 320px;
     max-width: 420px;
   }
 
