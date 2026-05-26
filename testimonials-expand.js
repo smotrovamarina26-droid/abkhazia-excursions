@@ -57,7 +57,7 @@
   if (!btn) return;
 
   var LABEL_EXPAND = "Показать ещё отзывы";
-  var LABEL_COLLAPSE = "Скрыть отзывы";
+  var LABEL_COLLAPSE = "Свернуть отзывы";
 
   var extraIds = (btn.getAttribute("aria-controls") || "")
     .trim()
