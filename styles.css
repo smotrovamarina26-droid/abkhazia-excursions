@@ -11,6 +11,12 @@ img {
   -webkit-user-drag: none;
 }
 
+.nolink {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
+}
+
 :root {
   --micro-duration: 0.2s;
   --micro-ease: ease;
