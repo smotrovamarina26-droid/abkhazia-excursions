@@ -3188,6 +3188,15 @@ h2 {
   color: #8a9099;
 }
 
+.site-footer-copyright {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #9ca3af;
+  text-align: center;
+  pointer-events: none;
+}
+
 .contact-overlay {
   position: fixed;
   inset: 0;
@@ -7302,7 +7311,8 @@ body.tour-sticky-bar-visible {
     transition:
       transform var(--micro-duration) var(--micro-ease),
       box-shadow var(--micro-duration) var(--micro-ease),
-      filter var(--micro-duration) var(--micro-ease);
+      filter var(--micro-duration) var(--micro-ease),
+      opacity 0.25s ease;
   }
 
   .mobile-call-fab:hover {
@@ -7332,6 +7342,12 @@ body.tour-sticky-bar-visible {
   .mobile-call-fab:focus-visible {
     outline: none;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18), 0 0 0 3px rgba(255, 122, 0, 0.35);
+  }
+
+  .mobile-call-fab.is-hidden-by-footer {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
   }
 
   .mobile-call-fab__icon {
