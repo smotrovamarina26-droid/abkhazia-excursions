@@ -101,28 +101,43 @@
       <div class="container">
         <h2 id="tour-tourists-gallery-title">Фотографии с экскурсии</h2>
         <p class="tour-tourists-gallery__subtitle">
-          Горячие источники, прогулки и атмосфера отдыха в Абхазии
+          Места, виды и атмосфера отдыха в Абхазии
         </p>
+        <div class="tour-tourists-gallery__viewport">
         <div class="tour-tourists-gallery__slider" tabindex="0" role="region" aria-roledescription="карусель" aria-label="Фото туристов с экскурсии">
-          <figure class="tour-tourists-gallery__card">
-            <div class="tour-tourists-gallery__placeholder">
-              <span class="tour-tourists-gallery__placeholder-text">Фото скоро появится</span>
-            </div>
-            <figcaption class="tour-tourists-gallery__caption">Термальные бассейны Кындыг</figcaption>
-          </figure>
-          <figure class="tour-tourists-gallery__card">
-            <div class="tour-tourists-gallery__placeholder">
-              <span class="tour-tourists-gallery__placeholder-text">Фото скоро появится</span>
-            </div>
-            <figcaption class="tour-tourists-gallery__caption">Прогулка по Сухуму</figcaption>
-          </figure>
-          <figure class="tour-tourists-gallery__card">
-            <div class="tour-tourists-gallery__placeholder">
-              <span class="tour-tourists-gallery__placeholder-text">Фото скоро появится</span>
-            </div>
-            <figcaption class="tour-tourists-gallery__caption">Остановки по маршруту</figcaption>
-          </figure>
+          <div class="tour-tourists-gallery__card">
+            <img src="../images/kyndyg/tourists/01-termalnyj-istochnik.png" alt="Термальные источники Кындыг" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="tour-tourists-gallery__card">
+            <img src="../images/kyndyg/tourists/02-gagra-kolonnada.png" alt="Гагра колоннада" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="tour-tourists-gallery__card">
+            <img src="../images/kyndyg/tourists/03-primorskij-park.png" alt="Приморский парк" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="tour-tourists-gallery__card">
+            <img src="../images/kyndyg/tourists/04-suhum-progulka.png" alt="Сухум" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="tour-tourists-gallery__card">
+            <img src="../images/kyndyg/tourists/05-fontan-suhum.png" alt="Фонтан в Сухуме" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="tour-tourists-gallery__card">
+            <img src="../images/kyndyg/tourists/06-termalnye-bassejny.png" alt="Термальные бассейны" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="tour-tourists-gallery__card">
+            <img src="../images/kyndyg/tourists/07-gidromassazh.png" alt="Гидромассаж" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="tour-tourists-gallery__card">
+            <img src="../images/kyndyg/tourists/08-holodnaya-bochka.png" alt="Холодная бочка" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
         </div>
+        <button class="tour-tourists-gallery__arrow tour-tourists-gallery__arrow--prev" type="button" aria-label="Предыдущее фото">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="tour-tourists-gallery__arrow tour-tourists-gallery__arrow--next" type="button" aria-label="Следующее фото">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        </div>
+        <div class="tour-tourists-gallery__dots" role="group" aria-label="Навигация по фотографиям"></div>
       </div>
     </section>
 
@@ -1044,6 +1059,85 @@
         }
         updateStickyBar();
       }, { passive: true });
+    })();
+  </script>
+  <script>
+    (function () {
+      var slider = document.querySelector('.tour-tourists-gallery__slider');
+      var dotsContainer = document.querySelector('.tour-tourists-gallery__dots');
+      var prevBtn = document.querySelector('.tour-tourists-gallery__arrow--prev');
+      var nextBtn = document.querySelector('.tour-tourists-gallery__arrow--next');
+      if (!slider || !dotsContainer) return;
+
+      var cards = slider.querySelectorAll('.tour-tourists-gallery__card');
+      var total = cards.length;
+      if (!total) return;
+
+      var dots = [];
+      for (var i = 0; i < total; i++) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'tour-tourists-gallery__dot';
+        dot.setAttribute('aria-label', 'Фото ' + (i + 1) + ' из ' + total);
+        (function (index) {
+          dot.addEventListener('click', function () {
+            scrollToIndex(index);
+          });
+        })(i);
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      }
+
+      var currentIndex = 0;
+
+      function getClosestIndex() {
+        var sliderLeft = slider.scrollLeft;
+        var sliderWidth = slider.offsetWidth;
+        var centerX = sliderLeft + sliderWidth / 2;
+        var closest = 0;
+        var minDist = Infinity;
+
+        for (var i = 0; i < cards.length; i++) {
+          var cardCenter = cards[i].offsetLeft + cards[i].offsetWidth / 2;
+          var dist = Math.abs(cardCenter - centerX);
+          if (dist < minDist) {
+            minDist = dist;
+            closest = i;
+          }
+        }
+        return closest;
+      }
+
+      function updateDots() {
+        var idx = getClosestIndex();
+        if (idx === currentIndex) return;
+        currentIndex = idx;
+        for (var i = 0; i < dots.length; i++) {
+          dots[i].classList.toggle('is-active', i === currentIndex);
+        }
+      }
+
+      function scrollToIndex(index) {
+        if (index < 0 || index >= total) return;
+        var card = cards[index];
+        var scrollTarget = card.offsetLeft - (slider.offsetWidth - card.offsetWidth) / 2;
+        slider.scrollTo({ left: scrollTarget, behavior: 'smooth' });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          scrollToIndex(getClosestIndex() - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          scrollToIndex(getClosestIndex() + 1);
+        });
+      }
+
+      dots[0].classList.add('is-active');
+      slider.addEventListener('scroll', updateDots, { passive: true });
     })();
   </script>
 </body>
