@@ -5310,18 +5310,18 @@ h2 {
 
 .tour-tourists-gallery__slider {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  touch-action: pan-x;
+  touch-action: pan-x pan-y;
   scrollbar-width: none;
-  padding: 4px 10px 8px;
-  scroll-padding-left: 10px;
-  scroll-padding-right: 10px;
+  padding: 4px 16px 8px;
+  scroll-padding-left: 16px;
+  scroll-padding-right: 16px;
 }
 
 .tour-tourists-gallery__slider::-webkit-scrollbar {
@@ -5335,8 +5335,8 @@ h2 {
 }
 
 .tour-tourists-gallery__card {
-  flex: 0 0 88vw;
-  max-width: 420px;
+  flex: 0 0 calc(100vw - 32px);
+  max-width: 548px;
   scroll-snap-align: center;
   scroll-snap-stop: always;
   border-radius: 16px;
@@ -5353,6 +5353,8 @@ h2 {
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: inherit;
+  touch-action: manipulation;
 }
 
 @media (min-width: 769px) {
@@ -5364,8 +5366,8 @@ h2 {
   }
 
   .tour-tourists-gallery__card {
-    flex: 0 0 320px;
-    max-width: 420px;
+    flex: 0 0 380px;
+    max-width: 548px;
   }
 
   .tour-tourists-gallery__subtitle {
