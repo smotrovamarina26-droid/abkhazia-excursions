@@ -5169,7 +5169,7 @@ h2 {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  touch-action: pan-x;
+  touch-action: pan-x pan-y;
   scrollbar-width: thin;
 }
 
@@ -5209,6 +5209,7 @@ h2 {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  touch-action: manipulation;
 }
 
 .tour-page--golden-ring #tour-route-photos .tour-route-carousel__caption,
