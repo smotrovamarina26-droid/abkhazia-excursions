@@ -135,7 +135,7 @@
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         </div>
-        <div class="tour-tourists-gallery__counter" aria-live="polite" aria-atomic="true">1 / 8</div>
+        <div class="tour-tourists-gallery__dots" role="group" aria-label="Навигация по фотографиям"></div>
       </div>
     </section>
 
@@ -1043,14 +1043,29 @@
   <script>
     (function () {
       var slider = document.querySelector('.tour-tourists-gallery__slider');
-      var counter = document.querySelector('.tour-tourists-gallery__counter');
+      var dotsContainer = document.querySelector('.tour-tourists-gallery__dots');
       var prevBtn = document.querySelector('.tour-tourists-gallery__arrow--prev');
       var nextBtn = document.querySelector('.tour-tourists-gallery__arrow--next');
-      if (!slider || !counter) return;
+      if (!slider || !dotsContainer) return;
 
       var cards = slider.querySelectorAll('.tour-tourists-gallery__card');
       var total = cards.length;
       if (!total) return;
+
+      var dots = [];
+      for (var i = 0; i < total; i++) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'tour-tourists-gallery__dot';
+        dot.setAttribute('aria-label', 'Фото ' + (i + 1) + ' из ' + total);
+        (function (index) {
+          dot.addEventListener('click', function () {
+            scrollToIndex(index);
+          });
+        })(i);
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      }
 
       var currentIndex = 0;
 
@@ -1072,9 +1087,13 @@
         return closest;
       }
 
-      function updateCounter() {
-        currentIndex = getClosestIndex();
-        counter.textContent = (currentIndex + 1) + ' / ' + total;
+      function updateDots() {
+        var idx = getClosestIndex();
+        if (idx === currentIndex) return;
+        currentIndex = idx;
+        for (var i = 0; i < dots.length; i++) {
+          dots[i].classList.toggle('is-active', i === currentIndex);
+        }
       }
 
       function scrollToIndex(index) {
@@ -1096,8 +1115,8 @@
         });
       }
 
-      slider.addEventListener('scroll', updateCounter, { passive: true });
-      updateCounter();
+      dots[0].classList.add('is-active');
+      slider.addEventListener('scroll', updateDots, { passive: true });
     })();
   </script>
 </body>
