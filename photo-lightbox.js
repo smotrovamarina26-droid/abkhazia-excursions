@@ -23,11 +23,15 @@
     '<button type="button" class="photo-lightbox__close" aria-label="Закрыть">×</button>' +
     '<figure class="photo-lightbox__figure">' +
     '<div class="photo-lightbox__media">' +
-    '<button type="button" class="photo-lightbox__nav photo-lightbox__nav--prev" aria-label="Предыдущее фото">‹</button>' +
+    '<button type="button" class="photo-lightbox__nav tour-tourists-gallery__arrow tour-tourists-gallery__arrow--prev" aria-label="Предыдущее фото">' +
+    '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+    "</button>" +
     '<img class="photo-lightbox__img" alt="" decoding="async">' +
-    '<button type="button" class="photo-lightbox__nav photo-lightbox__nav--next" aria-label="Следующее фото">›</button>' +
+    '<button type="button" class="photo-lightbox__nav tour-tourists-gallery__arrow tour-tourists-gallery__arrow--next" aria-label="Следующее фото">' +
+    '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+    "</button>" +
     "</div>" +
-    '<p class="photo-lightbox__counter" aria-live="polite" hidden></p>' +
+    '<div class="photo-lightbox__dots tour-tourists-gallery__dots" role="group" aria-label="Навигация по фотографиям" hidden></div>' +
     '<figcaption class="photo-lightbox__caption"></figcaption>' +
     "</figure></div>";
   document.body.appendChild(root);
@@ -35,11 +39,12 @@
   var backdrop = root.querySelector(".photo-lightbox__backdrop");
   var dialog = root.querySelector(".photo-lightbox__dialog");
   var closeBtn = root.querySelector(".photo-lightbox__close");
-  var prevBtn = root.querySelector(".photo-lightbox__nav--prev");
-  var nextBtn = root.querySelector(".photo-lightbox__nav--next");
+  var prevBtn = root.querySelector(".photo-lightbox__nav.tour-tourists-gallery__arrow--prev");
+  var nextBtn = root.querySelector(".photo-lightbox__nav.tour-tourists-gallery__arrow--next");
   var imageEl = root.querySelector(".photo-lightbox__img");
   var captionEl = root.querySelector(".photo-lightbox__caption");
-  var counterEl = root.querySelector(".photo-lightbox__counter");
+  var dotsRoot = root.querySelector(".photo-lightbox__dots");
+  var dotButtons = [];
 
   function buildRoutesGallery() {
     var nodes = main.querySelectorAll(ROUTES_SELECTOR);
@@ -93,23 +98,47 @@
     lockedScrollY = 0;
   }
 
+  function buildDots() {
+    if (!dotsRoot) {
+      return;
+    }
+    dotsRoot.innerHTML = "";
+    dotButtons = [];
+    if (currentGallery.length <= 1) {
+      dotsRoot.hidden = true;
+      return;
+    }
+    dotsRoot.hidden = false;
+    for (var i = 0; i < currentGallery.length; i++) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "tour-tourists-gallery__dot";
+      btn.setAttribute("aria-label", "Фото " + (i + 1) + " из " + currentGallery.length);
+      (function (index) {
+        btn.addEventListener("click", function () {
+          currentIndex = index;
+          renderSlide();
+        });
+      })(i);
+      dotsRoot.appendChild(btn);
+      dotButtons.push(btn);
+    }
+  }
+
+  function updateDots() {
+    dotButtons.forEach(function (btn, index) {
+      var on = index === currentIndex;
+      btn.classList.toggle("is-active", on);
+      btn.setAttribute("aria-current", on ? "true" : "false");
+    });
+  }
+
   function updateNav() {
     var hasMany = currentGallery.length > 1;
     prevBtn.hidden = !hasMany;
     nextBtn.hidden = !hasMany;
     prevBtn.disabled = currentIndex <= 0;
     nextBtn.disabled = currentIndex >= currentGallery.length - 1;
-  }
-
-  function updateCounter() {
-    var hasMany = currentGallery.length > 1;
-    counterEl.hidden = !hasMany;
-    if (hasMany) {
-      counterEl.textContent =
-        String(currentIndex + 1) + " / " + String(currentGallery.length);
-    } else {
-      counterEl.textContent = "";
-    }
   }
 
   function renderSlide() {
@@ -123,7 +152,7 @@
     captionEl.textContent = slide.alt;
     captionEl.hidden = !slide.alt;
     updateNav();
-    updateCounter();
+    updateDots();
   }
 
   function open(index) {
@@ -133,6 +162,7 @@
     }
 
     currentIndex = Math.max(0, Math.min(index, currentGallery.length - 1));
+    buildDots();
     renderSlide();
     lockScroll();
     root.hidden = false;
