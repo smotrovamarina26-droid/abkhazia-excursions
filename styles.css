@@ -7628,12 +7628,6 @@ body.is-photo-lightbox-open {
   display: none;
 }
 
-.photo-lightbox .tour-tourists-gallery__arrow:disabled {
-  opacity: 0.25;
-  cursor: default;
-  pointer-events: none;
-}
-
 @media (min-width: 769px) {
   .photo-lightbox {
     padding: 24px 48px;

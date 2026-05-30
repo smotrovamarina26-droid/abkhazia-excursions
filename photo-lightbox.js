@@ -134,11 +134,14 @@
   }
 
   function updateNav() {
-    var hasMany = currentGallery.length > 1;
-    prevBtn.hidden = !hasMany;
-    nextBtn.hidden = !hasMany;
-    prevBtn.disabled = currentIndex <= 0;
-    nextBtn.disabled = currentIndex >= currentGallery.length - 1;
+    var total = currentGallery.length;
+    if (total <= 1) {
+      prevBtn.hidden = true;
+      nextBtn.hidden = true;
+      return;
+    }
+    prevBtn.hidden = currentIndex <= 0;
+    nextBtn.hidden = currentIndex >= total - 1;
   }
 
   function renderSlide() {
