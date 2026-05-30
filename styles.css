@@ -678,35 +678,43 @@ body.is-mobile-menu-open {
 
 .hero-benefits-checklist {
   list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 520px;
+  box-sizing: border-box;
   width: 100%;
+  margin: 0;
+  padding: 0 0 0 20px;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 8px;
+  gap: 9px;
 }
 
 .hero-benefits-checklist__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
   margin: 0;
-  padding: 9px 18px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 1.3;
-  font-weight: 700;
-  letter-spacing: 0;
-  color: #434955;
-  text-align: center;
-  background: #fffdf9;
-  border: 1px solid rgba(255, 140, 40, 0.22);
-  border-radius: 24px;
-  box-shadow: 0 3px 10px rgba(30, 30, 30, 0.025);
-  transition: transform 0.15s ease;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.42;
+  font-weight: 400;
+  color: #4a515c;
+  text-align: left;
 }
 
-.hero-benefits-checklist__item:hover {
-  transform: translateY(-1px);
+.hero-benefits-checklist__item::before {
+  content: "✓";
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 122, 0, 0.08);
+  color: #ff7a00;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .tours,
@@ -3569,8 +3577,12 @@ h2 {
   }
 
   .hero-benefits-checklist {
-    max-width: 540px;
-    gap: 9px;
+    padding-left: 16px;
+    gap: 10px;
+  }
+
+  .hero-benefits-checklist__item {
+    font-size: 16px;
   }
 
   .hero h1 {
@@ -7182,11 +7194,8 @@ body.tour-sticky-bar-visible {
   }
 
   .hero-benefits-checklist {
-    gap: 7px;
-  }
-
-  .hero-benefits-checklist__item {
-    padding: 8px 12px;
+    padding-left: 18px;
+    gap: 8px;
   }
 
   .scenario-wrapper h2 {
