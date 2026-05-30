@@ -5442,6 +5442,10 @@ h2 {
   right: 6px;
 }
 
+#tour-tourists-gallery .tour-tourists-gallery__arrow[hidden] {
+  display: none;
+}
+
 .tour-tourists-gallery__dots {
   display: flex;
   flex-wrap: wrap;
@@ -6040,12 +6044,14 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel {
   position: relative;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel__track,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__track {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__track,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel__track {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
@@ -6058,18 +6064,21 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel__track::-webkit-scrollbar,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__track::-webkit-scrollbar {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__track::-webkit-scrollbar,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel__track::-webkit-scrollbar {
   display: none;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel__track:focus-visible,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__track:focus-visible {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__track:focus-visible,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel__track:focus-visible {
   outline: none;
   box-shadow: inset 0 0 0 3px rgba(255, 122, 0, 0.28);
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel__slide,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__slide {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__slide,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel__slide {
   flex: 0 0 100%;
   min-width: 100%;
   max-width: 100%;
@@ -6078,13 +6087,15 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel__slide .tour-logistics-sprinter-card__img-wrap,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__slide .tour-logistics-sprinter-card__img-wrap {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__slide .tour-logistics-sprinter-card__img-wrap,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel__slide .tour-logistics-sprinter-card__img-wrap {
   aspect-ratio: 16 / 9;
   height: auto;
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel__slide .tour-logistics-sprinter-card__img,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__slide .tour-logistics-sprinter-card__img {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel__slide .tour-logistics-sprinter-card__img,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel__slide .tour-logistics-sprinter-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -6092,8 +6103,15 @@ h2 {
 }
 
 .tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel .tour-tourists-gallery__arrow,
-.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel .tour-tourists-gallery__arrow {
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel .tour-tourists-gallery__arrow,
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel .tour-tourists-gallery__arrow {
   display: flex;
+}
+
+.tour-page--golden-ring #tour-logistics .tour-logistics-sprinter-carousel .tour-tourists-gallery__arrow[hidden],
+.tour-page--kyndyg #tour-logistics .tour-logistics-sprinter-carousel .tour-tourists-gallery__arrow[hidden],
+.tour-page--gega #tour-logistics .tour-logistics-sprinter-carousel .tour-tourists-gallery__arrow[hidden] {
+  display: none;
 }
 
 .tour-price-cols {
