@@ -1341,6 +1341,7 @@ body.is-mobile-menu-open {
 }
 
 #tours,
+#popular-excursions,
 #trust-who-helps,
 #how-booking,
 #how-trip,
@@ -3728,6 +3729,7 @@ h2 {
   }
 
   #tours,
+  #popular-excursions,
   #how-booking,
   #how-trip,
   #trip-documents,
@@ -3865,7 +3867,7 @@ h2 {
 /* --- Страница экскурсии --- */
 .tour-page main section[id],
 .tour-page main #tour-pricing,
-.tour-page main #tour-pricing-kyndyg {
+.tour-page main #tour-cost {
   scroll-margin-top: 90px;
 }
 
@@ -5175,7 +5177,7 @@ h2 {
 #tour-route-photos h2,
 #tour-program h2,
 #tour-pricing h2,
-#tour-pricing-kyndyg h2,
+#tour-cost h2,
 #tour-what-to-bring h2 {
   text-align: center;
 }
@@ -5796,21 +5798,21 @@ h2 {
 }
 
 .tour-page--golden-ring .tour-price-cols .tour-price-list,
-.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list,
+.tour-page--kyndyg #tour-cost .tour-price-cols .tour-price-list,
 .tour-page--gega .tour-price-cols .tour-price-list {
   list-style: none;
   padding-left: 0;
 }
 
 .tour-page--golden-ring .tour-price-cols .tour-price-list li,
-.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list li,
+.tour-page--kyndyg #tour-cost .tour-price-cols .tour-price-list li,
 .tour-page--gega .tour-price-cols .tour-price-list li {
   position: relative;
   padding-left: 15px;
 }
 
 .tour-page--golden-ring .tour-price-cols .tour-price-list li::before,
-.tour-page--kyndyg #tour-pricing-kyndyg .tour-price-cols .tour-price-list li::before,
+.tour-page--kyndyg #tour-cost .tour-price-cols .tour-price-list li::before,
 .tour-page--gega .tour-price-cols .tour-price-list li::before {
   content: "";
   position: absolute;
@@ -5822,15 +5824,15 @@ h2 {
   background: #ff7a00;
 }
 
-.tour-page--golden-ring section.tour-section:has(#tour-pricing) h2,
-.tour-page--kyndyg #tour-pricing-kyndyg h2,
-.tour-page--gega section.tour-section:has(#tour-pricing) h2 {
+.tour-page--golden-ring #tour-cost h2,
+.tour-page--kyndyg #tour-cost h2,
+.tour-page--gega #tour-cost h2 {
   text-align: center;
 }
 
-.tour-page--golden-ring section.tour-section:has(#tour-pricing) h2 + p,
-.tour-page--kyndyg #tour-pricing-kyndyg h2 + p,
-.tour-page--gega section.tour-section:has(#tour-pricing) h2 + p {
+.tour-page--golden-ring #tour-cost h2 + p,
+.tour-page--kyndyg #tour-cost h2 + p,
+.tour-page--gega #tour-cost h2 + p {
   text-align: center;
   max-width: 36em;
   margin-left: auto;
