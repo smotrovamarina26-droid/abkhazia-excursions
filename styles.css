@@ -716,26 +716,30 @@ body.is-mobile-menu-open {
 }
 
 .quick-scenarios {
-  padding: 30px 0 10px;
+  padding: 40px 0 6px;
 }
 
 .scenario-cards {
   display: grid;
   grid-template-columns: 1fr;
   align-items: stretch;
-  gap: 12px;
+  gap: 10px;
 }
 
 .scenario-wrapper {
-  background: rgba(255, 250, 245, 0.55);
-  border: 1px solid rgba(255, 140, 40, 0.10);
-  border-radius: 22px;
-  padding: 22px 16px 18px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   box-shadow: none;
 }
 
 .scenario-wrapper h2 {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  font-size: 23px;
+  line-height: 1.16;
+  font-weight: 700;
+  text-align: center;
 }
 
 .scenario-card {
@@ -748,11 +752,10 @@ body.is-mobile-menu-open {
   text-decoration: none;
   color: #222;
   background: #ffffff;
-  border: 1px solid rgba(255, 140, 40, 0.16);
+  border: 1px solid rgba(255, 140, 40, 0.22);
   border-radius: 18px;
-  padding: 14px 16px;
-  box-shadow: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  padding: 12px 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
   transition:
     transform var(--micro-duration) var(--micro-ease),
     box-shadow var(--micro-duration) var(--micro-ease),
@@ -3590,7 +3593,7 @@ h2 {
   }
 
   .quick-scenarios {
-    padding: 52px 0 16px;
+    padding: 52px 0 10px;
   }
 
   h2 {
@@ -3605,16 +3608,17 @@ h2 {
 
   .scenario-cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    gap: 12px;
   }
 
-  .scenario-wrapper {
-    padding: 26px 22px 20px;
-    border-radius: 24px;
+  .scenario-wrapper h2 {
+    margin-bottom: 14px;
+    font-size: 29px;
+    line-height: 1.2;
   }
 
   .scenario-card {
-    padding: 16px 18px;
+    padding: 14px 16px;
   }
 
   .card {
@@ -7185,21 +7189,16 @@ body.tour-sticky-bar-visible {
     padding: 8px 12px;
   }
 
-  .scenario-wrapper {
-    padding: 18px 10px 14px;
-    border-radius: 18px;
-  }
-
   .scenario-wrapper h2 {
-    margin-bottom: 14px;
+    margin-bottom: 11px;
   }
 
   .scenario-cards {
-    gap: 14px;
+    gap: 10px;
   }
 
   .scenario-card {
-    padding: 16px 14px;
+    padding: 12px 14px;
     width: 100%;
     box-sizing: border-box;
     border-radius: 16px;
@@ -7217,7 +7216,7 @@ body.tour-sticky-bar-visible {
   }
 
   main > .quick-scenarios {
-    padding: 24px 0 10px;
+    padding: 38px 0 6px;
   }
 
   main > .tours {
