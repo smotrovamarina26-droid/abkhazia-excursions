@@ -10,6 +10,26 @@
     content="Горная Абхазия, Гегский водопад и озеро Рица на джип-туре из Сочи и Адлера. Комфортный маршрут в УАЗ Патриот."
   />
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .tour-page--gega #tour-route-photos .tour-route-carousel__frame {
+      position: relative;
+    }
+
+    .tour-page--gega #tour-route-photos .tour-route-carousel__frame .tour-tourists-gallery__arrow {
+      display: flex;
+      top: calc(clamp(200px, 48vw, 300px) / 2);
+    }
+
+    .tour-page--gega #tour-route-photos .tour-route-carousel__frame .tour-tourists-gallery__arrow[hidden] {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .tour-page--gega #tour-route-photos .tour-route-carousel__frame .tour-tourists-gallery__arrow {
+        top: calc(clamp(240px, 36vw, 320px) / 2);
+      }
+    }
+  </style>
 </head>
 <body class="tour-page tour-page--gega">
   <header class="topbar">
@@ -278,7 +298,49 @@
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/gega-jeep/gega-waterfall.jpg"
+                  src="../images/gega-jeep/gallery/gagra-white-rocks-abkhazia.png"
+                  alt="Белые скалы"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Белые скалы</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/gega-jeep/gallery/gagripsh-restaurant-abkhazia.png"
+                  alt="Ресторан «Гагрипш»"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Ресторан «Гагрипш»</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/gega-jeep/gallery/gagra-colonnade-abkhazia.png"
+                  alt="Колоннада Гагры"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Колоннада Гагры</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/gega-jeep/gallery/gegsky-waterfall-abkhazia.png"
                   alt="Гегский водопад"
                   width="900"
                   height="600"
@@ -292,21 +354,7 @@
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/gega-jeep/ritsa.jpg"
-                  alt="Озеро Рица"
-                  width="900"
-                  height="600"
-                  loading="lazy"
-                  decoding="async"
-                  class="tour-route-carousel__img"
-                />
-              </div>
-              <figcaption class="tour-route-carousel__caption">Озеро Рица</figcaption>
-            </figure>
-            <figure class="tour-route-carousel__slide">
-              <div class="tour-route-carousel__img-wrap">
-                <img
-                  src="../images/gega-jeep/blue-lake.jpg"
+                  src="../images/gega-jeep/gallery/blue-lake-abkhazia.png"
                   alt="Голубое озеро"
                   width="900"
                   height="600"
@@ -320,8 +368,8 @@
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/gega-jeep/gagra.jpg"
-                  alt="Гагра"
+                  src="../images/gega-jeep/gallery/yupshar-canyon-abkhazia.png"
+                  alt="Юпшарский каньон"
                   width="900"
                   height="600"
                   loading="lazy"
@@ -329,13 +377,13 @@
                   class="tour-route-carousel__img"
                 />
               </div>
-              <figcaption class="tour-route-carousel__caption">Гагра</figcaption>
+              <figcaption class="tour-route-carousel__caption">Юпшарский каньон</figcaption>
             </figure>
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/gega-jeep/mountain-road.jpg"
-                  alt="Горная дорога"
+                  src="../images/gega-jeep/gallery/yupshara-river-abkhazia.png"
+                  alt="Река Юпшара"
                   width="900"
                   height="600"
                   loading="lazy"
@@ -343,9 +391,29 @@
                   class="tour-route-carousel__img"
                 />
               </div>
-              <figcaption class="tour-route-carousel__caption">Горная дорога</figcaption>
+              <figcaption class="tour-route-carousel__caption">Река Юпшара</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/gega-jeep/gallery/ritsa-lake-abkhazia.png"
+                  alt="Озеро Рица"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Озеро Рица</figcaption>
             </figure>
           </div>
+          <button class="tour-tourists-gallery__arrow tour-tourists-gallery__arrow--prev tour-route-carousel__arrow tour-route-carousel__arrow--prev" type="button" aria-label="Предыдущее фото" hidden>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="tour-tourists-gallery__arrow tour-tourists-gallery__arrow--next tour-route-carousel__arrow tour-route-carousel__arrow--next" type="button" aria-label="Следующее фото">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
         <div class="tour-route-carousel__controls">
           <div class="tour-route-carousel__dots" id="tour-route-carousel-dots" role="group" aria-label="Навигация по фото"></div>
@@ -956,6 +1024,8 @@
 
       var track = document.getElementById("tour-route-carousel-track");
       var dotsRoot = document.getElementById("tour-route-carousel-dots");
+      var prevBtn = section.querySelector(".tour-route-carousel__arrow--prev");
+      var nextBtn = section.querySelector(".tour-route-carousel__arrow--next");
       if (!track || !dotsRoot) {
         return;
       }
@@ -964,6 +1034,44 @@
       var n = slides.length;
       if (!n) {
         return;
+      }
+
+      function getIndex() {
+        var w = track.clientWidth;
+        if (w <= 0) {
+          return 0;
+        }
+        return Math.round(track.scrollLeft / w);
+      }
+
+      function updateArrows(index) {
+        if (n <= 1) {
+          if (prevBtn) {
+            prevBtn.hidden = true;
+          }
+          if (nextBtn) {
+            nextBtn.hidden = true;
+          }
+          return;
+        }
+        if (prevBtn) {
+          prevBtn.hidden = index <= 0;
+        }
+        if (nextBtn) {
+          nextBtn.hidden = index >= n - 1;
+        }
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", function () {
+          goTo(getIndex() - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", function () {
+          goTo(getIndex() + 1);
+        });
       }
 
       var dotButtons = [];
@@ -996,6 +1104,7 @@
           b.classList.toggle("is-active", on);
           b.setAttribute("aria-current", on ? "true" : "false");
         });
+        updateArrows(index);
       }
 
       function syncFromScroll() {
@@ -1036,8 +1145,7 @@
       );
 
       track.addEventListener("keydown", function (e) {
-        var w = track.clientWidth;
-        var i = Math.round(track.scrollLeft / w);
+        var i = getIndex();
         if (e.key === "ArrowRight") {
           e.preventDefault();
           goTo(Math.min(i + 1, n - 1));
