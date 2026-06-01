@@ -7,6 +7,26 @@
   <title>Термальные источники Кындыг — экскурсия из Сочи и Адлера</title>
   <meta name="description" content="Сухум, Новый Афон и купание в горячих источниках. Выезды по чётным числам. Микроавтобус Mercedes до 18 человек." />
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .tour-page--kyndyg #tour-route-photos .tour-route-carousel__frame {
+      position: relative;
+    }
+
+    .tour-page--kyndyg #tour-route-photos .tour-route-carousel__frame .tour-tourists-gallery__arrow {
+      display: flex;
+      top: calc(clamp(200px, 48vw, 300px) / 2);
+    }
+
+    .tour-page--kyndyg #tour-route-photos .tour-route-carousel__frame .tour-tourists-gallery__arrow[hidden] {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .tour-page--kyndyg #tour-route-photos .tour-route-carousel__frame .tour-tourists-gallery__arrow {
+        top: calc(clamp(240px, 36vw, 320px) / 2);
+      }
+    }
+  </style>
 </head>
 <body class="tour-page tour-page--kyndyg">
   <header class="topbar">
@@ -275,7 +295,7 @@
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/kyndyg/gagra.jpg"
+                  src="../images/kyndyg/gallery/gagra-colonnade-abkhazia.png"
                   alt="Гагра"
                   width="900"
                   height="600"
@@ -284,12 +304,12 @@
                   class="tour-route-carousel__img"
                 />
               </div>
-              <figcaption class="tour-route-carousel__caption">Гагра</figcaption>
+              <figcaption class="tour-route-carousel__caption">Колоннада Гагры</figcaption>
             </figure>
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/kyndyg/new-afon.jpg"
+                  src="../images/kyndyg/gallery/new-afon-swans-park-abkhazia.png"
                   alt="Новый Афон"
                   width="900"
                   height="600"
@@ -298,12 +318,26 @@
                   class="tour-route-carousel__img"
                 />
               </div>
-              <figcaption class="tour-route-carousel__caption">Новый Афон</figcaption>
+              <figcaption class="tour-route-carousel__caption">Приморский парк Нового Афона</figcaption>
             </figure>
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/kyndyg/sukhum.jpg"
+                  src="../images/kyndyg/gallery/new-afon-colonnade-abkhazia.png"
+                  alt="Новый Афон"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Набережная Сухума</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/kyndyg/gallery/sukhum-griffin-fountain-abkhazia.png"
                   alt="Сухум"
                   width="900"
                   height="600"
@@ -312,12 +346,12 @@
                   class="tour-route-carousel__img"
                 />
               </div>
-              <figcaption class="tour-route-carousel__caption">Сухум</figcaption>
+              <figcaption class="tour-route-carousel__caption">Фонтан Грифоны в Сухуме</figcaption>
             </figure>
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/kyndyg/kyndyg-source.jpg"
+                  src="../images/kyndyg/gallery/kyndyg-thermal-pools-abkhazia.png"
                   alt="Термальный комплекс Кындыг"
                   width="900"
                   height="600"
@@ -331,7 +365,21 @@
             <figure class="tour-route-carousel__slide">
               <div class="tour-route-carousel__img-wrap">
                 <img
-                  src="../images/kyndyg/road-views.jpg"
+                  src="../images/kyndyg/gallery/kyndyg-hydromassage-abkhazia.png"
+                  alt="Термальный комплекс Кындыг"
+                  width="900"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  class="tour-route-carousel__img"
+                />
+              </div>
+              <figcaption class="tour-route-carousel__caption">Гидромассажные источники Кындыга</figcaption>
+            </figure>
+            <figure class="tour-route-carousel__slide">
+              <div class="tour-route-carousel__img-wrap">
+                <img
+                  src="../images/kyndyg/gallery/kyndyg-hot-mineral-spring-abkhazia.png"
                   alt="Красивые места по дороге"
                   width="900"
                   height="600"
@@ -340,9 +388,15 @@
                   class="tour-route-carousel__img"
                 />
               </div>
-              <figcaption class="tour-route-carousel__caption">Красивые места по дороге</figcaption>
+              <figcaption class="tour-route-carousel__caption">Горячий минеральный источник</figcaption>
             </figure>
           </div>
+          <button class="tour-tourists-gallery__arrow tour-tourists-gallery__arrow--prev tour-route-carousel__arrow tour-route-carousel__arrow--prev" type="button" aria-label="Предыдущее фото" hidden>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="tour-tourists-gallery__arrow tour-tourists-gallery__arrow--next tour-route-carousel__arrow tour-route-carousel__arrow--next" type="button" aria-label="Следующее фото">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
         <div class="tour-route-carousel__controls">
           <div class="tour-route-carousel__dots" id="tour-route-carousel-dots" role="group" aria-label="Навигация по фото"></div>
@@ -937,6 +991,8 @@
       }
       var track = document.getElementById("tour-route-carousel-track");
       var dotsRoot = document.getElementById("tour-route-carousel-dots");
+      var prevBtn = section.querySelector(".tour-route-carousel__arrow--prev");
+      var nextBtn = section.querySelector(".tour-route-carousel__arrow--next");
       if (!track || !dotsRoot) {
         return;
       }
@@ -945,6 +1001,44 @@
       var n = slides.length;
       if (!n) {
         return;
+      }
+
+      function getIndex() {
+        var w = track.clientWidth;
+        if (w <= 0) {
+          return 0;
+        }
+        return Math.round(track.scrollLeft / w);
+      }
+
+      function updateArrows(index) {
+        if (n <= 1) {
+          if (prevBtn) {
+            prevBtn.hidden = true;
+          }
+          if (nextBtn) {
+            nextBtn.hidden = true;
+          }
+          return;
+        }
+        if (prevBtn) {
+          prevBtn.hidden = index <= 0;
+        }
+        if (nextBtn) {
+          nextBtn.hidden = index >= n - 1;
+        }
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", function () {
+          goTo(getIndex() - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", function () {
+          goTo(getIndex() + 1);
+        });
       }
 
       var dotButtons = [];
@@ -977,6 +1071,7 @@
           b.classList.toggle("is-active", on);
           b.setAttribute("aria-current", on ? "true" : "false");
         });
+        updateArrows(index);
       }
 
       function syncFromScroll() {
@@ -1017,8 +1112,7 @@
       );
 
       track.addEventListener("keydown", function (e) {
-        var w = track.clientWidth;
-        var i = Math.round(track.scrollLeft / w);
+        var i = getIndex();
         if (e.key === "ArrowRight") {
           e.preventDefault();
           goTo(Math.min(i + 1, n - 1));
