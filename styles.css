@@ -579,13 +579,15 @@ body.is-mobile-menu-open {
   padding: 84px 0 76px;
 }
 
-.hero.hero--home {
+.hero.hero--home,
+.tour-page--golden-ring #tour-hero.hero--tour {
   position: relative;
   overflow: hidden;
   background-color: #2a4540;
 }
 
-.hero.hero--home .hero__media {
+.hero.hero--home .hero__media,
+.tour-page--golden-ring #tour-hero .hero__media {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -596,7 +598,8 @@ body.is-mobile-menu-open {
   pointer-events: none;
 }
 
-.hero.hero--home .hero__img {
+.hero.hero--home .hero__img,
+.tour-page--golden-ring #tour-hero .hero__img {
   width: 100%;
   height: 100%;
   max-width: none;
@@ -604,7 +607,12 @@ body.is-mobile-menu-open {
   object-position: center;
 }
 
-.hero.hero--home .hero__overlay {
+.tour-page--golden-ring #tour-hero .hero__img {
+  object-position: center 42%;
+}
+
+.hero.hero--home .hero__overlay,
+.tour-page--golden-ring #tour-hero .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -618,9 +626,16 @@ body.is-mobile-menu-open {
   );
 }
 
-.hero.hero--home .hero__content {
+.hero.hero--home .hero__content,
+.tour-page--golden-ring #tour-hero .hero__content {
   position: relative;
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .tour-page--golden-ring #tour-hero .hero__img {
+    object-position: center 34%;
+  }
 }
 
 .hero h1 {

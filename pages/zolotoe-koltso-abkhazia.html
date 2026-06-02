@@ -7,28 +7,9 @@
   <title>Золотое кольцо Абхазии: Гагра, Рица, Новый Афон — экскурсия из Сочи и Адлера</title>
   <meta name="description" content="Однодневный тур по Гагре, озеру Рица и Новому Афону. Ежедневные выезды из Сочи, Адлера и Сириуса на Mercedes Sprinter." />
   <link rel="stylesheet" href="../styles.css" />
-  <link rel="preload" as="image" href="../images/zolotoe-koltso/golden-ring-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="../images/zolotoe-koltso/golden-ring-hero-mobile.jpg" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="../images/zolotoe-koltso/golden-ring-hero.jpg" media="(min-width: 769px)" fetchpriority="high" />
   <style>
-    .tour-page--golden-ring #tour-hero.hero--tour {
-      background:
-        linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.5) 0%,
-          rgba(0, 0, 0, 0.46) 30%,
-          rgba(0, 0, 0, 0.43) 62%,
-          rgba(0, 0, 0, 0.41) 100%
-        ),
-        url("../images/zolotoe-koltso/golden-ring-hero.jpg");
-      background-size: cover;
-      background-position: center 42%;
-    }
-
-    @media (max-width: 768px) {
-      .tour-page--golden-ring #tour-hero.hero--tour {
-        background-position: center 34%;
-      }
-    }
-
     .tour-page--golden-ring #tour-route-photos .tour-route-carousel__frame {
       position: relative;
     }
@@ -95,7 +76,20 @@
 
   <main>
     <header class="hero hero--tour" id="tour-hero">
-      <div class="container">
+      <picture class="hero__media" aria-hidden="true">
+        <source media="(max-width: 768px)" srcset="../images/zolotoe-koltso/golden-ring-hero-mobile.jpg" />
+        <img
+          class="hero__img"
+          src="../images/zolotoe-koltso/golden-ring-hero.jpg"
+          alt=""
+          width="1400"
+          height="787"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="container hero__content">
         <h1 class="hero-title">
           Золотое кольцо Абхазии
         </h1>
