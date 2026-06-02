@@ -7,7 +7,8 @@
   <title>Термальные источники Кындыг — экскурсия из Сочи и Адлера</title>
   <meta name="description" content="Сухум, Новый Афон и купание в горячих источниках. Выезды по чётным числам. Микроавтобус Mercedes до 18 человек." />
   <link rel="stylesheet" href="../styles.css" />
-  <link rel="preload" as="image" href="../images/kyndyg/kyndyg-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="../images/kyndyg/kyndyg-hero-mobile.jpg" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="../images/kyndyg/kyndyg-hero.jpg" media="(min-width: 769px)" fetchpriority="high" />
   <style>
     .tour-page--kyndyg #tour-route-photos .tour-route-carousel__frame {
       position: relative;
@@ -75,7 +76,20 @@
 
   <main>
     <header class="hero hero--tour" id="tour-hero">
-      <div class="container">
+      <picture class="hero__media" aria-hidden="true">
+        <source media="(max-width: 768px)" srcset="../images/kyndyg/kyndyg-hero-mobile.jpg" />
+        <img
+          class="hero__img"
+          src="../images/kyndyg/kyndyg-hero.jpg"
+          alt=""
+          width="1400"
+          height="787"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="container hero__content">
         <h1 class="hero-title">
           Термальные источники<br />
           Кындыг

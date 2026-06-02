@@ -580,14 +580,18 @@ body.is-mobile-menu-open {
 }
 
 .hero.hero--home,
-.tour-page--golden-ring #tour-hero.hero--tour {
+.tour-page--golden-ring #tour-hero.hero--tour,
+.tour-page--kyndyg #tour-hero.hero--tour,
+.tour-page--gega #tour-hero.hero--tour {
   position: relative;
   overflow: hidden;
   background-color: #2a4540;
 }
 
 .hero.hero--home .hero__media,
-.tour-page--golden-ring #tour-hero .hero__media {
+.tour-page--golden-ring #tour-hero .hero__media,
+.tour-page--kyndyg #tour-hero .hero__media,
+.tour-page--gega #tour-hero .hero__media {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -599,7 +603,9 @@ body.is-mobile-menu-open {
 }
 
 .hero.hero--home .hero__img,
-.tour-page--golden-ring #tour-hero .hero__img {
+.tour-page--golden-ring #tour-hero .hero__img,
+.tour-page--kyndyg #tour-hero .hero__img,
+.tour-page--gega #tour-hero .hero__img {
   width: 100%;
   height: 100%;
   max-width: none;
@@ -607,12 +613,14 @@ body.is-mobile-menu-open {
   object-position: center;
 }
 
-.tour-page--golden-ring #tour-hero .hero__img {
+.tour-page--golden-ring #tour-hero .hero__img,
+.tour-page--gega #tour-hero .hero__img {
   object-position: center 42%;
 }
 
 .hero.hero--home .hero__overlay,
-.tour-page--golden-ring #tour-hero .hero__overlay {
+.tour-page--golden-ring #tour-hero .hero__overlay,
+.tour-page--kyndyg #tour-hero .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -626,8 +634,18 @@ body.is-mobile-menu-open {
   );
 }
 
+.tour-page--gega #tour-hero .hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52));
+}
+
 .hero.hero--home .hero__content,
-.tour-page--golden-ring #tour-hero .hero__content {
+.tour-page--golden-ring #tour-hero .hero__content,
+.tour-page--kyndyg #tour-hero .hero__content,
+.tour-page--gega #tour-hero .hero__content {
   position: relative;
   z-index: 2;
 }
@@ -4111,20 +4129,6 @@ h2 {
   border-bottom: 1px solid #ede6dc;
 }
 
-.tour-page--kyndyg .hero.hero--tour {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.46) 30%,
-      rgba(0, 0, 0, 0.43) 62%,
-      rgba(0, 0, 0, 0.41) 100%
-    ),
-    url("images/kyndyg/kyndyg-hero.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
 @media (min-width: 481px) {
   .tour-page--kyndyg .tour-back-to-all {
     margin-top: 70px;
@@ -4261,13 +4265,6 @@ h2 {
   padding: 1px 0 4px;
   background: #faf9f7;
   border-bottom: 1px solid #ede6dc;
-}
-
-.tour-page--gega .hero.hero--tour {
-  background: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),
-    url("images/gega-jeep/gega-hero.jpg");
-  background-size: cover;
-  background-position: center 42%;
 }
 
 @media (min-width: 481px) {

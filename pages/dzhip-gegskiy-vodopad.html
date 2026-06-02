@@ -10,7 +10,8 @@
     content="Горная Абхазия, Гегский водопад и озеро Рица на джип-туре из Сочи и Адлера. Комфортный маршрут в УАЗ Патриот."
   />
   <link rel="stylesheet" href="../styles.css" />
-  <link rel="preload" as="image" href="../images/gega-jeep/gega-hero.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="../images/gega-jeep/gega-hero-mobile.jpg" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="../images/gega-jeep/gega-hero.jpg" media="(min-width: 769px)" fetchpriority="high" />
   <style>
     .tour-page--gega #tour-route-photos .tour-route-carousel__frame {
       position: relative;
@@ -78,7 +79,20 @@
 
   <main>
     <header class="hero hero--tour" id="tour-hero">
-      <div class="container">
+      <picture class="hero__media" aria-hidden="true">
+        <source media="(max-width: 768px)" srcset="../images/gega-jeep/gega-hero-mobile.jpg" />
+        <img
+          class="hero__img"
+          src="../images/gega-jeep/gega-hero.jpg"
+          alt=""
+          width="1400"
+          height="788"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="container hero__content">
         <h1 class="hero-title">Джип-тур Гегский водопад</h1>
 
         <p class="hero-subtitle">Гагра · Рица · Гегский водопад</p>
