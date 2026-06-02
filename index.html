@@ -7,7 +7,8 @@
   <title>Экскурсии в Абхазию из Сочи, Адлера, Сириуса</title>
   <meta name="description" content="Групповые экскурсии в Абхазию из Сочи, Адлера и Сириуса. Золотое кольцо, Кындыг, джип-тур на Гегский водопад." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preload" as="image" href="images/ritsa.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/ritsa-hero-mobile.jpg" media="(max-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/ritsa.jpg" media="(min-width: 769px)" fetchpriority="high" />
 </head>
 
 <body>
@@ -58,8 +59,21 @@
     </div>
   </header>
 
-  <header class="hero">
-    <div class="container">
+  <header class="hero hero--home">
+    <picture class="hero__media" aria-hidden="true">
+      <source media="(max-width: 768px)" srcset="images/ritsa-hero-mobile.jpg" />
+      <img
+        class="hero__img"
+        src="images/ritsa.jpg"
+        alt=""
+        width="1400"
+        height="787"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="container hero__content">
       <h1>
         Экскурсии в Абхазию<br>
         из Сочи и Адлера
@@ -121,7 +135,7 @@
           <article id="tour-golden-ring" class="card">
             <div class="card-section card-section--lead">
               <a href="pages/zolotoe-koltso-abkhazia.html" class="card-image-link">
-                <img src="images/ritsa-card.jpg" alt="Озеро Рица" class="card-image" width="840" height="473" loading="eager" decoding="async">
+                <img src="images/ritsa-card.jpg" alt="Озеро Рица" class="card-image" width="840" height="473" loading="lazy" decoding="async">
               </a>
               <h3><a href="pages/zolotoe-koltso-abkhazia.html" class="card-title-link">Золотое кольцо Абхазии</a></h3>
               <p>За 1 день — все главные места Абхазии: Гагра, Рица, Новый Афон</p>
