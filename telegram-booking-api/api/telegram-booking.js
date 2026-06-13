@@ -3,7 +3,12 @@
  * Принимает JSON: name, phone, tour, source, page, date, comment
  */
 
+const { Resend } = require("resend");
+
 const MAX_BODY_BYTES = 16 * 1024;
+const EMAIL_FROM = "zayavki@ekskursii-v-abhaziyu.ru";
+const EMAIL_TO = "smotrova-marina@mail.ru";
+const EMAIL_SUBJECT = "Новая заявка с сайта";
 
 function json(res, status, payload) {
   res.statusCode = status;
@@ -108,6 +113,38 @@ function buildTelegramText(body) {
   return lines.join("\n");
 }
 
+function buildEmailText(body) {
+  var lines = [
+    "Имя: " + displayBookingName(body.name),
+    "Телефон: " + String(body.phone || "").trim(),
+    "Экскурсия: " + (body.tour != null ? String(body.tour).trim() : "—"),
+    "Источник: " + (body.source != null ? String(body.source).trim() : "—"),
+    "Страница: " + (body.page != null ? String(body.page).trim() : "—"),
+    "Дата: " + (body.date != null ? String(body.date).trim() : "—"),
+    "Комментарий: " + (body.comment != null && String(body.comment).trim() ? String(body.comment).trim() : "—"),
+  ];
+  return lines.join("\n");
+}
+
+async function sendBookingEmail(body) {
+  var resendApiKey = (process.env.RESEND_API_KEY || "").trim();
+  if (!resendApiKey) {
+    throw new Error("RESEND_API_KEY is not configured");
+  }
+
+  var resend = new Resend(resendApiKey);
+  var result = await resend.emails.send({
+    from: EMAIL_FROM,
+    to: EMAIL_TO,
+    subject: EMAIL_SUBJECT,
+    text: buildEmailText(body),
+  });
+
+  if (result && result.error) {
+    throw new Error(result.error.message || "Resend API error");
+  }
+}
+
 module.exports = async function handler(req, res) {
   var allowedOrigin = (process.env.ALLOWED_ORIGIN || "").trim();
   var requestOrigin = (req.headers.origin || "").trim() || null;
@@ -160,6 +197,12 @@ module.exports = async function handler(req, res) {
 
   var text = buildTelegramText(body);
   var tgUrl = "https://api.telegram.org/bot" + encodeURIComponent(token) + "/sendMessage";
+
+  try {
+    await sendBookingEmail(body);
+  } catch (emailErr) {
+    console.error("Failed to send booking email", emailErr);
+  }
 
   try {
     var tgRes = await fetch(tgUrl, {

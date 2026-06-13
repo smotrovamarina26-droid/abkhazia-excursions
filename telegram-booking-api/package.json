@@ -2,5 +2,8 @@
   "name": "telegram-booking-api",
   "version": "1.0.0",
   "private": true,
-  "description": "Vercel serverless API: приём заявок и отправка в Telegram"
+  "description": "Vercel serverless API: приём заявок и отправка в Telegram",
+  "dependencies": {
+    "resend": "^6.12.4"
+  }
 }
