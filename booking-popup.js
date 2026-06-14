@@ -106,6 +106,12 @@
     showFormState();
     overlay.classList.add("is-open");
     overlay.setAttribute("aria-hidden", "false");
+    if (typeof window.reachMetrikaGoal === "function") {
+      window.reachMetrikaGoal("booking_open", {
+        tour: name,
+        flow: isLeadFlow ? "lead" : "booking",
+      });
+    }
     lastFocusedElement = document.activeElement;
     requestAnimationFrame(function () {
       contactInput.focus();
@@ -406,6 +412,13 @@
       bookingPhoneDigits = "";
       hasSubmitErrorState = false;
       showSuccessState();
+      if (typeof window.reachMetrikaGoal === "function") {
+        window.reachMetrikaGoal("booking_submit", {
+          tour: tourName,
+          source: payload.source,
+          page: payload.page,
+        });
+      }
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = savedSubmitLabel;
