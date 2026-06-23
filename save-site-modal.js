@@ -17,7 +17,7 @@
     },
   };
 
-  var trigger = document.getElementById("hero-save-site-trigger");
+  var trigger = document.getElementById("save-site-trigger");
   var overlay = document.getElementById("save-site-overlay");
   var closeBtn = document.getElementById("save-site-close");
 

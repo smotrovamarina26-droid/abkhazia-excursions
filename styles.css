@@ -697,44 +697,6 @@ body.is-mobile-menu-open {
   text-shadow: 0 0.05em 0.2em rgba(0, 0, 0, 0.3);
 }
 
-.hero-save-site-link {
-  display: inline-block;
-  margin: 10px 0 0;
-  padding: 6px 4px;
-  border: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 14px;
-  line-height: 1.4;
-  font-weight: 500;
-  text-align: center;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.35);
-  text-underline-offset: 3px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  text-shadow: 0 0.05em 0.2em rgba(0, 0, 0, 0.3);
-}
-
-.hero-save-site-link:hover {
-  color: #fff;
-  text-decoration-color: rgba(255, 255, 255, 0.65);
-}
-
-.hero-save-site-link:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.75);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-@media (max-width: 768px) {
-  .hero-save-site-link {
-    max-width: 280px;
-    font-size: 13px;
-    line-height: 1.45;
-  }
-}
-
 .btn {
   display: inline-block;
   background: linear-gradient(135deg, #ff7a00, #ff9500);
@@ -777,7 +739,123 @@ body.is-mobile-menu-open {
 
 .hero-benefits {
   background: #ffffff;
-  padding: 24px 0 16px;
+  padding: 24px 0 8px;
+}
+
+.save-site-cta {
+  padding: 36px 0 17px;
+  background: #ffffff;
+}
+
+main > .tours:first-child {
+  padding-top: 25px;
+}
+
+.save-site-cta-card {
+  text-align: center;
+  background: #fffaf4;
+  border: 1px solid #ffe3c8;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  padding: 17px 16px;
+}
+
+.save-site-cta-card h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #1d2128;
+}
+
+.save-site-cta-card__text {
+  margin: 0 auto 12px;
+  max-width: 34em;
+  color: #5f636d;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.save-site-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: min(100%, 300px);
+  min-height: 54px;
+  padding: 3px 18px;
+  border: 1px solid #f3c7a3;
+  border-radius: 12px;
+  background: #fff;
+  color: #222222;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition:
+    background var(--micro-duration) var(--micro-ease),
+    border-color var(--micro-duration) var(--micro-ease),
+    color var(--micro-duration) var(--micro-ease),
+    transform var(--micro-duration) var(--micro-ease),
+    box-shadow var(--micro-duration) var(--micro-ease);
+}
+
+.save-site-cta__btn:hover {
+  background: #fff8ef;
+  border-color: #ff7a00;
+  color: #222222;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 122, 0, 0.12);
+}
+
+.save-site-cta__btn:active {
+  transform: scale(0.98);
+  background: #fff5e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.save-site-cta__btn:focus {
+  outline: none;
+}
+
+.save-site-cta__btn:focus-visible {
+  outline: 2px solid rgba(255, 122, 0, 0.45);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .save-site-cta {
+    padding: 36px 0 15px;
+  }
+
+  main > .tours:first-child {
+    padding-top: 23px;
+  }
+
+  .save-site-cta-card {
+    padding: 15px 14px;
+  }
+
+  .save-site-cta-card h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .save-site-cta-card__text {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .save-site-cta__btn {
+    width: 100%;
+    min-height: 52px;
+    padding: 3px 18px;
+    font-size: 15px;
+  }
 }
 
 .hero-benefits-checklist {
@@ -3704,6 +3782,10 @@ h2 {
   .advantages,
   .trust {
     padding: 64px 0;
+  }
+
+  main > .tours:first-child {
+    padding-top: 25px;
   }
 
   .advantages.faq {
@@ -7319,6 +7401,10 @@ body.tour-sticky-bar-visible {
 
   main > .tours {
     padding: 43px 0;
+  }
+
+  main > .tours:first-child {
+    padding-top: 23px;
   }
 
   main > .tours .tours-lead {
