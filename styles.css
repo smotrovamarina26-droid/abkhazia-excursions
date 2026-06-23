@@ -738,8 +738,7 @@ body.is-mobile-menu-open {
 }
 
 .hero-benefits {
-  background: #ffffff;
-  padding: 24px 0 8px;
+  padding: 20px 0 12px;
 }
 
 .save-site-cta {
@@ -863,47 +862,22 @@ main > .tours:first-child {
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  padding: 0 0 0 20px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
 }
 
 .hero-benefits-checklist__item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin: 0;
   padding: 0;
-  font-size: 15px;
-  line-height: 1.42;
+  font-size: 16px;
+  line-height: 1.5;
   font-weight: 400;
-  color: #4a515c;
-  text-align: left;
-}
-
-.hero-benefits-checklist__icon {
-  flex: 0 0 auto;
-  width: 31px;
-  height: 31px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: #fdf6ee;
-  border: 1px solid rgba(243, 199, 163, 0.4);
-  color: #4a515c;
-}
-
-.hero-benefits-checklist__icon svg {
-  width: 17px;
-  height: 17px;
-  display: block;
-}
-
-.hero-benefits-checklist__text {
-  flex: 1;
-  min-width: 0;
+  color: #4b5563;
+  text-align: center;
 }
 
 .tours,
@@ -3582,8 +3556,8 @@ h2 {
   }
 
   .hero-benefits-checklist__item {
-    font-size: 15px;
-    line-height: 1.36;
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 
@@ -3626,7 +3600,7 @@ h2 {
 
   .hero-benefits-checklist__item {
     font-size: 17px;
-    line-height: 1.33;
+    line-height: 1.5;
   }
 
   .btn {
@@ -3774,12 +3748,11 @@ h2 {
   }
 
   .hero-benefits-checklist {
-    padding-left: 16px;
-    gap: 10px;
+    gap: 12px;
   }
 
   .hero-benefits-checklist__item {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .hero h1 {
@@ -7323,11 +7296,6 @@ body.tour-sticky-bar-visible {
   .hero .subtitle {
     font-size: 16px;
   }
-
-  .hero-benefits-checklist__item {
-    font-size: 14px;
-    line-height: 1.38;
-  }
 }
 
 @media (max-width: 390px) {
@@ -7374,12 +7342,16 @@ body.tour-sticky-bar-visible {
   }
 
   .hero-benefits {
-    padding: 22px 0 12px;
+    padding: 18px 0 10px;
   }
 
   .hero-benefits-checklist {
-    padding-left: 18px;
-    gap: 8px;
+    gap: 14px;
+  }
+
+  .hero-benefits-checklist__item {
+    font-size: 18px;
+    line-height: 1.5;
   }
 
   .scenario-wrapper h2 {
