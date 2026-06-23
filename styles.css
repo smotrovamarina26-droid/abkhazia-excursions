@@ -3445,6 +3445,12 @@ h2 {
   cursor: pointer;
 }
 
+#save-site-overlay .contact-sheet-close {
+  width: 26px;
+  height: 26px;
+  font-size: 17px;
+}
+
 .contact-sheet h3 {
   margin: 0;
   font-size: 22px;
