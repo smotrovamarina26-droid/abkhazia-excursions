@@ -697,6 +697,44 @@ body.is-mobile-menu-open {
   text-shadow: 0 0.05em 0.2em rgba(0, 0, 0, 0.3);
 }
 
+.hero-save-site-link {
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 6px 4px;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 3px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  text-shadow: 0 0.05em 0.2em rgba(0, 0, 0, 0.3);
+}
+
+.hero-save-site-link:hover {
+  color: #fff;
+  text-decoration-color: rgba(255, 255, 255, 0.65);
+}
+
+.hero-save-site-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .hero-save-site-link {
+    max-width: 280px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+}
+
 .btn {
   display: inline-block;
   background: linear-gradient(135deg, #ff7a00, #ff9500);
@@ -7434,7 +7472,8 @@ body.tour-sticky-bar-visible {
 }
 
 #booking-overlay.is-open ~ .tours-scroll-fab,
-#contact-overlay.is-open ~ .tours-scroll-fab {
+#contact-overlay.is-open ~ .tours-scroll-fab,
+#save-site-overlay.is-open ~ .tours-scroll-fab {
   visibility: hidden;
   pointer-events: none;
 }
@@ -7491,7 +7530,8 @@ body.tour-sticky-bar-visible {
   }
 
   #booking-overlay.is-open ~ .mobile-call-fab,
-  #contact-overlay.is-open ~ .mobile-call-fab {
+  #contact-overlay.is-open ~ .mobile-call-fab,
+  #save-site-overlay.is-open ~ .mobile-call-fab {
     visibility: hidden;
     pointer-events: none;
   }

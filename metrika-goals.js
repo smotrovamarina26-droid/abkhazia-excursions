@@ -18,6 +18,10 @@
       return;
     }
 
+    if (link.closest("#save-site-overlay")) {
+      return;
+    }
+
     var href = link.getAttribute("href") || "";
 
     if (href.indexOf("tel:") === 0) {
