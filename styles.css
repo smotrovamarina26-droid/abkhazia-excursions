@@ -871,8 +871,8 @@ main > .tours:first-child {
 
 .hero-benefits-checklist__item {
   display: flex;
-  align-items: flex-start;
-  gap: 9px;
+  align-items: center;
+  gap: 12px;
   margin: 0;
   padding: 0;
   font-size: 15px;
@@ -882,21 +882,28 @@ main > .tours:first-child {
   text-align: left;
 }
 
-.hero-benefits-checklist__item::before {
-  content: "✓";
+.hero-benefits-checklist__icon {
   flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
-  margin-top: 2px;
+  width: 31px;
+  height: 31px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 122, 0, 0.08);
-  color: #ff7a00;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1;
+  border-radius: 8px;
+  background: #fdf6ee;
+  border: 1px solid rgba(243, 199, 163, 0.4);
+  color: #4a515c;
+}
+
+.hero-benefits-checklist__icon svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+}
+
+.hero-benefits-checklist__text {
+  flex: 1;
+  min-width: 0;
 }
 
 .tours,
